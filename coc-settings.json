@@ -1,0 +1,39 @@
+{
+  "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": [
+        "go.mod",
+        "vendor/"
+      ],
+      "filetypes": [
+        "go"
+      ]
+    },
+    "clangd": {
+      "command": "clangd",
+      "rootPatterns": [
+        "compile_flags.txt",
+        "compile_commands.json",
+        "build/compile_commands.json"
+      ],
+      "filetypes": [
+        "c",
+        "cc",
+        "cpp",
+        "c++",
+        "objc",
+        "objcpp"
+      ]
+    }
+  },
+  "suggest.enablePreselect": true,
+  "suggest.noselect": false,
+  "diagnostic.checkCurrentLine": true,
+  "suggest.maxPreviewWidth": 120,
+  "diagnostic.maxWindowWidth": 120,
+  "suggest.maxCompleteItemCount": 30,
+  "coc.preferences.jumpCommand": "edit",
+  "diagnostic.refreshOnInsertMode": true,
+  "suggest.timeout": 15000
+}
