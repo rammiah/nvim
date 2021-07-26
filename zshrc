@@ -106,7 +106,9 @@ source $ZSH/oh-my-zsh.sh
 # export VISUAL=vim
 # export EDITOR="$VISUAL"
 
-# lias ipython=ipython3
+# alias gdtl="git difftool"
+# alias ipython=ipython3
+# alias cb="cd $HOME/code/gopath/src"
 # if [ -e /home/wangyaning.ovo/.nix-profile/etc/profile.d/nix.sh ]; then . /home/wangyaning.ovo/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 # source /home/wangyaning.ovo/.iterm2_shell_integration.zsh
 # # Add default node to path

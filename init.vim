@@ -11,7 +11,8 @@ Plug 'preservim/nerdcommenter'
 Plug 'luochen1990/rainbow'
 Plug 'airblade/vim-gitgutter'
 Plug 'overcache/NeoSolarized'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'rstacruz/vim-closer'
 call plug#end()
 " -------------------------------------------------------------------------------------------------
 
