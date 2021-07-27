@@ -74,7 +74,8 @@ let g:NERDSpaceDelims=1
 
 "let g:go_def_mode='gopls'
 "let g:go_info_mode='gopls'
-let g:go_code_completion_icase = 1
+let g:go_gopls_enabled = 0
+" let g:go_code_completion_icase = 1
 let g:go_test_timeout = '100s'
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
@@ -85,7 +86,6 @@ let g:go_highlight_variable_declarations = 1
 let g:go_highlight_operators = 1
 let g:go_fmt_command = "goimports"
 let g:go_list_type = "quickfix"
-let g:go_gopls_enabled = 0
 
 "let g:go_doc_popup_window = 1
 " let g:go_auto_type_info = 1
@@ -135,3 +135,8 @@ set encoding=utf8
 set updatetime=100 " gitgutter refresh time
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 set termguicolors
+" search option
+set ignorecase smartcase
+set incsearch
+set hlsearch
+
