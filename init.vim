@@ -13,6 +13,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'overcache/NeoSolarized'
 " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'rstacruz/vim-closer'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 " -------------------------------------------------------------------------------------------------
 
@@ -99,6 +101,9 @@ let g:airline#extensions#coc#enabled = 1
 let airline#extensions#coc#error_symbol = 'ERR:'
 let airline#extensions#coc#warning_symbol = 'WARN:'
 let g:airline_theme = 'solarized'
+" let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#branch#enabled=1
+
 
 " set git blame
 "let g:blamer_show_in_insert_modes = 0
