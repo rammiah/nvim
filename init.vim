@@ -121,6 +121,20 @@ map <C-n> :NERDTreeToggle<CR>
 " Your vimrc
 autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 
+" fzf settings
+" [Buffers] Jump to the existing window if possible
+let g:fzf_buffers_jump = 1
+
+" [[B]Commits] Customize the options used by 'git log':
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+
+" [Tags] Command to generate tags file
+let g:fzf_tags_command = 'ctags -R'
+
+" [Commands] --expect expression for directly executing the command
+let g:fzf_commands_expect = 'ctrl-x'
+
+
 " other settings
 syntax on
 set number
@@ -145,4 +159,5 @@ set termguicolors
 set ignorecase smartcase
 set incsearch
 set hlsearch
+set grepprg=rg\ --vimgrep\ --smart-case\ --hidden\ --follow
 
