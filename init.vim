@@ -15,6 +15,7 @@ Plug 'overcache/NeoSolarized'
 Plug 'rstacruz/vim-closer'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 " -------------------------------------------------------------------------------------------------
 
