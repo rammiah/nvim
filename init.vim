@@ -12,7 +12,7 @@ Plug 'luochen1990/rainbow'
 Plug 'airblade/vim-gitgutter'
 Plug 'overcache/NeoSolarized'
 " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-Plug 'rstacruz/vim-closer'
+Plug 'cohama/lexima.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
@@ -21,16 +21,6 @@ call plug#end()
 
 let g:rainbow_active = 1
 
-" if hidden is not set, TextEdit might fail.
-set hidden
-" Better display for messages
-set cmdheight=2
-" Smaller updatetime for CursorHold & CursorHoldI
-"set updatetime=300
-" don't give |ins-completion-menu| messages.
-"set shortmess+=c
-" always show signcolumns
-set signcolumn=yes
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
@@ -134,19 +124,38 @@ let g:fzf_tags_command = 'ctags -R'
 " [Commands] --expect expression for directly executing the command
 let g:fzf_commands_expect = 'ctrl-x'
 
+" lexima auto close settings
+let g:lexima_enable_basic_rules = 1
+let g:lexima_enable_newline_rules = 1
+let g:lexima_enable_endwise_rules = 1
+" Please add below in your vimrc
+call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': 'latex'})
+call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': 'latex'})
+call lexima#add_rule({'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': 'latex'})
 
+
+" if hidden is not set, TextEdit might fail.
+set hidden
+" Better display for messages
+set cmdheight=2
+" Smaller updatetime for CursorHold & CursorHoldI
+"set updatetime=300
+" don't give |ins-completion-menu| messages.
+"set shortmess+=c
+" always show signcolumns
+set signcolumn=yes
 " other settings
+set nocompatible
 syntax on
 set number
 set shiftwidth=4
 set tabstop=4
 set autoindent
-set cindent
+" set cindent
 set showcmd
 set smartindent
-filetype on
-filetype plugin on
-filetype indent on
+" filetype on
+filetype plugin indent on
 set background=light "dark or light
 colorscheme NeoSolarized
 set cursorline

@@ -32,9 +32,11 @@
   "suggest.maxPreviewWidth": 120,
   "suggest.maxCompleteItemCount": 30,
   "suggest.timeout": 15000,
-  "suggest.triggerAfterInsertEnter": true,
   "suggest.enablePreview": true,
   "suggest.autoTrigger": "always",
+  "suggest.floatEnable": true,
+  "suggest.localityBonus": true,
+  "suggest.minTriggerInputLength": 1,
 
   "coc.preferences.jumpCommand": "edit",
 
