@@ -68,7 +68,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git common-aliases)
+plugins=(git common-aliases fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -97,35 +97,36 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# source /etc/profile.d/bash_profile.sh
-# export PATH=$HOME/.bin:$PATH
-# export BAT_THEME="Solarized (light)"
-# export PATH="$PATH:$HOME/.yarn/bin"
-# export PATH="/opt/tiger/consul_deploy/bin:$PATH"
-# export RUNTIME_IDC_NAME="boe"
-# export VISUAL=vim
-# export EDITOR="$VISUAL"
+source /etc/profile.d/bash_profile.sh
+export PATH=$HOME/.bin:$PATH
+export BAT_THEME="Solarized (light)"
+export PATH="$PATH:$HOME/.yarn/bin"
+export PATH="/opt/tiger/consul_deploy/bin:$PATH"
+export RUNTIME_IDC_NAME="boe"
+export VISUAL=vim
+export EDITOR="$VISUAL"
 
-# alias gdtl="git difftool"
-# alias ipython=ipython3
-# alias cb="cd $HOME/code/gopath/src"
-# if [ -e /home/wangyaning.ovo/.nix-profile/etc/profile.d/nix.sh ]; then . /home/wangyaning.ovo/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-# source /home/wangyaning.ovo/.iterm2_shell_integration.zsh
-# # Add default node to path
+alias gdtl="git difftool"
+alias ipython=ipython3
+if [ -e /home/wangyaning.ovo/.nix-profile/etc/profile.d/nix.sh ]; then . /home/wangyaning.ovo/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+source /home/wangyaning.ovo/.iterm2_shell_integration.zsh
+# Add default node to path
 
-# # Load NVM
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh" --no-use
-# export PATH="$NVM_DIR/versions/node/v14.16.1//bin:$PATH:/opt/clangd_12.0.0/bin"
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Load NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh" --no-use
+export PATH="$NVM_DIR/versions/node/v14.16.1//bin:$PATH:/opt/clangd_12.0.0/bin"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# # c & c++ compilers
-# export LD_LIBRARY_PATH=/usr/local/lib
-# export CC=/usr/local/bin/gcc
-# export CXX=/usr/local/bin/g++
+# c & c++ compilers
+export LD_LIBRARY_PATH=/usr/local/lib
+export CC=/usr/local/bin/gcc
+export CXX=/usr/local/bin/g++
 
-# [[ -s "/home/wangyaning.ovo/.gvm/scripts/gvm" ]] && source "/home/wangyaning.ovo/.gvm/scripts/gvm"
+[[ -s "/home/wangyaning.ovo/.gvm/scripts/gvm" ]] && source "/home/wangyaning.ovo/.gvm/scripts/gvm"
 
-# # rust toolchain
-# export RUSTUP_DIST_SERVER="https://rsproxy.cn"
-# export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
+alias cb="cd $HOME/code/gopath/src"
+# rust toolchain
+export RUSTUP_DIST_SERVER="https://rsproxy.cn"
+export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
+export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git' --glob '!kitex_gen'"
