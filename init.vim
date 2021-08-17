@@ -16,6 +16,8 @@ Plug 'cohama/lexima.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
+" Plug 'solarnz/thrift.vim'
+" Plug 'sheerun/vim-polyglot'
 call plug#end()
 " -------------------------------------------------------------------------------------------------
 
@@ -87,10 +89,10 @@ let g:go_jump_to_error = 1
 let g:go_fmt_command = "goimports"
 let g:go_fmt_autosave = 1
 let g:go_list_type = "quickfix"
-autocmd FileType go let b:go_fmt_options = {
-     \ 'goimports': '-local ' .
-       \ trim(system('{cd '. shellescape(expand('%:h')) .' && go list -m;}')),
-     \ }
+" autocmd FileType go let b:go_fmt_options = {
+"      \ 'goimports': '-local ' .
+"        \ trim(system('{cd '. shellescape(expand('%:h')) .' && go list -m;}')),
+"      \ }
 
 "let g:go_doc_popup_window = 1
 " let g:go_auto_type_info = 1
