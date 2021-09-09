@@ -16,6 +16,8 @@ Plug 'cohama/lexima.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'ryanoasis/vim-devicons'
+" Plug 'lambdalisue/nerdfont.vim'
 " Plug 'solarnz/thrift.vim'
 " Plug 'sheerun/vim-polyglot'
 call plug#end()
@@ -99,6 +101,7 @@ let g:go_list_type = "quickfix"
 " disable vim-go :GoDef short cut (gd)
 "this is handled by LanguageClient [LC]
 let g:go_def_mapping_enabled = 0
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
@@ -122,6 +125,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
+" map <C-m> :NERDTreeFind<CR>
 " Your vimrc
 autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 
