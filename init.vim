@@ -109,6 +109,7 @@ let g:airline#extensions#coc#enabled = 1
 let airline#extensions#coc#error_symbol = 'ERR:'
 let airline#extensions#coc#warning_symbol = 'WARN:'
 let g:airline_theme = 'solarized'
+let g:solarized_termcolors=256
 " let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled=1
 
@@ -175,6 +176,7 @@ set smartindent
 " filetype on
 filetype plugin indent on
 set background=light "dark or light
+set termguicolors
 colorscheme NeoSolarized
 set cursorline
 highlight Cursorline cterm=bold

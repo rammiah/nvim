@@ -28,8 +28,7 @@
     }
   },
   "suggest.enablePreselect": true,
-  "suggest.noselect": false,
-  "suggest.maxPreviewWidth": 120,
+  "suggest.noselect": true,
   "suggest.maxCompleteItemCount": 30,
   "suggest.timeout": 15000,
   "suggest.enablePreview": true,
@@ -41,6 +40,5 @@
   "coc.preferences.jumpCommand": "edit",
 
   "diagnostic.checkCurrentLine": true,
-  "diagnostic.maxWindowWidth": 120,
   "diagnostic.refreshOnInsertMode": true
 }
