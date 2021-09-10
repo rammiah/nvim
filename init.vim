@@ -189,4 +189,5 @@ set ignorecase smartcase
 set incsearch
 set hlsearch
 set grepprg=rg\ --vimgrep\ --smart-case\ --hidden\ --follow
+set completeopt-=noselect
 
