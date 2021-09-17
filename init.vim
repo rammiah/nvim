@@ -153,28 +153,26 @@ call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': 'latex
 call lexima#add_rule({'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': 'latex'})
 
 
+" filetype on
+filetype plugin indent on
 " if hidden is not set, TextEdit might fail.
 set hidden
 " Better display for messages
 set cmdheight=2
-" Smaller updatetime for CursorHold & CursorHoldI
-"set updatetime=300
 " don't give |ins-completion-menu| messages.
-"set shortmess+=c
+set shortmess+=c
 " always show signcolumns
 set signcolumn=yes
 " other settings
 set nocompatible
 syntax on
 set number
-set shiftwidth=4
+" set shiftwidth=4
 set tabstop=4
 set autoindent
 " set cindent
 set showcmd
 set smartindent
-" filetype on
-filetype plugin indent on
 set background=light "dark or light
 set termguicolors
 colorscheme NeoSolarized
@@ -189,5 +187,5 @@ set ignorecase smartcase
 set incsearch
 set hlsearch
 set grepprg=rg\ --vimgrep\ --smart-case\ --hidden\ --follow
-set completeopt-=noselect
+set completeopt=menuone,noselect,noinsert
 
