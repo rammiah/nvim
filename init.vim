@@ -17,9 +17,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'ryanoasis/vim-devicons'
-" Plug 'lambdalisue/nerdfont.vim'
-" Plug 'solarnz/thrift.vim'
-" Plug 'sheerun/vim-polyglot'
 call plug#end()
 " -------------------------------------------------------------------------------------------------
 
