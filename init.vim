@@ -167,7 +167,7 @@ set signcolumn=yes
 set nocompatible
 syntax on
 set number
-" set shiftwidth=4
+set shiftwidth=4
 set tabstop=4
 set autoindent
 " set cindent
@@ -187,5 +187,5 @@ set ignorecase smartcase
 set incsearch
 set hlsearch
 set grepprg=rg\ --vimgrep\ --smart-case\ --hidden\ --follow
-set completeopt=menuone,noselect,noinsert
+set completeopt-=noselect
 
