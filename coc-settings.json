@@ -9,7 +9,10 @@
       "args": ["-remote=unix;/tmp/gopls-daemon-socket", "-logfile=auto", "-debug=:0", "-rpc.trace"],
       "filetypes": [
         "go"
-      ]
+      ],
+      "initializationOptions": {
+        "staticcheck": true
+      }
     },
     "clangd": {
       "command": "clangd",
