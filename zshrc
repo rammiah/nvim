@@ -41,3 +41,8 @@ alias cb="cd $HOME/code/gopath/src"
 export RUSTUP_DIST_SERVER="https://rsproxy.cn"
 export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
 export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git' --glob '!kitex_gen' --glob '!thrift_gen'"
+
+# gopath & goroot settings
+export GOROOT="$HOME/.gos/go"
+export GOPATH="$HOME/code/gopath"
+export PATH="$GOROOT/bin:$GOPATH/bin:$PATH" 
