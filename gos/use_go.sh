@@ -3,6 +3,10 @@
 [ $# -eq 0 ] && { echo "Usage: $0 version"; exit 1; }
 
 VERSION=$1
+if [[ $VERSION =~ ^go* ]]
+then
+	VERSION=${VERSION:2}
+fi
 
 TARGET="$HOME/.gos/go$VERSION"
 

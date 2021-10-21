@@ -28,6 +28,10 @@ case $(uname -s) in
 esac
 
 VERSION=$1
+if [[ $VERSION =~ ^go* ]]
+then
+	VERSION=${VERSION:2}
+fi
 
 cd $HOME/.gos &&\
 	wget -O "/tmp/go$VERSION.tar.gz" "https://golang.google.cn/dl/go$VERSION.$OS-$ARCH.tar.gz" &&\
