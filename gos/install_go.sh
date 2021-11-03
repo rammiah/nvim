@@ -33,7 +33,7 @@ then
 	VERSION=${VERSION:2}
 fi
 
-DOWN_FILE="/tmp/go$version.tar.gz"
+DOWN_FILE="/tmp/go$VERSION.tar.gz"
 
 cd $HOME/.gos &&\
 	wget -O "$DOWN_FILE" "https://golang.google.cn/dl/go$VERSION.$OS-$ARCH.tar.gz" &&\
