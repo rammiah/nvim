@@ -33,13 +33,15 @@ then
 	VERSION=${VERSION:2}
 fi
 
+DOWN_FILE="/tmp/go$version.tar.gz"
+
 cd $HOME/.gos &&\
-	wget -O "/tmp/go$VERSION.tar.gz" "https://golang.google.cn/dl/go$VERSION.$OS-$ARCH.tar.gz" &&\
-	tar -xvf "/tmp/go$VERSION.tar.gz" -C /tmp/ &&\
+	wget -O "$DOWN_FILE" "https://golang.google.cn/dl/go$VERSION.$OS-$ARCH.tar.gz" &&\
+	tar -xvf "$DOWN_FILE" -C /tmp/ &&\
 	rm -rf go$VERSION &&\
 	mv /tmp/go go$VERSION &&\
-	rm -rf "go$VERSION.tar.gz" &&\
+	rm -rf "$DOWN_FILE" &&\
 	echo "download go$VERSION success" ||\
 	echo "download go$VERSION fail" &&\
-	rm -rf "go$VERSION.tar.gz"
+	rm -rf "$DOWN_FILE"
 
