@@ -59,7 +59,14 @@ fzf-git-branch() {
 }
 
 gco() {
+	# check in git respository
     git rev-parse HEAD > /dev/null 2>&1 || return
+
+	# params count
+	if (( $# > 0 )) ; then
+		git checkout $*
+		return
+	fi
 
     local branch
 
