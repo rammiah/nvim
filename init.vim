@@ -183,6 +183,10 @@ set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 set ignorecase smartcase
 set incsearch
 set hlsearch
-set grepprg=rg\ --vimgrep\ --smart-case\ --hidden\ --follow
+set grepprg="rg --vimgrep --smart-case --hidden --follow"
 set completeopt-=noselect
 
+set foldmethod=indent   
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
