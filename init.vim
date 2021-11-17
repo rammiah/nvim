@@ -17,6 +17,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'ryanoasis/vim-devicons'
+" Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
 call plug#end()
 " -------------------------------------------------------------------------------------------------
 
