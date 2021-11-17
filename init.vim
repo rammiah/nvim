@@ -149,9 +149,21 @@ call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': 'latex'})
 call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': 'latex'})
 call lexima#add_rule({'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': 'latex'})
 
-
 " filetype on
+set autoindent
 filetype plugin indent on
+" set cindent
+set shiftwidth=4
+set tabstop=4
+set expandtab
+
+" only not expand tab for golang
+autocmd FileType go setlocal shiftwidth=4 tabstop=4 noexpandtab autoindent
+" expandtab for other files
+autocmd FileType python,json,yaml setlocal shiftwidth=2 softtabstop=2 expandtab autoindent
+autocmd FileType thrift,c,cpp setlocal shiftwidth=4 tabstop=4 expandtab autoindent
+" autocmd FileType json setlocal shiftwidth=2 softtabstop=2 expandtab autoindent
+" autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2 expandtab autoindent
 " if hidden is not set, TextEdit might fail.
 set hidden
 " Better display for messages
@@ -163,20 +175,23 @@ set signcolumn=yes
 " other settings
 set nocompatible
 syntax on
+" line number
 set number
-set shiftwidth=4
-set tabstop=4
-set autoindent
-" set cindent
+
+" status
 set showcmd
-set smartindent
+
+" themes
 set background=light "dark or light
 set termguicolors
 colorscheme NeoSolarized
 set cursorline
 highlight Cursorline cterm=bold
+
+" encoding
 set encoding=utf8
 set updatetime=100 " gitgutter refresh time
+" auto guess encoding
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 " set termguicolors
 " search option
@@ -184,9 +199,11 @@ set ignorecase smartcase
 set incsearch
 set hlsearch
 set grepprg="rg --vimgrep --smart-case --hidden --follow"
+
+" complete option
 set completeopt-=noselect
 
-set foldmethod=indent   
+set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
