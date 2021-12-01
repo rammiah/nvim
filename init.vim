@@ -20,7 +20,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'ryanoasis/vim-devicons'
 " Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
-Plug 'github/copilot.vim'
+" Plug 'github/copilot.vim'
 call plug#end()
 " -------------------------------------------------------------------------------------------------
 
