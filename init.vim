@@ -153,6 +153,13 @@ call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': 'latex'})
 call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': 'latex'})
 call lexima#add_rule({'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': 'latex'})
 
+" ctags command
+nmap <leader>tag :!ctags -R <CR>
+
+" quickfix jump
+map <leader>j :cn<CR>
+map <leader>k :cp<CR>
+
 " filetype on
 set autoindent
 filetype plugin indent on
