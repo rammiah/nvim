@@ -161,9 +161,8 @@ map <leader>j :cn<CR>
 map <leader>k :cp<CR>
 
 " filetype on
-set autoindent
 filetype plugin indent on
-" set cindent
+set autoindent
 set shiftwidth=4
 set tabstop=4
 set expandtab
@@ -173,6 +172,7 @@ autocmd FileType go setlocal shiftwidth=4 tabstop=4 noexpandtab autoindent
 " expandtab for other files
 autocmd FileType python,json,yaml setlocal shiftwidth=2 softtabstop=2 expandtab autoindent
 autocmd FileType thrift,c,cpp setlocal shiftwidth=4 tabstop=4 expandtab autoindent
+autocmd BufRead,BufNewFile Caddyfile setlocal shiftwidth=4 tabstop=4 noexpandtab autoindent
 " autocmd FileType json setlocal shiftwidth=2 softtabstop=2 expandtab autoindent
 " autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2 expandtab autoindent
 " if hidden is not set, TextEdit might fail.
