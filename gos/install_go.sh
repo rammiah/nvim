@@ -36,7 +36,7 @@ fi
 DOWN_FILE="/tmp/go$VERSION.tar.gz"
 
 cd $HOME/.gos &&\
-	wget -O "$DOWN_FILE" "https://golang.google.cn/dl/go$VERSION.$OS-$ARCH.tar.gz" &&\
+	wget -O "$DOWN_FILE" "https://golang.org/dl/go$VERSION.$OS-$ARCH.tar.gz" &&\
 	tar -xvf "$DOWN_FILE" -C /tmp/ &&\
 	rm -rf go$VERSION &&\
 	mv /tmp/go go$VERSION &&\
