@@ -6,7 +6,7 @@
         "go.mod",
         "vendor/"
       ],
-      "args": ["-remote=unix;/tmp/gopls-daemon-socket", "-logfile=auto", "-debug=:0", "-rpc.trace"],
+      "args": ["-remote=unix;/tmp/gopls-daemon-socket", "-logfile=auto", "-debug=\"\"", "-rpc.trace"],
       "filetypes": [
         "go"
       ]
