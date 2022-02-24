@@ -160,6 +160,10 @@ nmap <leader>tag :!ctags -R <CR>
 map <leader>j :cn<CR>
 map <leader>k :cp<CR>
 
+" spell check
+vmap <leader>a <Plug>(coc-codeaction-selected)
+nmap <leader>a <Plug>(coc-codeaction-selected)
+
 " filetype on
 filetype plugin indent on
 set autoindent
