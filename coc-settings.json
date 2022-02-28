@@ -72,6 +72,8 @@
     "gocsv",
     "gonic",
     "goquery",
+    "gorm",
+    "jinzhu",
     "kitc",
     "kitex",
     "kitutil",
