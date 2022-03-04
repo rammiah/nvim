@@ -47,6 +47,7 @@
   "diagnostic.virtualText": false,
   "diagnostic.enableMessage": "always",
   "cSpell.userWords": [
+    "Buyin",
     "Ecom",
     "Exts",
     "Ptcode",
@@ -70,6 +71,7 @@
     "gjson",
     "gocarina",
     "gocsv",
+    "gomonkey",
     "gonic",
     "goquery",
     "gorm",
