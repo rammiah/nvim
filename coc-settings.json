@@ -86,6 +86,7 @@
     "npwd",
     "payapi",
     "paywaydto",
+    "printf",
     "rocketmq",
     "sjson",
     "tccclient",

@@ -5,7 +5,7 @@ import argparse
 import subprocess
 
 # renamed 'link' file
-original_link_file = 'original_link'
+original_link_file = 'olink'
 
 # link first
 output=None
