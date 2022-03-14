@@ -48,6 +48,7 @@
   "diagnostic.enableMessage": "always",
   "cSpell.userWords": [
     "Buyin",
+    "Bytekv",
     "Ecom",
     "Exts",
     "Ptcode",
@@ -71,6 +72,7 @@
     "gjson",
     "gocarina",
     "gocsv",
+    "gokms",
     "gomonkey",
     "gonic",
     "goquery",
