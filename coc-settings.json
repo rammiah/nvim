@@ -1,33 +1,14 @@
 {
   "languageserver": {
-    "golang": {
-      "command": "gopls",
-      "rootPatterns": [
-        "go.mod",
-        "vendor/"
-      ],
-      "args": ["-remote=unix;/tmp/gopls-daemon-socket", "-logfile=auto", "-debug=\"\"", "-rpc.trace"],
-      "filetypes": [
-        "go"
-      ]
-    },
-    "clangd": {
-      "command": "clangd-12",
-      "rootPatterns": [
-        "compile_flags.txt",
-        "compile_commands.json",
-        "build/compile_commands.json"
-      ],
-      "filetypes": [
-        "c",
-        "cc",
-        "cpp",
-        "c++",
-        "objc",
-        "objcpp"
-      ]
-    }
   },
+  "go.enable": true,
+  "go.goplsPath": "~/code/gopath/bin/gopls",
+  "go.goplsArgs": ["-remote=unix;/tmp/gopls-daemon-socket", "-logfile=auto", "-debug=\"\"", "-rpc.trace"],
+  "go.goplsOptions": {
+    "memoryMode": "Normal",
+    "linkTarget": "pkg.go.dev"
+  },
+
   "suggest.enablePreselect": true,
   "suggest.noselect": true,
   "suggest.maxCompleteItemCount": 20,
@@ -75,6 +56,8 @@
     "gokms",
     "gomonkey",
     "gonic",
+    "gopath",
+    "gopls",
     "goquery",
     "gorm",
     "jinzhu",
@@ -85,6 +68,7 @@
     "logid",
     "metricsv",
     "mitchellh",
+    "noselect",
     "npwd",
     "payapi",
     "paywaydto",
