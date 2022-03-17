@@ -1,12 +1,16 @@
 {
   "languageserver": {
-  },
-  "go.enable": true,
-  "go.goplsPath": "~/code/gopath/bin/gopls",
-  "go.goplsArgs": ["-remote=unix;/tmp/gopls-daemon-socket", "-logfile=auto", "-debug=\"\"", "-rpc.trace"],
-  "go.goplsOptions": {
-    "memoryMode": "Normal",
-    "linkTarget": "pkg.go.dev"
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": [
+        "go.mod",
+        "vendor/"
+      ],
+      "args": ["-remote=unix;/tmp/gopls-daemon-socket", "-logfile=auto", "-debug=\"\"", "-rpc.trace"],
+      "filetypes": [
+        "go"
+      ]
+    }
   },
 
   "suggest.enablePreselect": true,
