@@ -23,5 +23,4 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
 ]])

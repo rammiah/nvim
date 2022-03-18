@@ -33,4 +33,5 @@ let g:go_list_type = "quickfix"
 "this is handled by LanguageClient [LC]
 let g:go_def_mapping_enabled = 0
 let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+autocmd BufWritePre *.go :GoImports
 ]])

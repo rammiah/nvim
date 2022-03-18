@@ -23,22 +23,22 @@ map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
 -- nvim-treesitter 代码格式化
 map("n", "<leader>i", "gg=G", opt)
 
-vim.cmd([[
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+-- vim.cmd([[
+-- function! s:check_back_space() abort
+--   let col = col('.') - 1
+--   return !col || getline('.')[col - 1]  =~# '\s'
+-- endfunction
 
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "<CR>" :
-      \ <SID>check_back_space() ? "<TAB>" :
-      \ coc#refresh()
+-- inoremap <silent><expr> <TAB>
+--       \ pumvisible() ? "<CR>" :
+--       \ <SID>check_back_space() ? "<TAB>" :
+--       \ coc#refresh()
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-]])
+-- function! s:check_back_space() abort
+--   let col = col('.') - 1
+--   return !col || getline('.')[col - 1]  =~# '\s'
+-- endfunction
+-- ]])
 
 vim.cmd([[
 " use K to show documentation in previw
