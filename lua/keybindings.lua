@@ -1,6 +1,5 @@
 vim.g.mapleader = ";"
 vim.g.maplocalleader = ";"
-
 -- 保存本地变量
 local map = vim.api.nvim_set_keymap
 local opt = {noremap = true, silent = true}
@@ -31,8 +30,8 @@ function! s:check_back_space() abort
 endfunction
 
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ pumvisible() ? "<CR>" :
+      \ <SID>check_back_space() ? "<TAB>" :
       \ coc#refresh()
 
 function! s:check_back_space() abort

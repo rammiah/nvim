@@ -14,18 +14,15 @@ vim.wo.signcolumn = "yes"
 -- 右侧参考线，超过表示代码太长了，考虑换行
 -- vim.wo.colorcolumn = "80"
 -- 缩进2个空格等于一个Tab
-vim.o.tabstop = 2
-vim.bo.tabstop = 2
-vim.o.softtabstop = 2
-vim.o.shiftround = true
--- >> << 时移动长度
-vim.o.shiftwidth = 2
-vim.bo.shiftwidth = 2
+vim.cmd([[
+" filetype on
+filetype plugin indent on
+set autoindent
+set shiftwidth=4
+set tabstop=4
+set expandtab
+]])
 -- 新行对齐当前行，空格替代tab
-vim.o.expandtab = true
-vim.bo.expandtab = true
-vim.o.autoindent = true
-vim.bo.autoindent = true
 vim.o.smartindent = true
 -- 搜索大小写不敏感，除非包含大写
 vim.o.ignorecase = true
@@ -40,7 +37,6 @@ vim.o.showmode = false
 vim.o.cmdheight = 2
 -- 当文件被外部程序修改时，自动加载
 vim.o.autoread = true
-vim.bo.autoread = true
 -- 禁止折行
 vim.o.wrap = false
 vim.wo.wrap = false
