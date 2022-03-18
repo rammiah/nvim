@@ -32,5 +32,7 @@ return require('packer').startup(function()
   use 'tpope/vim-surround'
   -- vim-go
   use 'fatih/vim-go'
+  -- blamer
+  use 'APZelos/blamer.nvim'
 
 end)
