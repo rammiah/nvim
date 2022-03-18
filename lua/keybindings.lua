@@ -55,8 +55,8 @@ nnoremap <silent> U :call <SID>show_doc()<CR>
 
 -- map("n", "K", ":call <SID>show_doc()<CR>", opt)
 map("n", "<leader>rn", ":call CocActionAsync('rename')<CR>", opt)
-map("n", "<space>a", ":call CocList diagnostics<CR>", opt)
-map("n", "<space>o", ":call CocList outline<CR>", opt)
+map("n", "<space>a", ":CocList diagnostics<CR>", opt)
+map("n", "<space>o", ":CocList outline<CR>", opt)
 map("n", "gd", ":call CocActionAsync('jumpDefinition')<CR>", opt)
 map("n", "gt", ":call CocActionAsync('jumpTypeDefinition')<CR>", opt)
 map("n", "gi", ":call CocActionAsync('jumpImplementation')<CR>", opt)
