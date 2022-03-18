@@ -90,7 +90,7 @@ let g:go_fmt_fail_silently = 0
 let g:go_jump_to_error = 1
 
 let g:go_fmt_command = "goimports"
-let g:go_fmt_autosave = 1
+let g:go_fmt_autosave = 0
 let g:go_list_type = "quickfix"
 " autocmd FileType go let b:go_fmt_options = {
 "      \ 'goimports': '-local ' .
