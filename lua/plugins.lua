@@ -33,6 +33,6 @@ return require('packer').startup(function()
   -- vim-go
   use 'fatih/vim-go'
   -- blamer
-  use 'APZelos/blamer.nvim'
+  -- use 'APZelos/blamer.nvim'
 
 end)
