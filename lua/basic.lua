@@ -57,14 +57,14 @@ vim.o.swapfile = false
 -- smaller updatetime 
 vim.o.updatetime = 300
 -- 等待mappings
-vim.o.timeoutlen = 100
+vim.o.timeoutlen = 600
 -- split window 从下边和右边出现
 vim.o.splitbelow = true
 vim.o.splitright = true
 -- 自动补全不自动选中
-vim.g.completeopt = "menu,menuone,noselect,noinsert"
+vim.g.completeopt = "noselect"
 -- 样式
--- vim.o.background = "dark"
+vim.o.background = "light"
 -- vim.o.termguicolors = true
 -- vim.opt.termguicolors = true
 -- 不可见字符的显示，这里只把空格显示为一个点
@@ -77,3 +77,5 @@ vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.pumheight = 10
 -- always show tabline
 vim.o.showtabline = 2
+vim.o.background = 'light'
+vim.o.grepprg = 'rg --vimgrep --smart-case --hidden --follow'
