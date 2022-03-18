@@ -83,5 +83,6 @@
     "tidwall",
     "toutiao",
     "xiaodian"
-  ]
+  ],
+  "Lua.telemetry.enable": true
 }

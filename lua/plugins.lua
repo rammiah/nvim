@@ -1,30 +1,36 @@
-local use = require('packer').use
+local use = require("packer").use
 return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   -- color theme
-  use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
+  use {'ellisonleao/gruvbox.nvim', requires = {'rktjmp/lush.nvim'}}
+  use 'overcache/NeoSolarized'
   -- nerd tree
-  use 'preservim/nerdtree'
+  use { 'preservim/nerdtree', requires = {'Xuyuanp/nerdtree-git-plugin'} }
   -- dev icons
   use 'ryanoasis/vim-devicons'
   -- treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  -- commenter
+  use 'preservim/nerdcommenter'
   -- bufferline (新增)
   use 'akinsho/bufferline.nvim'
-  -- lspconfig
-  use {'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer'}
-  -- complete
-  -- nvim-cmp
-  use 'hrsh7th/cmp-nvim-lsp' -- { name = nvim_lsp }
-  use 'hrsh7th/cmp-buffer'   -- { name = 'buffer' },
-  use 'hrsh7th/cmp-path'     -- { name = 'path' }
-  use 'hrsh7th/cmp-cmdline'  -- { name = 'cmdline' }
-  use 'hrsh7th/nvim-cmp'
-  -- vsnip
-  use 'hrsh7th/cmp-vsnip'    -- { name = 'vsnip' }
-  use 'hrsh7th/vim-vsnip'
-  use 'rafamadriz/friendly-snippets'
-  -- lspkind
-  use 'onsails/lspkind-nvim'
+  -- coc.nvim
+  use { 'neoclide/coc.nvim', branch = 'release' }
+  -- air-line
+  use { 'vim-airline/vim-airline', requires = {'vim-airline/vim-airline-themes'} }
+  -- rainbow
+  use { 'luochen1990/rainbow' }
+  -- git
+  use { 'airblade/vim-gitgutter' }
+  use 'tpope/vim-fugitive'
+  -- lexima
+  use { 'cohama/lexima.vim' }
+  -- fzf
+  use { 'junegunn/fzf.vim', requires = { 'junegunn/fzf', run = ':fzf#install()' } }
+  -- surround
+  use 'tpope/vim-surround'
+  -- vim-go
+  use 'fatih/vim-go'
+
 end)
