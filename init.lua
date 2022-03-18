@@ -1,0 +1,10 @@
+require('basic')
+require('keybindings')
+
+require('plugins')
+require('colorscheme')
+require('plugin-config/nerdtree')
+require('plugin-config/bufferline')
+require('plugin-config/nvim-treesitter')
+require('lsp/setup')
+require('lsp/nvim-cmp')
