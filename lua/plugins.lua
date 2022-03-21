@@ -8,19 +8,19 @@ return require('packer').startup(function()
   -- nerd tree
   use { 'preservim/nerdtree', requires = {'Xuyuanp/nerdtree-git-plugin'} }
   -- dev icons
-  use 'ryanoasis/vim-devicons'
+  -- use 'ryanoasis/vim-devicons'
   -- treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   -- commenter
   use 'preservim/nerdcommenter'
   -- bufferline (新增)
-  use 'akinsho/bufferline.nvim'
+  use { 'akinsho/bufferline.nvim', requires = {'kyazdani42/nvim-web-devicons'} }
   -- coc.nvim
   use { 'neoclide/coc.nvim', branch = 'release' }
   -- air-line
   use { 'vim-airline/vim-airline', requires = {'vim-airline/vim-airline-themes'} }
   -- rainbow
-  use { 'luochen1990/rainbow' }
+  -- use { 'luochen1990/rainbow' }
   -- git
   use { 'airblade/vim-gitgutter' }
   use 'tpope/vim-fugitive'
