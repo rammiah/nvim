@@ -28,6 +28,8 @@
   "suggest.preferCompleteThanJumpPlaceholder": true,
 
   "coc.preferences.jumpCommand": "edit",
+  "coc.preferences.formatOnSaveFiletypes": ["go"],
+  "json.format.enable": true,
 
   "diagnostic.checkCurrentLine": true,
   "diagnostic.refreshOnInsertMode": true,
@@ -88,6 +90,5 @@
     "tidwall",
     "toutiao",
     "xiaodian"
-  ],
-  "Lua.telemetry.enable": true
+  ]
 }
