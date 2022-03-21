@@ -8,7 +8,7 @@ return require('packer').startup(function()
   -- nerd tree
   use { 'preservim/nerdtree', requires = {'Xuyuanp/nerdtree-git-plugin'} }
   -- dev icons
-  -- use 'ryanoasis/vim-devicons'
+  use 'ryanoasis/vim-devicons'
   -- treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   -- commenter
