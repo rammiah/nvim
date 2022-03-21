@@ -20,6 +20,9 @@ map('n', '<C-f>', ':NERDTreeFind<CR>', opt)
 -- bufferline 左右Tab切换
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
+map("n", "gb", ":BufferLinePick<CR>", opt)
+-- map("n", "<leader>tn", ":tabnext<CR>", opt)
+-- map("n", "<leader>tp", ":tabprevious<CR>", opt)
 -- nvim-treesitter 代码格式化
 map("n", "<leader>i", "gg=G", opt)
 
