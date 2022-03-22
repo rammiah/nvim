@@ -25,10 +25,19 @@
   "suggest.floatEnable": true,
   "suggest.localityBonus": true,
   "suggest.minTriggerInputLength": 2,
-  "suggest.preferCompleteThanJumpPlaceholder": true,
+  "suggest.preferCompleteThanJumpPlaceholder": false,
+  "suggest.triggerAfterInsertEnter": true,
+  "suggest.removeDuplicateItems": true,
+  "suggest.defaultSortMethod": "alphabetical",
 
   "coc.preferences.jumpCommand": "edit",
   "coc.preferences.formatOnSaveFiletypes": ["go"],
+  "coc.preferences.enableMarkdown": true,
+  "coc.preferences.enableMessageDialog": true,
+  "coc.preferences.messageLevel": "warning",
+  "coc.preferences.formatOnType": true,
+
+
   "json.format.enable": true,
 
   "diagnostic.checkCurrentLine": true,
@@ -37,6 +46,7 @@
   "diagnostic.messageDelay": 200,
   "diagnostic.virtualText": false,
   "diagnostic.enableMessage": "always",
+
   "cSpell.userWords": [
     "Buyin",
     "Bytekv",
