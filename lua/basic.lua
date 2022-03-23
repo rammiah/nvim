@@ -12,17 +12,8 @@ vim.wo.cursorline = true
 -- 显示左侧图标指示列
 vim.wo.signcolumn = "yes"
 -- 右侧参考线，超过表示代码太长了，考虑换行
--- vim.wo.colorcolumn = "80"
--- 缩进2个空格等于一个Tab
-vim.cmd([[
-" filetype on
-filetype plugin indent on
-set autoindent
-set shiftwidth=4
-set tabstop=4
-set expandtab
-]])
--- 新行对齐当前行，空格替代tab
+vim.wo.colorcolumn = "120"
+-- 新行对齐当前行
 vim.o.smartindent = true
 -- 搜索大小写不敏感，除非包含大写
 vim.o.ignorecase = true
