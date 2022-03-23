@@ -10,7 +10,7 @@ return require('packer').startup(function()
   -- dev icons
   use 'ryanoasis/vim-devicons'
   -- treesitter
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', requires = 'p00f/nvim-ts-rainbow'}
   -- commenter
   use 'preservim/nerdcommenter'
   -- bufferline (新增)
