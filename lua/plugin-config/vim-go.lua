@@ -1,6 +1,8 @@
 vim.cmd([[
 "let g:go_def_mode='gopls'
 "let g:go_info_mode='gopls'
+let g:go_code_completion_enabled = 0
+let g:go_test_show_name = 1
 let g:go_gopls_enabled = 0
 " let g:go_code_completion_icase = 1
 let g:go_test_timeout = '100s'
@@ -17,7 +19,6 @@ let g:go_highlight_interfaces = 0
 
 let g:go_fmt_fail_silently = 0
 let g:go_jump_to_error = 1
-
 let g:go_fmt_command = "goimports"
 let g:go_fmt_autosave = 0
 let g:go_imports_autosave = 0
