@@ -2,6 +2,7 @@ vim.cmd([[
 "let g:go_def_mode='gopls'
 "let g:go_info_mode='gopls'
 let g:go_code_completion_enabled = 0
+
 let g:go_test_show_name = 1
 let g:go_gopls_enabled = 0
 " let g:go_code_completion_icase = 1
