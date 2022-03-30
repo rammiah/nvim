@@ -41,7 +41,7 @@ vim.o.mouse = "nv"
 vim.o.backup = false
 vim.o.writebackup = false
 vim.o.swapfile = false
--- smaller updatetime 
+-- smaller updatetime
 vim.o.updatetime = 300
 -- 等待mappings
 vim.o.timeoutlen = 600
