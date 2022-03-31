@@ -84,6 +84,7 @@
     "gopls",
     "goquery",
     "gorm",
+    "idgen",
     "jinzhu",
     "kitc",
     "kitex",
