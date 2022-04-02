@@ -64,5 +64,4 @@ vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.pumheight = 10
 -- always show tabline
 vim.o.showtabline = 2
-vim.o.background = 'light'
 vim.o.grepprg = 'rg --vimgrep --smart-case --hidden --follow'
