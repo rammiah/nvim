@@ -14,7 +14,7 @@ return require('packer').startup(function()
   -- commenter
   use 'preservim/nerdcommenter'
   -- bufferline (新增)
-  use { 'akinsho/bufferline.nvim', requires = {'kyazdani42/nvim-web-devicons'} }
+  use { 'akinsho/bufferline.nvim', tag = "*", requires = {'kyazdani42/nvim-web-devicons'} }
   -- coc.nvim
   use { 'neoclide/coc.nvim', branch = 'release' }
   -- air-line
