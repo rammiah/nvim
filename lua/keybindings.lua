@@ -69,7 +69,9 @@ map("n", "<C-_>", ":call nerdcommenter#Comment('n', 'toggle')<CR>", opt)
 map("v", "<C-_>", ":call nerdcommenter#Comment('x', 'toggle')<CR>gv", opt)
 -- tag
 map("n", "<leader>tag", ":!ctags -R<CR>", { noremap=true })
-
+-- Files
+map('n', "<leader>ff", ":Files<CR>", opt)
+map('n', '<leader>tt', ":Tags<CR>", opt)
 
 
 local pluginKeys = {}
