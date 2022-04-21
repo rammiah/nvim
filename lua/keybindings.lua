@@ -3,9 +3,6 @@ vim.g.maplocalleader = ";"
 -- 保存本地变量
 local map = vim.api.nvim_set_keymap
 local opt = {noremap = true, silent = true}
--- 每次移动9行而不是半屏
--- map("n", "<C-u>", "9k", opt)
--- map("n", "<C-d>", "9j", opt)
 -- 持续缩进
 map('v', '<', '<gv', opt)
 map('v', '>', '>gv', opt)
@@ -25,23 +22,6 @@ map("n", "gb", ":BufferLinePick<CR>", opt)
 -- map("n", "<leader>tp", ":tabprevious<CR>", opt)
 -- nvim-treesitter 代码格式化
 map("n", "<leader>i", "gg=G", opt)
-
--- vim.cmd([[
--- function! s:check_back_space() abort
---   let col = col('.') - 1
---   return !col || getline('.')[col - 1]  =~# '\s'
--- endfunction
-
--- inoremap <silent><expr> <TAB>
---       \ pumvisible() ? "<CR>" :
---       \ <SID>check_back_space() ? "<TAB>" :
---       \ coc#refresh()
-
--- function! s:check_back_space() abort
---   let col = col('.') - 1
---   return !col || getline('.')[col - 1]  =~# '\s'
--- endfunction
--- ]])
 
 vim.cmd([[
 " use K to show documentation in previw
@@ -73,7 +53,7 @@ map("n", "<leader>tag", ":!ctags -R<CR>", { noremap=true })
 map('n', "<leader>ff", ":Files<CR>", opt)
 map('n', '<leader>ts', ":Tags<CR>", opt)
 map('n', '<leader>bs', ":Buffers<CR>", opt)
-
+-- map('n', '<leader>bc', ":BufferLinePickClose<CR>", opt)
 
 local pluginKeys = {}
 
