@@ -15,9 +15,6 @@ map("n", "<A-l>", "<C-w>l", opt)
 map('n', '<C-n>', ':NERDTreeToggle<CR>', opt)
 map('n', '<C-f>', ':NERDTreeFind<CR>', opt)
 -- bufferline 左右Tab切换
-map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
-map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
-map("n", "gb", ":BufferLinePick<CR>", opt)
 -- map("n", "<leader>tn", ":tabnext<CR>", opt)
 -- map("n", "<leader>tp", ":tabprevious<CR>", opt)
 -- nvim-treesitter 代码格式化
@@ -26,12 +23,13 @@ map("n", "<leader>i", "gg=G", opt)
 vim.cmd([[
 " use K to show documentation in previw
 function! s:show_doc()
-  if &filetype == 'vim'
+if &filetype == 'vim'
     exceute 'h '.expand('<cword>')
-  else
+else
     call CocAction('doHover')
-  endif
+    endif
 endfunction
+
 nnoremap <silent> U :call <SID>show_doc()<CR>
 ]])
 
@@ -44,15 +42,9 @@ map("n", "gt", ":call CocActionAsync('jumpTypeDefinition')<CR>", opt)
 map("n", "gi", ":call CocActionAsync('jumpImplementation')<CR>", opt)
 map("n", "gr", ":call CocActionAsync('jumpReferences')<CR>", opt)
 
--- commenter
-map("n", "<C-_>", ":call nerdcommenter#Comment('n', 'toggle')<CR>", opt)
-map("v", "<C-_>", ":call nerdcommenter#Comment('x', 'toggle')<CR>gv", opt)
 -- tag
 map("n", "<leader>tag", ":!ctags -R<CR>", { noremap=true })
 -- Files
-map('n', "<leader>ff", ":Files<CR>", opt)
-map('n', '<leader>ts', ":Tags<CR>", opt)
-map('n', '<leader>bs', ":Buffers<CR>", opt)
 -- map('n', '<leader>bc', ":BufferLinePickClose<CR>", opt)
 
 local pluginKeys = {}

@@ -12,3 +12,7 @@ let g:fzf_tags_command = 'ctags -R'
 " [Commands] --expect expression for directly executing the command
 let g:fzf_commands_expect = 'ctrl-x'
 ]])
+
+map('n', "<leader>ff", ":Files<CR>", opt)
+map('n', '<leader>ts', ":Tags<CR>", opt)
+map('n', '<leader>bs', ":Buffers<CR>", opt)
