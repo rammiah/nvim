@@ -5,3 +5,8 @@ require("bufferline").setup {
         -- diagnostics = "nvim_lsp"
     }
 }
+
+map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
+map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
+map("n", "gb", ":BufferLinePick<CR>", opt)
+

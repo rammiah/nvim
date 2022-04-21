@@ -34,5 +34,6 @@ return require('packer').startup(function()
   use 'fatih/vim-go'
   -- blamer
   -- use 'APZelos/blamer.nvim'
+  use { 'ojroques/vim-oscyank', branch= 'main' }
 
 end)
