@@ -13,6 +13,10 @@ let g:fzf_tags_command = 'ctags -R'
 let g:fzf_commands_expect = 'ctrl-x'
 ]])
 
+
+local map = vim.api.nvim_set_keymap
+local opt = {noremap = true, silent = true}
+
 map('n', "<leader>ff", ":Files<CR>", opt)
 map('n', '<leader>ts', ":Tags<CR>", opt)
 map('n', '<leader>bs', ":Buffers<CR>", opt)
