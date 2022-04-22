@@ -47,6 +47,8 @@ map("n", "<leader>tag", ":!ctags -R<CR>", { noremap=true })
 -- Files
 -- map('n', '<leader>bc', ":BufferLinePickClose<CR>", opt)
 
+map("v", "<leader>cp", ":OSCYank<CR>", opt)
+
 local pluginKeys = {}
 
 
