@@ -5,3 +5,4 @@ gitconfigs/gitconfig
 gitconfigs/git-credentials
 .env
 plugin/
+.envrc
