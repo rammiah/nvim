@@ -5,6 +5,9 @@ return require('packer').startup(function()
   -- color theme
   use {'ellisonleao/gruvbox.nvim', requires = {'rktjmp/lush.nvim'}}
   use 'overcache/NeoSolarized'
+  use 'NLKNguyen/papercolor-theme'
+  use 'mrtazz/molokai.vim'
+  use 'rakr/vim-one'
   -- nerd tree
   use { 'preservim/nerdtree', requires = {'Xuyuanp/nerdtree-git-plugin'} }
   -- dev icons

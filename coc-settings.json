@@ -13,27 +13,6 @@
       "settings": {
         "usePlaceholder": true
       }
-    },
-    "ccls": {
-      "command": "ccls",
-      "filetypes": [
-        "c",
-        "cpp",
-        "objc",
-        "objcpp"
-      ],
-      "rootPatterns": [
-        ".ccls",
-        "compile_commands.json",
-        ".vim/",
-        ".git/",
-        ".hg/"
-      ],
-      "initializationOptions": {
-        "cache": {
-          "directory": "/tmp/ccls"
-        }
-      }
     }
   },
 
@@ -55,6 +34,7 @@
 
   "codeLens.enable": true,
   "codeLens.separator": "🔍",
+  "codeLens.position": "eol",
 
   "coc.preferences.jumpCommand": "drop",
   "coc.preferences.formatOnSaveFiletypes": ["go"],
