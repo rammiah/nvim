@@ -37,6 +37,7 @@ return require('packer').startup(function()
   use { 'junegunn/fzf.vim', requires = { 'junegunn/fzf', run = ':fzf#install()' } }
   -- surround
   use 'tpope/vim-surround'
+  use 'tpope/vim-repeat'
   -- blamer
   -- use 'APZelos/blamer.nvim'
   use { 'ojroques/vim-oscyank', branch= 'main' }
