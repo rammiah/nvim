@@ -23,7 +23,7 @@ endif
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-autocmd BufWritePre *.go call CocAction('runCommand', 'editor.action.organizeImport')
+" autocmd BufWritePre *.go call CocAction('runCommand', 'editor.action.organizeImport')
 " autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.formatDocument') | call CocAction('runCommand', 'editor.action.organizeImport')
 " Add `:Format` command to format current buffer.
 "" ommand! -nargs=0 Format :call CocAction('format')

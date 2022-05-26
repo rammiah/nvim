@@ -18,6 +18,9 @@ return require('packer').startup(function()
   use 'preservim/nerdcommenter'
   -- bufferline (新增)
   use { 'akinsho/bufferline.nvim', tag = "*", requires = {'kyazdani42/nvim-web-devicons'} }
+  -- vim-go
+  -- use 'fatih/vim-go'
+  use{ 'crispgm/nvim-go', requires = {'nvim-lua/plenary.nvim'} }
   -- coc.nvim
   use { 'neoclide/coc.nvim', branch = 'release' }
   -- air-line
@@ -33,8 +36,6 @@ return require('packer').startup(function()
   use { 'junegunn/fzf.vim', requires = { 'junegunn/fzf', run = ':fzf#install()' } }
   -- surround
   use 'tpope/vim-surround'
-  -- vim-go
-  use 'fatih/vim-go'
   -- blamer
   -- use 'APZelos/blamer.nvim'
   use { 'ojroques/vim-oscyank', branch= 'main' }
