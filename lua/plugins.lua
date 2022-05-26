@@ -21,6 +21,7 @@ return require('packer').startup(function()
   -- vim-go
   -- use 'fatih/vim-go'
   use{ 'crispgm/nvim-go', requires = {'nvim-lua/plenary.nvim'} }
+  use 'rammiah/gocommand.vim'
   -- coc.nvim
   use { 'neoclide/coc.nvim', branch = 'release' }
   -- air-line
