@@ -19,4 +19,4 @@ local opt = {noremap = true, silent = true}
 
 map('n', "<leader>ff", ":Files<CR>", opt)
 map('n', '<leader>ts', ":Tags<CR>", opt)
-map('n', '<leader>bs', ":Buffers<CR>", opt)
+map('n', '<leader>fb', ":Buffers<CR>", opt)
