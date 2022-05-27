@@ -41,5 +41,7 @@ return require('packer').startup(function()
   -- blamer
   -- use 'APZelos/blamer.nvim'
   use { 'ojroques/vim-oscyank', branch= 'main' }
+  -- suda
+  use 'lambdalisue/suda.vim'
 
 end)
