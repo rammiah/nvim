@@ -45,7 +45,7 @@
   "diagnostic.checkCurrentLine": true,
   "diagnostic.refreshOnInsertMode": true,
   "diagnostic.autoRefresh": true,
-  "diagnostic.messageDelay": 200,
+  "diagnostic.messageDelay": 500,
   "diagnostic.virtualText": false,
   "diagnostic.enableMessage": "always",
 
