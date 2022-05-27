@@ -48,6 +48,11 @@
   "diagnostic.messageDelay": 500,
   "diagnostic.virtualText": false,
   "diagnostic.enableMessage": "always",
+  "diagnostic.level": "information",
+  "diagnostic.warningSign": "❗",
+  "diagnostic.infoSign": "❕",
+  "diagnostic.hintSign": ">>",
+  "diagnostic.errorSign": "❌",
 
   "cSpell.userWords": [
     "Buyin",
