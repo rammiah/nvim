@@ -1,5 +1,5 @@
-vim.g.mapleader = ";"
-vim.g.maplocalleader = ";"
+vim.g.mapleader = "\\"
+-- vim.g.maplocalleader = ";"
 -- 保存本地变量
 local map = vim.api.nvim_set_keymap
 local opt = {noremap = true, silent = true}
@@ -21,16 +21,16 @@ map('n', '<C-f>', ':NERDTreeFind<CR>', opt)
 map("n", "<leader>i", "gg=G", opt)
 
 vim.cmd([[
-" use K to show documentation in previw
-function! s:show_doc()
-if &filetype == 'vim'
-    exceute 'h '.expand('<cword>')
-else
-    call CocAction('doHover')
-    endif
-endfunction
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call ShowDocumentation()<CR>
 
-nnoremap <silent> U :call <SID>show_doc()<CR>
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
 ]])
 
 -- map("n", "K", ":call <SID>show_doc()<CR>", opt)
