@@ -42,7 +42,7 @@
   "diagnostic.refreshOnInsertMode": true,
   "diagnostic.autoRefresh": true,
   "diagnostic.messageDelay": 500,
-  "diagnostic.virtualText": true,
+  "diagnostic.virtualText": false,
   "diagnostic.enableMessage": "always",
   "diagnostic.level": "information",
   "diagnostic.warningSign": "❗",
