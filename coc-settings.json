@@ -1,20 +1,16 @@
 {
-  "languageserver": {
-    "golang": {
-      "command": "gopls",
-      "rootPatterns": [
-        "go.mod",
-        "vendor/"
-      ],
-      "args": ["-remote=unix;/tmp/gopls-daemon-socket", "-logfile=auto", "-debug=\"\"", "-rpc.trace"],
-      "filetypes": [
-        "go"
-      ],
-      "settings": {
-        "usePlaceholder": true
-      }
-    }
+  "go.goplsArgs": ["-remote=unix;/tmp/gopls-daemon-socket", "-logfile=auto", "-debug=\"\"", "-rpc.trace"],
+  "go.goplsOptions": {
+    "usePlaceholders": true
   },
+  "go.goplsPath": "~/code/gopath/bin/gopls",
+
+  "Lua.workspace.library": {
+    "/usr/share/nvim/runtime/lua": true,
+    "/usr/share/nvim/runtime/lua/vim": true,
+    "/usr/share/nvim/runtime/lua/vim/lsp": true
+  },
+  "Lua.diagnostics.globals": ["vim"],
 
   "suggest.selection": "recentlyUsed",
   "suggest.enablePreselect": true,
@@ -46,7 +42,7 @@
   "diagnostic.refreshOnInsertMode": true,
   "diagnostic.autoRefresh": true,
   "diagnostic.messageDelay": 500,
-  "diagnostic.virtualText": false,
+  "diagnostic.virtualText": true,
   "diagnostic.enableMessage": "always",
   "diagnostic.level": "information",
   "diagnostic.warningSign": "❗",
@@ -107,6 +103,7 @@
     "mitchellh",
     "noselect",
     "npwd",
+    "nvim",
     "objc",
     "objcpp",
     "payapi",
