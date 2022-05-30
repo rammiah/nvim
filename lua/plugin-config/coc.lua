@@ -1,12 +1,12 @@
 vim.cmd([[
-augroup mygroup
-  autocmd!
+"augroup mygroup
+  "autocmd!
   " Setup formatexpr specified filetype(s).
   " autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
   " Update signature help on jump placeholder.
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
-
+  "autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+"augroup end
+autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 " autocmd CursorHold * silent call CocActionAsync('highlight')
 " Use <c-space> to trigger completion.
 if has('nvim')
