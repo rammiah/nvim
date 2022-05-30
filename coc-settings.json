@@ -1,8 +1,5 @@
 {
   "go.goplsArgs": ["-remote=unix;/tmp/gopls-daemon-socket", "-logfile=auto", "-debug=\"\"", "-rpc.trace"],
-  "go.goplsOptions": {
-    "usePlaceholders": true
-  },
   "go.goplsPath": "~/code/gopath/bin/gopls",
 
   "Lua.workspace.library": {
@@ -23,12 +20,20 @@
   "suggest.localityBonus": true,
   "suggest.fixInsertedWord": true,
   "suggest.minTriggerInputLength": 2,
-  "suggest.preferCompleteThanJumpPlaceholder": true,
+  "suggest.preferCompleteThanJumpPlaceholder": false,
   "suggest.triggerAfterInsertEnter": false,
   "suggest.removeDuplicateItems": true,
   "suggest.defaultSortMethod": "alphabetical",
+  "suggest.snippetIndicator": "~",
+  "suggest.snippetsSupport": true,
 
-  "coc.preferences.jumpCommand": "drop",
+  "signature.enable": true,
+  "signature.preferShownAbove": true,
+  "signature.triggerSignatureWait": 500,
+  "signature.target": "float",
+  "signature.hideOnTextChange": false,
+
+  "coc.preferences.jumpCommand": "edit",
   "coc.preferences.formatOnSaveFiletypes": [],
   "coc.preferences.enableMarkdown": true,
   "coc.preferences.enableMessageDialog": true,
