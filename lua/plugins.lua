@@ -20,7 +20,7 @@ return require('packer').startup(function()
   use { 'akinsho/bufferline.nvim', tag = "*", requires = {'kyazdani42/nvim-web-devicons'} }
   -- vim-go
   -- use 'fatih/vim-go'
-  use{ 'crispgm/nvim-go', requires = {'nvim-lua/plenary.nvim'} }
+  use{ 'rammiah/nvim-go', requires = {'nvim-lua/plenary.nvim', 'rcarriga/nvim-notify'} }
   use 'rammiah/gocommand.vim'
   -- coc.nvim
   use { 'neoclide/coc.nvim', branch = 'release' }
