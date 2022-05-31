@@ -1,6 +1,12 @@
 require('go').setup({
     -- notify: use nvim-notify
-    notify = false,
+    notify = true,
+    notify_config = {
+        timeout = 300,
+        info_timeout = 200,
+        warn_timeout = 300,
+        error_timeout = 500,
+    },
     -- auto commands
     auto_format = true,
     auto_lint = false,
