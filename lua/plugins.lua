@@ -23,7 +23,7 @@ return require('packer').startup(function()
   use{ 'rammiah/nvim-go', requires = {'nvim-lua/plenary.nvim', 'rcarriga/nvim-notify'} }
   use 'rammiah/gocommand.vim'
   -- coc.nvim
-  use { 'neoclide/coc.nvim', branch = 'release' }
+  use { 'rammiah/coc.nvim', branch = 'master', run = 'yarn install --frozen-lockfile'}
   -- air-line
   use { 'vim-airline/vim-airline', requires = {'vim-airline/vim-airline-themes'} }
   -- rainbow

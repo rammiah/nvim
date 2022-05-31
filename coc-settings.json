@@ -1,8 +1,11 @@
 {
   "go.goplsArgs": ["-remote=unix;/tmp/gopls-daemon-socket", "-logfile=auto", "-debug=\"\"", "-rpc.trace"],
   "go.goplsPath": "~/code/gopath/bin/gopls",
+  "go.goplsOptions": {
+    "usePlaceholders": true
+  },
 
-  "suggest.selection": "recentlyUsed",
+  "suggest.selection": "none",
   "suggest.enablePreselect": true,
   "suggest.noselect": true,
   "suggest.maxCompleteItemCount": 20,
