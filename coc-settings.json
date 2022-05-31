@@ -2,13 +2,6 @@
   "go.goplsArgs": ["-remote=unix;/tmp/gopls-daemon-socket", "-logfile=auto", "-debug=\"\"", "-rpc.trace"],
   "go.goplsPath": "~/code/gopath/bin/gopls",
 
-  "Lua.workspace.library": {
-    "/usr/share/nvim/runtime/lua": true,
-    "/usr/share/nvim/runtime/lua/vim": true,
-    "/usr/share/nvim/runtime/lua/vim/lsp": true
-  },
-  "Lua.diagnostics.globals": ["vim"],
-
   "suggest.selection": "recentlyUsed",
   "suggest.enablePreselect": true,
   "suggest.noselect": true,
