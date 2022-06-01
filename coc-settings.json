@@ -2,26 +2,36 @@
   "go.goplsArgs": ["-remote=unix;/tmp/gopls-daemon-socket", "-logfile=auto", "-debug=\"\"", "-rpc.trace"],
   "go.goplsPath": "~/code/gopath/bin/gopls",
   "go.goplsOptions": {
-    "usePlaceholders": true
+    "usePlaceholders": true,
+    "staticcheck": true,
+    "linksInHover": false
   },
 
-  "suggest.selection": "none",
+  "Lua.signatureHelp.enable": true,
+
+  "suggest.selection": "recentlyUsed",
   "suggest.enablePreselect": true,
   "suggest.noselect": true,
   "suggest.maxCompleteItemCount": 20,
-  "suggest.timeout": 10000,
+  "suggest.timeout": 5000,
   "suggest.enablePreview": true,
   "suggest.autoTrigger": "always",
   "suggest.floatEnable": true,
-  "suggest.localityBonus": true,
+  "suggest.localityBonus": false,
   "suggest.fixInsertedWord": true,
   "suggest.minTriggerInputLength": 2,
   "suggest.preferCompleteThanJumpPlaceholder": false,
   "suggest.triggerAfterInsertEnter": false,
   "suggest.removeDuplicateItems": true,
-  "suggest.defaultSortMethod": "alphabetical",
+  "suggest.defaultSortMethod": "none",
   "suggest.snippetIndicator": "~",
   "suggest.snippetsSupport": true,
+  "suggest.detailField": "preview",
+  "suggest.triggerCompletionWait": 20,
+
+  "suggest.languageSourcePriority": 99,
+  "suggest.highPrioritySourceLimit": 10,
+  "suggest.lowPrioritySourceLimit": 5,
 
   "signature.enable": true,
   "signature.preferShownAbove": true,
@@ -29,14 +39,25 @@
   "signature.target": "float",
   "signature.hideOnTextChange": false,
 
+  "colors.filetypes": [
+    "vim",
+    "html",
+    "css",
+    "javascript",
+    "typescript",
+    "vue",
+    "go"
+  ],
+
   "coc.preferences.jumpCommand": "edit",
   "coc.preferences.formatOnSaveFiletypes": [],
   "coc.preferences.enableMarkdown": true,
   "coc.preferences.enableMessageDialog": true,
-  "coc.preferences.messageLevel": "warning",
+  "coc.preferences.messageLevel": "more",
   "coc.preferences.formatOnType": false,
 
   "json.format.enable": true,
+  "json.enable": true,
 
   "diagnostic.enable": true,
   "diagnostic.checkCurrentLine": true,
