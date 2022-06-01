@@ -14,7 +14,7 @@ export BAT_THEME="Solarized (light)"
 # export PATH="$PATH:$HOME/.yarn/bin"
 # export PATH="/opt/tiger/consul_deploy/bin:$PATH"
 export RUNTIME_IDC_NAME="boe"
-export VISUAL=vim
+export VISUAL="nvim"
 export EDITOR="$VISUAL"
 
 alias gdtl="git difftool"
@@ -85,3 +85,5 @@ gco() {
         git checkout $branch;
     fi
 }
+
+eval "$(direnv hook zsh)"
