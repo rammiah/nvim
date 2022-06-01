@@ -66,3 +66,4 @@ vim.o.pumheight = 10
 -- always show tabline
 vim.o.showtabline = 2
 vim.o.grepprg = 'rg --vimgrep --smart-case --hidden --follow'
+vim.o.selection = 'exclusive'
