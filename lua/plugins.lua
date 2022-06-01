@@ -33,8 +33,6 @@ return require('packer').startup(function()
   use 'tpope/vim-fugitive'
   -- lexima
   use { 'cohama/lexima.vim' }
-  -- fzf
-  use { 'junegunn/fzf.vim', requires = { 'junegunn/fzf', run = ':fzf#install()' } }
   -- surround
   use 'tpope/vim-surround'
   use 'tpope/vim-repeat'
@@ -43,5 +41,6 @@ return require('packer').startup(function()
   use { 'ojroques/vim-oscyank', branch= 'main' }
   -- suda
   use 'lambdalisue/suda.vim'
-
+  use 'nvim-telescope/telescope.nvim'
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 end)
