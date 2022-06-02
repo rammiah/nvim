@@ -8,12 +8,14 @@
 
   "Lua.signatureHelp.enable": true,
 
-  "suggest.selection": "recentlyUsed",
-  "suggest.enablePreselect": true,
   "suggest.noselect": true,
+  "suggest.enablePreview": true,
+  "suggest.enablePreselect": true,
+  "suggest.selection": "none",
+
+
   "suggest.maxCompleteItemCount": 20,
   "suggest.timeout": 5000,
-  "suggest.enablePreview": true,
   "suggest.autoTrigger": "always",
   "suggest.floatEnable": true,
   "suggest.localityBonus": false,
@@ -27,10 +29,6 @@
   "suggest.snippetsSupport": true,
   "suggest.detailField": "preview",
   "suggest.triggerCompletionWait": 20,
-
-  "suggest.languageSourcePriority": 99,
-  "suggest.highPrioritySourceLimit": 10,
-  "suggest.lowPrioritySourceLimit": 5,
 
   "signature.enable": true,
   "signature.preferShownAbove": true,
