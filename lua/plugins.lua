@@ -13,21 +13,19 @@ return require('packer').startup(function()
     -- dev icons
     use 'ryanoasis/vim-devicons'
     -- treesitter
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', requires = 'p00f/nvim-ts-rainbow'}
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', requires = 'p00f/nvim-ts-rainbow' }
     -- commenter
     use 'preservim/nerdcommenter'
     -- bufferline (新增)
-    use { 'akinsho/bufferline.nvim', tag = "*", requires = {'kyazdani42/nvim-web-devicons'} }
+    use { 'akinsho/bufferline.nvim', tag = "*", requires = { 'kyazdani42/nvim-web-devicons' } }
     -- vim-go
     -- use 'fatih/vim-go'
-    use{ 'rammiah/nvim-go', requires = {'nvim-lua/plenary.nvim', 'rcarriga/nvim-notify'} }
+    use{ 'rammiah/nvim-go', requires = { 'nvim-lua/plenary.nvim', 'rcarriga/nvim-notify' } }
     use 'rammiah/gocommand.vim'
     -- coc.nvim
-    use { 'rammiah/coc.nvim', branch = 'master', run = 'yarn install --frozen-lockfile'}
+    use { 'rammiah/coc.nvim', branch = 'master', run = 'yarn install --frozen-lockfile' }
     -- air-line
-    use { 'vim-airline/vim-airline', requires = {'vim-airline/vim-airline-themes'} }
-    -- rainbow
-    -- use { 'luochen1990/rainbow' }
+    use { 'vim-airline/vim-airline', requires = { 'vim-airline/vim-airline-themes' } }
     -- git
     use { 'airblade/vim-gitgutter' }
     use 'tpope/vim-fugitive'
@@ -39,12 +37,17 @@ return require('packer').startup(function()
     -- blamer
     -- use 'APZelos/blamer.nvim'
     use { 'ojroques/vim-oscyank', branch= 'main' }
-    -- suda
+    -- suda sudo write
     use 'lambdalisue/suda.vim'
-
     -- telescope and plugins
-    use 'nvim-telescope/telescope.nvim'
-    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-    -- lazygit
-    use 'kdheepak/lazygit.nvim'
+    use { 'nvim-telescope/telescope.nvim', requires = {
+        -- lazygit
+        { 'kdheepak/lazygit.nvim', requires = 'nvim-lua/plenary.nvim' },
+        -- funcs
+        'nvim-lua/plenary.nvim',
+        {
+            -- fzf support
+            'nvim-telescope/telescope-fzf-native.nvim', run = 'make'
+        }
+    }}
 end)
