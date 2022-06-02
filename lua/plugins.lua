@@ -24,6 +24,7 @@ return require('packer').startup(function()
     use 'rammiah/gocommand.vim'
     -- coc.nvim
     use { 'rammiah/coc.nvim', branch = 'master', run = 'yarn install --frozen-lockfile' }
+    use 'fannheyward/telescope-coc.nvim'
     -- air-line
     use { 'vim-airline/vim-airline', requires = { 'vim-airline/vim-airline-themes' } }
     -- git
@@ -48,6 +49,9 @@ return require('packer').startup(function()
         {
             -- fzf support
             'nvim-telescope/telescope-fzf-native.nvim', run = 'make'
-        }
+        },
+        'nvim-lua/popup.nvim'
     }}
+    -- neovim start time
+    use 'dstein64/vim-startuptime'
 end)
