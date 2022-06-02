@@ -40,4 +40,6 @@ require('telescope').setup({
         }
     })
 
+-- end
 require('telescope').load_extension('fzf')
+require('telescope').load_extension('lazygit')

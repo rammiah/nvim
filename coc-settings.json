@@ -7,6 +7,7 @@
   },
 
   "Lua.signatureHelp.enable": true,
+  "Lua.telemetry.enable": true,
 
   "suggest.noselect": true,
   "suggest.enablePreview": true,
