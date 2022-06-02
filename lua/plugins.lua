@@ -45,4 +45,6 @@ return require('packer').startup(function()
     -- telescope and plugins
     use 'nvim-telescope/telescope.nvim'
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    -- lazygit
+    use 'kdheepak/lazygit.nvim'
 end)
