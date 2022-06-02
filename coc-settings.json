@@ -3,7 +3,6 @@
   "go.goplsPath": "~/code/gopath/bin/gopls",
   "go.goplsOptions": {
     "usePlaceholders": true,
-    "staticcheck": true,
     "linksInHover": false
   },
 
