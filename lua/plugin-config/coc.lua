@@ -11,7 +11,7 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 vim.g.coc_global_extensions = {
     'coc-go',
     'coc-spell-checker',
-    'coc-lua',
+    'coc-sumneko-lua',
     'coc-json',
     'coc-yaml',
     'coc-tsserver',

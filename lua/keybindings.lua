@@ -49,7 +49,10 @@ map("n", "<leader>tag", ":!ctags -R<CR>", { noremap=true })
 
 map("v", "<leader>cp", ":OSCYank<CR>", opt)
 
-local pluginKeys = {}
+-- githunk jump
+map("n", ']h', '<Plug>(GitGutterNextHunk)', opt)
+map('n', '[h', '<Plug>(GitGutterPrevHunk)', opt)
 
+local pluginKeys = {}
 
 return pluginKeys
