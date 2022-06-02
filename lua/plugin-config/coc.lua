@@ -18,5 +18,7 @@ vim.g.coc_global_extensions = {
     'coc-vimlsp',
     'coc-pyright',
     'coc-highlight',
+    'coc-sh',
+    'coc-rust-analyzer'
 }
 
