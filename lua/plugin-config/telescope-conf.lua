@@ -6,6 +6,7 @@ map('n', '<leader>fb', ':lua require("telescope.builtin").buffers()<CR>')
 map('n', '<leader>ft', ':lua require("telescope.builtin").tags()<CR>')
 map('n', '<leader>fh', ':lua require("telescope.builtin").help_tags()<CR>')
 map('n', '<leader>fc', ':lua require("telescope.builtin").commands()<CR>')
+map('n', '<leader>fq', ':lua require("telescope.builtin").quickfix()<CR>')
 
 require('telescope').setup({
     defaults = {
