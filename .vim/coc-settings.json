@@ -3,5 +3,5 @@
   "sumneko-lua.checkUpdate": false,
   "Lua.completion.callSnippet": "Replace",
   "suggest.removeDuplicateItems": true,
-  "sumneko-lua.locale": "zh-cn"
+  "sumneko-lua.locale": "en-us"
 }
