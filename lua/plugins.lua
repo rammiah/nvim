@@ -34,8 +34,6 @@ return require('packer').startup(function()
     -- surround
     use 'tpope/vim-surround'
     use 'tpope/vim-repeat'
-    -- blamer
-    -- use 'APZelos/blamer.nvim'
     use { 'ojroques/vim-oscyank', branch = 'main' }
     -- suda sudo write
     use 'lambdalisue/suda.vim'
@@ -55,4 +53,7 @@ return require('packer').startup(function()
     use 'dstein64/vim-startuptime'
     -- git diff view
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+    -- git blame
+    use 'bobrown101/git_blame.nvim'
+    use 'lewis6991/gitsigns.nvim'
 end)
