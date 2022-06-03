@@ -2,7 +2,7 @@ vim.g.mapleader = "\\"
 -- vim.g.maplocalleader = ";"
 -- 保存本地变量
 local map = vim.api.nvim_set_keymap
-local opt = {noremap = true, silent = true}
+local opt = { noremap = true, silent = true }
 -- 持续缩进
 map('v', '<', '<gv', opt)
 map('v', '>', '>gv', opt)
@@ -18,22 +18,31 @@ map('n', '<C-f>', ':NERDTreeFind<CR>', opt)
 -- map("n", "<leader>tn", ":tabnext<CR>", opt)
 -- map("n", "<leader>tp", ":tabprevious<CR>", opt)
 -- nvim-treesitter 代码格式化
-map("n", "<leader>i", "gg=G", opt)
 
 vim.cmd([[
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call ShowDocumentation()<CR>
 
 function! ShowDocumentation()
-  if CocAction('hasProvider', 'hover')
+  if CocHasProvider('hover')
     call CocActionAsync('doHover')
   else
     call feedkeys('K', 'in')
   endif
 endfunction
+
+
+" map for format key use editor.action.formatDocument
+nnoremap <silent> <leader>i :call FormatDocument()<CR>
+function! FormatDocument()
+    if CocHasProvider('format')
+        call CocActionAsync('format')
+    else
+        call feedkeys('gg=G', 'in')
+    endif
+endfunction
 ]])
 
--- map("n", "K", ":call <SID>show_doc()<CR>", opt)
 map("n", "<leader>rn", ":call CocActionAsync('rename')<CR>", opt)
 map("n", "<space>a", ":CocList diagnostics<CR>", opt)
 map("n", "<space>o", ":CocList outline<CR>", opt)
@@ -43,9 +52,8 @@ map("n", "gi", ":call CocActionAsync('jumpImplementation')<CR>", opt)
 map("n", "gr", ":call CocActionAsync('jumpReferences')<CR>", opt)
 
 -- tag
-map("n", "<leader>tag", ":!ctags -R<CR>", { noremap=true })
+map("n", "<leader>tag", ":!ctags -R<CR>", { noremap = true })
 -- Files
--- map('n', '<leader>bc', ":BufferLinePickClose<CR>", opt)
 
 map("v", "<leader>cp", ":OSCYank<CR>", opt)
 
