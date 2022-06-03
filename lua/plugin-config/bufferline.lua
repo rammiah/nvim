@@ -1,4 +1,4 @@
--- vim.opt.termguicolors = true
+local map = require('local-util').KeyMap
 require("bufferline").setup {
     options = {
         -- 使用 nvim 内置lsp
@@ -6,9 +6,6 @@ require("bufferline").setup {
     }
 }
 
-local map = vim.api.nvim_set_keymap
-local opt = { noremap = true, silent = true }
-
-map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
-map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
-map("n", "gb", ":BufferLinePick<CR>", opt)
+map("n", "<C-h>", ":BufferLineCyclePrev<CR>")
+map("n", "<C-l>", ":BufferLineCycleNext<CR>")
+map("n", "gb", ":BufferLinePick<CR>")

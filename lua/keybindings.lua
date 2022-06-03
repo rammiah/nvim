@@ -1,19 +1,19 @@
+local map = require('local-util').KeyMap
+
 vim.g.mapleader = "\\"
 -- vim.g.maplocalleader = ";"
 -- 保存本地变量
-local map = vim.api.nvim_set_keymap
-local opt = { noremap = true, silent = true }
 -- 持续缩进
-map('v', '<', '<gv', opt)
-map('v', '>', '>gv', opt)
+map('v', '<', '<gv')
+map('v', '>', '>gv')
 -- 分屏切换
-map("n", "<A-h>", "<C-w>h", opt)
-map("n", "<A-j>", "<C-w>j", opt)
-map("n", "<A-k>", "<C-w>k", opt)
-map("n", "<A-l>", "<C-w>l", opt)
+map("n", "<A-h>", "<C-w>h")
+map("n", "<A-j>", "<C-w>j")
+map("n", "<A-k>", "<C-w>k")
+map("n", "<A-l>", "<C-w>l")
 -- nerdtree
-map('n', '<C-n>', ':NERDTreeToggle<CR>', opt)
-map('n', '<C-f>', ':NERDTreeFind<CR>', opt)
+map('n', '<C-n>', ':NERDTreeToggle<CR>')
+map('n', '<C-f>', ':NERDTreeFind<CR>')
 -- bufferline 左右Tab切换
 -- map("n", "<leader>tn", ":tabnext<CR>", opt)
 -- map("n", "<leader>tp", ":tabprevious<CR>", opt)
@@ -43,23 +43,23 @@ function! FormatDocument()
 endfunction
 ]])
 
-map("n", "<leader>rn", ":call CocActionAsync('rename')<CR>", opt)
-map("n", "<space>a", ":CocList diagnostics<CR>", opt)
-map("n", "<space>o", ":CocList outline<CR>", opt)
-map("n", "gd", ":call CocActionAsync('jumpDefinition')<CR>", opt)
-map("n", "gt", ":call CocActionAsync('jumpTypeDefinition')<CR>", opt)
-map("n", "gi", ":call CocActionAsync('jumpImplementation')<CR>", opt)
-map("n", "gr", ":call CocActionAsync('jumpReferences')<CR>", opt)
+map("n", "<leader>rn", ":call CocActionAsync('rename')<CR>")
+map("n", "<space>a", ":CocList diagnostics<CR>")
+map("n", "<space>o", ":CocList outline<CR>")
+map("n", "gd", ":call CocActionAsync('jumpDefinition')<CR>")
+map("n", "gt", ":call CocActionAsync('jumpTypeDefinition')<CR>")
+map("n", "gi", ":call CocActionAsync('jumpImplementation')<CR>")
+map("n", "gr", ":call CocActionAsync('jumpReferences')<CR>")
 
 -- tag
 map("n", "<leader>tag", ":!ctags -R<CR>", { noremap = true })
 -- Files
 
-map("v", "<leader>cp", ":OSCYank<CR>", opt)
+map("v", "<leader>cp", ":OSCYank<CR>")
 
 -- githunk jump
-map("n", ']h', '<Plug>(GitGutterNextHunk)', opt)
-map('n', '[h', '<Plug>(GitGutterPrevHunk)', opt)
+map("n", ']h', '<Plug>(GitGutterNextHunk)')
+map('n', '[h', '<Plug>(GitGutterPrevHunk)')
 
 local pluginKeys = {}
 
