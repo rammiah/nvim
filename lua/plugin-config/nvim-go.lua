@@ -19,7 +19,7 @@ require('go').setup({
     -- formatter: goimports, gofmt, gofumpt
     formatter = 'goimports',
     -- test flags: -count=1 will disable cache
-    test_flags = {'-v', '-count=1', '-failfast'},
+    test_flags = { '-v', '-count=1', '-failfast' },
     test_timeout = '300s',
     test_env = {},
     -- show test result with popup window
@@ -32,9 +32,9 @@ require('go').setup({
     -- struct tags
     tags_name = 'json',
     -- tags_options = {'json=omitempty'},
-    tags_options = {'json=omitempty'},
+    tags_options = { 'json=omitempty' },
     tags_transform = 'snakecase',
-    tags_flags = {'-skip-unexported'},
+    tags_flags = { '-skip-unexported' },
     -- quick type
-    quick_type_flags = {'--just-types'},
+    quick_type_flags = { '--just-types' },
 })
