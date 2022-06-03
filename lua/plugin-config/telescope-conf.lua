@@ -1,11 +1,11 @@
-vim.cmd([[
-" Using Lua functions
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>ft <cmd>lua require('telescope.builtin').tags()<cr>
-nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-]])
+local map = require('local-util').KeyMap
+
+map('n', '<leader>ff', ':lua require("telescope.builtin").find_files()<CR>')
+map('n', '<leader>fg', ':lua require("telescope.builtin").live_grep()<CR>')
+map('n', '<leader>fb', ':lua require("telescope.builtin").buffers()<CR>')
+map('n', '<leader>ft', ':lua require("telescope.builtin").tags()<CR>')
+map('n', '<leader>fh', ':lua require("telescope.builtin").help_tags()<CR>')
+map('n', '<leader>fc', ':lua require("telescope.builtin").commands()<CR>')
 
 require('telescope').setup({
     defaults = {

@@ -1,4 +1,4 @@
-vim.cmd [[
-vmap <leader>a <Plug>(coc-codeaction-selected)
-nmap <leader>a <Plug>(coc-codeaction-selected)
-]]
+local map = require('local-util').KeyMap
+
+map('v', '<leader>a', '<Plug>(coc-codeaction-selected)')
+map('v', '<leader>a', '<Plug>(coc-codeaction-selected)')
