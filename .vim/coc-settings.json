@@ -1,8 +1,7 @@
 {
-  "Lua.workspace.library": {
-    "/usr/share/nvim/runtime/lua": true,
-    "/usr/share/nvim/runtime/lua/vim": true,
-    "/usr/share/nvim/runtime/lua/vim/lsp": true
-  },
-  "Lua.diagnostics.globals": ["vim"]
+  "sumneko-lua.enableNvimLuaDev": true,
+  "sumneko-lua.checkUpdate": false,
+  "Lua.completion.callSnippet": "Replace",
+  "suggest.removeDuplicateItems": true,
+  "sumneko-lua.locale": "zh-cn"
 }
