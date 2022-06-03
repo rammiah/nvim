@@ -3,5 +3,9 @@
   "sumneko-lua.checkUpdate": false,
   "Lua.completion.callSnippet": "Replace",
   "suggest.removeDuplicateItems": true,
-  "sumneko-lua.locale": "en-us"
+  "sumneko-lua.locale": "en-us",
+  "Lua.diagnostics.enable": true,
+  "Lua.diagnostics.workspaceDelay": 3000,
+  "Lua.diagnostics.workspaceRate": 100,
+  "sumneko-lua.inlayHints.refreshOnInsertMode": true
 }

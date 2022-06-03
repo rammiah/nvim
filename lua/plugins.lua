@@ -56,6 +56,8 @@ return require('packer').startup({ function()
     -- git blame
     use 'bobrown101/git_blame.nvim'
     use 'lewis6991/gitsigns.nvim'
+
+    use 'honza/vim-snippets'
 end,
 config = {
     display = {
