@@ -1,20 +1,22 @@
 {
-  "go.goplsArgs": ["-remote=unix;/tmp/gopls-daemon-socket", "-logfile=auto", "-debug=\"\"", "-rpc.trace"],
+  "go.goplsArgs": [
+    "-remote=unix;/tmp/gopls-daemon-socket",
+    "-logfile=auto",
+    "-debug=\"\"",
+    "-rpc.trace"
+  ],
   "go.goplsPath": "~/code/gopath/bin/gopls",
   "go.goplsOptions": {
     "usePlaceholders": true,
     "linksInHover": false
   },
-
   "Lua.signatureHelp.enable": true,
   "Lua.telemetry.enable": true,
-
+  "Lua.color.mode": "Grammar",
   "suggest.noselect": true,
   "suggest.enablePreview": true,
   "suggest.enablePreselect": true,
   "suggest.selection": "none",
-
-
   "suggest.maxCompleteItemCount": 20,
   "suggest.timeout": 5000,
   "suggest.autoTrigger": "always",
@@ -30,13 +32,11 @@
   "suggest.snippetsSupport": true,
   "suggest.detailField": "preview",
   "suggest.triggerCompletionWait": 20,
-
   "signature.enable": true,
   "signature.preferShownAbove": true,
   "signature.triggerSignatureWait": 500,
   "signature.target": "float",
   "signature.hideOnTextChange": false,
-
   "colors.filetypes": [
     "vim",
     "html",
@@ -46,17 +46,14 @@
     "vue",
     "go"
   ],
-
   "coc.preferences.jumpCommand": "edit",
   "coc.preferences.formatOnSaveFiletypes": [],
   "coc.preferences.enableMarkdown": true,
   "coc.preferences.enableMessageDialog": true,
   "coc.preferences.messageLevel": "more",
   "coc.preferences.formatOnType": false,
-
   "json.format.enable": true,
   "json.enable": true,
-
   "diagnostic.enable": true,
   "diagnostic.checkCurrentLine": true,
   "diagnostic.refreshOnInsertMode": true,
@@ -69,7 +66,6 @@
   "diagnostic.infoSign": "❕",
   "diagnostic.hintSign": ">>",
   "diagnostic.errorSign": "❌",
-
   "cSpell.userWords": [
     "Buyin",
     "Bytekv",
