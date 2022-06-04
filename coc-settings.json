@@ -7,7 +7,7 @@
   ],
   "go.goplsPath": "~/code/gopath/bin/gopls",
   "go.goplsOptions": {
-    "usePlaceholders": true,
+    "usePlaceholders": false,
     "linksInHover": false,
     "diagnosticsDelay": "300ms"
   },
@@ -34,6 +34,7 @@
   "suggest.defaultSortMethod": "none",
   "suggest.snippetIndicator": "~",
   "suggest.snippetsSupport": true,
+  "coc.preferences.snippetStatusText": "SN",
   "suggest.detailField": "preview",
   "suggest.triggerCompletionWait": 20,
   "signature.enable": true,
