@@ -11,6 +11,8 @@
     "linksInHover": false,
     "diagnosticsDelay": "300ms"
   },
+  "Lua.completion.callSnippet": "Replace",
+  "Lua.completion.keywordSnippet": "Replace",
   "Lua.signatureHelp.enable": true,
   "Lua.telemetry.enable": true,
   "Lua.completion.autoRequire": true,
