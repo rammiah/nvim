@@ -1,5 +1,6 @@
 -- utf8
 vim.g.encoding = "UTF-8"
+vim.g.no_plugin_maps = 1
 vim.o.fileencoding = 'utf-8'
 -- jk移动时光标下上方保留8行
 -- vim.o.scrolloff = 8
@@ -67,3 +68,4 @@ vim.o.pumheight = 10
 vim.o.showtabline = 2
 vim.o.grepprg = 'rg --vimgrep --smart-case --hidden --follow'
 vim.o.selection = 'inclusive'
+vim.o.fixendofline = false
