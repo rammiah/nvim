@@ -1,0 +1,13 @@
+diff --git a/internal/lsp/protocol/tsprotocol.go b/internal/lsp/protocol/tsprotocol.go
+index 647aabc2..3775f289 100644
+--- a/internal/lsp/protocol/tsprotocol.go
++++ b/internal/lsp/protocol/tsprotocol.go
+@@ -4590,7 +4590,7 @@ type SignatureHelp struct {
+ 	 * mandatory to better express the active parameter if the
+ 	 * active signature does have any.
+ 	 */
+-	ActiveParameter uint32 `json:"activeParameter,omitempty"`
++	ActiveParameter uint32 `json:"activeParameter"`
+ }
+ 
+ /**
