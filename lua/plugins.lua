@@ -31,7 +31,9 @@ return require('packer').startup({ function()
     -- git
     -- use 'tpope/vim-fugitive'
     -- lexima
-    use { 'cohama/lexima.vim' }
+    -- use { 'cohama/lexima.vim' }
+    use 'windwp/nvim-autopairs'
+    use 'windwp/nvim-ts-autotag'
     -- surround
     use 'tpope/vim-surround'
     use 'tpope/vim-repeat'
@@ -56,9 +58,13 @@ return require('packer').startup({ function()
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
     -- git blame
     use 'bobrown101/git_blame.nvim'
+    -- git line signs, hunk previw and jump
     use 'lewis6991/gitsigns.nvim'
+    -- better filetype detect
+    use "nathom/filetype.nvim"
+    -- todo comment list
+    use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" }
 
-    use 'honza/vim-snippets'
 end,
 config = {
     display = {

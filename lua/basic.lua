@@ -74,3 +74,4 @@ vim.o.fixendofline = false
 vim.o.shelltemp = false
 -- shell is zsh
 vim.o.shell = 'zsh'
+-- vim.g.did_load_filetypes = 1
