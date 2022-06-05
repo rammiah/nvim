@@ -12,13 +12,13 @@ map("n", "<M-j>", "<C-w>j")
 map("n", "<M-k>", "<C-w>k")
 map("n", "<M-l>", "<C-w>l")
 -- nerdtree
-map('n', '<C-n>', ':NERDTreeToggle<CR>')
-map('n', '<C-f>', ':NERDTreeFind<CR>')
+-- map('n', '<C-n>', ':NERDTreeToggle<CR>')
+-- map('n', '<C-f>', ':NERDTreeFind<CR>')
 -- bufferline 左右Tab切换
 map("n", "]t", ":tabnext<CR>")
 map("n", "[t", ":tabprevious<CR>")
-map("n", "]q", ":cnext<CR>")
-map("n", "[q", ":cprevious<CR>")
+map("n", "]c", ":cnext<CR>")
+map("n", "[c", ":cprevious<CR>")
 -- nvim-treesitter 代码格式化
 
 -- tag
