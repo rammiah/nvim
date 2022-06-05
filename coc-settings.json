@@ -45,13 +45,14 @@
   "signature.target": "float",
   "signature.hideOnTextChange": false,
   "colors.filetypes": [
-    "vim",
-    "html",
     "css",
+    "go",
+    "html",
     "javascript",
+    "lua",
     "typescript",
-    "vue",
-    "go"
+    "vim",
+    "vue"
   ],
   "coc.preferences.jumpCommand": "edit",
   "coc.preferences.formatOnSaveFiletypes": [],
