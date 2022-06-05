@@ -9,7 +9,14 @@ return require('packer').startup({ function()
     use 'mrtazz/molokai.vim'
     use 'rakr/vim-one'
     -- nerd tree
-    use { 'preservim/nerdtree', requires = { 'Xuyuanp/nerdtree-git-plugin' } }
+    -- use { 'preservim/nerdtree', requires = { 'Xuyuanp/nerdtree-git-plugin' } }
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = {
+            'kyazdani42/nvim-web-devicons', -- optional, for file icon
+        },
+        tag = 'nightly' -- optional, updated every week. (see issue 1193)
+    }
     -- dev icons
     use 'ryanoasis/vim-devicons'
     -- treesitter
