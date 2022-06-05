@@ -31,7 +31,6 @@ require('nvim-treesitter.configs').setup {
         "nix",
         "ocaml",
         "perl",
-        "perl",
         "php",
         "python",
         "ruby",
