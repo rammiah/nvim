@@ -100,7 +100,6 @@ require 'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
             icons = {
                 corner = "└─",
                 item = "├─",
-
                 edge = "│ ",
                 none = "  ",
             },
