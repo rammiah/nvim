@@ -2,8 +2,8 @@ local map = require('local-util').KeyMap
 
 local M = {}
 
-map('n', '[g', '<Plug>(coc-diagnostic-prev)')
-map('n', ']g', '<Plug>(coc-diagnostic-next)')
+map("n", "[g", "<Plug>(coc-diagnostic-prev)")
+map("n", "]g", "<Plug>(coc-diagnostic-next)")
 map("n", "<leader>rn", ":call CocActionAsync('rename')<CR>")
 map("n", "<space>a", ":CocList diagnostics<CR>")
 map("n", "<space>o", ":CocList outline<CR>")
@@ -13,25 +13,25 @@ map("n", "gi", ":call CocActionAsync('jumpImplementation')<CR>")
 map("n", "gr", ":call CocActionAsync('jumpReferences')<CR>")
 
 vim.g.coc_global_extensions = {
-    'coc-go',
-    'coc-spell-checker',
-    'coc-sumneko-lua',
-    'coc-json',
-    'coc-yaml',
-    'coc-tsserver',
-    'coc-vimlsp',
-    'coc-pyright',
-    'coc-highlight',
-    'coc-sh',
-    'coc-rust-analyzer'
+    "coc-go",
+    "coc-spell-checker",
+    "coc-sumneko-lua",
+    "coc-json",
+    "coc-yaml",
+    "coc-tsserver",
+    "coc-vimlsp",
+    "coc-pyright",
+    "coc-highlight",
+    "coc-sh",
+    "coc-rust-analyzer"
 }
 
 -- ShowDoc show document or type hover
 function M.ShowHover()
     if vim.fn.CocHasProvider and vim.fn.CocHasProvider('hover') then
-        vim.fn.CocActionAsync('doHover')
+        vim.fn.CocActionAsync("doHover")
     else
-        vim.api.nvim_feedkeys('K', 'in', false)
+        vim.api.nvim_feedkeys("K", "in", false)
     end
 end
 
@@ -41,7 +41,10 @@ function M.FormatDoc()
     -- if bufnr.filetype == 'go' then
     --     print('file type is go')
     -- end
-    if vim.fn.CocHasProvider and vim.fn.CocHasProvider("format") then
+    local nvim_go = require("go.format")
+    if vim.bo.ft == "go" and nvim_go and nvim_go.format then
+        nvim_go.format()
+    elseif vim.fn.CocHasProvider and vim.fn.CocHasProvider("format") then
         vim.fn.CocActionAsync("format")
     else
         local view = vim.fn.winsaveview()
