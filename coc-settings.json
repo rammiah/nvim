@@ -9,7 +9,7 @@
   "go.goplsOptions": {
     "usePlaceholders": false,
     "linksInHover": false,
-    "diagnosticsDelay": "300ms"
+    "diagnosticsDelay": "400ms"
   },
   "Lua.completion.callSnippet": "Replace",
   "Lua.completion.keywordSnippet": "Replace",
@@ -36,7 +36,6 @@
   "suggest.defaultSortMethod": "none",
   "suggest.snippetIndicator": "~",
   "suggest.snippetsSupport": true,
-  "coc.preferences.snippetStatusText": "SN",
   "suggest.detailField": "preview",
   "suggest.triggerCompletionWait": 20,
   "signature.enable": true,
@@ -54,6 +53,7 @@
     "vim",
     "vue"
   ],
+  "coc.preferences.snippetStatusText": "SN",
   "coc.preferences.jumpCommand": "edit",
   "coc.preferences.formatOnSaveFiletypes": [],
   "coc.preferences.enableMarkdown": true,
@@ -62,6 +62,9 @@
   "coc.preferences.formatOnType": false,
   "json.format.enable": true,
   "json.enable": true,
+  "hover.autoHide": true,
+  "hover.target": "float",
+  "hover.previewMaxHeight": 12,
   "diagnostic.enable": true,
   "diagnostic.checkCurrentLine": true,
   "diagnostic.refreshOnInsertMode": false,
