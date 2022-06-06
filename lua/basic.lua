@@ -75,3 +75,7 @@ vim.o.shelltemp = false
 -- shell is zsh
 vim.o.shell = 'zsh'
 -- vim.g.did_load_filetypes = 1
+-- set python3 path
+vim.g.python3_host_prog = '/usr/bin/python3'
+-- disable ruby
+vim.g.loaded_ruby_provider = false
