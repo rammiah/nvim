@@ -1,6 +1,10 @@
 local map = require('local-util').KeyMap
+local builtin = require('telescope.builtin')
 
-map('n', '<leader>ff', ':lua require("telescope.builtin").find_files()<CR>')
+map('n', '<leader>ff', ':lua require("telescope.builtin").find_files(' ..
+    '{ find_command = { "fd", "--type", "f", "--color", "never", ' ..
+    ' "-E", ".git/", "--strip-cwd-prefix", "-E", "kitex_gen/", "-E", "thrift_gen/" } })<CR>')
+
 map('n', '<leader>fg', ':lua require("telescope.builtin").live_grep()<CR>')
 map('n', '<leader>fb', ':lua require("telescope.builtin").buffers()<CR>')
 map('n', '<leader>ft', ':lua require("telescope.builtin").tags()<CR>')
@@ -10,17 +14,57 @@ map('n', '<leader>fq', ':lua require("telescope.builtin").quickfix()<CR>')
 
 require('telescope').setup({
     defaults = {
+        -- this is used for find_files
+        file_ignore_patterns = {
+        },
+        vimgrep_arguments = {
+            "rg",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
+        },
+        default_mappings = true,
         -- Default configuration for telescope goes here:
         -- config_key = value,
         mappings = {
-            i = {
-                -- map actions.which_key to <C-h> (default: <C-/>)
-                -- actions.which_key shows the mappings for your picker,
-                -- e.g. git_{create, delete, ...}_branch for the git_branches picker
-                -- ["<C-h>"] = "which_key"
+        },
+        layout_config = {
+            bottom_pane = {
+                height = 25,
+                preview_cutoff = 120,
+                prompt_position = "top"
+            },
+            center = {
+                height = 0.4,
+                preview_cutoff = 40,
+                prompt_position = "top",
+                width = 0.5
+            },
+            cursor = {
+                height = 0.9,
+                preview_cutoff = 40,
+                width = 0.8
+            },
+            horizontal = {
+                height = 0.9,
+                preview_cutoff = 120,
+                prompt_position = "bottom",
+                width = 0.8
+            },
+            vertical = {
+                height = 0.9,
+                preview_cutoff = 40,
+                prompt_position = "bottom",
+                width = 0.8
             }
         },
-        file_previewer = require 'telescope.previewers'.cat.new
+        file_previewer = require "telescope.previewers".cat.new,
+        grep_previewer = require "telescope.previewers".vimgrep.new,
+        qlist_previewer = require "telescope.previewers".qflist.new,
+        buffer_previewer_maker = require "telescope.previewers".buffer_previewer_maker,
     },
     pickers = {
         -- Default configuration for builtin pickers goes here:
