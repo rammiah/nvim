@@ -1,3 +1,4 @@
+local util = require("packer.util")
 local use = require("packer").use
 return require("packer").startup({ function()
     -- Packer can manage itself
@@ -71,12 +72,31 @@ return require("packer").startup({ function()
     use "nathom/filetype.nvim"
     -- todo comment list
     use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" }
-    use { "AckslD/nvim-neoclip.lua", requires = "nvim-telescope/telescope.nvim" }
-
+    use { "AckslD/nvim-neoclip.lua", requires = {
+        "nvim-telescope/telescope.nvim",
+        {
+            'tami5/sqlite.lua', module = 'sqlite'
+        },
+    },
+    }
 
 end,
 config = {
-    display = {
+    ensure_dependencies  = true, -- Should packer install plugin dependencies?
+    snapshot             = nil, -- Name of the snapshot you would like to load at startup
+    snapshot_path        = util.join_paths(vim.fn.stdpath('cache'), 'packer.nvim'), -- Default save directory for snapshots
+    package_root         = util.join_paths(vim.fn.stdpath('data'), 'site', 'pack'),
+    compile_path         = util.join_paths(vim.fn.stdpath('config'), 'plugin', 'packer_compiled.lua'),
+    plugin_package       = 'packer', -- The default package for plugins
+    max_jobs             = 5, -- Limit the number of simultaneous jobs. nil means no limit
+    auto_clean           = true, -- During sync(), remove unused plugins
+    compile_on_sync      = true, -- During sync(), run packer.compile()
+    disable_commands     = false, -- Disable creating commands
+    opt_default          = false, -- Default to using opt (as opposed to start) plugins
+    transitive_opt       = true, -- Make dependencies of opt plugins also opt by default
+    transitive_disable   = true, -- Automatically disable dependencies of disabled plugins
+    auto_reload_compiled = true, -- Automatically reload the compiled file after creating it.
+    display              = {
         open_fn = require("packer.util").float,
         working_sym = "⟳", -- The symbol for a plugin being installed/updated
         error_sym = "✗", -- The symbol for a plugin with an error in installation/updating
@@ -86,5 +106,14 @@ config = {
         header_sym = "━", -- The symbol for the header line in packer's display
         show_all_info = true, -- Should packer show all update details automatically?
         prompt_border = "double", -- Border style of prompt popups.
-    }
-} })
+    },
+    profile              = {
+        enable = false,
+        threshold = 1, -- the amount in ms that a plugins load time must be over for it to be included in the profile
+    },
+    log                  = {
+        level = "info"
+    },
+}
+
+})
