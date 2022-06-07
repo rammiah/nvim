@@ -1,7 +1,6 @@
 # tags file
 tags
 *.log
-gitconfigs/gitconfig
 gitconfigs/git-credentials
 .env
 plugin/
