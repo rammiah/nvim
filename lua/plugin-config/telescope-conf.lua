@@ -45,3 +45,4 @@ require('telescope').setup({
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('lazygit')
 require('telescope').load_extension('coc')
+require('telescope').load_extension('neoclip')

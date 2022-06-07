@@ -4,12 +4,6 @@ map('n', '<C-n>', ':NvimTreeToggle<CR>')
 -- map('n', '<leader>r', ':NvimTreeRefresh<CR>')
 map('n', '<C-f>', ':NvimTreeFindFile<CR>')
 
-vim.cmd [[
-" auto open when no files on start
-autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NvimTreeOpen | endif
-]]
-
 -- setup with all defaults
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 -- nested options are documented by accessing them with `.` (eg: `:help nvim-tree.view.mappings.list`).
@@ -173,8 +167,8 @@ require 'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
     },
     git = {
         enable = true,
-        ignore = false,
-        timeout = 400,
+        ignore = true,
+        timeout = 500,
     },
     actions = {
         use_system_clipboard = true,
