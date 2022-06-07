@@ -17,8 +17,8 @@ map("n", "<M-l>", "<C-w>l")
 -- bufferline 左右Tab切换
 map("n", "]t", ":tabnext<CR>")
 map("n", "[t", ":tabprevious<CR>")
-map("n", "]c", ":cnext<CR>")
-map("n", "[c", ":cprevious<CR>")
+map("n", "]q", ":cnext<CR>")
+map("n", "[q", ":cprevious<CR>")
 -- nvim-treesitter 代码格式化
 
 -- tag
