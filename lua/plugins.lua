@@ -74,11 +74,10 @@ return require("packer").startup({ function()
     use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" }
     use { "AckslD/nvim-neoclip.lua", requires = {
         "nvim-telescope/telescope.nvim",
-        {
-            'tami5/sqlite.lua', module = 'sqlite'
-        },
+        { 'tami5/sqlite.lua', module = 'sqlite' },
     },
     }
+    use "voldikss/vim-floaterm"
 
 end,
 config = {
