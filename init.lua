@@ -9,7 +9,7 @@ require('colorscheme')
 require('plugin-config.impatient')
 
 -- plugins config
-require("plugin-config.airline")
+require("plugin-config.lualine")
 require("plugin-config.coc")
 require("plugin-config.diffview")
 require("plugin-config.nerdcommenter")
