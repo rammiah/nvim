@@ -1,3 +1,5 @@
+-- add a global variable
+_M = {}
 -- utf8
 vim.g.encoding = "UTF-8"
 -- vim.g.no_plugin_maps = 0

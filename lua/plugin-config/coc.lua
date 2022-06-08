@@ -1,7 +1,5 @@
 local map = require('local-util').KeyMap
 
-local M = {}
-
 map("n", "[g", "<Plug>(coc-diagnostic-prev)")
 map("n", "]g", "<Plug>(coc-diagnostic-next)")
 map("n", "<leader>rn", ":call CocActionAsync('rename')<CR>")
@@ -27,7 +25,7 @@ vim.g.coc_global_extensions = {
 }
 
 -- ShowDoc show document or type hover
-function M.ShowHover()
+function _M.ShowHover()
     if vim.fn.CocHasProvider and vim.fn.CocHasProvider('hover') then
         vim.fn.CocActionAsync("doHover")
     else
@@ -35,18 +33,29 @@ function M.ShowHover()
     end
 end
 
+function _M.OrganizeImports()
+    local actions = vim.fn.CocAction("codeActions", "", { "source.organizeImports" })
+    -- print('actions is ' .. vim.inspect(actions))
+
+    if #actions ~= 0 then
+        vim.fn.CocAction('organizeImport')
+    end
+end
+
 -- FormatDoc will format buffer by language server
-function M.FormatDoc()
+function _M.FormatDoc()
     -- local bufnr = vim.api.nvim_get_current_buf()
     -- if bufnr.filetype == 'go' then
     --     print('file type is go')
     -- end
     -- go.format is too slow for big project, use coc organizeImports and formatDocument
+    _M.OrganizeImports()
+
     local nvim_go = require("go.format")
-    if vim.bo.ft == "go" and nvim_go and nvim_go.format then
-        nvim_go.format()
-    elseif vim.fn.CocHasProvider and vim.fn.CocHasProvider("format") then
+    if vim.fn.CocHasProvider and vim.fn.CocHasProvider("format") then
         vim.fn.CocActionAsync("format")
+    elseif vim.bo.ft == "go" and nvim_go and nvim_go.format then
+        nvim_go.format()
     else
         local view = vim.fn.winsaveview()
         -- print("view saved is " .. vim.inspect(view))
@@ -56,13 +65,12 @@ function M.FormatDoc()
 end
 
 -- Use K to show documentation in preview window.
-map("n", "K", ":lua require('plugin-config.coc').ShowHover()<CR>")
+map("n", "K", ":lua _M.ShowHover()<CR>")
 -- map for format key use editor.action.formatDocument
-map("n", "<leader>i", ":lua require('plugin-config.coc').FormatDoc()<CR>")
+map("n", "<leader>i", ":lua _M.FormatDoc()<CR>")
 
 vim.cmd([[
 autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 " autocmd CursorHold * silent call CocActionAsync('highlight')
 ]])
 
-return M
