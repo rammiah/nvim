@@ -35,7 +35,7 @@ return require("packer").startup({ function()
     use { "neoclide/coc.nvim", branch = "release" }
     use "fannheyward/telescope-coc.nvim"
     -- air-line
-    use { "vim-airline/vim-airline", requires = { "vim-airline/vim-airline-themes" } }
+    -- use { "vim-airline/vim-airline", requires = { "vim-airline/vim-airline-themes" } }
     -- git
     -- use "tpope/vim-fugitive"
     -- lexima
@@ -81,7 +81,11 @@ return require("packer").startup({ function()
     }
     -- float term
     use "voldikss/vim-floaterm"
-    
+    -- lualine status line
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
 
 end,
 config = {

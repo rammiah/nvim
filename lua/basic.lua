@@ -81,3 +81,5 @@ vim.g.python3_host_prog = '/usr/bin/python3'
 vim.g.loaded_ruby_provider = false
 -- set language to english
 vim.api.nvim_exec('language en_US.UTF-8', true)
+-- lazyredraw
+vim.o.lazyredraw = true
