@@ -86,6 +86,16 @@ return require("packer").startup({ function()
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
+    -- use {
+    --     "kwkarlwang/bufjump.nvim",
+    --     config = function()
+    --         require("bufjump").setup {
+    --             forward = "<C-n>",
+    --             backward = "<C-p>",
+    --             on_success = nil
+    --         }
+    --     end,
+    -- }
 
 end,
 config = {

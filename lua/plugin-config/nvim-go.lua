@@ -8,7 +8,7 @@ require('go').setup({
         error_timeout = 500,
     },
     -- auto commands
-    auto_format = false,
+    auto_format = true,
     auto_lint = false,
     -- linters: revive, errcheck, staticcheck, golangci-lint
     linter = 'revive',
