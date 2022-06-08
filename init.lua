@@ -6,6 +6,7 @@ require("indent")
 -- plugin init
 require('plugins')
 require('colorscheme')
+require('plugin-config.impatient')
 
 -- plugins config
 require("plugin-config.airline")

@@ -41,6 +41,7 @@ function M.FormatDoc()
     -- if bufnr.filetype == 'go' then
     --     print('file type is go')
     -- end
+    -- go.format is too slow for big project, use coc organizeImports and formatDocument
     local nvim_go = require("go.format")
     if vim.bo.ft == "go" and nvim_go and nvim_go.format then
         nvim_go.format()

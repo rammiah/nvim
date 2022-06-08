@@ -70,6 +70,8 @@ return require("packer").startup({ function()
     use "lewis6991/gitsigns.nvim"
     -- better filetype detect
     use "nathom/filetype.nvim"
+    -- impatient to speed up vim
+    use 'lewis6991/impatient.nvim'
     -- todo comment list
     use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" }
     use { "AckslD/nvim-neoclip.lua", requires = {
@@ -77,7 +79,9 @@ return require("packer").startup({ function()
         { 'tami5/sqlite.lua', module = 'sqlite' },
     },
     }
+    -- float term
     use "voldikss/vim-floaterm"
+    
 
 end,
 config = {
