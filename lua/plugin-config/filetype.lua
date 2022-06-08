@@ -9,6 +9,7 @@ require("filetype").setup({
             -- Set the filetype of files named "MyBackupFile" to lua
             -- MyBackupFile = "lua",
             Caddyfile = "Caddyfile",
+            ["tmux.conf"] = "tmux",
         },
         complex = {
             -- Set the filetype of any full filename matching the regex to gitconfig
