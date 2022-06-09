@@ -22,6 +22,7 @@ return require("packer").startup({ function()
     use "ryanoasis/vim-devicons"
     -- treesitter
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", requires = "p00f/nvim-ts-rainbow" }
+    use 'nvim-treesitter/nvim-treesitter-textobjects'
     -- commenter
     use "preservim/nerdcommenter"
     -- bufferline (新增)
