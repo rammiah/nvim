@@ -79,8 +79,9 @@ vim.o.shell = 'zsh'
 -- vim.g.did_load_filetypes = 1
 -- set python3 path
 vim.g.python3_host_prog = '/usr/bin/python3'
--- disable ruby
-vim.g.loaded_ruby_provider = false
+-- disable ruby and perl
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider = 0
 -- set language to english
 vim.api.nvim_exec('language en_US.UTF-8', true)
 -- lazyredraw
