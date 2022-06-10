@@ -10,10 +10,10 @@ require("filetype").setup({
             -- MyBackupFile = "lua",
             Caddyfile = "Caddyfile",
             ["tmux.conf"] = "tmux",
+            [".gitconfig"] = "gitconfig", -- Included in the plugin
         },
         complex = {
             -- Set the filetype of any full filename matching the regex to gitconfig
-            [".*git/config"] = "gitconfig", -- Included in the plugin
         },
 
         -- The same as the ones above except the keys map to functions
