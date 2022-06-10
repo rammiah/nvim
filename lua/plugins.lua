@@ -9,8 +9,7 @@ return require("packer").startup({ function()
     use "NLKNguyen/papercolor-theme"
     use "mrtazz/molokai.vim"
     use "rakr/vim-one"
-    -- nerd tree
-    -- use { "preservim/nerdtree", requires = { "Xuyuanp/nerdtree-git-plugin" } }
+    -- nvim tree
     use {
         "kyazdani42/nvim-tree.lua",
         requires = {
@@ -25,22 +24,15 @@ return require("packer").startup({ function()
     use 'nvim-treesitter/nvim-treesitter-textobjects'
     -- commenter
     use "preservim/nerdcommenter"
-    -- bufferline (新增)
+    -- bufferline
     use { "akinsho/bufferline.nvim", tag = "*", requires = { "kyazdani42/nvim-web-devicons" } }
-    -- vim-go
-    -- use "fatih/vim-go"
+    -- go
     use { "rammiah/nvim-go", requires = { "nvim-lua/plenary.nvim", "rcarriga/nvim-notify" } }
     use "rammiah/gocommand.vim"
     -- coc.nvim
-    -- use { "rammiah/coc.nvim", branch = "master", run = "yarn install --frozen-lockfile" }
     use { "neoclide/coc.nvim", branch = "release" }
     use "fannheyward/telescope-coc.nvim"
-    -- air-line
-    -- use { "vim-airline/vim-airline", requires = { "vim-airline/vim-airline-themes" } }
-    -- git
-    -- use "tpope/vim-fugitive"
-    -- lexima
-    -- use { "cohama/lexima.vim" }
+    -- auto pair
     use "windwp/nvim-autopairs"
     use "windwp/nvim-ts-autotag"
     -- surround
@@ -66,7 +58,6 @@ return require("packer").startup({ function()
     -- git diff view
     use { "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" }
     -- git blame
-    -- use "bobrown101/git_blame.nvim"
     use 'dinhhuy258/git.nvim'
     -- git line signs, hunk previw and jump
     use "lewis6991/gitsigns.nvim"
@@ -78,7 +69,6 @@ return require("packer").startup({ function()
     use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" }
     use { "AckslD/nvim-neoclip.lua", requires = {
         "nvim-telescope/telescope.nvim",
-        { 'tami5/sqlite.lua', module = 'sqlite' },
     },
     }
     -- float term
@@ -88,16 +78,6 @@ return require("packer").startup({ function()
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
-    -- use {
-    --     "kwkarlwang/bufjump.nvim",
-    --     config = function()
-    --         require("bufjump").setup {
-    --             forward = "<C-n>",
-    --             backward = "<C-p>",
-    --             on_success = nil
-    --         }
-    --     end,
-    -- }
 
 end,
 config = {
@@ -107,7 +87,7 @@ config = {
     package_root         = util.join_paths(vim.fn.stdpath('data'), 'site', 'pack'),
     compile_path         = util.join_paths(vim.fn.stdpath('config'), 'plugin', 'packer_compiled.lua'),
     plugin_package       = 'packer', -- The default package for plugins
-    max_jobs             = 5, -- Limit the number of simultaneous jobs. nil means no limit
+    max_jobs             = 7, -- Limit the number of simultaneous jobs. nil means no limit
     auto_clean           = true, -- During sync(), remove unused plugins
     compile_on_sync      = true, -- During sync(), run packer.compile()
     disable_commands     = false, -- Disable creating commands
