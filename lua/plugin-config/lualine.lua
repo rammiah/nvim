@@ -1,15 +1,15 @@
+local status_map = {
+    ["NORMAL"] = "NORM",
+    ["INSERT"] = "INS",
+    ["SELECT"] = "SEL",
+    ["COMMAND"] = "CMD",
+    ["VISUAL"] = "VIS",
+    ["V-LINE"] = "V-L",
+    ["V-BLOCK"] = "V-B",
+    ["REPLACE"] = "REPL",
+    ["TERMINAL"] = "TERM",
+}
 local function fmt_mode(str)
-
-    local status_map = {
-    }
-    status_map["NORMAL"] = "NORM"
-    status_map["INSERT"] = "INS"
-    status_map["SELECT"] = "SEL"
-    status_map["COMMAND"] = "CMD"
-    status_map["VISUAL"] = "VIS"
-    status_map["V-LINE"] = "V-L"
-    status_map["V-BLOCK"] = "V-B"
-    status_map["REPLACE"] = "REPL"
     local ret = status_map[str]
     if ret == nil then
         return str
