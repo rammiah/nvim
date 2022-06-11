@@ -52,7 +52,7 @@ require 'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
                 -- { key = "J", action = "last_sibling" },
                 { key = "I", action = "toggle_git_ignored" },
                 { key = "H", action = "toggle_dotfiles" },
-                { key = "U", action = "toggle_custom" },
+                -- { key = "U", action = "toggle_custom" },
                 { key = "R", action = "refresh" },
                 { key = "a", action = "create" },
                 { key = "D", action = "remove" },
@@ -149,7 +149,7 @@ require 'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
     ignore_ft_on_setup = {},
     -- dont use
     system_open = {
-        cmd = "",
+        cmd = "nvim",
         args = {},
     },
     diagnostics = {
@@ -170,7 +170,7 @@ require 'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
     git = {
         enable = true,
         ignore = true,
-        timeout = 500,
+        timeout = 1000,
     },
     actions = {
         use_system_clipboard = true,
