@@ -9,6 +9,9 @@ map("n", "gd", ":call CocActionAsync('jumpDefinition')<CR>")
 map("n", "gt", ":call CocActionAsync('jumpTypeDefinition')<CR>")
 map("n", "gi", ":call CocActionAsync('jumpImplementation')<CR>")
 map("n", "gr", ":call CocActionAsync('jumpReferences')<CR>")
+map("n", "<space>j", ":<C-u>CocNext<CR>", { nowait = true })
+map("n", "<space>k", ":<C-u>CocNext<CR>", { nowait = true })
+map("n", "<space>p", ":<C-u>CocResume<CR>", { nowait = true })
 
 vim.g.coc_global_extensions = {
     "coc-go",
@@ -73,4 +76,3 @@ vim.cmd([[
 autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 " autocmd CursorHold * silent call CocActionAsync('highlight')
 ]])
-
