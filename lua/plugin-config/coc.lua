@@ -48,14 +48,14 @@ function _M.FormatDoc()
     -- if bufnr.filetype == 'go' then
     --     print('file type is go')
     -- end
-    -- go.format is too slow for big project, use coc organizeImports and formatDocument
+    -- go.format is too slow for big project, use coc organizeImports to import
     _M.OrganizeImports()
 
     local nvim_go = require("go.format")
-    if vim.fn.CocHasProvider and vim.fn.CocHasProvider("format") then
-        vim.fn.CocActionAsync("format")
-    elseif vim.bo.ft == "go" and nvim_go and nvim_go.format then
+    if vim.bo.ft == "go" and nvim_go and nvim_go.format then
         nvim_go.format()
+    elseif vim.fn.CocHasProvider and vim.fn.CocHasProvider("format") then
+        vim.fn.CocActionAsync("format")
     else
         local view = vim.fn.winsaveview()
         -- print("view saved is " .. vim.inspect(view))
