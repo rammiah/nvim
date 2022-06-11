@@ -1,3 +1,5 @@
+local gps = require("nvim-gps")
+
 local status_map = {
     ["NORMAL"] = "NORM",
     ["INSERT"] = "INS",
@@ -17,12 +19,12 @@ local function fmt_mode(str)
     return ret
 end
 
-require('lualine').setup {
+require("lualine").setup {
     options = {
         icons_enabled = true,
-        theme = 'solarized_light',
-        component_separators = { left = '', right = '' }, -- { left = '', right = '' }
-        section_separators = { left = '', right = '' }, -- { left = '', right = ''},
+        theme = "solarized_light",
+        component_separators = { left = "", right = "" }, -- { left = "", right = "" }
+        section_separators = { left = '', right = "" }, -- { left = "", right = ""},
         disabled_filetypes = {},
         always_divide_middle = true,
         globalstatus = false,
@@ -30,14 +32,14 @@ require('lualine').setup {
     sections = {
         lualine_a = {
             {
-                'mode',
+                "mode",
                 fmt = fmt_mode
             },
         },
-        lualine_b = { 'branch', 'diff' },
+        lualine_b = { "branch", "diff" },
         lualine_c = {
             {
-                'filename',
+                "filename",
                 file_status = true,
                 path = 1, -- 0: Just the filename
                 -- 1: Relative path
@@ -47,27 +49,28 @@ require('lualine').setup {
                 shorting_target = 40, -- Shortens path to leave 40 spaces in the window
                 -- for other components. (terrible name, any suggestions?)
                 symbols = {
-                    modified = '[+]', -- Text to show when the file is modified.
-                    readonly = '[-]', -- Text to show when the file is non-modifiable or readonly.
-                    unnamed = '[No Name]', -- Text to show for unnamed buffers.
+                    modified = "[+]", -- Text to show when the file is modified.
+                    readonly = "[-]", -- Text to show when the file is non-modifiable or readonly.
+                    unnamed = "[No Name]", -- Text to show for unnamed buffers.
                 },
             },
-            'g:coc_status',
+            { gps.get_location, cond = gps.is_available },
+            "g:coc_status",
         },
         lualine_x = {
             {
-                'filetype',
+                "filetype",
                 colored = true, -- Displays filetype icon in color if set to true
                 icon_only = false, -- Display only an icon for filetype
-                icon = { align = 'right' }, -- Display filetype icon on the right hand side
+                icon = { align = "right" }, -- Display filetype icon on the right hand side
             },
-            'encoding',
+            "encoding",
             {
-                'fileformat',
+                "fileformat",
                 symbols = {
-                    unix = '', -- e712
-                    dos = '', -- e70f
-                    mac = '', -- e711
+                    unix = "", -- e712
+                    dos = "", -- e70f
+                    mac = "", -- e711
                 }
             },
         },
@@ -75,38 +78,38 @@ require('lualine').setup {
             {
                 "diagnostics",
                 sources = { "coc" },
-                sections = { 'error', 'warn' }, -- info hint
+                sections = { "error", "warn" }, -- info hint
                 diagnostics_color = {
                     -- Same values as the general color option can be used here.
-                    error = 'DiagnosticError', -- Changes diagnostics' error color.
-                    warn  = 'DiagnosticWarn', -- Changes diagnostics' warn color.
-                    info  = 'DiagnosticInfo', -- Changes diagnostics' info color.
-                    hint  = 'DiagnosticHint', -- Changes diagnostics' hint color.
+                    error = "DiagnosticError", -- Changes diagnostics' error color.
+                    warn  = "DiagnosticWarn", -- Changes diagnostics' warn color.
+                    info  = "DiagnosticInfo", -- Changes diagnostics' info color.
+                    hint  = "DiagnosticHint", -- Changes diagnostics' hint color.
                 },
-                symbols = { error = 'E', warn = 'W', info = 'I', hint = 'H' },
+                symbols = { error = "E", warn = "W", info = "I", hint = "H" },
                 colored = true, -- Displays diagnostics status in color if set to true.
                 update_in_insert = false, -- Update diagnostics in insert mode.
                 always_visible = false, -- Show diagnostics even if there are none.
             },
         },
-        lualine_z = { '%l:%c', '%p%%/%L' },
+        lualine_z = { "%l:%c", "%p%%/%L" },
     },
     inactive_sections = {
-        -- lualine_z = { '%l:%c', '%p%%/%L' },
+        -- lualine_z = { "%l:%c", "%p%%/%L" },
         lualine_a = {},
         lualine_b = {},
-        lualine_c = { 'filename' },
+        lualine_c = { "filename" },
         lualine_x = {
             {
-                'filetype',
+                "filetype",
                 colored = true, -- Displays filetype icon in color if set to true
                 icon_only = false, -- Display only an icon for filetype
-                icon = { align = 'right' }, -- Display filetype icon on the right hand side
+                icon = { align = "right" }, -- Display filetype icon on the right hand side
             }
         },
         lualine_y = {},
         -- lualine_z = {}
-        lualine_z = { '%p%%/%L' },
+        lualine_z = { "%p%%/%L" },
     },
     tabline = {},
     extensions = {}

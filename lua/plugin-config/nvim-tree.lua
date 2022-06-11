@@ -1,13 +1,13 @@
-local map = require('local-util').KeyMap
+local map = require("local-util").KeyMap
 
-map('n', '<C-n>', ':NvimTreeToggle<CR>')
--- map('n', '<leader>r', ':NvimTreeRefresh<CR>')
-map('n', '<C-f>', ':NvimTreeFindFile<CR>')
+map("n", "<C-n>", ":NvimTreeToggle<CR>")
+-- map("n", "<leader>r", ":NvimTreeRefresh<CR>")
+map("n", "<C-f>", ":NvimTreeFindFile<CR>")
 
 -- setup with all defaults
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 -- nested options are documented by accessing them with `.` (eg: `:help nvim-tree.view.mappings.list`).
-require 'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
+require "nvim-tree".setup { -- BEGIN_DEFAULT_OPTS
     auto_reload_on_write = true,
     create_in_closed_folder = true,
     disable_netrw = false,
@@ -19,7 +19,7 @@ require 'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
     open_on_setup_file = false,
     open_on_tab = false,
     sort_by = "name",
-    update_cwd = false,
+    update_cwd = true,
     reload_on_bufenter = false,
     respect_buf_cwd = false,
     view = {
@@ -176,7 +176,7 @@ require 'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
         use_system_clipboard = true,
         change_dir = {
             enable = true,
-            global = false,
+            global = true,
             restrict_above_cwd = false,
         },
         expand_all = {

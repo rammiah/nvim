@@ -1,22 +1,22 @@
-local map = require('local-util').KeyMap
+local map = require("local-util").KeyMap
 local builtin = require('telescope.builtin')
 local actions = require('telescope.actions')
 
-map('n', '<leader>ff', ':lua require("telescope.builtin").find_files(' ..
+map("n", "<leader>ff", ':lua require("telescope.builtin").find_files(' ..
     '{ find_command = { "fd", "--type", "f", "--strip-cwd-prefix", ' ..
     ' "-E", "kitex_gen/", "-E", "thrift_gen/" } })<CR>')
 
-map('n', '<leader>fg', ':lua require("telescope.builtin").live_grep({ vimgrep_arguments = { "rg", ' ..
+map("n", "<leader>fg", ':lua require("telescope.builtin").live_grep({ vimgrep_arguments = { "rg", ' ..
     ' "--color=never", "--no-heading", "--with-filename", "--line-number", "--column", "--smart-case", ' ..
     ' "--iglob", "!.git/", "--iglob", "!thrift_gen/", "--iglob", "!kitex_gen/", } })<CR>')
 
-map('n', '<leader>fb', ':lua require("telescope.builtin").buffers()<CR>')
--- map('n', '<leader>ft', ':lua require("telescope.builtin").tags()<CR>')
-map('n', '<leader>fh', ':lua require("telescope.builtin").help_tags()<CR>')
-map('n', '<leader>fc', ':lua require("telescope.builtin").commands()<CR>')
-map('n', '<leader>fq', ':lua require("telescope.builtin").quickfix()<CR>')
+map("n", "<leader>fb", ':lua require("telescope.builtin").buffers()<CR>')
+-- map("n", "<leader>ft", ':lua require("telescope.builtin").tags()<CR>')
+map("n", "<leader>fh", ':lua require("telescope.builtin").help_tags()<CR>')
+map("n", "<leader>fc", ':lua require("telescope.builtin").commands()<CR>')
+map("n", "<leader>fq", ':lua require("telescope.builtin").quickfix()<CR>')
 
-require('telescope').setup({
+require("telescope").setup({
     defaults = {
         -- this is used for find_files
         file_ignore_patterns = {
@@ -169,7 +169,7 @@ require('telescope').setup({
 })
 
 -- end
-require('telescope').load_extension('fzf')
--- require('telescope').load_extension('lazygit')
-require('telescope').load_extension('coc')
-require('telescope').load_extension('neoclip')
+require("telescope").load_extension("fzf")
+-- require("telescope").load_extension("lazygit")
+require("telescope").load_extension("coc")
+require("telescope").load_extension("neoclip")

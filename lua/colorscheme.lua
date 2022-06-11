@@ -1,4 +1,4 @@
-vim.o.background = 'light'
+vim.o.background = "light"
 local colorscheme = "NeoSolarized"
 -- tokyonight
 -- OceanicNext
