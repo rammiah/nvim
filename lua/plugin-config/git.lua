@@ -1,4 +1,4 @@
-require('git').setup({
+require("git").setup({
     keymaps = {
         blame = "<Leader>gb", -- Open blame window
         quit_blame = "q", -- Close blame window

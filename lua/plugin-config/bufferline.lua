@@ -5,7 +5,7 @@ map("n", "<C-l>", ":BufferLineCycleNext<CR>")
 map("n", "gb", ":BufferLinePick<CR>")
 map("n", "gc", ":BufferLinePickClose<CR>")
 
-require('bufferline').setup {
+require("bufferline").setup {
     options = {
         mode = "buffers", -- set to "tabs" to only show tabpages instead
         numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
