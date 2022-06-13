@@ -15,6 +15,7 @@ map("n", "<leader>fb", ':lua require("telescope.builtin").buffers()<CR>')
 map("n", "<leader>fh", ':lua require("telescope.builtin").help_tags()<CR>')
 map("n", "<leader>fc", ':lua require("telescope.builtin").commands()<CR>')
 map("n", "<leader>fq", ':lua require("telescope.builtin").quickfix()<CR>')
+map("n", "<leader>fr", ':lua require("telescope.builtin").resume()<CR>')
 
 require("telescope").setup({
     defaults = {
@@ -36,10 +37,10 @@ require("telescope").setup({
         default_mappings = nil,
         mappings = {
             i = {
-                ["<C-n>"] = actions.move_selection_next,
-                ["<C-p>"] = actions.move_selection_previous,
-                -- ["<C-j>"] = actions.move_selection_next,
-                -- ["<C-k>"] = actions.move_selection_previous,
+                -- ["<C-n>"] = actions.move_selection_next,
+                -- ["<C-p>"] = actions.move_selection_previous,
+                ["<C-j>"] = actions.move_selection_next,
+                ["<C-k>"] = actions.move_selection_previous,
 
                 ["<C-c>"] = actions.close,
 
