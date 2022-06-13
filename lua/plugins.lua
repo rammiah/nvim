@@ -16,7 +16,7 @@ return require("packer").startup({
             requires = {
                 "kyazdani42/nvim-web-devicons", -- optional, for file icon
             },
-            -- tag = "nightly" -- optional, updated every week. (see issue 1193)
+            tag = "nightly" -- optional, updated every week. (see issue 1193)
         }
         -- dev icons
         use "ryanoasis/vim-devicons"
@@ -24,10 +24,10 @@ return require("packer").startup({
         use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", requires = "p00f/nvim-ts-rainbow" }
         use "nvim-treesitter/nvim-treesitter-textobjects"
         -- Lua
-        use {
-            "SmiteshP/nvim-gps",
-            requires = "nvim-treesitter/nvim-treesitter"
-        }
+        -- use {
+        --     "SmiteshP/nvim-gps",
+        --     requires = "nvim-treesitter/nvim-treesitter"
+        -- }
         -- commenter
         use "preservim/nerdcommenter"
         -- bufferline

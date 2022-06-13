@@ -1,4 +1,4 @@
-local gps = require("nvim-gps")
+-- local gps = require("nvim-gps")
 
 local status_map = {
     ["NORMAL"] = "NORM",
@@ -54,7 +54,7 @@ require("lualine").setup {
                     unnamed = "[No Name]", -- Text to show for unnamed buffers.
                 },
             },
-            { gps.get_location, cond = gps.is_available },
+            -- { gps.get_location, cond = gps.is_available },
             "g:coc_status",
         },
         lualine_x = {
