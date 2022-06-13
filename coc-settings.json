@@ -71,7 +71,7 @@
   "suggest.snippetIndicator": "~",
   "suggest.snippetsSupport": true,
   "suggest.detailField": "preview",
-  "suggest.triggerCompletionWait": 20,
+  "suggest.triggerCompletionWait": 50,
   "signature.enable": true,
   "signature.preferShownAbove": true,
   "signature.triggerSignatureWait": 500,
@@ -99,6 +99,9 @@
   "hover.autoHide": true,
   "hover.target": "float",
   "hover.previewMaxHeight": 12,
+  "hover.floatConfig": {
+    "maxHeight": 12
+  },
   "diagnostic.enable": true,
   "diagnostic.checkCurrentLine": true,
   "diagnostic.refreshOnInsertMode": false,
