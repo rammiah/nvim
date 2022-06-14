@@ -11,6 +11,7 @@ local status_map = {
     ["REPLACE"] = "REPL",
     ["TERMINAL"] = "TERM",
 }
+
 local function fmt_mode(str)
     local ret = status_map[str]
     if ret == nil then
@@ -25,7 +26,7 @@ require("lualine").setup {
         theme = "solarized_light",
         component_separators = { left = "", right = "" }, -- { left = "", right = "" }
         section_separators = { left = '', right = "" }, -- { left = "", right = ""},
-        disabled_filetypes = {},
+        disabled_filetypes = { "NvimTree" },
         always_divide_middle = true,
         globalstatus = false,
     },

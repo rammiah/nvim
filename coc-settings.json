@@ -54,6 +54,7 @@
   "sumneko-lua.prompt": true,
   "sumneko-lua.inlayHints.typeHintsPrefix": "« ",
   "suggest.noselect": true,
+  "documentHighlight.timeout": 500,
   "suggest.enablePreview": true,
   "suggest.enablePreselect": true,
   "suggest.selection": "none",
