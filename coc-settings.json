@@ -53,7 +53,7 @@
   "Lua.completion.displayContext": 1,
   "sumneko-lua.prompt": true,
   "sumneko-lua.inlayHints.typeHintsPrefix": "« ",
-  "suggest.noselect": true,
+  "suggest.noselect": false,
   "documentHighlight.timeout": 500,
   "suggest.enablePreview": true,
   "suggest.enablePreselect": true,
