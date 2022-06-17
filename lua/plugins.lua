@@ -64,7 +64,7 @@ return require("packer").startup({
         -- git diff view
         use { "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" }
         -- git blame
-        use "dinhhuy258/git.nvim"
+        use "rammiah/git.nvim"
         -- git line signs, hunk previw and jump
         use "lewis6991/gitsigns.nvim"
         -- better filetype detect
