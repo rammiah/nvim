@@ -24,7 +24,6 @@ vim.g.coc_global_extensions = {
     "coc-tsserver",
     "coc-vimlsp",
     "coc-pyright",
-    "coc-highlight",
     "coc-sh",
     "coc-rust-analyzer"
 }
