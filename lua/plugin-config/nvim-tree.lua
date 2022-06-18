@@ -1,8 +1,8 @@
 local map = require("local-util").KeyMap
 
-map("n", "<C-n>", "<Cmd>NvimTreeToggle<CR>")
+map("n", "<leader>e", "<Cmd>NvimTreeToggle<CR>")
 -- map("n", "<leader>r", ":NvimTreeRefresh<CR>")
-map("n", "<C-f>", "<Cmd>NvimTreeFindFile<CR>")
+-- map("n", "<C-f>", "<Cmd>NvimTreeFindFile<CR>")
 
 -- setup with all defaults
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
