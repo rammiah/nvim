@@ -86,3 +86,5 @@ vim.g.loaded_perl_provider = 0
 vim.api.nvim_exec('language en_US.UTF-8', true)
 -- lazyredraw
 vim.o.lazyredraw = true
+-- number add or sub format recognize
+vim.o.nrformats="bin,octal,hex"

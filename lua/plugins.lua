@@ -29,7 +29,7 @@ return require("packer").startup({
         --     requires = "nvim-treesitter/nvim-treesitter"
         -- }
         -- commenter
-        use "preservim/nerdcommenter"
+        use 'numToStr/Comment.nvim'
         -- bufferline
         use { "akinsho/bufferline.nvim", tag = "*", requires = { "kyazdani42/nvim-web-devicons" } }
         -- go
