@@ -12,8 +12,8 @@ map("n", "gr", "<Cmd>call CocActionAsync('jumpReferences')<CR>")
 map("n", "<space>j", ":<C-u>CocNext<CR>", { nowait = true })
 map("n", "<space>k", ":<C-u>CocNext<CR>", { nowait = true })
 map("n", "<space>p", ":<C-u>CocListResume<CR>", { nowait = true })
-map("i", "<C-j>", 'pumvisible()?("<C-n>"):("j")', { nowait = true, expr = true })
-map("i", "<C-k>", 'pumvisible()?("<C-p>"):("k")', { nowait = true, expr = true })
+-- map("i", "<C-j>", 'pumvisible()?("<C-n>"):("j")', { nowait = true, expr = true })
+-- map("i", "<C-k>", 'pumvisible()?("<C-p>"):("k")', { nowait = true, expr = true })
 
 vim.g.coc_global_extensions = {
     "coc-go",
