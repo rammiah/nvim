@@ -33,6 +33,7 @@ require("todo-comments").setup {
         exclude = {
             "vim",
             "sh",
+            "",
         }, -- list of file types to exclude highlighting
     },
     -- list of named colors where we try to extract the guifg from the
