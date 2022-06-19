@@ -89,3 +89,5 @@ vim.api.nvim_exec('language en_US.UTF-8', true)
 vim.o.lazyredraw = true
 -- number add or sub format recognize
 vim.o.nrformats="bin,octal,hex"
+-- history length
+vim.o.history = 1000
