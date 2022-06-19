@@ -39,7 +39,7 @@ vim.o.whichwrap = 'b,s,<,>,[,],h,l'
 -- 允许隐藏被修改过的buffer
 vim.o.hidden = true
 -- 鼠标支持
-vim.o.mouse = "nv"
+vim.o.mouse = ""
 -- 禁止创建备份文件
 vim.o.backup = false
 vim.o.writebackup = false
@@ -63,6 +63,7 @@ vim.o.termguicolors = true
 --vim.o.listchars = "space:·"
 -- 补全增强
 vim.o.wildmenu = true
+vim.o.wildmode = 'full'
 -- Dont' pass messages to |ins-completin menu|
 vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.pumheight = 10
