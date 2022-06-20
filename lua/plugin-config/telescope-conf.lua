@@ -16,6 +16,7 @@ map("n", "<leader>fh", ':lua require("telescope.builtin").help_tags()<CR>')
 map("n", "<leader>fc", ':lua require("telescope.builtin").commands()<CR>')
 map("n", "<leader>fq", ':lua require("telescope.builtin").quickfix()<CR>')
 map("n", "<leader>fr", ':lua require("telescope.builtin").resume()<CR>')
+map("n", "<leader>fs", ':lua require("telescope.builtin").git_status()<CR>')
 
 require("telescope").setup({
     defaults = {
