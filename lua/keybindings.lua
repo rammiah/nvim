@@ -25,7 +25,7 @@ map("n", "[q", ":cprevious<CR>")
 map("n", "<leader>tag", ":!ctags -R<CR>", { noremap = true })
 -- Files
 
-map("v", "<leader>cp", ":OSCYank<CR>")
+map("v", "<leader>y", ":OSCYank<CR>")
 
 -- githunk jump
 -- map("n", ']h', '<Plug>(GitGutterNextHunk)')
