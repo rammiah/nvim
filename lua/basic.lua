@@ -91,3 +91,4 @@ vim.o.lazyredraw = true
 vim.o.nrformats="bin,octal,hex"
 -- history length
 vim.o.history = 1000
+vim.o.clipboard = vim.o.clipboard.."unnamedplus"
