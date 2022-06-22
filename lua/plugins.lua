@@ -87,7 +87,7 @@ return require("packer").startup({
         -- icon picker
         use { "ziontee113/icon-picker.nvim", requires = "stevearc/dressing.nvim" }
         -- clipboard
-        use "roxma/vim-tmux-clipboard"
+        -- use "roxma/vim-tmux-clipboard"
         -- visual find
         use "nelstrom/vim-visual-star-search"
 
