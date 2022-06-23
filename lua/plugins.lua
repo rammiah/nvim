@@ -10,6 +10,7 @@ return require("packer").startup({
         use "NLKNguyen/papercolor-theme"
         use "mrtazz/molokai.vim"
         use "rakr/vim-one"
+        use "folke/tokyonight.nvim"
         -- nvim tree
         use {
             "kyazdani42/nvim-tree.lua",
