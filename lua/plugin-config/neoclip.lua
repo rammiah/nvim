@@ -1,3 +1,7 @@
+if not require("local-util").safe_load("neoclip") then
+    return
+end
+
 require("neoclip").setup({
     history = 1000,
     enable_persistent_history = false,

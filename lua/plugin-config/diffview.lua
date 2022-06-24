@@ -1,3 +1,7 @@
+if not require("local-util").safe_load("diffview") then
+    return
+end
+
 -- Lua
 local actions = require("diffview.actions")
 

@@ -1,3 +1,7 @@
+if not require("local-util").safe_load("toggleterm") then
+    return
+end
+
 require("toggleterm").setup {
     -- size can be a number or function which is passed the current terminal
     size = function(term)

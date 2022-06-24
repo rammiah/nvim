@@ -1,3 +1,7 @@
+if not require("local-util").safe_load("git", "git.nvim is not installed") then
+    return
+end
+
 require("git").setup({
     keymaps = {
         blame = "<leader>gb", -- Open blame window

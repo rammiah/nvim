@@ -1,3 +1,7 @@
+if not require("local-util").safe_load("lazygit") then
+    return
+end
+
 local map = require("local-util").KeyMap
 
 vim.cmd [[

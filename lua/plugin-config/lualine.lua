@@ -1,3 +1,7 @@
+if not require("local-util").safe_load("lualine") then
+    return
+end
+
 -- local gps = require("nvim-gps")
 
 local status_map = {

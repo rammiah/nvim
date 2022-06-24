@@ -1,3 +1,7 @@
+if not require("local-util").safe_load("nvim-treesitter") then
+    return
+end
+
 require("nvim-treesitter.configs").setup {
     -- 安装 language parser
     -- :TSInstallInfo 命令查看支持的语言

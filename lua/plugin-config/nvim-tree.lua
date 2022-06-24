@@ -1,3 +1,7 @@
+if not require("local-util").safe_load("nvim-tree") then
+    return
+end
+
 local map = require("local-util").KeyMap
 
 map("n", "<leader>e", "<Cmd>NvimTreeToggle<CR>")
