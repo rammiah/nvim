@@ -1,3 +1,7 @@
+if not require("local-util").safe_load("nvim-autopairs") then
+    return
+end
+
 local npairs = require("nvim-autopairs")
 local Rule = require("nvim-autopairs.rule")
 

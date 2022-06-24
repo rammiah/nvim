@@ -1,3 +1,7 @@
+if not require("local-util").safe_load("todo-comments") then
+    return
+end
+
 require("todo-comments").setup {
     -- your configuration comes here
     -- or leave it empty to use the default settings

@@ -1,3 +1,7 @@
+if not require("local-util").safe_load("filetype") then
+    return
+end
+
 -- In init.lua or filetype.nvim's config file
 require("filetype").setup({
     overrides = {

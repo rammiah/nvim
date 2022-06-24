@@ -8,4 +8,10 @@ _G.__luacache_config = {
     path = vim.fn.stdpath("cache").."/luacache_modpaths",
   }
 }
+
+
+if not require("local-util").safe_load("impatient") then
+    return
+end
+
 require('impatient')

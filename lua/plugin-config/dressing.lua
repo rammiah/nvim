@@ -1,3 +1,7 @@
+if not require("local-util").safe_load("dressing") then
+    return
+end
+
 require('dressing').setup({
     input = {
         -- Set to false to disable the vim.ui.input implementation
