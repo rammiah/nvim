@@ -11,6 +11,7 @@ return require("packer").startup({
         use "mrtazz/molokai.vim"
         use "rakr/vim-one"
         use "folke/tokyonight.nvim"
+        use "cpea2506/one_monokai.nvim"
         -- nvim tree
         use {
             "kyazdani42/nvim-tree.lua",
@@ -96,6 +97,8 @@ return require("packer").startup({
         use "tpope/vim-abolish"
         -- glow
         use {"ellisonleao/glow.nvim", branch = 'main'}
+        -- color
+        use "norcalli/nvim-colorizer.lua"
 
     end,
     config = {
