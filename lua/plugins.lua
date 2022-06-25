@@ -92,6 +92,8 @@ return require("packer").startup({
         -- use "roxma/vim-tmux-clipboard"
         -- visual find
         use "nelstrom/vim-visual-star-search"
+        -- substitute
+        use "tpope/vim-abolish"
 
     end,
     config = {
