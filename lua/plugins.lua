@@ -99,6 +99,8 @@ return require("packer").startup({
         use {"ellisonleao/glow.nvim", branch = 'main'}
         -- color
         use "norcalli/nvim-colorizer.lua"
+        -- lastplace
+        use 'ethanholz/nvim-lastplace'
 
     end,
     config = {
