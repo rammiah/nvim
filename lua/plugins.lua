@@ -94,6 +94,8 @@ return require("packer").startup({
         use "nelstrom/vim-visual-star-search"
         -- substitute
         use "tpope/vim-abolish"
+        -- glow
+        use {"ellisonleao/glow.nvim", branch = 'main'}
 
     end,
     config = {
