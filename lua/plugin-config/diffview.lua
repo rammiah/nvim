@@ -77,7 +77,7 @@ require("diffview").setup({
             ["<tab>"]     = actions.select_next_entry,
             ["<s-tab>"]   = actions.select_prev_entry,
             ["gf"]        = actions.goto_file_tab,
-            ["i"]         = actions.listing_style, -- Toggle between list and tree views
+            ["`"]         = actions.listing_style, -- Toggle between list and tree views
             ["f"]         = actions.toggle_flatten_dirs, -- Flatten empty subdirectories in tree listing style.
             ["<leader>b"] = actions.toggle_files,
         },
