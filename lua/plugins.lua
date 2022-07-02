@@ -81,7 +81,7 @@ return require("packer").startup({
         }
         -- float term
         -- use "voldikss/vim-floaterm"
-        use { "akinsho/toggleterm.nvim", tag = 'v1.*' }
+        use { "akinsho/toggleterm.nvim", tag = "v1.*" }
         -- lualine status line
         use {
             "nvim-lualine/lualine.nvim",
@@ -96,11 +96,13 @@ return require("packer").startup({
         -- substitute
         use "tpope/vim-abolish"
         -- glow
-        use {"ellisonleao/glow.nvim", branch = 'main'}
+        use { "ellisonleao/glow.nvim", branch = "main" }
         -- color
         use "norcalli/nvim-colorizer.lua"
         -- lastplace
-        use 'ethanholz/nvim-lastplace'
+        use "ethanholz/nvim-lastplace"
+        -- key repeat
+        use { "anuvyklack/hydra.nvim", requires = "anuvyklack/keymap-layer.nvim" }
 
     end,
     config = {

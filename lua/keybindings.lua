@@ -7,10 +7,10 @@ vim.g.mapleader = "\\"
 map('v', '<', '<gv')
 map('v', '>', '>gv')
 -- 分屏切换
-map("n", "<M-h>", "<C-w>h")
-map("n", "<M-j>", "<C-w>j")
-map("n", "<M-k>", "<C-w>k")
-map("n", "<M-l>", "<C-w>l")
+-- map("n", "<M-h>", "<C-w>h")
+-- map("n", "<M-j>", "<C-w>j")
+-- map("n", "<M-k>", "<C-w>k")
+-- map("n", "<M-l>", "<C-w>l")
 -- nerdtree
 -- map('n', '<C-n>', ':NERDTreeToggle<CR>')
 -- map('n', '<C-f>', ':NERDTreeFind<CR>')
