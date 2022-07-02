@@ -4,9 +4,9 @@ end
 
 local map = require('local-util').KeyMap
 
-map("n", "<C-h>", ":BufferLineCyclePrev<CR>")
-map("n", "<C-l>", ":BufferLineCycleNext<CR>")
-map("n", "<leader>gb", ":BufferLinePick<CR>")
+-- map("n", "<C-h>", ":BufferLineCyclePrev<CR>")
+-- map("n", "<C-l>", ":BufferLineCycleNext<CR>")
+-- map("n", "<leader>bp", ":BufferLinePick<CR>")
 -- map("n", "gc", ":BufferLinePickClose<CR>")
 
 require("bufferline").setup {
@@ -86,4 +86,3 @@ require("bufferline").setup {
         -- end
     }
 }
-

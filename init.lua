@@ -1,3 +1,4 @@
+-- git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 -- basic config
 require("basic")
 require("keybindings")
@@ -37,3 +38,4 @@ require("plugin-config.glow")
 require("plugin-config.colorizer")
 -- require("plugin-config.monokai")
 require("plugin-config.lastplace")
+require("plugin-config.hydra")
