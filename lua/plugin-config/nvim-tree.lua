@@ -14,16 +14,16 @@ map("n", "<leader>e", "<Cmd>NvimTreeToggle<CR>")
 require "nvim-tree".setup { -- BEGIN_DEFAULT_OPTS
     auto_reload_on_write = true,
     create_in_closed_folder = true,
-    disable_netrw = false,
-    hijack_cursor = false,
+    disable_netrw = true,
+    hijack_cursor = true,
     hijack_netrw = true,
-    hijack_unnamed_buffer_when_opening = false,
+    hijack_unnamed_buffer_when_opening = true,
     ignore_buffer_on_setup = false,
     open_on_setup = false,
     open_on_setup_file = false,
     open_on_tab = false,
     sort_by = "name",
-    update_cwd = true,
+    sync_root_with_cwd = true,
     reload_on_bufenter = false,
     respect_buf_cwd = false,
     view = {
@@ -212,9 +212,9 @@ require "nvim-tree".setup { -- BEGIN_DEFAULT_OPTS
     },
     log = {
         enable = false,
-        truncate = false,
+        truncate = true,
         types = {
-            all = false,
+            all = true,
             config = false,
             copy_paste = false,
             diagnostics = false,
