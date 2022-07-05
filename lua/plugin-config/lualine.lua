@@ -31,7 +31,7 @@ require("lualine").setup {
         -- theme = "tokyonight",
         component_separators = { left = "", right = "" }, -- { left = "", right = "" }
         section_separators = { left = '', right = "" }, -- { left = "", right = ""},
-        disabled_filetypes = { "NvimTree" },
+        disabled_filetypes = {},
         always_divide_middle = true,
         globalstatus = false,
     },
@@ -118,5 +118,5 @@ require("lualine").setup {
         lualine_z = { "%p%%/%L" },
     },
     tabline = {},
-    extensions = {}
+    extensions = { "toggleterm", "nvim-tree" }
 }
