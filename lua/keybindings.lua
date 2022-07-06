@@ -19,7 +19,8 @@ map("n", "]t", ":tabnext<CR>")
 map("n", "[t", ":tabprevious<CR>")
 map("n", "]q", ":cnext<CR>")
 map("n", "[q", ":cprevious<CR>")
--- nvim-treesitter 代码格式化
+-- ctrl-l clear highlight
+map("n", "<C-l>", "<Cmd>nohlsearch<CR><C-l>")
 
 -- tag
 map("n", "<leader>tag", ":!ctags -R<CR>", { noremap = true })
