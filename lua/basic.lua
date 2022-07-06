@@ -5,8 +5,8 @@ vim.g.encoding = "UTF-8"
 -- vim.g.no_plugin_maps = 0
 vim.o.fileencoding = 'utf-8'
 -- jk移动时光标下上方保留8行
--- vim.o.scrolloff = 8
--- vim.o.sidescrolloff = 8
+vim.o.scrolloff = 8
+vim.o.sidescrolloff = 8
 -- 使用相对行号
 vim.wo.number = true
 vim.wo.relativenumber = true

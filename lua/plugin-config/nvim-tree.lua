@@ -17,7 +17,7 @@ require "nvim-tree".setup { -- BEGIN_DEFAULT_OPTS
     disable_netrw = true,
     hijack_cursor = true,
     hijack_netrw = true,
-    hijack_unnamed_buffer_when_opening = true,
+    hijack_unnamed_buffer_when_opening = false,
     ignore_buffer_on_setup = false,
     open_on_setup = false,
     open_on_setup_file = false,
@@ -27,7 +27,7 @@ require "nvim-tree".setup { -- BEGIN_DEFAULT_OPTS
     reload_on_bufenter = false,
     respect_buf_cwd = false,
     view = {
-        adaptive_size = false,
+        adaptive_size = true,
         width = 30,
         height = 30,
         hide_root_folder = false,
