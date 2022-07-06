@@ -24,6 +24,18 @@ local function fmt_mode(str)
     return ret
 end
 
+-- nvim-tree extensions
+local function get_short_cwd()
+    return vim.fn.fnamemodify(vim.fn.getcwd(), ':~')
+end
+
+local nvim_tree = {
+    sections = {
+        lualine_a = { get_short_cwd },
+    },
+    filetypes = { "NvimTree" }
+}
+
 require("lualine").setup {
     options = {
         icons_enabled = true,
@@ -118,5 +130,5 @@ require("lualine").setup {
         lualine_z = { "%p%%/%L" },
     },
     tabline = {},
-    extensions = { "toggleterm", "nvim-tree" }
+    extensions = { "toggleterm", nvim_tree }
 }
