@@ -88,7 +88,7 @@ vim.api.nvim_exec('language en_US.UTF-8', true)
 -- lazyredraw
 vim.o.lazyredraw = true
 -- number add or sub format recognize
-vim.o.nrformats="bin,octal,hex"
+vim.o.nrformats="alpha,bin,hex,unsigned"
 -- history length
 vim.o.history = 1000
 vim.o.clipboard = vim.o.clipboard.."unnamedplus"
