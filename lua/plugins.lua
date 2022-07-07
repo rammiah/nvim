@@ -25,6 +25,7 @@ return require("packer").startup({
         -- treesitter
         use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", requires = "p00f/nvim-ts-rainbow" }
         use "nvim-treesitter/nvim-treesitter-textobjects"
+        use "JoosepAlviste/nvim-ts-context-commentstring"
         -- Lua
         -- use {
         --     "SmiteshP/nvim-gps",
@@ -105,7 +106,10 @@ return require("packer").startup({
         use { "anuvyklack/hydra.nvim", requires = "anuvyklack/keymap-layer.nvim" }
         -- speeddating
         use "tpope/vim-speeddating"
+        -- speed move
         use "phaazon/hop.nvim"
+        -- copilot
+        -- use "github/copilot.vim"
 
     end,
     config = {

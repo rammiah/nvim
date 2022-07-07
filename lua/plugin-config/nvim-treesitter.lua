@@ -120,6 +120,10 @@ require("nvim-treesitter.configs").setup {
                 -- ["[]"] = "@class.outer",
             },
         },
+    },
+    context_commentstring = {
+        enable = true,
+        enable_autocmd = false,
     }
 }
 -- 开启 Folding
