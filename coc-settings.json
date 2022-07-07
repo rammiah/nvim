@@ -1,6 +1,6 @@
 {
   "go.goplsArgs": [
-    "-remote=unix;/tmp/gopls-daemon-socket",
+    "-remote=auto",
     "-logfile=auto",
     "-debug=\"\"",
     "-rpc.trace"
