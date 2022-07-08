@@ -9,7 +9,7 @@
   "go.goplsOptions": {
     "usePlaceholders": false,
     "linksInHover": false,
-    "diagnosticsDelay": "400ms"
+    "diagnosticsDelay": "800ms"
   },
   "suggest.languageSourcePriority": 99,
   "coc.source.buffer.enable": true,
@@ -107,7 +107,6 @@
   "notification.preferMenuPicker": true,
   "notification.focusable": true,
   "notification.timeout": 5000,
-
   "diagnostic.enable": true,
   "diagnostic.checkCurrentLine": true,
   "diagnostic.refreshOnInsertMode": false,
@@ -127,7 +126,6 @@
   "diagnostic.errorSign": "",
   "diagnostic.messageTarget": "float",
   "diagnostic.format": "%message\n[%source:%code]",
-
   "cSpell.userWords": [
     "Buyin",
     "Bytekv",

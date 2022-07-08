@@ -45,7 +45,8 @@ return require("packer").startup({
         use "windwp/nvim-autopairs"
         use "windwp/nvim-ts-autotag"
         -- surround
-        use "tpope/vim-surround"
+        -- use "tpope/vim-surround"
+        use "kylechui/nvim-surround"
         use "tpope/vim-repeat"
         use { "ojroques/vim-oscyank", branch = "main" }
         -- suda sudo write
