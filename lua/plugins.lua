@@ -111,6 +111,8 @@ return require("packer").startup({
         use "phaazon/hop.nvim"
         -- copilot
         -- use "github/copilot.vim"
+        -- sort
+        use "sQVe/sort.nvim"
 
     end,
     config = {
@@ -141,7 +143,7 @@ return require("packer").startup({
                 diff_fmt       = "%%h %%s (%%cr)",
                 get_rev        = "rev-parse --short HEAD",
                 get_msg        = "log --color=never --pretty=format:FMT --no-show-signature HEAD -n 1",
-                submodules     = "submodule update --init --recursive --progress"
+                submodules     = "submodule update --init --recursive --progress",
             },
             depth = 1, -- Git clone depth
             clone_timeout = 60, -- Timeout, in seconds, for git clones
