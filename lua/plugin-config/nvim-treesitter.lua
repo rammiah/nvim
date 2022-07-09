@@ -67,7 +67,7 @@ require("nvim-treesitter.configs").setup {
     -- 启用基于Treesitter的代码格式化(=)
     -- 实际使用效果一般，还是用CocActionAsync("format")吧
     indent = {
-        enable = false,
+        enable = true,
     },
     rainbow = {
         enable = true,
