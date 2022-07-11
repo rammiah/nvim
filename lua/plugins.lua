@@ -6,7 +6,8 @@ return require("packer").startup({
         use "wbthomason/packer.nvim"
         -- color theme
         use { "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }
-        use "overcache/NeoSolarized"
+        -- use "overcache/NeoSolarized"
+        use 'shaunsingh/solarized.nvim'
         use "NLKNguyen/papercolor-theme"
         use "mrtazz/molokai.vim"
         use "rakr/vim-one"

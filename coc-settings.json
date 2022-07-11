@@ -107,7 +107,11 @@
   "hover.target": "float",
   "hover.previewMaxHeight": 12,
   "hover.floatConfig": {
-    "maxHeight": 12
+    "maxHeight": 12,
+    "border": true,
+    "shadow": false,
+    "borderhighlight": "CocFloating",
+    "rounded": true
   },
   "notification.border": true,
   "notification.preferMenuPicker": true,
