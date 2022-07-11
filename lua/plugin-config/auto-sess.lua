@@ -12,5 +12,5 @@ require("auto-session").setup {
     auto_session_suppress_dirs = { "~/" },
     auto_session_use_git_branch = nil,
     -- the configs below are lua only
-    bypass_session_save_file_types = nil
+    bypass_session_save_file_types = { "NvimTree", "thrift" }
 }
