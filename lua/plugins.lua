@@ -113,6 +113,19 @@ return require("packer").startup({
         -- use "github/copilot.vim"
         -- sort
         use "sQVe/sort.nvim"
+        -- translate
+        use "potamides/pantran.nvim"
+        use {
+            "rmagatti/auto-session",
+            config = function()
+                require("auto-session").setup {
+                    log_level = "info",
+                    auto_session_suppress_dirs = { "~/" }
+                }
+            end
+        }
+        -- hardtime
+        use "takac/vim-hardtime"
 
     end,
     config = {
