@@ -114,16 +114,16 @@ return require("packer").startup({
         -- sort
         use "sQVe/sort.nvim"
         -- translate
-        use "potamides/pantran.nvim"
-        use {
-            "rmagatti/auto-session",
-            config = function()
-                require("auto-session").setup {
-                    log_level = "info",
-                    auto_session_suppress_dirs = { "~/" }
-                }
-            end
-        }
+        -- use "potamides/pantran.nvim"
+        -- use {
+        --     "rmagatti/auto-session",
+        --     config = function()
+        --         require("auto-session").setup {
+        --             log_level = "info",
+        --             auto_session_suppress_dirs = { "~/" }
+        --         }
+        --     end
+        -- }
         -- hardtime
         use "takac/vim-hardtime"
 
