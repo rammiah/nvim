@@ -6,7 +6,7 @@ require("indent")
 
 -- plugin init
 require("plugins")
-require("plugin-config.solarized")
+-- require("plugin-config.solarized")
 require("colorscheme")
 -- require("plugin-config.impatient")
 
