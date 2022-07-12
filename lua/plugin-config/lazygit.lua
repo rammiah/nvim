@@ -14,4 +14,4 @@ vim.g.lazygit_floating_window_corner_chars = {"╭", "╮", "╰", "╯"} -- cus
 vim.g.lazygit_floating_window_use_plenary = 1 -- use plenary.nvim to manage floating window if available
 vim.g.lazygit_use_neovim_remote = 1 -- fallback to 0 if neovim-remote is not installed
 
-map("n", "<leader>lz", ":LazyGit<CR>")
+map("n", "<leader>lz", "<Cmd>LazyGit<CR>")

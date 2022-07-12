@@ -6,9 +6,9 @@ require("indent")
 
 -- plugin init
 require("plugins")
--- require("plugin-config.solarized")
+require("plugin-config.solarized")
 require("colorscheme")
-require("plugin-config.impatient")
+-- require("plugin-config.impatient")
 
 -- require("plugin-config.nvim-gps-conf")
 -- require("plugin-config.monokai")
