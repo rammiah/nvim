@@ -9,7 +9,8 @@
   "go.goplsOptions": {
     "usePlaceholders": false,
     "linksInHover": false,
-    "diagnosticsDelay": "500ms"
+    "diagnosticsDelay": "500ms",
+    "staticcheck": true
   },
   "suggest.languageSourcePriority": 99,
   "coc.source.buffer.enable": true,
