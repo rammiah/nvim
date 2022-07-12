@@ -108,7 +108,7 @@
   "hover.previewMaxHeight": 12,
   "hover.floatConfig": {
     "maxHeight": 12,
-    "border": true,
+    "border": false,
     "shadow": false,
     "borderhighlight": "CocFloating",
     "rounded": true

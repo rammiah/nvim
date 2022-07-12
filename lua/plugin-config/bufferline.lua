@@ -67,7 +67,7 @@ require("bufferline").setup {
         -- end,
         --
         -- {{filetype = "NvimTree", text = "File Explorer" | function , text_align = "left" | "center" | "right"}},
-        offsets = { filetype = "nerdtree", text = "FileExplorer", text_align = "left" },
+        offsets = { filetype = "NvimTree", text = "FileExplorer", text_align = "left" },
         color_icons = true, -- | false, -- whether or not to add the filetype icon highlights
         show_buffer_icons = true, -- | false, -- disable filetype icons for buffers
         show_buffer_close_icons = false, -- true | false,
