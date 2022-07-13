@@ -15,6 +15,7 @@ require("filetype").setup({
             Caddyfile = "Caddyfile",
             ["tmux.conf"] = "tmux",
             [".gitconfig"] = "gitconfig", -- Included in the plugin
+            [".envrc"] = "bash",
         },
         complex = {
             -- Set the filetype of any full filename matching the regex to gitconfig
