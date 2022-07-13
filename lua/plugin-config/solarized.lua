@@ -11,4 +11,4 @@ vim.g.solarized_borders = true
 vim.g.solarized_disable_background = true
 
 -- Load the colorscheme
-require('solarized').set()
+-- require('solarized').set()

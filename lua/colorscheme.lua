@@ -1,5 +1,5 @@
 vim.o.background = "light"
-local colorscheme = "NeoSolarized"
+local colorscheme = "dawnfox"
 -- tokyonight
 -- OceanicNext
 -- gruvbox
