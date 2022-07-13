@@ -13,6 +13,8 @@ return require("packer").startup({
         use "rakr/vim-one"
         use "folke/tokyonight.nvim"
         use "cpea2506/one_monokai.nvim"
+        use "lifepillar/vim-solarized8"
+        use "EdenEast/nightfox.nvim"
         -- nvim tree
         use {
             "kyazdani42/nvim-tree.lua",
