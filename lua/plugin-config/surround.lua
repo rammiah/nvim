@@ -19,6 +19,7 @@ require("nvim-surround").setup({
             [">"] = { "<", ">" },
             ["["] = { "[ ", " ]" },
             ["]"] = { "[", "]" },
+            [","] = { ",", "," },
             -- Define pairs based on function evaluations!
             ["i"] = function()
                 return {

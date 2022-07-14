@@ -123,17 +123,12 @@ return require("packer").startup({
         use "sQVe/sort.nvim"
         -- translate
         -- use "potamides/pantran.nvim"
-        -- use {
-        --     "rmagatti/auto-session",
-        --     config = function()
-        --         require("auto-session").setup {
-        --             log_level = "info",
-        --             auto_session_suppress_dirs = { "~/" }
-        --         }
-        --     end
-        -- }
+        -- auto session
+        use "rmagatti/auto-session"
         -- hardtime
         use "takac/vim-hardtime"
+        -- comma text object
+        use "austintaylor/vim-commaobject"
 
     end,
     config = {
