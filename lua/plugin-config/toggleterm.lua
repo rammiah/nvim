@@ -58,13 +58,24 @@ require("toggleterm").setup {
 local Terminal = require('toggleterm.terminal').Terminal
 local map = require("local-util").KeyMap
 
+
+local function on_open(t)
+    local bufnr = t.bufnr;
+end
+
+local M = {}
 local lazygit = Terminal:new({
     cmd = "lazygit",
     hidden = true,
     count = 100,
+    on_open = function(t)
+        vim.api.nvim_buf_set_keymap(t.bufnr, "t", "<C-\\>",
+            "<Cmd>lua require('plugin-config.toggleterm').LazygitToggle()<CR>",
+            { silent = true, noremap = true })
+    end,
 })
 
-function _M.LazygitToggle()
+function M.LazygitToggle()
     lazygit:toggle()
 end
 
@@ -72,11 +83,18 @@ local htop = Terminal:new({
     cmd = "htop",
     hidden = true,
     count = 101,
+    on_open = function(t)
+        vim.api.nvim_buf_set_keymap(t.bufnr, "t", "<C-\\>",
+            "<Cmd>lua require('plugin-config.toggleterm').HtopToggle()<CR>",
+            { silent = true, noremap = true })
+    end
 })
 
-function _M.HtopToggle()
+function M.HtopToggle()
     htop:toggle()
 end
 
-map("n", "<leader>lz", "<cmd>lua _M.LazygitToggle()<CR>")
-map("n", "<leader>ht", "<cmd>lua _M.HtopToggle()<CR>")
+map("n", "<leader>lz", "<Cmd>lua require('plugin-config.toggleterm').LazygitToggle()<CR>")
+map("n", "<leader>ht", "<Cmd>lua require('plugin-config.toggleterm').HtopToggle()<CR>")
+
+return M
