@@ -91,7 +91,7 @@ return require("packer").startup({
         }
         -- float term
         -- use "voldikss/vim-floaterm"
-        use { "akinsho/toggleterm.nvim", tag = "v1.*" }
+        use { "akinsho/toggleterm.nvim" }
         -- lualine status line
         use {
             "nvim-lualine/lualine.nvim",

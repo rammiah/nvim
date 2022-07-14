@@ -5,3 +5,5 @@ gitconfigs/git-credentials
 .env
 plugin/
 .envrc
+
+config/lazygit/state.yml
