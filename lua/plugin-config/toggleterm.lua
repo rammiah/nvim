@@ -65,13 +65,13 @@ end
 
 local M = {}
 
-local git_cmd = "lazygit -ucd ~/.config/nvim/config/lazygit/"
-if vim.fn.has("mac") == 1 then
-    git_cmd = "lazygit"
-end
+-- local git_cmd = "lazygit -ucd ~/.config/nvim/config/lazygit/"
+-- if vim.fn.has("mac") == 1 then
+--     git_cmd = "lazygit"
+-- end
 
 local lazygit = Terminal:new({
-    cmd = git_cmd,
+    cmd = "lazygit",
     hidden = true,
     direction = "float",
     count = 100,
