@@ -54,3 +54,29 @@ require("toggleterm").setup {
         },
     },
 }
+
+local Terminal = require('toggleterm.terminal').Terminal
+local map = require("local-util").KeyMap
+
+local lazygit = Terminal:new({
+    cmd = "lazygit",
+    hidden = true,
+    count = 100,
+})
+
+function _M.LazygitToggle()
+    lazygit:toggle()
+end
+
+local htop = Terminal:new({
+    cmd = "htop",
+    hidden = true,
+    count = 101,
+})
+
+function _M.HtopToggle()
+    htop:toggle()
+end
+
+map("n", "<leader>lz", "<cmd>lua _M.LazygitToggle()<CR>")
+map("n", "<leader>ht", "<cmd>lua _M.HtopToggle()<CR>")
