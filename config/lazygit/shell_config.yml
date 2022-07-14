@@ -1,12 +1,13 @@
 gui:
   theme:
-    lightTheme: false
+    lightTheme: true
     activeBorderColor:
       - green
       - bold
     inactiveBorderColor:
-      - default
+      - black
     selectedLineBgColor:
       - reverse
     selectedRangeBgColor:
       - reverse
+
