@@ -62,7 +62,7 @@ return require("packer").startup({
         -- telescope and plugins
         use { "nvim-telescope/telescope.nvim", requires = {
             -- lazygit
-            { "kdheepak/lazygit.nvim", requires = "nvim-lua/plenary.nvim" },
+            -- { "kdheepak/lazygit.nvim", requires = "nvim-lua/plenary.nvim" },
             -- funcs
             "nvim-lua/plenary.nvim",
             {
