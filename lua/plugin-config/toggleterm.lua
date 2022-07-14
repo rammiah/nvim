@@ -64,8 +64,14 @@ local function on_open(t)
 end
 
 local M = {}
+
+local git_cmd = "lazygit -ucd ~/.config/nvim/config/lazygit/"
+if vim.fn.has("mac") == 1 then
+    git_cmd = "lazygit"
+end
+
 local lazygit = Terminal:new({
-    cmd = "lazygit -ucd ~/.config/nvim/config/lazygit/",
+    cmd = git_cmd,
     hidden = true,
     direction = "float",
     count = 100,
