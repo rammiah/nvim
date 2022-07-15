@@ -23,7 +23,7 @@ map("n", "[q", ":cprevious<CR>")
 map("n", "<C-l>", "<Cmd>nohlsearch<CR><C-l>")
 
 -- tag
-map("n", "<leader>tag", ":!ctags -R<CR>", { noremap = true })
+-- map("n", "<leader>tag", ":!ctags -R<CR>", { noremap = true })
 -- Files
 
 -- map("v", "<leader>y", ":OSCYank<CR>")
