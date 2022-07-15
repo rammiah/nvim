@@ -26,7 +26,7 @@ return require("packer").startup({
             requires = {
                 "kyazdani42/nvim-web-devicons", -- optional, for file icon
             },
-            -- tag = "nightly" -- optional, updated every week. (see issue 1193)
+            tag = "nightly" -- optional, updated every week. (see issue 1193)
         }
         -- dev icons
         use "ryanoasis/vim-devicons"
