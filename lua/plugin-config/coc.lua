@@ -3,17 +3,22 @@ local map = require('local-util').KeyMap
 map("n", "[g", "<Plug>(coc-diagnostic-prev)")
 map("n", "]g", "<Plug>(coc-diagnostic-next)")
 map("n", "<leader>rn", "<Cmd>call CocActionAsync('rename')<CR>")
-map("n", "<space>a", "<Cmd>CocList diagnostics<CR>")
-map("n", "<space>o", "<Cmd>CocList outline<CR>")
+-- goto
 map("n", "gd", "<Cmd>call CocActionAsync('jumpDefinition')<CR>")
 map("n", "gt", "<Cmd>call CocActionAsync('jumpTypeDefinition')<CR>")
 map("n", "gi", "<Cmd>call CocActionAsync('jumpImplementation')<CR>")
 map("n", "gr", "<Cmd>call CocActionAsync('jumpReferences')<CR>")
-map("n", "<space>j", ":<C-u>CocNext<CR>", { nowait = true })
-map("n", "<space>k", ":<C-u>CocPrev<CR>", { nowait = true })
-map("n", "<space>p", ":<C-u>CocListResume<CR>", { nowait = true })
--- map("i", "<C-j>", 'pumvisible()?("<C-n>"):("j")', { nowait = true, expr = true })
--- map("i", "<C-k>", 'pumvisible()?("<C-p>"):("k")', { nowait = true, expr = true })
+-- coc-list
+map("n", "<space>j", "<Cmd>CocNext<CR>", { nowait = true })
+map("n", "<space>k", "<Cmd>CocPrev<CR>", { nowait = true })
+map("n", "<space>p", "<Cmd>CocListResume<CR>", { nowait = true })
+map("n", "<space>a", "<Cmd>CocList diagnostics<CR>", { nowait = true })
+map("n", "<space>o", "<Cmd>CocList outline<CR>", { nowait = true })
+map("n", "<space>c", "<Cmd>CocList commands<CR>", { nowait = true })
+-- code actions
+map("n", "<leader>cc", "<Plug>(coc-codeaction-cursor)")
+map("v", "<leader>a", "<Plug>(coc-codeaction-selected)")
+map("n", "<leader>a", "<Plug>(coc-codeaction-selected)")
 
 vim.g.coc_global_extensions = {
     "coc-go",
