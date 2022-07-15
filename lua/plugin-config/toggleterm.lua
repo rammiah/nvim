@@ -58,57 +58,40 @@ require("toggleterm").setup {
 local Terminal = require('toggleterm.terminal').Terminal
 local map = require("local-util").KeyMap
 
-
-local function on_open(t)
-    local bufnr = t.bufnr;
-end
-
 local M = {}
 
--- local git_cmd = "lazygit -ucd ~/.config/nvim/config/lazygit/"
--- if vim.fn.has("mac") == 1 then
---     git_cmd = "lazygit"
--- end
+local function add_terminal(exe, args, key)
+    local args = args or {}
+    if vim.fn.executable(exe) then
+        local term = Terminal:new({
+            cmd = exe .. table.concat(args, " "),
+            hidden = true,
+            direction = "float",
+            count = 100,
+            on_open = function(t)
+                vim.api.nvim_buf_set_keymap(t.bufnr, "t", "<C-\\>",
+                    "<Cmd>lua require('plugin-config.toggleterm')." .. exe .. "Toggle()<CR>",
+                    { silent = true, noremap = true })
+            end,
+            highlight = {
+                NormalFloat = { link = "PMenu" },
+            },
+        })
 
-local lazygit = Terminal:new({
-    cmd = "lazygit",
-    hidden = true,
-    direction = "float",
-    count = 100,
-    on_open = function(t)
-        vim.api.nvim_buf_set_keymap(t.bufnr, "t", "<C-\\>",
-            "<Cmd>lua require('plugin-config.toggleterm').LazygitToggle()<CR>",
-            { silent = true, noremap = true })
-    end,
-    highlight = {
-        NormalFloat = { link = "PMenu" },
-    },
-})
+        M[exe .. "Toggle"] = function()
+            term:toggle()
+        end
 
-function M.LazygitToggle()
-    lazygit:toggle()
+        map("n", key, "<Cmd>lua require('plugin-config.toggleterm')." .. exe .. "Toggle()<CR>")
+    else
+        vim.notify("please install " .. exe .. " first!!!", vim.log.levels.WARN)
+    end
 end
 
-local htop = Terminal:new({
-    cmd = "htop",
-    direction = "float",
-    hidden = true,
-    count = 101,
-    on_open = function(t)
-        vim.api.nvim_buf_set_keymap(t.bufnr, "t", "<C-\\>",
-            "<Cmd>lua require('plugin-config.toggleterm').HtopToggle()<CR>",
-            { silent = true, noremap = true })
-    end,
-    highlight = {
-        NormalFloat = { link = "PMenu" },
-    }
-})
-
-function M.HtopToggle()
-    htop:toggle()
-end
-
-map("n", "<leader>lz", "<Cmd>lua require('plugin-config.toggleterm').LazygitToggle()<CR>")
-map("n", "<leader>ht", "<Cmd>lua require('plugin-config.toggleterm').HtopToggle()<CR>")
+add_terminal("lazygit", nil, "<leader>tl")
+add_terminal("htop", nil, "<leader>tt")
+add_terminal("ncdu", nil, "<leader>tu")
+add_terminal("ipython", nil, "<leader>tp")
+add_terminal("node", nil, "<leader>tn")
 
 return M
