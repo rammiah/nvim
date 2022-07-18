@@ -77,7 +77,6 @@
   "suggest.snippetIndicator": "~",
   "suggest.snippetsSupport": true,
   "suggest.timeout": 5000,
-
   "suggest.triggerAfterInsertEnter": false,
   "suggest.triggerCompletionWait": 50,
   "signature.enable": true,
@@ -137,7 +136,16 @@
   "diagnostic.errorSign": "",
   "diagnostic.messageTarget": "float",
   "diagnostic.format": "%message\n[%source:%code]",
-  "cSpell.userWords": [
+  "cSpell.numSuggestions": 4,
+  "cSpell.showStatus": true,
+  "cSpell.language": "en",
+  "cSpell.checkLimit": 1024,
+  "cSpell.maxNumberOfProblems": 100,
+  "cSpell.minWordLength": 4,
+  "cSpell.maxDuplicateProblems": 3,
+  "cSpell.allowCompoundWords": true,
+  "cSpell.diagnosticLevel": "Information",
+  "cSpell.ignoreWords": [
     "Buyin",
     "Bytekv",
     "Danmu",
