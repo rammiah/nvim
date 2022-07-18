@@ -4,4 +4,6 @@ vim.bo.expandtab = false
 
 local save_load = require("local-util").safe_load
 
-save_load("dap-go")
+if save_load("dap-go") then
+    require("dap-go").setup()
+end
