@@ -60,14 +60,21 @@ local map = require("local-util").KeyMap
 
 local M = {}
 
-local function add_terminal(exe, args, key)
+local cmds = {}
+
+local function add_terminal(exe, args, key, cnt)
     local args = args or {}
     if vim.fn.executable(exe) then
+        local cmd = exe .. table.concat(args, " ")
+        if cmds[cmd] ~= nil then
+            map("n", key, "<Cmd>lua require('plugin-config.toggleterm')." .. exe .. "Toggle()<CR>")
+            return
+        end
         local term = Terminal:new({
-            cmd = exe .. table.concat(args, " "),
+            cmd = cmd,
             hidden = true,
             direction = "float",
-            count = 100,
+            count = cnt,
             on_open = function(t)
                 vim.api.nvim_buf_set_keymap(t.bufnr, "t", "<C-\\>",
                     "<Cmd>lua require('plugin-config.toggleterm')." .. exe .. "Toggle()<CR>",
@@ -88,10 +95,11 @@ local function add_terminal(exe, args, key)
     end
 end
 
-add_terminal("lazygit", nil, "<leader>tl")
-add_terminal("htop", nil, "<leader>tt")
-add_terminal("ncdu", nil, "<leader>tu")
-add_terminal("ipython", nil, "<leader>tp")
-add_terminal("node", nil, "<leader>tn")
+add_terminal("lazygit", nil, "<leader>lz", 100)
+add_terminal("lazygit", nil, "<leader>tl", 100)
+add_terminal("htop", nil, "<leader>tt", 102)
+add_terminal("ncdu", nil, "<leader>tu", 103)
+add_terminal("ipython", nil, "<leader>tp", 104)
+add_terminal("node", nil, "<leader>tn", 105)
 
 return M
