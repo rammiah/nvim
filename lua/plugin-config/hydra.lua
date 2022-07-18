@@ -4,13 +4,12 @@ end
 
 local Hydra = require("hydra")
 
-
-
 Hydra({
     name = "Windows",
     mode = { "n" },
-    body = "<C-w>",
+    body = "<leader>w",
     config = {
+        invoke_on_body = true,
         color = "pink",
     },
     heads = {
@@ -29,6 +28,15 @@ Hydra({
         { "J", "<Cmd>wincmd J<CR>", { noremap = true, nowait = true } },
         { "K", "<Cmd>wincmd K<CR>", { noremap = true, nowait = true } },
         { "L", "<Cmd>wincmd L<CR>", { noremap = true, nowait = true } },
+
+        -- bufferline
+        { "h", function() vim.cmd("BufferLineCyclePrev") end, { on_key = false } },
+        { "l", function() vim.cmd("BufferLineCycleNext") end, { on_key = false } },
+
+        -- { "H", function() vim.cmd("BufferLineCloseLeft") end, { desc = false } },
+        -- { "L", function() vim.cmd("BufferLineCloseRight") end, { desc = false } },
+
+        { "P", function() vim.cmd("BufferLinePickClose") end, { desc = "pick close" } },
 
         -- only
         { "<C-o>", "<Cmd>only<CR>", { exit = true, desc = false } },
