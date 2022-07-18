@@ -4,6 +4,8 @@ end
 
 local Hydra = require("hydra")
 
+
+
 Hydra({
     name = "Windows",
     mode = { "n" },
@@ -18,24 +20,25 @@ Hydra({
         { "<C-k>", "<Cmd>wincmd k<CR>" },
         { "<C-l>", "<Cmd>wincmd l<CR>" },
 
-        -- resizing window
-        -- { "H", "<C-w>3<" },
-        -- { "L", "<C-w>3>" },
-        -- { "K", "<C-w>1+" },
-        -- { "J", "<C-w>1-" },
+        -- split window
+        { "<C-s>", "<Cmd>split<CR>" },
+        { "<C-v>", "<Cmd>vsplit<CR>" },
 
         -- move windows
-        { "H", "<Cmd>wincmd H<CR>", { noremap = true, nowait = true, } },
-        { "J", "<Cmd>wincmd J<CR>", { noremap = true, nowait = true, } },
-        { "K", "<Cmd>wincmd K<CR>", { noremap = true, nowait = true, } },
-        { "L", "<Cmd>wincmd L<CR>", { noremap = true, nowait = true, } },
+        { "H", "<Cmd>wincmd H<CR>", { noremap = true, nowait = true } },
+        { "J", "<Cmd>wincmd J<CR>", { noremap = true, nowait = true } },
+        { "K", "<Cmd>wincmd K<CR>", { noremap = true, nowait = true } },
+        { "L", "<Cmd>wincmd L<CR>", { noremap = true, nowait = true } },
+
+        -- only
+        { "<C-o>", "<Cmd>only<CR>", { exit = true, desc = false } },
 
         -- equalize window sizes
-        -- { "e", "<C-w>=" },
+        { "<C-e>", "<C-w>=" },
 
         -- close active window
         -- { "Q", ":q<cr>" },
-        { "<C-q>", ":q<cr>" },
+        { "<C-q>", "<Cmd>wincmd q<CR>" },
 
         -- exit this Hydra
         { "q", nil, { exit = true, nowait = true } },
