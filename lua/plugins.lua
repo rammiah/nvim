@@ -129,6 +129,24 @@ return require("packer").startup({
         use "takac/vim-hardtime"
         -- comma text object
         use "austintaylor/vim-commaobject"
+        -- dap
+        use "mfussenegger/nvim-dap"
+        use {
+            "leoluz/nvim-dap-go",
+            as = "dap-go",
+            opt = true,
+            config = function()
+                require("dap-go").setup()
+            end,
+        }
+        use {
+            "mfussenegger/nvim-dap-python",
+            as = "dap-python",
+            opt = true,
+            config = function()
+                require("dap-python").setup()
+            end,
+        }
 
     end,
     config = {
