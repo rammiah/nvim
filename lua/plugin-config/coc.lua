@@ -43,11 +43,15 @@ function _M.ShowHover()
 end
 
 function _M.OrganizeImports()
-    local actions = vim.fn.CocAction("codeActions", "", { "source.organizeImports" })
-    -- print('actions is ' .. vim.inspect(actions))
+    if vim.g.coc_service_initialized == 1 then
+        local actions = vim.fn.CocAction("codeActions", "", { "source.organizeImports" })
+        -- print('actions is ' .. vim.inspect(actions))
 
-    if #actions ~= 0 then
-        vim.fn.CocAction('organizeImport')
+        if #actions ~= 0 then
+            vim.fn.CocAction('organizeImport')
+        end
+    else
+        vim.notify("coc not initialized", vim.log.levels.INFO)
     end
 end
 
@@ -63,7 +67,7 @@ function _M.FormatDoc()
     local nvim_go = require("go.format")
     if vim.bo.ft == "go" and nvim_go and nvim_go.format then
         nvim_go.format()
-    elseif vim.fn.CocHasProvider and vim.fn.CocHasProvider("format") then
+    elseif vim.g.coc_service_initialized == 1 and vim.fn.CocHasProvider and vim.fn.CocHasProvider("format") then
         vim.fn.CocActionAsync("format")
     else
         local view = vim.fn.winsaveview()
