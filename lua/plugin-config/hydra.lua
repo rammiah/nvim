@@ -33,10 +33,8 @@ Hydra({
         { "h", function() vim.cmd("BufferLineCyclePrev") end, { on_key = false } },
         { "l", function() vim.cmd("BufferLineCycleNext") end, { on_key = false } },
 
-        -- { "H", function() vim.cmd("BufferLineCloseLeft") end, { desc = false } },
-        -- { "L", function() vim.cmd("BufferLineCloseRight") end, { desc = false } },
-
-        { "P", function() vim.cmd("BufferLinePickClose") end, { desc = "pick close" } },
+        { "p", function() vim.cmd("BufferLinePickClose") end, { desc = "pick" } },
+        { "P", function() vim.cmd("BufferLinePickClose") end, { desc = "close" } },
 
         -- only
         { "<C-o>", "<Cmd>only<CR>", { exit = true, desc = false } },
