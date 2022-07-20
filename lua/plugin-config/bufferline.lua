@@ -2,7 +2,7 @@ if not require("local-util").safe_load("bufferline") then
     return
 end
 
-local map = require('local-util').KeyMap
+local map = require("local-util").KeyMap
 
 -- map("n", "<C-h>", ":BufferLineCyclePrev<CR>")
 -- map("n", "<C-l>", ":BufferLineCycleNext<CR>")
@@ -20,20 +20,20 @@ require("bufferline").setup {
         -- NOTE: this plugin is designed with this icon in mind,
         -- and so changing this is NOT recommended, this is intended
         -- as an escape hatch for people who cannot bear it for whatever reason
-        indicator_icon = '▎',
-        buffer_close_icon = '',
-        modified_icon = '',
-        close_icon = '',
-        left_trunc_marker = '',
-        right_trunc_marker = '',
+        indicator_icon = "▎",
+        buffer_close_icon = "",
+        modified_icon = "",
+        close_icon = "",
+        left_trunc_marker = "",
+        right_trunc_marker = "",
         --- name_formatter can be used to change the buffer's label in the bufferline.
         --- Please note some names can/will break the
         --- bufferline so use this at your discretion knowing that it has
         --- some limitations that will *NOT* be fixed.
         name_formatter = function(buf) -- buf contains a "name", "path" and "bufnr"
             -- remove extension from markdown files for example
-            if buf.name:match('%.md') then
-                return vim.fn.fnamemodify(buf.name, ':t:r')
+            if buf.name:match("%.md") then
+                return vim.fn.fnamemodify(buf.name, ":t:r")
             end
         end,
         max_name_length = 18,
@@ -60,7 +60,7 @@ require("bufferline").setup {
         --   if vim.fn.getcwd() == "<work-repo>" and vim.bo[buf_number].filetype ~= "wiki" then
         --     return true
         --   end
-        --   -- filter out by it's index number in list (don't show first buffer)
+        --   -- filter out by it"s index number in list (don"t show first buffer)
         --   if buf_numbers[1] ~= buf_number then
         --     return true
         --   end
@@ -76,11 +76,11 @@ require("bufferline").setup {
         show_tab_indicators = true, -- | false,
         persist_buffer_sort = false, -- whether or not custom sorted buffers should persist
         -- can also be a table containing 2 custom separators
-        -- [focused and unfocused]. eg: { '|', '|' }
-        separator_style = 'thin', -- "slant" | "thick" | "thin" | { 'any', 'any' },
+        -- [focused and unfocused]. eg: { "|", '|' }
+        separator_style = "thin", -- "slant" | "thick" | "thin" | { 'any', 'any' },
         enforce_regular_tabs = true, -- false | true,
         always_show_bufferline = true, -- | false,
-        sort_by = 'id', -- 'insert_after_current' |'insert_at_end' | 'id' | 'extension' | 'relative_directory' | 'directory' | 'tabs' | function(buffer_a, buffer_b)
+        sort_by = "id", -- 'insert_after_current' |'insert_at_end' | 'id' | 'extension' | 'relative_directory' | 'directory' | 'tabs' | function(buffer_a, buffer_b)
         -- add custom logic
         --   return buffer_a.modified > buffer_b.modified
         -- end
