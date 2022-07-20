@@ -109,7 +109,7 @@ require "nvim-tree".setup { -- BEGIN_DEFAULT_OPTS
             webdev_colors = true,
             git_placement = "before",
             padding = " ",
-            symlink_arrow = "→",
+            symlink_arrow = " → ",
             show = {
                 file = true,
                 folder = true, -- 优先级低于indent_makers
