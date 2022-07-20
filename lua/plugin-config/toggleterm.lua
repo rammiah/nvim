@@ -6,7 +6,7 @@ require("toggleterm").setup {
     -- size can be a number or function which is passed the current terminal
     size = function(term)
         if term.direction == "horizontal" then
-            return 15
+            return 20
         elseif term.direction == "vertical" then
             return vim.o.columns * 0.4
         end
@@ -33,7 +33,7 @@ require("toggleterm").setup {
         --     guibg = "<VALUE-HERE>",
         -- },
     },
-    shade_terminals = true, -- NOTE: this option takes priority over highlights specified so if you specify Normal highlights you should set this to false
+    shade_terminals = false, -- NOTE: this option takes priority over highlights specified so if you specify Normal highlights you should set this to false
     shading_factor = 3, -- the degree by which to darken to terminal colour, default: 1 for dark backgrounds, 3 for light
     start_in_insert = true,
     insert_mappings = true, -- whether or not the open mapping applies in insert mode
@@ -62,7 +62,8 @@ local M = {}
 
 local cmds = {}
 
-local function add_terminal(exe, args, key, cnt)
+local function add_terminal(exe, args, key, cnt, direction)
+    local direction = direction or "float"
     local args = args or {}
     if vim.fn.executable(exe) then
         local cmd = exe .. table.concat(args, " ")
@@ -73,10 +74,10 @@ local function add_terminal(exe, args, key, cnt)
         local term = Terminal:new({
             cmd = cmd,
             hidden = true,
-            direction = "float",
+            direction = direction,
             count = cnt,
             on_open = function(t)
-                vim.api.nvim_buf_set_keymap(t.bufnr, "t", "<C-\\>",
+                vim.api.nvim_buf_set_keymap(t.bufnr, "t", key,
                     "<Cmd>lua require('plugin-config.toggleterm')." .. exe .. "Toggle()<CR>",
                     { silent = true, noremap = true })
             end,
@@ -101,5 +102,6 @@ add_terminal("htop", nil, "<leader>tt", 102)
 add_terminal("ncdu", nil, "<leader>tu", 103)
 add_terminal("ipython", nil, "<leader>tp", 104)
 add_terminal("node", nil, "<leader>tn", 105)
+add_terminal("zsh", nil, "<C-`>", 106, "horizontal")
 
 return M
