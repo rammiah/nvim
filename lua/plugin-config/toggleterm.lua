@@ -77,7 +77,7 @@ local function add_terminal(exe, args, key, cnt, direction)
             direction = direction,
             count = cnt,
             on_open = function(t)
-                vim.api.nvim_buf_set_keymap(t.bufnr, "t", key,
+                vim.api.nvim_buf_set_keymap(t.bufnr, "t", "<C-\\>",
                     "<Cmd>lua require('plugin-config.toggleterm')." .. exe .. "Toggle()<CR>",
                     { silent = true, noremap = true })
             end,
@@ -102,6 +102,6 @@ add_terminal("htop", nil, "<leader>tt", 102)
 add_terminal("ncdu", nil, "<leader>tu", 103)
 add_terminal("ipython", nil, "<leader>tp", 104)
 add_terminal("node", nil, "<leader>tn", 105)
-add_terminal("zsh", nil, "<C-`>", 106, "horizontal")
+add_terminal("zsh", nil, "<leader>`", 106, "horizontal")
 
 return M
