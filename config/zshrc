@@ -12,6 +12,7 @@ plugins=(git common-aliases fzf zsh-syntax-highlighting zsh-completions tmux)
 source $ZSH/oh-my-zsh.sh
 # source /etc/profile.d/bash_profile.sh
 test -d /usr/share/datapool && alias cdpool='cd /usr/share/datapool'
+echo "\e[5 q" # set cursor shape
 export BAT_THEME="Solarized (light)"
 # boe
 export RUNTIME_IDC_NAME="boe"
