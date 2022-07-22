@@ -19,7 +19,7 @@ precmd_functions+=(_fix_cursor)
 
 export BAT_THEME="Solarized (light)"
 alias cat="bat"
-alias rm="/usr/local/bin/trash"
+alias rm="trash"
 # boe
 export RUNTIME_IDC_NAME="boe"
 # editor
