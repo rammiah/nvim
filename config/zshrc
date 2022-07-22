@@ -10,8 +10,6 @@ plugins=(git common-aliases fzf zsh-syntax-highlighting zsh-completions tmux)
 
 # user config
 source $ZSH/oh-my-zsh.sh
-# source /etc/profile.d/bash_profile.sh
-test -d /usr/share/datapool && alias cdpool='cd /usr/share/datapool'
 
 _fix_cursor() {
    echo -ne "\e[5 q"
@@ -19,41 +17,45 @@ _fix_cursor() {
 
 precmd_functions+=(_fix_cursor)
 
+if [ -d ~/.zshconf ]
+then
+    for file in ~/.zshconf/*; do
+        source "$file"
+    done
+fi
+
 export BAT_THEME="Solarized (light)"
 # boe
 export RUNTIME_IDC_NAME="boe"
 # editor
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
-# iterm2
-test -f $HOME/.iterm2_shell_integration.zsh && source $HOME/.iterm2_shell_integration.zsh
-# Add default node to path
 
 # Load NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh" --no-use
 # export PATH="$NVM_DIR/versions/node/v16.13.2/bin:$PATH"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion 
+[ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"  # This loads nvm bash_completion 
 
 # c & c++ compilers
 # export LD_LIBRARY_PATH=/usr/local/lib
 # export CC=/usr/local/bin/gcc
 # export CXX=/usr/local/bin/g++
 
-MYGO=$(echo Y29kZS9nb3BhdGgvc3JjL2NvZGUuYnl0ZWQub3JnCg== | base64 -d)
-alias cb="cd $HOME/$MYGO"
 # rust toolchain
 # export RUSTUP_DIST_SERVER="https://rsproxy.cn"
 # export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
 export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git' --glob '!kitex_gen' --glob '!thrift_gen'"
 # fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -s ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # gopath & goroot settings
 export GOROOT="$HOME/.gos/go"
 export GOPATH="$HOME/code/gopath"
 export PATH="$GOROOT/bin:$GOPATH/bin:$PATH" 
-export DOCKER_HOST=unix:///run/user/1000/docker.sock
+# for rootless docker
+export PATH=$HOME/bin:$PATH
+# export DOCKER_HOST=unix:///run/user/1000/docker.sock
 
 # params alias
 unalias gco
@@ -94,5 +96,7 @@ gco() {
         git checkout $branch;
     fi
 }
+
+[ -s "$HOME/.acme.sh/acme.sh.env" ] && source "$HOME/.acme.sh/acme.sh.env"
 
 eval "$(direnv hook zsh)"
