@@ -2,12 +2,28 @@ if not require("local-util").safe_load("nvim-surround") then
     return
 end
 
+-- Since `vim.fn.input()` does not handle keyboard interrupts, we use a protected call to check whether the user has
+-- used `<C-c>` to cancel the input. This is not needed if `<Esc>` is used to cancel the input.
+local get_input = function(prompt)
+    local ok, result = pcall(vim.fn.input, { prompt = prompt })
+    if not ok then
+        return nil
+    end
+    return result
+end
+
 require("nvim-surround").setup({
     keymaps = { -- vim-surround style keymaps
-        insert = "ys",
-        visual = "S",
+        -- insert = "<C-g>s",
+        -- insert_line = "<C-g>S",
         delete = "ds",
         change = "cs",
+        normal = "ys",
+        normal_cur = "yss",
+        normal_line = "yS",
+        normal_cur_line = "ySS",
+        visual = "S",
+        visual_line = "gS",
     },
     delimiters = {
         pairs = {
@@ -22,22 +38,19 @@ require("nvim-surround").setup({
             [","] = { ",", "," },
             -- Define pairs based on function evaluations!
             ["i"] = function()
-                return {
-                    require("nvim-surround.utils").get_input(
-                        "Enter the left delimiter: "
-                    ),
-                    require("nvim-surround.utils").get_input(
-                        "Enter the right delimiter: "
-                    )
-                }
+                local left_delimiter = get_input("Enter the left delimiter: ")
+                if left_delimiter then
+                    local right_delimiter = get_input("Enter the right delimiter: ")
+                    if right_delimiter then
+                        return { left_delimiter, right_delimiter }
+                    end
+                end
             end,
             ["f"] = function()
-                return {
-                    require("nvim-surround.utils").get_input(
-                        "Enter the function name: "
-                    ) .. "(",
-                    ")"
-                }
+                local result = get_input("Enter the function name: ")
+                if result then
+                    return { result .. "(", ")" }
+                end
             end,
         },
         separators = {
@@ -46,7 +59,8 @@ require("nvim-surround").setup({
             ["`"] = { "`", "`" },
         },
         HTML = {
-            ["t"] = true, -- Use "t" for HTML-style mappings
+            ["t"] = "type",
+            ["T"] = "whole",
         },
         aliases = {
             ["a"] = ">", -- Single character aliases apply everywhere
@@ -60,5 +74,6 @@ require("nvim-surround").setup({
     },
     highlight_motion = { -- Highlight text-objects before surrounding them
         duration = 0,
-    }
+    },
+    move_cursor = "begin",
 })
