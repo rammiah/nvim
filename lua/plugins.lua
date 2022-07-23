@@ -5,21 +5,7 @@ return require("packer").startup({
         -- Packer can manage itself
         use "wbthomason/packer.nvim"
         -- color theme
-        use { "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }
         use "overcache/NeoSolarized"
-        use 'shaunsingh/solarized.nvim'
-        use "NLKNguyen/papercolor-theme"
-        use "mrtazz/molokai.vim"
-        use "rakr/vim-one"
-        use "folke/tokyonight.nvim"
-        use "cpea2506/one_monokai.nvim"
-        use "lifepillar/vim-solarized8"
-        use "EdenEast/nightfox.nvim"
-        use({
-            'rose-pine/neovim',
-            as = 'rose-pine',
-            tag = 'v1.*',
-        })
         -- nvim tree
         use {
             "kyazdani42/nvim-tree.lua",

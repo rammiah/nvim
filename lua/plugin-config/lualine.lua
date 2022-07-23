@@ -39,8 +39,8 @@ local nvim_tree = {
 require("lualine").setup {
     options = {
         icons_enabled = true,
-        -- theme = "solarized_light",
-        theme = "solarized",
+        theme = "solarized_light",
+        -- theme = "solarized",
         -- theme = "auto",
         -- theme = "tokyonight",
         component_separators = { left = "", right = "" }, -- { left = "", right = "" }
