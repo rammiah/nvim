@@ -6,9 +6,6 @@ require("indent")
 
 -- plugin init
 require("plugins")
-require("plugin-config.nightfox")
-require("plugin-config.rose-pine")
-require("plugin-config.solarized")
 require("colorscheme")
 
 -- plugins config
