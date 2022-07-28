@@ -21,6 +21,7 @@ map("n", "<leader>fc", ':lua require("telescope.builtin").commands()<CR>')
 map("n", "<leader>fq", ':lua require("telescope.builtin").quickfix()<CR>')
 map("n", "<leader>fr", ':lua require("telescope.builtin").resume()<CR>')
 map("n", "<leader>fs", ':lua require("telescope.builtin").git_status()<CR>')
+map("n", "<leader>fl", ':lua require("telescope.builtin").current_buffer_fuzzy_find()<CR>')
 
 require("telescope").setup({
     defaults = {
