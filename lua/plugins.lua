@@ -18,7 +18,12 @@ return require("packer").startup({
         -- dev icons
         use "ryanoasis/vim-devicons"
         -- treesitter
-        use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", requires = "p00f/nvim-ts-rainbow" }
+        use { 
+            "nvim-treesitter/nvim-treesitter",
+            run = ":TSUpdate",
+            requires = "p00f/nvim-ts-rainbow",
+            commit = "635c450",
+        }
         use "nvim-treesitter/nvim-treesitter-textobjects"
         use "JoosepAlviste/nvim-ts-context-commentstring"
         -- Lua
