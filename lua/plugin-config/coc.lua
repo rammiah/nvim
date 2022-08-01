@@ -20,6 +20,11 @@ map("n", "<leader>cc", "<Plug>(coc-codeaction-cursor)")
 map("v", "<leader>a", "<Plug>(coc-codeaction-selected)")
 map("n", "<leader>a", "<Plug>(coc-codeaction-selected)")
 
+vim.cmd [[
+  hi CocSearch ctermfg=12 guifg=#18A3FF
+  hi CocMenuSel ctermbg=109 guibg=#ffffff
+]]
+
 vim.g.coc_global_extensions = {
     "coc-go",
     "coc-spell-checker",
