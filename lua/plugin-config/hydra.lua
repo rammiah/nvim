@@ -37,7 +37,7 @@ Hydra({
         { "P", function() vim.cmd("BufferLinePickClose") end, { desc = "close" } },
 
         -- only
-        { "<C-o>", "<Cmd>only<CR>", { exit = true, desc = false } },
+        -- { "<C-o>", "<Cmd>only<CR>", { exit = true, desc = false } },
 
         -- equalize window sizes
         { "<C-e>", "<C-w>=" },
