@@ -20,11 +20,12 @@ map("n", "<leader>cc", "<Plug>(coc-codeaction-cursor)")
 map("v", "<leader>a", "<Plug>(coc-codeaction-selected)")
 map("n", "<leader>a", "<Plug>(coc-codeaction-selected)")
 
+-- #657b83 #ffffd7
 vim.cmd [[
-  hi CocFloating guifg=#000000 guibg=#dfdfdf "#f7f7f7
+  hi CocFloating guifg=#000000 guibg=#f2f2dc "#f7f7f7
   hi CocSearch ctermfg=12 guifg=#2470b3
   "hi CocMenuSel ctermbg=109 guifg=#000000 guibg=#c5dffc
-  hi CocMenuSel guibg=#c5dffc
+  hi CocMenuSel guibg=#ffffd7    "#c5dffc
 ]]
 
 vim.g.coc_global_extensions = {

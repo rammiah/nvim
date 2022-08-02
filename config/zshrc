@@ -35,7 +35,9 @@ export NVM_DIR="$HOME/.nvm"
 # rust toolchain
 # export RUSTUP_DIST_SERVER="https://rsproxy.cn"
 # export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
-export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git' --glob '!kitex_gen' --glob '!thrift_gen'"
+# export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git' --glob '!kitex_gen' --glob '!thrift_gen'"
+export FZF_DEFAULT_COMMAND="fd --type file --hidden --follow --color=always --glob '!.git' --glob '!kitex_gen' --glob '!thrift_gen'"
+
 # fzf
 [ -s ~/.fzf.zsh ] && source ~/.fzf.zsh
 
