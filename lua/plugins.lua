@@ -116,7 +116,7 @@ return require("packer").startup({
         -- auto session
         use "rmagatti/auto-session"
         -- hardtime
-        use "takac/vim-hardtime"
+        -- use "takac/vim-hardtime"
         -- comma text object
         use "austintaylor/vim-commaobject"
         -- dap
