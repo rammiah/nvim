@@ -23,7 +23,8 @@ map("n", "<leader>a", "<Plug>(coc-codeaction-selected)")
 vim.cmd [[
   hi CocFloating guifg=#000000 guibg=#dfdfdf "#f7f7f7
   hi CocSearch ctermfg=12 guifg=#2470b3
-  hi CocMenuSel ctermbg=109 guifg=#000000 guibg=#c5dffc
+  "hi CocMenuSel ctermbg=109 guifg=#000000 guibg=#c5dffc
+  hi CocMenuSel guibg=#c5dffc
 ]]
 
 vim.g.coc_global_extensions = {
