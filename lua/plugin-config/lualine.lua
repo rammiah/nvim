@@ -48,6 +48,12 @@ require("lualine").setup {
         disabled_filetypes = {},
         always_divide_middle = true,
         globalstatus = true,
+        ignore_focus = {},
+        refresh = {
+          statusline = 3000, -- time before nvim-tree refresh
+          tabline = 1000,
+          winbar = 1000,
+        },
     },
     sections = {
         lualine_a = {
@@ -132,5 +138,7 @@ require("lualine").setup {
         lualine_z = { "%p%%/%L" },
     },
     tabline = {},
-    extensions = { "toggleterm", nvim_tree }
+    winbar = {},
+    inactive_winbar = {},
+    extensions = { "toggleterm", nvim_tree },
 }

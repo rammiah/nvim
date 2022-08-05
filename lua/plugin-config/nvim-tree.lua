@@ -99,11 +99,12 @@ require "nvim-tree".setup { -- BEGIN_DEFAULT_OPTS
         indent_markers = {
             enable = true,
             icons = {
-                corner = "└─",
-                item = "├─",
-                edge = "│ ",
-                none = "  ",
+                corner = "└",
+                item = "├",
+                edge = "│",
+                none = " ",
             },
+            inline_arrows = true,
         },
         icons = {
             webdev_colors = true,
@@ -113,7 +114,7 @@ require "nvim-tree".setup { -- BEGIN_DEFAULT_OPTS
             show = {
                 file = true,
                 folder = true, -- 优先级低于indent_makers
-                folder_arrow = false,
+                folder_arrow = true,
                 git = true,
             },
             glyphs = {
