@@ -4,7 +4,7 @@ end
 
 vim.notify = require("notify")
 
-vim.cmd[[
+vim.cmd [[
 highlight NotifyERRORBorder guifg=#8A1F1F
 highlight NotifyWARNBorder guifg=#79491D
 highlight NotifyINFOBorder guifg=#4F6752
@@ -26,3 +26,20 @@ highlight link NotifyINFOBody Normal
 highlight link NotifyDEBUGBody Normal
 highlight link NotifyTRACEBody Normal
 ]]
+
+require("notify").setup {
+    background_colour = "Normal",
+    fps = 30,
+    icons = {
+        DEBUG = "",
+        ERROR = "",
+        INFO = "",
+        TRACE = "✎",
+        WARN = ""
+    },
+    level = 2,
+    minimum_width = 50,
+    render = "default",
+    stages = "fade_in_slide_out",
+    timeout = 5000
+}

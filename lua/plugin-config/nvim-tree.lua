@@ -33,6 +33,17 @@ require "nvim-tree".setup { -- BEGIN_DEFAULT_OPTS
         height = 30,
         hide_root_folder = false,
         side = "left",
+        float = {
+            enable = false,
+            open_win_config = {
+                relative = "editor",
+                border = "rounded",
+                width = 30,
+                height = 30,
+                row = 1,
+                col = 1,
+            },
+        },
         preserve_window_proportions = false,
         number = false,
         relativenumber = false,
@@ -114,7 +125,7 @@ require "nvim-tree".setup { -- BEGIN_DEFAULT_OPTS
             show = {
                 file = true,
                 folder = true, -- 优先级低于indent_makers
-                folder_arrow = true,
+                folder_arrow = false,
                 git = true,
             },
             glyphs = {
