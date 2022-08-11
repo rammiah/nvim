@@ -16,9 +16,9 @@ map("n", "<leader>fg", ':lua require("telescope.builtin").live_grep({ vimgrep_ar
 
 map("n", "<leader>fb", ':lua require("telescope.builtin").buffers()<CR>')
 -- map("n", "<leader>ft", ':lua require("telescope.builtin").tags()<CR>')
-map("n", "<leader>fh", ':lua require("telescope.builtin").help_tags()<CR>')
-map("n", "<leader>fc", ':lua require("telescope.builtin").commands()<CR>')
-map("n", "<leader>fq", ':lua require("telescope.builtin").quickfix()<CR>')
+-- map("n", "<leader>fh", ':lua require("telescope.builtin").help_tags()<CR>')
+-- map("n", "<leader>fc", ':lua require("telescope.builtin").commands()<CR>')
+-- map("n", "<leader>fq", ':lua require("telescope.builtin").quickfix()<CR>')
 map("n", "<leader>fr", ':lua require("telescope.builtin").resume()<CR>')
 map("n", "<leader>fs", ':lua require("telescope.builtin").git_status()<CR>')
 map("n", "<leader>fl", ':lua require("telescope.builtin").current_buffer_fuzzy_find()<CR>')
