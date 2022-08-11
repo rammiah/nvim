@@ -70,7 +70,7 @@ function _M.FormatDoc()
     --     print('file type is go')
     -- end
     -- go.format is too slow for big project, use coc organizeImports to import
-    _M.OrganizeImports()
+    -- _M.OrganizeImports()
 
     local nvim_go = require("go.format")
     if vim.bo.ft == "go" and nvim_go and nvim_go.format then
