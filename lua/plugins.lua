@@ -103,8 +103,6 @@ return require("packer").startup({
         use "ethanholz/nvim-lastplace"
         -- key repeat
         use { "anuvyklack/hydra.nvim", requires = "anuvyklack/keymap-layer.nvim" }
-        -- speeddating
-        use "tpope/vim-speeddating"
         -- speed move
         use "phaazon/hop.nvim"
         -- copilot
