@@ -6,8 +6,8 @@ local M = require("nvim-surround.config")
 
 require("nvim-surround").setup({
     keymaps = { -- vim-surround style keymaps
-        -- insert = "<C-g>s",
-        -- insert_line = "<C-g>S",
+        insert = "<C-g>s",
+        insert_line = "<C-g>S",
         delete = "ds",
         change = "cs",
         normal = "ys",
