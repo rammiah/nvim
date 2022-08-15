@@ -21,8 +21,8 @@ map("n", "]q", ":cnext<CR>")
 map("n", "[q", ":cprevious<CR>")
 -- ctrl-l clear highlight
 -- map("n", "<C-l>", "<Cmd>nohlsearch<CR><C-l>")
-map("n", "c,", "ct,")
-map("n", "d,", "dt,")
+--[[ map("n", "c,", "ct,") ]]
+--[[ map("n", "d,", "dt,") ]]
 map("i", "<C-j>", "<End><Enter>")
 
 -- tag
