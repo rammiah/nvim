@@ -20,6 +20,7 @@ precmd_functions+=(_fix_cursor)
 export BAT_THEME="Solarized (light)"
 alias cat="bat"
 alias rm="trash"
+alias lsnvim="lsof -p $(pidof nvim | tr ' ' ',') | grep cwd"
 # boe
 export RUNTIME_IDC_NAME="boe"
 # editor
