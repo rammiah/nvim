@@ -95,7 +95,7 @@ lsnvim() {
         echo "no nvim instances"
         return
     fi
-    echo $(lsof -p $nvims | grep cwd)
+    lsof -p $nvims | grep cwd | awk -F' ' '{printf "%s\t%s\n",$2,$9}'
 }
 
 [ -s "$HOME/.acme.sh/acme.sh.env" ] && source "$HOME/.acme.sh/acme.sh.env"
