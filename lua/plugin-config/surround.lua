@@ -21,112 +21,79 @@ require("nvim-surround").setup({
         ["("] = {
             add = { "( ", " )" },
             find = function()
-                return M.get_selection({ textobject = "(" })
+                return M.get_selection({ motion = "a(" })
             end,
             delete = "^(. ?)().-( ?.)()$",
-            change = {
-                target = "^(. ?)().-( ?.)()$",
-            },
         },
         [")"] = {
             add = { "(", ")" },
             find = function()
-                return M.get_selection({ textobject = ")" })
+                return M.get_selection({ motion = "a)" })
             end,
             delete = "^(.)().-(.)()$",
-            change = {
-                target = "^(.)().-(.)()$",
-            },
         },
         ["{"] = {
             add = { "{ ", " }" },
             find = function()
-                return M.get_selection({ textobject = "{" })
+                return M.get_selection({ motion = "a{" })
             end,
             delete = "^(. ?)().-( ?.)()$",
-            change = {
-                target = "^(. ?)().-( ?.)()$",
-            },
         },
         ["}"] = {
             add = { "{", "}" },
             find = function()
-                return M.get_selection({ textobject = "}" })
+                return M.get_selection({ motion = "a}" })
             end,
             delete = "^(.)().-(.)()$",
-            change = {
-                target = "^(.)().-(.)()$",
-            },
         },
         ["<"] = {
             add = { "< ", " >" },
             find = function()
-                return M.get_selection({ textobject = "<" })
+                return M.get_selection({ motion = "a<" })
             end,
             delete = "^(. ?)().-( ?.)()$",
-            change = {
-                target = "^(. ?)().-( ?.)()$",
-            },
         },
         [">"] = {
             add = { "<", ">" },
             find = function()
-                return M.get_selection({ textobject = ">" })
+                return M.get_selection({ motion = "a>" })
             end,
             delete = "^(.)().-(.)()$",
-            change = {
-                target = "^(.)().-(.)()$",
-            },
         },
         ["["] = {
             add = { "[ ", " ]" },
             find = function()
-                return M.get_selection({ textobject = "[" })
+                return M.get_selection({ motion = "a[" })
             end,
             delete = "^(. ?)().-( ?.)()$",
-            change = {
-                target = "^(. ?)().-( ?.)()$",
-            },
         },
         ["]"] = {
             add = { "[", "]" },
             find = function()
-                return M.get_selection({ textobject = "]" })
+                return M.get_selection({ motion = "a]" })
             end,
             delete = "^(.)().-(.)()$",
-            change = {
-                target = "^(.)().-(.)()$",
-            },
         },
         ["'"] = {
             add = { "'", "'" },
             find = function()
-                return M.get_selection({ textobject = "'" })
+                return M.get_selection({ motion = "a'" })
             end,
             delete = "^(.)().-(.)()$",
-            change = {
-                target = "^(.)().-(.)()$",
-            },
         },
         ['"'] = {
             add = { '"', '"' },
             find = function()
-                return M.get_selection({ textobject = '"' })
+                return M.get_selection({ motion = 'a"' })
             end,
             delete = "^(.)().-(.)()$",
-            change = {
-                target = "^(.)().-(.)()$",
-            },
         },
         ["`"] = {
             add = { "`", "`" },
             find = function()
-                return M.get_selection({ textobject = "`" })
+                return M.get_selection({ motion = "a`" })
             end,
             delete = "^(.)().-(.)()$",
-            change = {
-                target = "^(.)().-(.)()$",
-            },
         },
         ["i"] = { -- TODO: Add find/delete/change functions
             add = function()
@@ -138,14 +105,13 @@ require("nvim-surround").setup({
             end,
             find = function() end,
             delete = function() end,
-            change = { target = function() end },
         },
         ["t"] = {
             add = function()
                 local input = M.get_input("Enter the HTML tag: ")
                 if input then
-                    local element = input:match("^<?([%w-]*)")
-                    local attributes = input:match("%s+([^>]+)>?$")
+                    local element = input:match("^<?([^%s>]*)")
+                    local attributes = input:match("^<?[^%s>]*%s+(.-)>?$")
 
                     local open = attributes and element .. " " .. attributes or element
                     local close = element
@@ -154,15 +120,21 @@ require("nvim-surround").setup({
                 end
             end,
             find = function()
-                return M.get_selection({ textobject = "t" })
+                return M.get_selection({ motion = "at" })
             end,
             delete = "^(%b<>)().-(%b<>)()$",
             change = {
-                target = "^<([%w-]*)().-([^/]*)()>$",
+                target = "^<([^%s<>]*)().-([^/]*)()>$",
                 replacement = function()
-                    local element = M.get_input("Enter the HTML element: ")
-                    if element then
-                        return { { element }, { element } }
+                    local input = M.get_input("Enter the HTML tag: ")
+                    if input then
+                        local element = input:match("^<?([^%s>]*)")
+                        local attributes = input:match("^<?[^%s>]*%s+(.-)>?$")
+
+                        local open = attributes and element .. " " .. attributes or element
+                        local close = element
+
+                        return { { open }, { close } }
                     end
                 end,
             },
@@ -207,10 +179,49 @@ require("nvim-surround").setup({
                     return { { result .. "(" }, { ")" } }
                 end
             end,
-            find = "[%w%-_:.>]+%b()",
-            delete = "^([%w%-_:.>]+%()().-(%))()$",
+            find = function()
+                local selection
+                if vim.g.loaded_nvim_treesitter then
+                    selection = M.get_selection({
+                        query = {
+                            capture = "@call.outer",
+                            type = "textobjects",
+                        },
+                    })
+                end
+                if selection then
+                    return selection
+                end
+                return M.get_selection({ pattern = "[^=%s%(%)]+%b()" })
+            end,
+            delete = function()
+                local selections
+                if vim.g.loaded_nvim_treesitter then
+                    selections = M.get_selections({
+                        char = "f",
+                        exclude = function()
+                            return M.get_selection({
+                                query = {
+                                    capture = "@call.inner",
+                                    type = "textobjects",
+                                },
+                            })
+                        end,
+                    })
+                    -- Adjust the selections since `@call.inner` includes parentheses
+                    -- See https://github.com/nvim-treesitter/nvim-treesitter-textobjects/issues/195
+                    if selections then
+                        selections.left.last_pos[2] = selections.left.last_pos[2] + 1
+                        selections.right.first_pos[2] = selections.right.first_pos[2] - 1
+                    end
+                end
+                if selections then
+                    return selections
+                end
+                return M.get_selections({ char = "f", pattern = "^([^=%s%(%)]+%()().-(%))()$" })
+            end,
             change = {
-                target = "^.-([%w_]+)()%b()()()$",
+                target = "^.-([%w_]+)()%(.-%)()()$",
                 replacement = function()
                     local result = M.get_input("Enter the function name: ")
                     if result then
@@ -243,22 +254,25 @@ require("nvim-surround").setup({
                 end,
             },
         },
-        HTML = {
-            ["t"] = "type",
-            ["T"] = "whole",
-        },
-        aliases = {
-            ["a"] = ">", -- Single character aliases apply everywhere
-            ["b"] = ")",
-            ["B"] = "}",
-            ["r"] = "]",
-            -- Table aliases only apply for changes/deletions
-            ["q"] = { '"', "'", "`" }, -- Any quote character
-            ["s"] = { ")", "]", "}", ">", "'", '"', "`" }, -- Any surrounding delimiter
-        },
+    },
+    aliases = {
+        ["a"] = ">", -- Single character aliases apply everywhere
+        ["b"] = ")",
+        ["B"] = "}",
+        ["r"] = "]",
+        -- Table aliases only apply for changes/deletions
+        ["q"] = { '"', "'", "`" }, -- Any quote character
+        ["s"] = { ")", "]", "}", ">", "'", '"', "`" }, -- Any surrounding delimiter
     },
     highlight = { -- Highlight text-objects before surrounding them
         duration = 0,
     },
     move_cursor = "begin",
+    indent_lines = function(start, stop)
+        local b = vim.bo
+        -- Only re-indent the selection if a formatter is set up already
+        if start <= stop and (b.equalprg ~= "" or b.indentexpr ~= "" or b.cindent or b.smartindent or b.lisp) then
+            vim.cmd(string.format("silent normal! %dG=%dG", start, stop))
+        end
+    end,
 })
