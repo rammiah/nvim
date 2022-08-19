@@ -89,13 +89,17 @@ gco() {
     fi
 }
 
-lsnvim() {
-    nvims=$(pidof nvim | tr ' ' ',')
-    if  [[ "$nvims" = "" ]] ; then
-        echo "no nvim instances"
+lscwd() {
+    proc="nvim"
+    if (( $# > 0 )); then
+        proc=$1
+    fi
+    procs=$(pidof $proc | tr ' ' ',')
+    if  [[ "$procs" = "" ]] ; then
+        echo "no $proc instance"
         return
     fi
-    lsof -p $nvims | grep cwd | awk -F' ' '{printf "%s\t%s\n",$2,$9}'
+    lsof -p $procs 2>&1 | grep -v "^lsof" | grep cwd | awk -F' ' '{printf "%s\t%s\n",$2,$9}'
 }
 
 [ -s "$HOME/.acme.sh/acme.sh.env" ] && source "$HOME/.acme.sh/acme.sh.env"
