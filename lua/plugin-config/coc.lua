@@ -5,7 +5,7 @@ map("n", "]g", "<Plug>(coc-diagnostic-next)")
 map("n", "<leader>rn", "<Cmd>call CocActionAsync('rename')<CR>")
 -- goto
 map("n", "gd", "<Cmd>call CocActionAsync('jumpDefinition')<CR>")
-map("n", "gt", "<Cmd>call CocActionAsync('jumpTypeDefinition')<CR>")
+map("n", "gy", "<Cmd>call CocActionAsync('jumpTypeDefinition')<CR>")
 map("n", "gi", "<Cmd>call CocActionAsync('jumpImplementation')<CR>")
 map("n", "gr", "<Cmd>call CocActionAsync('jumpReferences')<CR>")
 -- coc-list
