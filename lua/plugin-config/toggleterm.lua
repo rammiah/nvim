@@ -67,10 +67,10 @@ local function add_terminal(exe, args, key, cnt, direction)
     local args = args or {}
     if vim.fn.executable(exe) then
         local cmd = exe .. table.concat(args, " ")
-        if cmds[cmd] ~= nil then
-            map("n", key, "<Cmd>lua require('plugin-config.toggleterm')." .. exe .. "Toggle()<CR>")
-            return
-        end
+        -- if cmds[cmd] ~= nil then
+        --     map("n", key, "<Cmd>lua require('plugin-config.toggleterm')." .. exe .. "Toggle()<CR>")
+        --     return
+        -- end
         local term = Terminal:new({
             cmd = cmd,
             hidden = true,
@@ -96,7 +96,7 @@ local function add_terminal(exe, args, key, cnt, direction)
     end
 end
 
-add_terminal("lazygit", nil, "<leader>lz", 100)
+-- add_terminal("lazygit", nil, "<leader>lz", 100)
 add_terminal("lazygit", nil, "<leader>tl", 100)
 add_terminal("htop", nil, "<leader>tt", 102)
 add_terminal("ncdu", nil, "<leader>tu", 103)
