@@ -15,8 +15,8 @@ map('v', '>', '>gv')
 -- map('n', '<C-n>', ':NERDTreeToggle<CR>')
 -- map('n', '<C-f>', ':NERDTreeFind<CR>')
 -- bufferline 左右Tab切换
-map("n", "]t", ":tabnext<CR>")
-map("n", "[t", ":tabprevious<CR>")
+-- map("n", "]t", ":tabnext<CR>")
+-- map("n", "[t", ":tabprevious<CR>")
 map("n", "]q", ":cnext<CR>")
 map("n", "[q", ":cprevious<CR>")
 -- ctrl-l clear highlight
