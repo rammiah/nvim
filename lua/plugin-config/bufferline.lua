@@ -20,7 +20,10 @@ require("bufferline").setup {
         -- NOTE: this plugin is designed with this icon in mind,
         -- and so changing this is NOT recommended, this is intended
         -- as an escape hatch for people who cannot bear it for whatever reason
-        indicator_icon = "▎",
+        indicator = {
+            "▎",
+            style = "icon"
+        },
         buffer_close_icon = "",
         modified_icon = "●",
         close_icon = "",
@@ -67,7 +70,12 @@ require("bufferline").setup {
         -- end,
         --
         -- {{filetype = "NvimTree", text = "File Explorer" | function , text_align = "left" | "center" | "right"}},
-        offsets = { filetype = "NvimTree", text = "FileExplorer", text_align = "left" },
+        offsets = {
+            filetype = "NvimTree",
+            text = "FileExplorer",
+            text_align = "left",
+            separator = true,
+        },
         color_icons = true, -- | false, -- whether or not to add the filetype icon highlights
         show_buffer_icons = true, -- | false, -- disable filetype icons for buffers
         show_buffer_close_icons = false, -- true | false,
