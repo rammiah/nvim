@@ -194,7 +194,8 @@ require("nvim-surround").setup({
                 end
                 return M.get_selection({ pattern = "[^=%s%(%)]+%b()" })
             end,
-            delete = function()
+            delete = "^(.-%()().-(%))()$",
+            --[[ function()
                 local selections
                 if vim.g.loaded_nvim_treesitter then
                     selections = M.get_selections({
@@ -219,7 +220,7 @@ require("nvim-surround").setup({
                     return selections
                 end
                 return M.get_selections({ char = "f", pattern = "^([^=%s%(%)]+%()().-(%))()$" })
-            end,
+            end, ]]
             change = {
                 target = "^.-([%w_]+)()%(.-%)()()$",
                 replacement = function()
