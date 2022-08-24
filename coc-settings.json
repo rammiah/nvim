@@ -128,7 +128,7 @@
     "border": false,
     "shadow": false,
     "borderhighlight": "CocFloating",
-    "rounded": true
+    "rounded": false
   },
   "notification.border": true,
   "notification.focusable": true,
@@ -142,7 +142,7 @@
   "diagnostic.virtualTextLevel": "information",
   "diagnostic.enableMessage": "always",
   "diagnostic.level": "information",
-  "diagnostic.highlighLimit": 300,
+  "diagnostic.highlightLimit": 300,
   "diagnostic.enableSign": true,
   "diagnostic.enableHighlightLineNumber": false,
   "diagnostic.showDeprecated": true,
