@@ -75,12 +75,7 @@ return require("packer").startup({
         use "lewis6991/impatient.nvim"
         -- todo comment list
         use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" }
-        use { "AckslD/nvim-neoclip.lua", requires = {
-            "nvim-telescope/telescope.nvim",
-        },
-        }
-        -- float term
-        -- use "voldikss/vim-floaterm"
+        -- toggleterm
         use { "akinsho/toggleterm.nvim" }
         -- lualine status line
         use {
