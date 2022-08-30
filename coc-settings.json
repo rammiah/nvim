@@ -112,7 +112,7 @@
     "vue"
   ],
   "snippet.statusText": "SN",
-  "snippet.highlight": true,
+  "snippet.highlight": false,
   "snippet.nextPlaceholderOnDelete": false,
   "coc.preferences.jumpCommand": "edit",
   "coc.preferences.formatOnSaveFiletypes": [],
