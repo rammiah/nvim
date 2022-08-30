@@ -12,7 +12,7 @@ plugins=(git common-aliases fzf zsh-syntax-highlighting zsh-completions tmux)
 source $ZSH/oh-my-zsh.sh
 
 _fix_cursor() {
-   echo -ne "\e[5 q"
+    echo -ne "\e[5 q"
 }
 
 precmd_functions+=(_fix_cursor)
@@ -52,29 +52,31 @@ export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
 # params alias
 unalias gco
-fzf-git-branch() {
+
+_fzf_git_branch() {
+    # get all branch
     git rev-parse HEAD > /dev/null 2>&1 || return
 
     git branch --color=always --all --sort=-committerdate |
         grep -v HEAD |
         fzf --height 50% --ansi --no-multi --preview-window right:65% \
-            --preview 'git log -n 50 --color=always --date=short --pretty="format:%C(auto)%cd %h%d %s" $(sed "s/.* //" <<< {})' |
+        --preview 'git log -n 50 --color=always --date=short --pretty="format:%C(auto)%cd %h%d %s" $(sed "s/.* //" <<< {})' |
         sed "s/.* //"
-}
+    }
 
-gco() {
-	# check in git respository
-    git rev-parse HEAD > /dev/null 2>&1 || return
+    gco() {
+        # check in git respository
+        git rev-parse HEAD > /dev/null 2>&1 || return
 
-	# params count
-	if (( $# > 0 )) ; then
-		git checkout $*
-		return
-	fi
+    # params count
+    if (( $# > 0 )) ; then
+        git checkout $*
+        return
+    fi
 
     local branch
 
-    branch=$(fzf-git-branch)
+    branch=$(_fzf_git_branch)
     if [[ "$branch" = "" ]]; then
         echo "No branch selected."
         return
