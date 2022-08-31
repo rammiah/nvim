@@ -18,7 +18,7 @@ return require("packer").startup({
         -- dev icons
         use "ryanoasis/vim-devicons"
         -- treesitter
-        use { 
+        use {
             "nvim-treesitter/nvim-treesitter",
             run = ":TSUpdate",
             requires = "p00f/nvim-ts-rainbow",
@@ -96,6 +96,8 @@ return require("packer").startup({
         use { "anuvyklack/hydra.nvim", requires = "anuvyklack/keymap-layer.nvim" }
         -- speed move
         use "phaazon/hop.nvim"
+        -- for telescope
+        use "nvim-telescope/telescope-hop.nvim"
         -- copilot
         -- use "github/copilot.vim"
         -- sort
