@@ -110,6 +110,8 @@ return require("packer").startup({
         -- use "takac/vim-hardtime"
         -- comma text object
         use "austintaylor/vim-commaobject"
+        -- vim thrift syntax
+        use "solarnz/thrift.vim"
     end,
     config = {
         ensure_dependencies  = true, -- Should packer install plugin dependencies?
