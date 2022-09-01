@@ -74,7 +74,7 @@ require("gitsigns").setup {
         map("n", "<leader>hp", gs.preview_hunk)
         map("n", "<leader>hb", function() gs.blame_line { full = true } end)
         -- map("n", "<leader>tb", gs.toggle_current_line_blame)
-        map("n", "<leader>gd", gs.diffthis)
+        -- map("n", "<leader>gd", gs.diffthis)
         -- map("n", "<leader>hD", function() gs.diffthis("~") end)
         -- map("n", "<leader>td", gs.toggle_deleted)
 
