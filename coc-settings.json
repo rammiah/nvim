@@ -95,7 +95,7 @@
   "suggest.timeout": 5000,
   "suggest.triggerAfterInsertEnter": false,
   "suggest.triggerCompletionWait": 50,
-  "suggest.reversePumAboveCursor": true,
+  "suggest.reversePumAboveCursor": false,
   "signature.enable": true,
   "signature.preferShownAbove": true,
   "signature.triggerSignatureWait": 500,
