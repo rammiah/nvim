@@ -79,8 +79,7 @@ return require("packer").startup({
         use { "akinsho/toggleterm.nvim" }
         -- lualine status line
         use {
-            "nvim-lualine/lualine.nvim",
-            requires = { "kyazdani42/nvim-web-devicons", opt = true }
+            "nvim-lualine/lualine.nvim", requires = "kyazdani42/nvim-web-devicons",
         }
         -- clipboard
         -- use "roxma/vim-tmux-clipboard"
