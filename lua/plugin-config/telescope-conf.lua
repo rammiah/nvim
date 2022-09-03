@@ -178,6 +178,7 @@ telescope.setup({
         path_display = {
             truncate = 3,
         },
+        borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" }
     },
     pickers = {
         -- Default configuration for builtin pickers goes here:
