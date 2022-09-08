@@ -121,6 +121,12 @@ return require("packer").startup({
                 })
             end,
         }
+        use {
+            "tiagovla/scope.nvim",
+            config = function()
+                require("scope").setup()
+            end,
+        }
     end,
     config = {
         ensure_dependencies  = true, -- Should packer install plugin dependencies?
