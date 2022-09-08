@@ -111,6 +111,16 @@ return require("packer").startup({
         use "austintaylor/vim-commaobject"
         -- vim thrift syntax
         use "solarnz/thrift.vim"
+        -- stay in place format
+        use {
+            "gbprod/stay-in-place.nvim",
+            config = function()
+                require("stay-in-place").setup({
+                    set_keymaps = true,
+                    preserve_visual_selection = true,
+                })
+            end,
+        }
     end,
     config = {
         ensure_dependencies  = true, -- Should packer install plugin dependencies?

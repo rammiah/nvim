@@ -85,11 +85,15 @@
   "suggest.fixInsertedWord": true,
   "suggest.floatConfig": {},
   "suggest.localityBonus": false,
+  "inlayHint.filetypes": [
+    "*"
+  ],
+  "inlayHint.refreshOnInsertMode": false,
   "suggest.maxCompleteItemCount": 20,
   "suggest.minTriggerInputLength": 2,
   "suggest.preferCompleteThanJumpPlaceholder": false,
   "suggest.removeDuplicateItems": true,
-  "suggest.selection": "recentlyUsed",
+  "suggest.selection": "first",
   "suggest.snippetIndicator": "~",
   "suggest.snippetsSupport": true,
   "suggest.timeout": 5000,
