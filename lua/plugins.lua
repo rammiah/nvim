@@ -90,7 +90,17 @@ return require("packer").startup({
         -- color
         use "norcalli/nvim-colorizer.lua"
         -- lastplace
-        use "ethanholz/nvim-lastplace"
+        use {
+            "ethanholz/nvim-lastplace",
+            config = function()
+                require "nvim-lastplace".setup {
+                    lastplace_ignore_buftype = { "quickfix", "nofile", "help", "NvimTree" },
+                    lastplace_ignore_filetype = { "gitcommit", "gitrebase", "svn", "hgcommit", "NvimTree" },
+                    lastplace_open_folds = true
+                }
+            end,
+
+        }
         -- key repeat
         use { "anuvyklack/hydra.nvim", requires = "anuvyklack/keymap-layer.nvim" }
         -- speed move
