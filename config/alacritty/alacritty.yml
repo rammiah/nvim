@@ -453,7 +453,7 @@ colors:
     blue:    '#268bd2' # blue
     magenta: '#d33682' # magenta
     cyan:    '#2aa198' # cyan
-    white:   '#1c1c1c' # base2
+    white:   '#262626' # base2
 
   # Bright colors
   bright:
