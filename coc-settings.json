@@ -10,7 +10,8 @@
     "usePlaceholders": false,
     "linksInHover": false,
     "diagnosticsDelay": "500ms",
-    "staticcheck": true
+    "staticcheck": true,
+    "importShortcut": "Both"
   },
   "languageserver": {
     "haskell": {
@@ -75,6 +76,8 @@
   "list.maxPreviewHeight": 9999,
   "sumneko-lua.prompt": true,
   "sumneko-lua.inlayHints.typeHintsPrefix": "« ",
+  "inlayHint.enable": true,
+  "inlayHint.enableParameter": true,
   "inlayHint.refreshOnInsertMode": false,
   "suggest.noselect": false,
   "documentHighlight.timeout": 500,
@@ -82,15 +85,21 @@
   "suggest.autoTrigger": "always",
   "suggest.defaultSortMethod": "none",
   "suggest.detailField": "preview",
+  "suggest.formatItems": [
+    "abbr",
+    "menu",
+    "kind",
+    "shortcut"
+  ],
   "suggest.enablePreselect": true,
   "suggest.fixInsertedWord": true,
   "suggest.floatConfig": {},
-  "suggest.localityBonus": false,
+  "suggest.localityBonus": true,
   "suggest.maxCompleteItemCount": 20,
   "suggest.minTriggerInputLength": 2,
   "suggest.preferCompleteThanJumpPlaceholder": false,
   "suggest.removeDuplicateItems": true,
-  "suggest.selection": "first",
+  "suggest.selection": "recentlyUsedByPrefix",
   "suggest.snippetIndicator": "~",
   "suggest.snippetsSupport": true,
   "suggest.timeout": 5000,
