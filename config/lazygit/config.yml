@@ -1,12 +1,8 @@
 gui:
   theme:
     lightTheme: false
-    activeBorderColor:
-      - green
-      - bold
-    inactiveBorderColor:
-      - default
-    selectedLineBgColor:
-      - reverse
-    selectedRangeBgColor:
-      - reverse
+
+git:
+  paging:
+    colorArg: always
+    pager: delta --light --paging=never
