@@ -75,6 +75,7 @@
   "list.maxPreviewHeight": 9999,
   "sumneko-lua.prompt": true,
   "sumneko-lua.inlayHints.typeHintsPrefix": "« ",
+  "inlayHint.refreshOnInsertMode": false,
   "suggest.noselect": false,
   "documentHighlight.timeout": 500,
   "suggest.acceptSuggestionOnCommitCharacter": true,
@@ -85,10 +86,6 @@
   "suggest.fixInsertedWord": true,
   "suggest.floatConfig": {},
   "suggest.localityBonus": false,
-  "inlayHint.filetypes": [
-    "*"
-  ],
-  "inlayHint.refreshOnInsertMode": false,
   "suggest.maxCompleteItemCount": 20,
   "suggest.minTriggerInputLength": 2,
   "suggest.preferCompleteThanJumpPlaceholder": false,

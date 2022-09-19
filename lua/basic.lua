@@ -95,3 +95,4 @@ vim.o.clipboard = vim.o.clipboard .. "unnamedplus"
 vim.o.guicursor = [[i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff500-blinkon500,sm:block-blinkwait175-blinkoff150-blinkon175]]
 vim.o.guifont = "JetBrainsMonoNL Nerd Font"
 vim.o.linespace = 0
+vim.o.pumblend = 15
