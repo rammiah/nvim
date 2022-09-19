@@ -14,27 +14,27 @@ Hydra({
     },
     heads = {
         -- move between windows
-        { "<C-h>", "<Cmd>wincmd h<CR>" },
-        { "<C-j>", "<Cmd>wincmd j<CR>" },
-        { "<C-k>", "<Cmd>wincmd k<CR>" },
-        { "<C-l>", "<Cmd>wincmd l<CR>" },
+        -- { "<C-h>", "<Cmd>wincmd h<CR>" },
+        -- { "<C-j>", "<Cmd>wincmd j<CR>" },
+        -- { "<C-k>", "<Cmd>wincmd k<CR>" },
+        -- { "<C-l>", "<Cmd>wincmd l<CR>" },
 
         -- split window
         { "<C-s>", "<Cmd>split<CR>" },
         { "<C-v>", "<Cmd>vsplit<CR>" },
 
         -- move windows
-        { "H", "<Cmd>wincmd H<CR>", { noremap = true, nowait = true } },
-        { "J", "<Cmd>wincmd J<CR>", { noremap = true, nowait = true } },
-        { "K", "<Cmd>wincmd K<CR>", { noremap = true, nowait = true } },
-        { "L", "<Cmd>wincmd L<CR>", { noremap = true, nowait = true } },
+        -- { "H", "<Cmd>wincmd H<CR>", { noremap = true, nowait = true } },
+        -- { "J", "<Cmd>wincmd J<CR>", { noremap = true, nowait = true } },
+        -- { "K", "<Cmd>wincmd K<CR>", { noremap = true, nowait = true } },
+        -- { "L", "<Cmd>wincmd L<CR>", { noremap = true, nowait = true } },
 
         -- bufferline
-        { "h", function() vim.cmd("BufferLineCyclePrev") end, { on_key = false } },
-        { "l", function() vim.cmd("BufferLineCycleNext") end, { on_key = false } },
+        { "<C-h>", function() vim.cmd("BufferLineCyclePrev") end, { on_key = false } },
+        { "<C-l>", function() vim.cmd("BufferLineCycleNext") end, { on_key = false } },
 
-        { "p", function() vim.cmd("BufferLinePick") end, { desc = "pick" } },
-        { "P", function() vim.cmd("BufferLinePickClose") end, { desc = "close" } },
+        { "<C-p>", function() vim.cmd("BufferLinePick") end, { desc = "pick" } },
+        { "<C-k>", function() vim.cmd("BufferLinePickClose") end, { desc = "close" } },
 
         -- only
         -- { "<C-o>", "<Cmd>only<CR>", { exit = true, desc = false } },
