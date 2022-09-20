@@ -190,6 +190,10 @@ telescope.setup({
         -- builtin picker
         find_files = {
             find_command = { "fd", "--type", "f", "--strip-cwd-prefix", "-H", "-I", "-E", ".git/" }
+        },
+        buffers = {
+            -- sort_lastused = true,
+            sort_mru = true, -- include sort_lastused
         }
     },
     extensions = {
