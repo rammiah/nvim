@@ -46,7 +46,7 @@ vim.g.coc_global_extensions = {
     "coc-rust-analyzer"
 }
 
-vim.g.coc_disable_transparent_cursor = 1
+vim.g.coc_disable_transparent_cursor = 0
 vim.g.coc_enable_locationlist = 1
 
 -- format options
