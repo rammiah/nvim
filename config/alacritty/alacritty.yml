@@ -18,9 +18,9 @@ window:
   #
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
-  #dimensions:
-  #  columns: 0
-  #  lines: 0
+  dimensions:
+   columns: 0
+   lines: 0
 
   # Window position (changes require restart)
   #
@@ -50,7 +50,7 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background, but no title bar buttons
-  #decorations: full
+  decorations: full
 
   # Startup Mode (changes require restart)
   #
@@ -61,7 +61,7 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  #startup_mode: Windowed
+  startup_mode: SimpleFullscreen
 
   # Window title
   title: Alacritty
@@ -89,7 +89,7 @@ scrolling:
   #multiplier: 3
 
   # Scroll to the bottom when new text is written to the terminal.
-  #auto_scroll: false
+  auto_scroll: true
 
 # Spaces per Tab (changes require restart)
 #
@@ -102,7 +102,7 @@ scrolling:
 
 # Font configuration
 font:
-  size: 17.7
+  size: 17.6
   normal:
     family: JetBrainsMonoNL Nerd Font
     style: Regular
@@ -143,7 +143,7 @@ font:
   #
   # This is a global setting and will require a log out or restart to take
   # effect.
-  use_thin_strokes: true
+  # use_thin_strokes: true
 
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: true
@@ -187,7 +187,7 @@ font:
   #save_to_clipboard: false
 
 # Allow terminal applications to change Alacritty's window title.
-#dynamic_title: true
+dynamic_title: true
 
 cursor:
   # Cursor style
@@ -197,6 +197,7 @@ cursor:
   #   - _ Underline
   #   - | Beam
   style: Block
+  blink_interval: 500
 
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
@@ -432,6 +433,7 @@ key_bindings:
   - { key: End,       mods: Shift,   action: ScrollToBottom, mode: ~Alt       }
   - { key: Right, mods: Alt, chars: "\x1BF" }
   - { key: Left,  mods: Alt, chars: "\x1BB" }
+  - { key: Back, action:  ReceiveChar}
 
 # Colors (Solarized Light)
 colors:
