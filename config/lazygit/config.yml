@@ -1,4 +1,6 @@
 gui:
+  scrollHeight: 4 # how many lines you scroll by
+  scrollPastBottom: false # enable scrolling past the bottom
   theme:
     lightTheme: false
 
@@ -6,3 +8,7 @@ git:
   paging:
     colorArg: always
     pager: delta --light --paging=never
+# git:
+#   paging:
+#     colorArg: always
+#     pager: diff-so-fancy
