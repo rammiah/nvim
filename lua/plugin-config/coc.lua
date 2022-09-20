@@ -32,6 +32,7 @@ vim.cmd [[
   hi CocMenuSel guibg=#ffffd7    "#c5dffc
 ]]
 
+-- global options
 vim.g.coc_global_extensions = {
     "coc-go",
     "coc-spell-checker",
@@ -45,6 +46,10 @@ vim.g.coc_global_extensions = {
     "coc-rust-analyzer"
 }
 
+vim.g.coc_disable_transparent_cursor = 1
+vim.g.coc_enable_locationlist = 1
+
+-- format options
 -- ShowDoc show document or type hover
 function _M.ShowHover()
     if vim.fn.CocHasProvider and vim.fn.CocHasProvider('hover') then
