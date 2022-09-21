@@ -101,3 +101,4 @@ end
 vim.o.guifont = "JetBrainsMonoNL Nerd Font"
 vim.o.linespace = 0
 vim.o.pumblend = 20
+vim.o.pumheight = 15

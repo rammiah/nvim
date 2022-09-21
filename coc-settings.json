@@ -93,9 +93,24 @@
   ],
   "suggest.enablePreselect": true,
   "suggest.fixInsertedWord": true,
-  "suggest.floatConfig": {},
+  "suggest.floatConfig": {
+    "border": false,
+    "rounded": false,
+    "borderhighlight": "CocFloating",
+    "maxWidth": 100,
+    "winblend": 20,
+    "shadow": false
+  },
+  "suggest.pumFloatConfig": {
+    "border": false,
+    "rounded": false,
+    "borderhighlight": "CocFloating",
+    "maxWidth": 100,
+    "winblend": 20,
+    "shadow": false
+  },
   "suggest.localityBonus": true,
-  "suggest.maxCompleteItemCount": 20,
+  "suggest.maxCompleteItemCount": 50,
   "suggest.minTriggerInputLength": 2,
   "suggest.preferCompleteThanJumpPlaceholder": false,
   "suggest.removeDuplicateItems": true,
