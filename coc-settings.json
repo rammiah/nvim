@@ -163,7 +163,7 @@
   },
   "notification.border": true,
   "notification.focusable": true,
-  "notification.timeout": 5000,
+  "notification.timeout": 2000,
   "diagnostic.enable": true,
   "diagnostic.checkCurrentLine": true,
   "diagnostic.refreshOnInsertMode": false,
