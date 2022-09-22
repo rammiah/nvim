@@ -98,7 +98,7 @@ if vim.fn.has("wsl") or vim.fn.has("win32") or vim.fn.has("win64") then
 elseif vim.fn.has("linux") or vim.fn.has("unix") or vim.fn.has("mac") then
     vim.o.guifont = "JetBrainsMonoNL Nerd Font"
 end
-vim.o.guifont = "JetBrainsMonoNL Nerd Font"
 vim.o.linespace = 0
 vim.o.pumblend = 10
 vim.o.pumheight = 12
+vim.o.path = vim.o.path + "**"
