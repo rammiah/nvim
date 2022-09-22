@@ -100,5 +100,5 @@ elseif vim.fn.has("linux") or vim.fn.has("unix") or vim.fn.has("mac") then
 end
 vim.o.guifont = "JetBrainsMonoNL Nerd Font"
 vim.o.linespace = 0
-vim.o.pumblend = 15
+vim.o.pumblend = 10
 vim.o.pumheight = 12
