@@ -101,4 +101,4 @@ end
 vim.o.linespace = 0
 vim.o.pumblend = 10
 vim.o.pumheight = 12
-vim.o.path = vim.o.path + "**"
+vim.opt.path = vim.opt.path + "**"
