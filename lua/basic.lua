@@ -3,7 +3,7 @@ _M = {}
 -- utf8
 vim.g.encoding = "UTF-8"
 -- vim.g.no_plugin_maps = 0
-vim.o.fileencoding = 'utf-8'
+vim.o.fileencoding = "utf-8"
 -- jk移动时光标下上方保留8行
 vim.o.scrolloff = 8
 vim.o.sidescrolloff = 8
@@ -35,7 +35,7 @@ vim.o.autoread = true
 vim.o.wrap = false
 --[[ vim.wo.wrap = true ]]
 -- 行结尾可以跳到下一行
-vim.o.whichwrap = 'b,s,<,>,[,],h,l'
+vim.o.whichwrap = "b,s,<,>,[,],h,l"
 -- 允许隐藏被修改过的buffer
 vim.o.hidden = true
 -- 鼠标支持
@@ -63,28 +63,37 @@ vim.o.termguicolors = true
 --vim.o.listchars = "space:·"
 -- 补全增强
 vim.o.wildmenu = true
-vim.o.wildmode = 'full'
+vim.o.wildmode = "full"
 -- Dont' pass messages to |ins-completin menu|
-vim.o.shortmess = vim.o.shortmess .. 'c'
+vim.o.shortmess = vim.o.shortmess .. "c"
 vim.o.pumheight = 10
 -- always show tabline
 vim.o.showtabline = 2
-vim.o.grepprg = 'rg --vimgrep --smart-case --hidden --follow'
-vim.o.selection = 'inclusive'
+vim.o.grepprg = "rg --vimgrep --smart-case --hidden --follow"
+vim.o.selection = "inclusive"
 -- don't add '\n' to end of file
 vim.o.fixendofline = false
 -- no shell temp file
 vim.o.shelltemp = false
--- shell is zsh
-vim.o.shell = 'zsh'
+-- shell is zsh or powershell
+if vim.fn.has("mac") == 1 or vim.fn.has("wsl") == 1 or vim.fn.has("unix") == 1 or vim.fn.has("linux") == 1 then
+    vim.o.shell = "zsh"
+elseif vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
+    vim.o.shell = "powershell"
+end
+
 -- vim.g.did_load_filetypes = 1
 -- set python3 path
-vim.g.python3_host_prog = '/usr/bin/python3'
+if 1 == vim.fn.executable("/home/wangyaning.ovo/.nix-profile/bin/python3") then
+    vim.g.python3_host_prog = "/home/wangyaning.ovo/.nix-profile/bin/python3"
+else
+    vim.g.python3_host_prog = "/usr/bin/python3"
+end
 -- disable ruby and perl
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
 -- set language to english
-vim.api.nvim_exec('language en_US.UTF-8', true)
+vim.api.nvim_exec("language en_US.UTF-8", true)
 -- lazyredraw
 vim.o.lazyredraw = true
 -- number add or sub format recognize
