@@ -8,10 +8,6 @@ local view = require("nvim-tree.view")
 
 map("n", "<leader>e", "<Cmd>NvimTreeToggle<CR>")
 
-local function collapse_all()
-    require("nvim-tree.actions.tree-modifiers.collapse-all").fn()
-end
-
 local function edit_or_open()
     -- open as vsplit on current node
     local action = "edit"
@@ -29,7 +25,28 @@ local function edit_or_open()
         require('nvim-tree.actions.node.open-file').fn(action, node.absolute_path)
         view.close() -- Close the tree if file was opened
     end
+end
 
+local function split_preview()
+    -- open as split on current node
+    local action = "split"
+    local node = lib.get_node_at_cursor()
+
+    -- Just copy what's done normally with vsplit
+    if node.link_to and not node.nodes then
+        require('nvim-tree.actions.node.open-file').fn(action, node.link_to)
+
+    elseif node.nodes ~= nil then
+        lib.expand_or_collapse(node)
+    else
+        require('nvim-tree.actions.node.open-file').fn(action, node.absolute_path)
+    end
+
+    -- Finally refocus on tree if it was lost
+    if not view.is_visible() then
+        view.open()
+    end
+    view.focus()
 end
 
 local function vsplit_preview()
@@ -48,6 +65,9 @@ local function vsplit_preview()
     end
 
     -- Finally refocus on tree if it was lost
+    if not view.is_visible() then
+        view.open()
+    end
     view.focus()
 end
 
@@ -115,8 +135,8 @@ require "nvim-tree".setup { -- BEGIN_DEFAULT_OPTS
                 -- { key = "J", action = "last_sibling" },
                 { key = "l", action = "edit", action_cb = edit_or_open },
                 { key = "L", action = "vsplit_preview", action_cb = vsplit_preview },
+                { key = "J", action = "split_preview", action_cb = split_preview },
                 { key = "h", action = "close_node" },
-                -- { key = "H", action = "collapse_all", action_cb = collapse_all },
                 { key = "I", action = "toggle_git_ignored" },
                 { key = "H", action = "toggle_dotfiles" },
                 -- { key = "U", action = "toggle_custom" },
