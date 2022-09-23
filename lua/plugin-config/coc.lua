@@ -1,4 +1,4 @@
-local map = require('local-util').KeyMap
+local map = require('localutils').KeyMap
 
 map("n", "[g", "<Plug>(coc-diagnostic-prev)")
 map("n", "]g", "<Plug>(coc-diagnostic-next)")

@@ -1,4 +1,4 @@
-if not require("local-util").safe_load("toggleterm") then
+if not require("localutils").safe_load("toggleterm") then
     return
 end
 
@@ -56,7 +56,7 @@ require("toggleterm").setup {
 }
 
 local Terminal = require('toggleterm.terminal').Terminal
-local map = require("local-util").KeyMap
+local map = require("localutils").KeyMap
 
 local M = {}
 

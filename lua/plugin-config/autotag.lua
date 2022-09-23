@@ -1,4 +1,4 @@
-if not require("local-util").safe_load("nvim-ts-autotag") then
+if not require("localutils").safe_load("nvim-ts-autotag") then
     return
 end
 
