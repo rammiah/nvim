@@ -1,4 +1,4 @@
-if not require("local-util").safe_load("nvim-autopairs") then
+if not require("localutils").safe_load("nvim-autopairs") then
     return
 end
 
@@ -27,7 +27,7 @@ npairs.setup({
     map_c_w = false, -- map <c-w> to delete a pair if possible
 })
 
-local map = require("local-util").KeyMap
+local map = require("localutils").KeyMap
 
 -- skip it, if you use another global object
 _G.MUtils = {}

@@ -1,8 +1,8 @@
-if not require("local-util").safe_load("nvim-tree") then
+if not require("localutils").safe_load("nvim-tree") then
     return
 end
 
-local map = require("local-util").KeyMap
+local map = require("localutils").KeyMap
 local lib = require("nvim-tree.lib")
 local view = require("nvim-tree.view")
 
@@ -49,6 +49,11 @@ local function vsplit_preview()
 
     -- Finally refocus on tree if it was lost
     view.focus()
+end
+
+-- telescope node support
+local function custom_callback(callback_name)
+    return string.format(":lua require('treeutils').%s()<CR>", callback_name)
 end
 
 -- setup with all defaults
@@ -140,6 +145,8 @@ require "nvim-tree".setup { -- BEGIN_DEFAULT_OPTS
                 { key = "S", action = "search_node" },
                 { key = ".", action = "run_file_command" },
                 { key = "<C-k>", action = "toggle_file_info" },
+                { key = "<C-f>", cb = custom_callback "launch_find_files" },
+                { key = "<C-g>", cb = custom_callback "launch_live_grep" },
                 { key = "g?", action = "toggle_help" },
             },
         },
@@ -241,6 +248,13 @@ require "nvim-tree".setup { -- BEGIN_DEFAULT_OPTS
         },
         expand_all = {
             max_folder_discovery = 300,
+            exclude = {
+                "kitex_gen",
+                "thrift_gen",
+                ".git",
+                "build",
+                "target",
+            }
         },
         open_file = {
             quit_on_open = true,

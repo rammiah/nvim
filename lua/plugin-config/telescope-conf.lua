@@ -1,8 +1,8 @@
-if not require("local-util").safe_load("telescope") then
+if not require("localutils").safe_load("telescope") then
     return
 end
 
-local map = require("local-util").KeyMap
+local map = require("localutils").KeyMap
 local builtin = require('telescope.builtin')
 local actions = require('telescope.actions')
 
@@ -226,9 +226,6 @@ telescope.setup({
     }
 })
 
--- end
 require("telescope").load_extension("fzf")
--- require("telescope").load_extension("lazygit")
 require("telescope").load_extension("coc")
--- require("telescope").load_extension("neoclip")
 require("telescope").load_extension('hop')

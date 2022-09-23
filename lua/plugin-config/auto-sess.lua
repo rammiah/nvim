@@ -1,8 +1,8 @@
-if not require("local-util").safe_load("auto-session") then
+if not require("localutils").safe_load("auto-session") then
     return
 end
 
-local map = require("local-util").KeyMap
+local map = require("localutils").KeyMap
 
 require("auto-session").setup {
     log_level = "info",

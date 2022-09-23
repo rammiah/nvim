@@ -1,4 +1,4 @@
-if not require("local-util").safe_load("diffview") then
+if not require("localutils").safe_load("diffview") then
     return
 end
 

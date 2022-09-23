@@ -1,4 +1,4 @@
-if not require("local-util").safe_load("git", "git.nvim is not installed") then
+if not require("localutils").safe_load("git", "git.nvim is not installed") then
     return
 end
 

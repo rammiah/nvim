@@ -1,4 +1,4 @@
-if not require("local-util").safe_load("filetype") then
+if not require("localutils").safe_load("filetype") then
     return
 end
 

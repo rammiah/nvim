@@ -1,4 +1,4 @@
-if not require("local-util").safe_load("Comment") then
+if not require("localutils").safe_load("Comment") then
     return
 end
 

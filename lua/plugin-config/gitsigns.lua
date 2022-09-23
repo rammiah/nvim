@@ -1,4 +1,4 @@
-if not require("local-util").safe_load("gitsigns") then
+if not require("localutils").safe_load("gitsigns") then
     return
 end
 

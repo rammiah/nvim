@@ -1,4 +1,4 @@
-local map = require("local-util").KeyMap
+local map = require("localutils").KeyMap
 
 vim.g.mapleader = "\\"
 -- vim.g.maplocalleader = ";"

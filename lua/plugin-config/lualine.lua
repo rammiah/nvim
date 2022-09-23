@@ -1,4 +1,4 @@
-if not require("local-util").safe_load("lualine") then
+if not require("localutils").safe_load("lualine") then
     return
 end
 

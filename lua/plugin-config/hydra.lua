@@ -1,4 +1,4 @@
-if not require("local-util").safe_load("hydra") then
+if not require("localutils").safe_load("hydra") then
     return
 end
 

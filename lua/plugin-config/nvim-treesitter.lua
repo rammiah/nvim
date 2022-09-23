@@ -1,4 +1,4 @@
-if not require("local-util").safe_load("nvim-treesitter") then
+if not require("localutils").safe_load("nvim-treesitter") then
     return
 end
 

@@ -1,8 +1,8 @@
-if not require("local-util").safe_load("hop") then
+if not require("localutils").safe_load("hop") then
     return
 end
 local hint = require("hop.hint")
-local map = require("local-util").KeyMap
+local map = require("localutils").KeyMap
 map("n", "<C-h>", "<Cmd>HopWord<CR>")
 -- you can configure Hop the way you like here; see :h hop-config
 require "hop".setup {

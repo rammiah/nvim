@@ -1,4 +1,4 @@
-if not require("local-util").safe_load("glow") then
+if not require("localutils").safe_load("glow") then
     return
 end
 
