@@ -84,11 +84,7 @@ end
 
 -- vim.g.did_load_filetypes = 1
 -- set python3 path
-if 1 == vim.fn.executable("/home/wangyaning.ovo/.nix-profile/bin/python3") then
-    vim.g.python3_host_prog = "/home/wangyaning.ovo/.nix-profile/bin/python3"
-else
-    vim.g.python3_host_prog = "/usr/bin/python3"
-end
+vim.g.python3_host_prog = "/usr/bin/python3"
 -- disable ruby and perl
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
