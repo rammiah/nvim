@@ -3,10 +3,53 @@ if not require("local-util").safe_load("nvim-tree") then
 end
 
 local map = require("local-util").KeyMap
+local lib = require("nvim-tree.lib")
+local view = require("nvim-tree.view")
 
 map("n", "<leader>e", "<Cmd>NvimTreeToggle<CR>")
--- map("n", "<leader>r", ":NvimTreeRefresh<CR>")
--- map("n", "<C-f>", "<Cmd>NvimTreeFindFile<CR>")
+
+local function collapse_all()
+    require("nvim-tree.actions.tree-modifiers.collapse-all").fn()
+end
+
+local function edit_or_open()
+    -- open as vsplit on current node
+    local action = "edit"
+    local node = lib.get_node_at_cursor()
+
+    -- Just copy what's done normally with vsplit
+    if node.link_to and not node.nodes then
+        require('nvim-tree.actions.node.open-file').fn(action, node.link_to)
+        view.close() -- Close the tree if file was opened
+
+    elseif node.nodes ~= nil then
+        lib.expand_or_collapse(node)
+
+    else
+        require('nvim-tree.actions.node.open-file').fn(action, node.absolute_path)
+        view.close() -- Close the tree if file was opened
+    end
+
+end
+
+local function vsplit_preview()
+    -- open as vsplit on current node
+    local action = "vsplit"
+    local node = lib.get_node_at_cursor()
+
+    -- Just copy what's done normally with vsplit
+    if node.link_to and not node.nodes then
+        require('nvim-tree.actions.node.open-file').fn(action, node.link_to)
+
+    elseif node.nodes ~= nil then
+        lib.expand_or_collapse(node)
+    else
+        require('nvim-tree.actions.node.open-file').fn(action, node.absolute_path)
+    end
+
+    -- Finally refocus on tree if it was lost
+    view.focus()
+end
 
 -- setup with all defaults
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
@@ -65,6 +108,10 @@ require "nvim-tree".setup { -- BEGIN_DEFAULT_OPTS
                 { key = "<Tab>", action = "preview" },
                 -- { key = "K", action = "first_sibling" },
                 -- { key = "J", action = "last_sibling" },
+                { key = "l", action = "edit", action_cb = edit_or_open },
+                { key = "L", action = "vsplit_preview", action_cb = vsplit_preview },
+                { key = "h", action = "close_node" },
+                -- { key = "H", action = "collapse_all", action_cb = collapse_all },
                 { key = "I", action = "toggle_git_ignored" },
                 { key = "H", action = "toggle_dotfiles" },
                 -- { key = "U", action = "toggle_custom" },
@@ -82,12 +129,9 @@ require "nvim-tree".setup { -- BEGIN_DEFAULT_OPTS
                 { key = "c", action = "copy_name" },
                 { key = "C", action = "copy_path" },
                 { key = "gy", action = "copy_absolute_path" },
-                -- { key = "[c", action = "prev_git_item" },
-                -- { key = "]c", action = "next_git_item" },
                 { key = "[h", action = "prev_git_item" },
                 { key = "]h", action = "next_git_item" },
                 { key = "-", action = "dir_up" },
-                -- { key = "s", action = "system_open" },
                 { key = "f", action = "live_filter" },
                 { key = "F", action = "clear_live_filter" },
                 { key = "q", action = "close" },
