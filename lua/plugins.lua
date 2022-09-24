@@ -88,7 +88,21 @@ return require("packer").startup({
         -- glow
         use { "ellisonleao/glow.nvim", branch = "main" }
         -- color
-        use "norcalli/nvim-colorizer.lua"
+        -- use "norcalli/nvim-colorizer.lua"
+        use {
+            "uga-rosa/ccc.nvim",
+            branch = "0.7.2",
+            config = function()
+                require("ccc").setup {
+                    highlighter = {
+                        auto_enable = true,
+                        filetypes = {},
+                        excludes = {},
+                        events = { "WinScrolled", "TextChanged", "TextChangedI" },
+                    },
+                }
+            end
+        }
         -- lastplace
         use {
             "ethanholz/nvim-lastplace",
