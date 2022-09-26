@@ -1,0 +1,12 @@
+--exclude=*/kitex_gen/*
+--exclude=*/thrift_gen/*
+--exclude=*/.vim/*
+--exclude=*/.git/*
+--exclude=*/output/*
+--exclude=kitex_gen/*
+--exclude=thrift_gen/*
+--exclude=.vim/*
+--exclude=.git/*
+--exclude=output/*
+-f tags
+--recurse
