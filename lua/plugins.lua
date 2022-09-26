@@ -46,7 +46,14 @@ return require("packer").startup({
         use "windwp/nvim-ts-autotag"
         -- surround
         use "kylechui/nvim-surround"
-        use { "ojroques/vim-oscyank", branch = "main" }
+        use { "ojroques/vim-oscyank",
+            branch = "main",
+            config = function()
+                vim.cmd [[ autocmd TextYankPost * if v:event.operator is 'y' && v:event.regname is '' | execute 'OSCYankReg "' | endif ]]
+                vim.g.oscyank_silent = true
+                vim.g.oscyank_term = "default"
+            end 
+        }
         -- suda sudo write
         use {
             "lambdalisue/suda.vim",
@@ -92,7 +99,15 @@ return require("packer").startup({
         -- visual find
         use "nelstrom/vim-visual-star-search"
         -- glow
-        use { "ellisonleao/glow.nvim", branch = "main" }
+        use { "ellisonleao/glow.nvim",
+            branch = "main",
+            config = function()
+                vim.g.glow_border = "rounded"
+                vim.g.glow_width = 120
+                vim.g.glow_use_pager = true
+                vim.g.glow_style = "light"
+            end,
+        }
         -- color
         -- use "norcalli/nvim-colorizer.lua"
         use {
@@ -119,7 +134,6 @@ return require("packer").startup({
                     lastplace_open_folds = true
                 }
             end,
-
         }
         -- key repeat
         use { "anuvyklack/hydra.nvim", requires = "anuvyklack/keymap-layer.nvim" }
