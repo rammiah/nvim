@@ -48,7 +48,13 @@ return require("packer").startup({
         use "kylechui/nvim-surround"
         use { "ojroques/vim-oscyank", branch = "main" }
         -- suda sudo write
-        use "lambdalisue/suda.vim"
+        use {
+            "lambdalisue/suda.vim",
+            config = function()
+                vim.g.suda_smart_edit = 1
+                vim.g["suda#prompt"] = "password: "
+            end
+        }
         -- telescope and plugins
         use { "nvim-telescope/telescope.nvim", requires = {
             -- lazygit
