@@ -15,13 +15,17 @@ local function edit_or_open()
 
     -- Just copy what's done normally with vsplit
     if node.link_to and not node.nodes then
+        -- 链接到文件
         require('nvim-tree.actions.node.open-file').fn(action, node.link_to)
         view.close() -- Close the tree if file was opened
-
     elseif node.nodes ~= nil then
+        -- 文件夹节点
         lib.expand_or_collapse(node)
-
+    elseif node.name == ".." then
+        -- 根节点不做操作
     else
+        -- 文件节点
+        print(vim.inspect(node))
         require('nvim-tree.actions.node.open-file').fn(action, node.absolute_path)
         view.close() -- Close the tree if file was opened
     end
