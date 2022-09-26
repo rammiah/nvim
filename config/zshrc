@@ -21,7 +21,7 @@ precmd_functions+=(_fix_cursor)
 export BAT_THEME="Solarized (light)"
 alias cat="bat"
 alias rm="trash"
-alias lz="lazygit"
+# alias lz="lazygit"
 # boe
 export RUNTIME_IDC_NAME="boe"
 # editor
