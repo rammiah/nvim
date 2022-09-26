@@ -25,7 +25,7 @@ local function edit_or_open()
         -- 根节点不做操作
     else
         -- 文件节点
-        print(vim.inspect(node))
+        -- print(vim.inspect(node))
         require('nvim-tree.actions.node.open-file').fn(action, node.absolute_path)
         view.close() -- Close the tree if file was opened
     end
