@@ -112,3 +112,5 @@ vim.o.linespace = 0
 vim.o.pumblend = 10
 vim.o.pumheight = 12
 vim.opt.path = vim.opt.path + "**"
+vim.o.undofile = true
+vim.o.undolevels = 200
