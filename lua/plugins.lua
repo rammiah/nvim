@@ -52,7 +52,7 @@ return require("packer").startup({
                 vim.cmd [[ autocmd TextYankPost * if v:event.operator is 'y' && v:event.regname is '' | execute 'OSCYankReg "' | endif ]]
                 vim.g.oscyank_silent = true
                 vim.g.oscyank_term = "default"
-            end 
+            end,
         }
         -- suda sudo write
         use {
@@ -169,6 +169,32 @@ return require("packer").startup({
             "tiagovla/scope.nvim",
             config = function()
                 require("scope").setup()
+            end,
+        }
+        use {
+            'mvllow/modes.nvim',
+            tag = 'v0.2.0',
+            config = function()
+                require('modes').setup({
+                    colors = {
+                        copy = "#f5c359",
+                        delete = "#c75c6a",
+                        insert = "#78ccc5",
+                        visual = "#9745be",
+                    },
+                    -- Set opacity for cursorline and number background
+                    line_opacity = 0.20,
+                    -- Enable cursor highlights
+                    set_cursor = true,
+                    -- Enable cursorline initially, and disable cursorline for inactive windows
+                    -- or ignored filetypes
+                    set_cursorline = true,
+                    -- Enable line number highlights to match cursorline
+                    set_number = true,
+                    -- Disable modes highlights in specified filetypes
+                    -- Please PR commonly ignored filetypes
+                    ignore_filetypes = { 'NvimTree', 'TelescopePrompt' }
+                })
             end,
         }
     end,
