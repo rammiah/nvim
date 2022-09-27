@@ -109,7 +109,6 @@
     "border": false,
     "rounded": false,
     "borderhighlight": "CocFloating",
-    "maxWidth": 100,
     "winblend": 10,
     "shadow": false
   },
