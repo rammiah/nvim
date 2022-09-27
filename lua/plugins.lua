@@ -173,17 +173,17 @@ return require("packer").startup({
         }
         use {
             'mvllow/modes.nvim',
-            tag = 'v0.2.0',
+            -- tag = 'v0.2.0',
             config = function()
-                require('modes').setup({
+                require("modes").setup({
                     colors = {
                         copy = "#f5c359",
-                        delete = "#c75c6a",
-                        insert = "#78ccc5",
-                        visual = "#9745be",
+                        delete = "#dc322f",
+                        insert = "#859900",
+                        visual = "#d33682",
                     },
                     -- Set opacity for cursorline and number background
-                    line_opacity = 0.20,
+                    line_opacity = 0.2,
                     -- Enable cursor highlights
                     set_cursor = true,
                     -- Enable cursorline initially, and disable cursorline for inactive windows
@@ -193,7 +193,7 @@ return require("packer").startup({
                     set_number = true,
                     -- Disable modes highlights in specified filetypes
                     -- Please PR commonly ignored filetypes
-                    ignore_filetypes = { 'NvimTree', 'TelescopePrompt' }
+                    ignore_filetypes = { 'NvimTree', 'TelescopePrompt' },
                 })
             end,
         }
