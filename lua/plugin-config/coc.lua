@@ -35,15 +35,16 @@ vim.cmd [[
 -- global options
 vim.g.coc_global_extensions = {
     "coc-go",
-    "coc-spell-checker",
-    "coc-sumneko-lua",
     "coc-json",
-    "coc-yaml",
+    "coc-pyright",
+    "coc-rust-analyzer",
+    "coc-sh",
+    "coc-spell-checker",
+    "coc-sql",
+    "coc-sumneko-lua",
     "coc-tsserver",
     "coc-vimlsp",
-    "coc-pyright",
-    "coc-sh",
-    "coc-rust-analyzer"
+    "coc-yaml",
 }
 
 vim.g.coc_disable_transparent_cursor = 0
