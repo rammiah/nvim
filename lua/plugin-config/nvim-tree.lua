@@ -39,9 +39,10 @@ local function split_preview()
     -- Just copy what's done normally with vsplit
     if node.link_to and not node.nodes then
         require('nvim-tree.actions.node.open-file').fn(action, node.link_to)
-
     elseif node.nodes ~= nil then
         lib.expand_or_collapse(node)
+    elseif node.name == ".." then
+        -- ignore root node
     else
         require('nvim-tree.actions.node.open-file').fn(action, node.absolute_path)
     end
@@ -61,9 +62,10 @@ local function vsplit_preview()
     -- Just copy what's done normally with vsplit
     if node.link_to and not node.nodes then
         require('nvim-tree.actions.node.open-file').fn(action, node.link_to)
-
     elseif node.nodes ~= nil then
         lib.expand_or_collapse(node)
+    elseif node.name == ".." then
+        -- ignore root node
     else
         require('nvim-tree.actions.node.open-file').fn(action, node.absolute_path)
     end
