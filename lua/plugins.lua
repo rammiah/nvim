@@ -63,17 +63,18 @@ return require("packer").startup({
             end
         }
         -- telescope and plugins
-        use { "nvim-telescope/telescope.nvim", requires = {
-            -- lazygit
-            -- { "kdheepak/lazygit.nvim", requires = "nvim-lua/plenary.nvim" },
-            -- funcs
-            "nvim-lua/plenary.nvim",
-            {
-                -- fzf support
-                "nvim-telescope/telescope-fzf-native.nvim", run = "make"
-            },
-            "nvim-lua/popup.nvim"
-        } }
+        use {
+            "nvim-telescope/telescope.nvim",
+            requires = {
+                "nvim-lua/plenary.nvim",
+                {
+                    -- fzf support
+                    "nvim-telescope/telescope-fzf-native.nvim", run = "make"
+                },
+                "nvim-lua/popup.nvim",
+                "nvim-telescope/telescope-hop.nvim",
+            }
+        }
         -- neovim start time
         use "dstein64/vim-startuptime"
         -- git diff view
@@ -131,7 +132,7 @@ return require("packer").startup({
                 require "nvim-lastplace".setup {
                     lastplace_ignore_buftype = { "quickfix", "nofile", "help", "NvimTree" },
                     lastplace_ignore_filetype = { "gitcommit", "gitrebase", "svn", "hgcommit", "NvimTree" },
-                    lastplace_open_folds = true
+                    lastplace_open_folds = true,
                 }
             end,
         }
@@ -139,18 +140,10 @@ return require("packer").startup({
         use { "anuvyklack/hydra.nvim", requires = "anuvyklack/keymap-layer.nvim" }
         -- speed move
         use "phaazon/hop.nvim"
-        -- for telescope
-        use "nvim-telescope/telescope-hop.nvim"
-        -- copilot
-        -- use "github/copilot.vim"
         -- sort
         use "sQVe/sort.nvim"
-        -- translate
-        -- use "potamides/pantran.nvim"
         -- auto session
         use "rmagatti/auto-session"
-        -- hardtime
-        -- use "takac/vim-hardtime"
         -- comma text object
         use "austintaylor/vim-commaobject"
         -- vim thrift syntax
@@ -159,10 +152,10 @@ return require("packer").startup({
         use {
             "gbprod/stay-in-place.nvim",
             config = function()
-                require("stay-in-place").setup({
+                require("stay-in-place").setup {
                     set_keymaps = true,
                     preserve_visual_selection = true,
-                })
+                }
             end,
         }
         use {
@@ -175,7 +168,7 @@ return require("packer").startup({
             'mvllow/modes.nvim',
             -- tag = 'v0.2.0',
             config = function()
-                require("modes").setup({
+                require("modes").setup {
                     colors = {
                         copy = "#f5c359",
                         delete = "#dc322f",
@@ -194,7 +187,7 @@ return require("packer").startup({
                     -- Disable modes highlights in specified filetypes
                     -- Please PR commonly ignored filetypes
                     ignore_filetypes = { 'NvimTree', 'TelescopePrompt' },
-                })
+                }
             end,
         }
     end,
