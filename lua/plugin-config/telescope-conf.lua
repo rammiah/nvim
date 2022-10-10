@@ -1,7 +1,3 @@
-if not require("localutils").safe_load("telescope") then
-    return
-end
-
 local map = require("localutils").KeyMap
 local builtin = require('telescope.builtin')
 local actions = require('telescope.actions')

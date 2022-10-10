@@ -1,7 +1,3 @@
-if not require("localutils").safe_load("auto-session") then
-    return
-end
-
 local map = require("localutils").KeyMap
 
 require("auto-session").setup {
