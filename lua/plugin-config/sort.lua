@@ -1,6 +1,3 @@
-if not require("localutils").safe_load("sort") then
-    return
-end
 local map = require("localutils").KeyMap
 
 require("sort").setup({
