@@ -322,9 +322,9 @@ return require("packer").startup({
                 cmp.setup.cmdline({ "/", "?" }, {
                     -- fields = { "kind", "abbr" },
                     mapping = cmp.mapping.preset.cmdline(),
-                    sources = {
+                    sources = cmp.config.sources({
                         { name = "buffer", keyword_length = 2 }
-                    },
+                    }),
                 })
 
                 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
