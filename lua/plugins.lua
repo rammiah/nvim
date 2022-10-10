@@ -321,7 +321,7 @@ return require("packer").startup({
                         },
                     },
                     view = {
-                        entry = "custom",
+                        entries = "custom",
                     },
                     preselect = cmp.PreselectMode.Item,
                 }
