@@ -1,7 +1,3 @@
-if not require("localutils").safe_load("nvim-tree") then
-    return
-end
-
 local map = require("localutils").KeyMap
 local lib = require("nvim-tree.lib")
 local view = require("nvim-tree.view")

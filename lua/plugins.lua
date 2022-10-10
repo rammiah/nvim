@@ -14,6 +14,9 @@ return require("packer").startup({
                 "kyazdani42/nvim-web-devicons", -- optional, for file icon
             },
             -- tag = "nightly" -- optional, updated every week. (see issue 1193)
+            config = function()
+                require("plugin-config.nvim-tree")
+            end,
         }
         -- dev icons
         use "ryanoasis/vim-devicons"
@@ -23,6 +26,9 @@ return require("packer").startup({
             run = ":TSUpdate",
             requires = "p00f/nvim-ts-rainbow",
             -- commit = "635c450",
+            config = function()
+                require("plugin-config.nvim-treesitter")
+            end,
         }
         use "nvim-treesitter/nvim-treesitter-textobjects"
         use "JoosepAlviste/nvim-ts-context-commentstring"
@@ -33,44 +39,55 @@ return require("packer").startup({
         --     requires = "nvim-treesitter/nvim-treesitter"
         -- }
         -- commenter
-        use 'numToStr/Comment.nvim'
+        use {
+            "numToStr/Comment.nvim",
+            config = function()
+                require("plugin-config.comment")
+            end,
+        }
         -- bufferline
-        use { "akinsho/bufferline.nvim", tag = "*", requires = { "kyazdani42/nvim-web-devicons" } }
+        use {
+            "akinsho/bufferline.nvim",
+            tag = "*",
+            requires = "kyazdani42/nvim-web-devicons",
+            config = function()
+                require("plugin-config.bufferline")
+            end,
+        }
         -- go
         use { "rammiah/nvim-go", requires = { "nvim-lua/plenary.nvim", "rcarriga/nvim-notify" } }
         use "rammiah/gocommand.vim"
         use {
             "rcarriga/nvim-notify",
-            config = function ()
+            config = function()
                 require("plugin-config.notify")
             end,
         }
         -- coc.nvim
-        use { 
-            "neoclide/coc.nvim", 
+        use {
+            "neoclide/coc.nvim",
             branch = "release",
-            config = function ()
+            config = function()
                 require("plugin-config.coc")
             end
         }
-        use "fannheyward/telescope-coc.nvim"
         -- auto pair
-        use { 
+        use {
             "windwp/nvim-autopairs",
-            config = function ()
+            config = function()
                 require("plugin-config.autopairs")
             end,
         }
-        use { 
+        use {
             "windwp/nvim-ts-autotag",
-            config = function ()
+            config = function()
                 require("plugin-config.autotag")
             end,
         }
         -- surround
-        use { 
+        use {
             "kylechui/nvim-surround",
-            config = function ()
+            config = function()
                 require("plugin-config.surround")
             end,
         }
@@ -101,35 +118,58 @@ return require("packer").startup({
                 },
                 "nvim-lua/popup.nvim",
                 "nvim-telescope/telescope-hop.nvim",
+                "fannheyward/telescope-coc.nvim",
             },
-            config = function ()
+            config = function()
                 require("plugin-config.telescope-conf")
             end,
         }
         -- neovim start time
         use "dstein64/vim-startuptime"
         -- git diff view
-        use { "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" }
+        use {
+            "sindrets/diffview.nvim",
+            requires = "nvim-lua/plenary.nvim",
+            config = function()
+                require("plugin-config.diffview")
+            end,
+        }
         -- git blame
         use "dinhhuy258/git.nvim"
         -- git line signs, hunk previw and jump
         use "lewis6991/gitsigns.nvim"
         -- better filetype detect
-        use "nathom/filetype.nvim"
+        use {
+            "nathom/filetype.nvim",
+            config = function()
+                require("plugin-config.filetype")
+            end,
+        }
         -- impatient to speed up vim
         use "lewis6991/impatient.nvim"
         -- todo comment list
-        use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" }
+        use {
+            "folke/todo-comments.nvim",
+            requires = "nvim-lua/plenary.nvim",
+            config = function()
+                require("plugin-config.todo-comments")
+            end,
+        }
         -- toggleterm
-        use { "akinsho/toggleterm.nvim" }
+        use {
+            "akinsho/toggleterm.nvim",
+            config = function()
+                require("plugin-config.toggleterm")
+            end,
+        }
         -- lualine status line
         use {
-            "nvim-lualine/lualine.nvim", requires = "kyazdani42/nvim-web-devicons",
+            "nvim-lualine/lualine.nvim",
+            requires = "kyazdani42/nvim-web-devicons",
+            config = function()
+                require("plugin-config.lualine")
+            end,
         }
-        -- clipboard
-        -- use "roxma/vim-tmux-clipboard"
-        -- visual find
-        -- use "nelstrom/vim-visual-star-search"
         -- glow
         use { "ellisonleao/glow.nvim",
             branch = "main",
@@ -172,7 +212,12 @@ return require("packer").startup({
         -- speed move
         use "phaazon/hop.nvim"
         -- sort
-        use "sQVe/sort.nvim"
+        use {
+            "sQVe/sort.nvim",
+            config = function()
+                require("plugin-config.sort")
+            end,
+        }
         -- auto session
         use "rmagatti/auto-session"
         -- comma text object
