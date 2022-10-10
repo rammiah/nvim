@@ -16,9 +16,7 @@
   "languageserver": {
     "haskell": {
       "command": "haskell-language-server-wrapper",
-      "args": [
-        "--lsp"
-      ],
+      "args": ["--lsp"],
       "rootPatterns": [
         "*.cabal",
         "stack.yaml",
@@ -26,10 +24,7 @@
         "package.yaml",
         "hie.yaml"
       ],
-      "filetypes": [
-        "haskell",
-        "lhaskell"
-      ]
+      "filetypes": ["haskell", "lhaskell"]
     }
   },
   "suggest.languageSourcePriority": 99,
@@ -46,15 +41,8 @@
   "coc.source.file.disableSyntaxes": [],
   "coc.source.buffer.ignoreGitignore": true,
   "coc.source.buffer.disableSyntaxes": [],
-  "coc.source.file.triggerCharacters": [
-    "/",
-    "\\"
-  ],
-  "coc.source.file.trimSameExts": [
-    ".ts",
-    ".js",
-    ".lua"
-  ],
+  "coc.source.file.triggerCharacters": ["/", "\\"],
+  "coc.source.file.trimSameExts": [".ts", ".js", ".lua"],
   "coc.source.file.ignoreHidden": true,
   "coc.source.file.ignorePatterns": [],
   "tree.key.toggle": "t",
@@ -89,12 +77,7 @@
   "suggest.autoTrigger": "always",
   "suggest.defaultSortMethod": "none",
   "suggest.detailField": "preview",
-  "suggest.formatItems": [
-    "kind",
-    "abbr",
-    "menu",
-    "shortcut"
-  ],
+  "suggest.formatItems": ["kind", "abbr", "menu", "shortcut"],
   "suggest.enablePreselect": true,
   "suggest.fixInsertedWord": true,
   "suggest.floatConfig": {

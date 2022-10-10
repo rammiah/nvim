@@ -293,6 +293,7 @@ return require("packer").startup({
                 }
             end
         }
+        use  "phelipetls/jsonpath.nvim"
     end,
     config = {
         ensure_dependencies  = true, -- Should packer install plugin dependencies?
@@ -347,5 +348,4 @@ return require("packer").startup({
             level = "info"
         },
     }
-
 })
