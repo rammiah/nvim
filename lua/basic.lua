@@ -105,8 +105,7 @@ if vim.fn.has("wsl") == 1 or
 elseif vim.fn.has("linux") == 1 or
     vim.fn.has("unix") == 1 or
     vim.fn.has("mac") == 1 then
-    vim.o.guifont = "JetBrainsMonoNL Nerd Font"
-    vim.o.guifont = "JetBrainsMonoNL Nerd Font"
+    vim.o.guifont = "JetBrainsMonoNL Nerd Font:h16"
 end
 vim.o.linespace = 0
 vim.o.pumblend = 10
