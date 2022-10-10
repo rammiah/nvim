@@ -179,6 +179,7 @@ require "nvim-tree".setup { -- BEGIN_DEFAULT_OPTS
         highlight_git = false,
         highlight_opened_files = "none",
         root_folder_modifier = ":~",
+        indent_width = 2,
         indent_markers = {
             enable = true,
             icons = {
@@ -186,6 +187,7 @@ require "nvim-tree".setup { -- BEGIN_DEFAULT_OPTS
                 item = "├",
                 edge = "│",
                 none = " ",
+                bottom = "─",
             },
             inline_arrows = true,
         },
@@ -255,6 +257,10 @@ require "nvim-tree".setup { -- BEGIN_DEFAULT_OPTS
         dotfiles = true,
         custom = {},
         exclude = {},
+    },
+    filesystem_watchers = {
+        enable = true,
+        debounce_delay = 50,
     },
     git = {
         enable = true,
