@@ -1,7 +1,3 @@
-if not require("localutils").safe_load("notify") then
-    return
-end
-
 vim.notify = require("notify")
 
 vim.cmd [[

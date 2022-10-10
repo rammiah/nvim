@@ -1,7 +1,3 @@
-if not require("localutils").safe_load("nvim-surround") then
-    return
-end
-
 local M = require("nvim-surround.config")
 
 require("nvim-surround").setup({

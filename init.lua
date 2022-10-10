@@ -10,7 +10,6 @@ require("plugins")
 require("colorscheme")
 
 -- plugins config
-require("plugin-config.notify")
 require("plugin-config.bufferline")
 require("plugin-config.comment")
 require("plugin-config.diffview")

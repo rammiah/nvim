@@ -1,7 +1,3 @@
-if not require("localutils").safe_load("nvim-autopairs") then
-    return
-end
-
 local npairs = require("nvim-autopairs")
 
 npairs.setup({

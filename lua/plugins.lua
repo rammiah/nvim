@@ -39,6 +39,12 @@ return require("packer").startup({
         -- go
         use { "rammiah/nvim-go", requires = { "nvim-lua/plenary.nvim", "rcarriga/nvim-notify" } }
         use "rammiah/gocommand.vim"
+        use {
+            "rcarriga/nvim-notify",
+            config = function ()
+                require("plugin-config.notify")
+            end,
+        }
         -- coc.nvim
         use { 
             "neoclide/coc.nvim", 
@@ -47,7 +53,6 @@ return require("packer").startup({
                 require("plugin-config.coc")
             end
         }
-
         use "fannheyward/telescope-coc.nvim"
         -- auto pair
         use { 
