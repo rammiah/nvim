@@ -26,6 +26,7 @@ return require("packer").startup({
         }
         use "nvim-treesitter/nvim-treesitter-textobjects"
         use "JoosepAlviste/nvim-ts-context-commentstring"
+        use "nvim-treesitter/playground"
         -- Lua
         -- use {
         --     "SmiteshP/nvim-gps",
@@ -58,7 +59,7 @@ return require("packer").startup({
         use {
             "lambdalisue/suda.vim",
             config = function()
-                vim.g.suda_smart_edit = 1
+                vim.g.suda_smart_edit = 0
                 vim.g["suda#prompt"] = "password: "
             end
         }
@@ -98,7 +99,7 @@ return require("packer").startup({
         -- clipboard
         -- use "roxma/vim-tmux-clipboard"
         -- visual find
-        use "nelstrom/vim-visual-star-search"
+        -- use "nelstrom/vim-visual-star-search"
         -- glow
         use { "ellisonleao/glow.nvim",
             branch = "main",
@@ -189,6 +190,33 @@ return require("packer").startup({
                     ignore_filetypes = { 'NvimTree', 'TelescopePrompt' },
                 }
             end,
+        }
+        use {
+            "folke/zen-mode.nvim",
+            config = function()
+                require("plugin-config.zen-mode")
+            end,
+        }
+        use {
+            "smjonas/live-command.nvim",
+            config = function()
+                require("live-command").setup {
+                    commands = {
+                        Norm = { cmd = "norm" },
+                        G = { cmd = "g" },
+                    },
+                    defaults = {
+                        enable_highlighting = true,
+                        inline_highlighting = true,
+                        hl_groups = {
+                            insertion = "DiffAdd",
+                            deletion = "DiffDelete",
+                            change = "DiffChange",
+                        },
+                        debug = false,
+                    },
+                }
+            end
         }
     end,
     config = {
