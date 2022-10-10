@@ -35,13 +35,16 @@ vim.cmd [[
 -- global options
 vim.g.coc_global_extensions = {
     "coc-go",
+    "coc-html",
     "coc-json",
+    "coc-prettier",
     "coc-pyright",
     "coc-rust-analyzer",
     "coc-sh",
     "coc-spell-checker",
     "coc-sql",
     "coc-sumneko-lua",
+    "coc-tag",
     "coc-tsserver",
     "coc-vimlsp",
     "coc-yaml",
@@ -80,12 +83,13 @@ function _M.FormatDoc()
     --     print('file type is go')
     -- end
     -- go.format is too slow for big project, use coc organizeImports to import
-    -- _M.OrganizeImports()
+    _M.OrganizeImports()
 
-    local nvim_go = require("go.format")
-    if vim.bo.ft == "go" and nvim_go and nvim_go.format then
-        nvim_go.format()
-    elseif vim.g.coc_service_initialized == 1 and vim.fn.CocHasProvider and vim.fn.CocHasProvider("format") then
+    -- local nvim_go = require("go.format")
+    -- if vim.bo.ft == "go" and nvim_go and nvim_go.format then
+    --     nvim_go.format()
+    -- elseif vim.g.coc_service_initialized == 1 and vim.fn.CocHasProvider and vim.fn.CocHasProvider("format") then
+    if vim.g.coc_service_initialized == 1 and vim.fn.CocHasProvider and vim.fn.CocHasProvider("format") then
         vim.fn.CocActionAsync("format")
     else
         local view = vim.fn.winsaveview()
