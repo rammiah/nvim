@@ -18,13 +18,27 @@ npairs.setup({
         lua = { "string", "source" }, -- it will not add a pair on that treesitter node
         javascript = { "template_string", "string" },
     },
-    map_cr = true,
+    map_cr = false,
     map_bs = true, -- map the <BS> key
     map_c_h = false, -- Map the <C-h> key to delete a pair
     map_c_w = false, -- map <c-w> to delete a pair if possible
 })
 
 -- local ts_conds = require("nvim-autopairs.ts-conds")
+local map = require("localutils").KeyMap
+
+-- skip it, if you use another global object
+_G.MUtils = {}
+
+MUtils.completion_confirm = function()
+    if vim.fn["coc#pum#visible"] ~= nil and vim.fn["coc#pum#visible"]() ~= 0 then
+        return vim.fn["coc#pum#confirm"]()
+    else
+        return npairs.autopairs_cr()
+    end
+end
+
+map("i", "<CR>", "v:lua.MUtils.completion_confirm()", { expr = true, noremap = true, silent = true })
 
 local Rule = require 'nvim-autopairs.rule'
 local cond = require 'nvim-autopairs.conds'

@@ -40,13 +40,35 @@ return require("packer").startup({
         use { "rammiah/nvim-go", requires = { "nvim-lua/plenary.nvim", "rcarriga/nvim-notify" } }
         use "rammiah/gocommand.vim"
         -- coc.nvim
-        use { "neoclide/coc.nvim", branch = "release" }
+        use { 
+            "neoclide/coc.nvim", 
+            branch = "release",
+            config = function ()
+                require("plugin-config.coc")
+            end
+        }
+
         use "fannheyward/telescope-coc.nvim"
         -- auto pair
-        use "windwp/nvim-autopairs"
-        use "windwp/nvim-ts-autotag"
+        use { 
+            "windwp/nvim-autopairs",
+            config = function ()
+                require("plugin-config.autopairs")
+            end,
+        }
+        use { 
+            "windwp/nvim-ts-autotag",
+            config = function ()
+                require("plugin-config.autotag")
+            end,
+        }
         -- surround
-        use "kylechui/nvim-surround"
+        use { 
+            "kylechui/nvim-surround",
+            config = function ()
+                require("plugin-config.surround")
+            end,
+        }
         use { "ojroques/vim-oscyank",
             branch = "main",
             config = function()
@@ -74,7 +96,10 @@ return require("packer").startup({
                 },
                 "nvim-lua/popup.nvim",
                 "nvim-telescope/telescope-hop.nvim",
-            }
+            },
+            config = function ()
+                require("plugin-config.telescope-conf")
+            end,
         }
         -- neovim start time
         use "dstein64/vim-startuptime"
