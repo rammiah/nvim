@@ -90,9 +90,9 @@
   "suggest.defaultSortMethod": "none",
   "suggest.detailField": "preview",
   "suggest.formatItems": [
+    "kind",
     "abbr",
     "menu",
-    "kind",
     "shortcut"
   ],
   "suggest.enablePreselect": true,
