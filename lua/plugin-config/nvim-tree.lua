@@ -126,7 +126,7 @@ require "nvim-tree".setup { -- BEGIN_DEFAULT_OPTS
                 { key = "O", action = "edit_no_picker" },
                 { key = { "<C-]>", "<2-RightMouse>" }, action = "cd" },
                 { key = "<C-v>", action = "vsplit" },
-                { key = "<C-s>", action = "split" },
+                { key = "<C-x>", action = "split" },
                 { key = "<C-t>", action = "tabnew" },
                 { key = "<", action = "prev_sibling" },
                 { key = ">", action = "next_sibling" },
