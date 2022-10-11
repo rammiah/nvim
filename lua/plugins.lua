@@ -297,7 +297,7 @@ return require("packer").startup({
         use "hrsh7th/cmp-cmdline"
         use "hrsh7th/cmp-buffer"
         use "onsails/lspkind.nvim"
-        use { 'tzachar/cmp-fuzzy-path', requires = { 'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim' } }
+        use { "tzachar/cmp-fuzzy-path", requires = { "hrsh7th/nvim-cmp", "tzachar/fuzzy.nvim" } }
         use {
             "hrsh7th/nvim-cmp",
             config = function()
@@ -309,7 +309,7 @@ return require("packer").startup({
                             preset = "codicons",
                             mode = "symbol", -- show only symbol annotations
                             maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-                            ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+                            ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
 
                             -- The function below will be called before any actual modifications from lspkind
                             -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
@@ -340,7 +340,7 @@ return require("packer").startup({
                             { name = "path", keyword_length = 2 }
                         },
                         {
-                            { name = 'fuzzy_path', keyword_length = 2, option = { fd_timeout_msec = 2000 } },
+                            { name = "fuzzy_path", keyword_length = 2, option = { fd_timeout_msec = 2000 } },
                         }
                     ),
                 })
@@ -349,8 +349,8 @@ return require("packer").startup({
         use {
             "nvim-orgmode/orgmode",
             config = function()
-                require('orgmode').setup {}
-                require('orgmode').setup_ts_grammar {}
+                require("orgmode").setup {}
+                require("orgmode").setup_ts_grammar {}
             end,
         }
     end,
