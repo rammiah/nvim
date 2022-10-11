@@ -27,7 +27,7 @@ export RUNTIME_IDC_NAME="boe"
 # editor
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
-export NEOVIDE_MULTIGRID=1
+export NEOVIDE_MULTIGRID="true"
 
 # Load NVM
 export NVM_DIR="$HOME/.nvm"
