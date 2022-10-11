@@ -98,6 +98,7 @@ vim.o.nrformats = "alpha,bin,hex,unsigned"
 vim.o.history = 1000
 vim.o.clipboard = vim.o.clipboard .. "unnamedplus"
 vim.o.guicursor = [[i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff500-blinkon500,sm:block-blinkwait175-blinkoff150-blinkon175]]
+-- set for neovide
 if vim.fn.has("wsl") == 1 or
     vim.fn.has("win32") == 1 or
     vim.fn.has("win64") == 1 then
@@ -107,6 +108,10 @@ elseif vim.fn.has("linux") == 1 or
     vim.fn.has("mac") == 1 then
     vim.o.guifont = "JetBrainsMonoNL Nerd Font:h16"
 end
+-- cursor theme
+-- railgun, torpedo, pixiedust
+vim.g.neovide_cursor_vfx_mode = "railgun"
+
 vim.o.linespace = 0
 vim.o.pumblend = 10
 vim.o.pumheight = 12
