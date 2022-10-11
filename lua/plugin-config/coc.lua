@@ -41,6 +41,7 @@ vim.g.coc_global_extensions = {
     "coc-pyright",
     "coc-rust-analyzer",
     "coc-sh",
+    "coc-snippets",
     "coc-spell-checker",
     "coc-sql",
     "coc-sumneko-lua",
