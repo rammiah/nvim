@@ -297,6 +297,7 @@ return require("packer").startup({
         use "hrsh7th/cmp-cmdline"
         use "hrsh7th/cmp-buffer"
         use "onsails/lspkind.nvim"
+        use { 'tzachar/cmp-fuzzy-path', requires = { 'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim' } }
         use {
             "hrsh7th/nvim-cmp",
             config = function()
@@ -337,10 +338,20 @@ return require("packer").startup({
                         },
                         {
                             { name = "path", keyword_length = 2 }
+                        },
+                        {
+                            { name = 'fuzzy_path', keyword_length = 2, option = { fd_timeout_msec = 2000 } },
                         }
                     ),
                 })
             end
+        }
+        use {
+            "nvim-orgmode/orgmode",
+            config = function()
+                require('orgmode').setup {}
+                require('orgmode').setup_ts_grammar {}
+            end,
         }
     end,
     config = {
