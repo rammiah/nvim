@@ -1,9 +1,4 @@
-if not require("localutils").safe_load("lualine") then
-    return
-end
-
--- local gps = require("nvim-gps")
-
+local lualine = require("lualine")
 local status_map = {
     ["NORMAL"] = "NORM",
     ["INSERT"] = "INS",
@@ -36,7 +31,7 @@ local nvim_tree = {
     filetypes = { "NvimTree" }
 }
 
-require("lualine").setup {
+lualine.setup {
     options = {
         icons_enabled = true,
         theme = "solarized_light",
@@ -50,9 +45,9 @@ require("lualine").setup {
         globalstatus = true,
         ignore_focus = {},
         refresh = {
-          statusline = 3000, -- time before nvim-tree refresh
-          tabline = 1000,
-          winbar = 1000,
+            statusline = 3000, -- time before nvim-tree refresh
+            tabline = 1000,
+            winbar = 1000,
         },
     },
     sections = {
@@ -142,3 +137,14 @@ require("lualine").setup {
     inactive_winbar = {},
     extensions = { "toggleterm", nvim_tree },
 }
+
+vim.api.nvim_create_autocmd("User", {
+    pattern = "CocStatusChange",
+    desc = "refresh lualine for coc_status",
+    callback = function(opts)
+        lualine.refresh({
+            scope = "tabpage", -- scope of refresh all/tabpage/window
+            place = { "statusline" }, -- lualine segment ro refresh.
+        })
+    end,
+})
