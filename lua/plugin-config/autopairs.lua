@@ -27,7 +27,11 @@ local map = require("localutils").KeyMap
 _G.MUtils = {}
 
 MUtils.completion_confirm = function()
-    if vim.fn["coc#pum#visible"] ~= nil and vim.fn["coc#pum#visible"]() ~= 0 then
+    if vim.fn["coc#pum#visible"] and vim.fn["coc#pum#visible"]() ~= 0 then
+        -- visible 返回int
+        return vim.fn["coc#pum#confirm"]()
+    elseif vim.fn["coc#expandable"] and vim.fn["coc#expandable"]() then
+        -- expandable 返回bool
         return vim.fn["coc#pum#confirm"]()
     else
         return npairs.autopairs_cr()

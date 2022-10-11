@@ -103,8 +103,9 @@ end
 map("n", "K", ":lua _M.ShowHover()<CR>")
 -- map for format key use editor.action.formatDocument
 map("n", "<leader>i", ":lua _M.FormatDoc()<CR>")
+map("i", "<C-j>", "<Plug>(coc-snippets-expand-jump)", { noremap = false })
 
-vim.cmd([[
-autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-" autocmd CursorHold * silent call CocActionAsync('highlight')
-]])
+vim.api.nvim_create_autocmd("User", {
+    pattern = "CocJumpPlaceholder",
+    command = "call CocActionAsync('showSignatureHelp')",
+})
