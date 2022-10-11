@@ -74,7 +74,7 @@ return require("packer").startup({
                 require("plugin-config.coc")
             end
         }
-        use "honza/vim-snippets" 
+        use "honza/vim-snippets"
         -- auto pair
         use {
             "windwp/nvim-autopairs",
@@ -356,6 +356,35 @@ return require("packer").startup({
                 require("orgmode").setup {}
                 require("orgmode").setup_ts_grammar {}
             end,
+        }
+        use {
+            "nguyenvukhang/nvim-toggler",
+            config = function()
+                local toggler = require("nvim-toggler")
+                toggler.setup {
+                    inverses = {
+                        ['true'] = 'false',
+                        ['yes'] = 'no',
+                        ['on'] = 'off',
+                        ['left'] = 'right',
+                        ['up'] = 'down',
+                        ['!='] = '==',
+                        ["connected"] = "disconnected",
+                        ["vim"] = "emacs",
+                        ["True"] = "False",
+                        ["TRUE"] = "FALSE",
+                        ["Yes"] = "No",
+                        ["YES"] = "NO",
+                        ["success"] = "fail",
+                    },
+                    remove_default_keybinds = true,
+                    remove_default_inverses = true,
+                }
+                vim.keymap.set({ "n", "v" }, "<leader>cl", toggler.toggle, {
+                    noremap = true,
+                    silent = true,
+                })
+            end
         }
     end,
     config = {
