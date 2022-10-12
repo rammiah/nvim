@@ -7,6 +7,17 @@ return require("packer").startup({
         use "wbthomason/packer.nvim"
         -- color theme
         use "overcache/NeoSolarized"
+        -- dev icons
+        use {
+            "kyazdani42/nvim-web-devicons",
+            config = function()
+                require("nvim-web-devicons").setup {
+                    override = {};
+                    color_icons = true;
+                    default = true;
+                }
+            end,
+        }
         -- nvim tree
         use {
             "kyazdani42/nvim-tree.lua",
@@ -18,8 +29,6 @@ return require("packer").startup({
                 require("plugin-config.nvim-tree")
             end,
         }
-        -- dev icons
-        use "ryanoasis/vim-devicons"
         -- treesitter
         use {
             "nvim-treesitter/nvim-treesitter",
@@ -95,10 +104,16 @@ return require("packer").startup({
                 require("plugin-config.surround")
             end,
         }
-        use { "ojroques/vim-oscyank",
+        -- yank
+        use {
+            "ojroques/vim-oscyank",
             branch = "main",
             config = function()
-                vim.cmd [[ autocmd TextYankPost * if v:event.operator is 'y' && v:event.regname is '' | execute 'OSCYankReg "' | endif ]]
+                vim.api.nvim_create_autocmd("TextYankPost", {
+                    desc = "send text by osc32",
+                    command = [[if v:event.operator is 'y' && v:event.regname is '' | execute 'OSCYankReg "' | endif]],
+                    pattern = "*",
+                })
                 vim.g.oscyank_silent = true
                 vim.g.oscyank_term = "default"
             end,
@@ -237,15 +252,16 @@ return require("packer").startup({
                 }
             end,
         }
+        -- tab scope buffers
         use {
             "tiagovla/scope.nvim",
             config = function()
-                require("scope").setup()
+                require("scope").setup {}
             end,
         }
+        -- cursor line mode colors
         use {
             "mvllow/modes.nvim",
-            -- tag = "v0.2.0",
             config = function()
                 require("modes").setup {
                     colors = {
@@ -269,12 +285,14 @@ return require("packer").startup({
                 }
             end,
         }
+        -- zen-mod
         use {
             "folke/zen-mode.nvim",
             config = function()
                 require("plugin-config.zen-mode")
             end,
         }
+        -- command result real time
         use {
             "smjonas/live-command.nvim",
             config = function()
@@ -296,7 +314,9 @@ return require("packer").startup({
                 }
             end
         }
+        -- jsonpath
         use "phelipetls/jsonpath.nvim"
+        -- nvim-cmp for cmdline
         use "hrsh7th/cmp-path"
         use "hrsh7th/cmp-cmdline"
         use "hrsh7th/cmp-buffer"
@@ -304,10 +324,11 @@ return require("packer").startup({
         use { "tzachar/cmp-fuzzy-path", requires = { "hrsh7th/nvim-cmp", "tzachar/fuzzy.nvim" } }
         use {
             "hrsh7th/nvim-cmp",
-            config = function ()
+            config = function()
                 require("plugin-config.cmp")
             end
         }
+        -- orgmode
         use {
             "nvim-orgmode/orgmode",
             config = function()
@@ -315,12 +336,14 @@ return require("packer").startup({
                 require("orgmode").setup_ts_grammar {}
             end,
         }
+        -- toggle bool, words
         use {
             "nguyenvukhang/nvim-toggler",
-            config = function ()
+            config = function()
                 require("plugin-config.toggler")
-            end 
+            end
         }
+        -- real time line number
         use {
             "nacro90/numb.nvim",
             config = function()
