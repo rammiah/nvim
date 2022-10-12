@@ -1,7 +1,3 @@
-if not require("localutils").safe_load("go") then
-    return
-end
-
 require("go").setup({
     -- notify: use nvim-notify
     notify = true,

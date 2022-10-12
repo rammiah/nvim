@@ -64,7 +64,16 @@ return require("packer").startup({
             end,
         }
         -- go
-        use { "rammiah/nvim-go", requires = { "nvim-lua/plenary.nvim", "rcarriga/nvim-notify" } }
+        use {
+            "rammiah/nvim-go",
+            requires = {
+                "nvim-lua/plenary.nvim",
+                "rcarriga/nvim-notify",
+            },
+            config = function()
+                require("plugin-config.nvim-go")
+            end,
+        }
         use "rammiah/gocommand.vim"
         use {
             "rcarriga/nvim-notify",
@@ -154,9 +163,19 @@ return require("packer").startup({
             end,
         }
         -- git blame
-        use "dinhhuy258/git.nvim"
+        use {
+            "dinhhuy258/git.nvim",
+            config = function()
+                require("plugin-config.git")
+            end
+        }
         -- git line signs, hunk previw and jump
-        use "lewis6991/gitsigns.nvim"
+        use {
+            "lewis6991/gitsigns.nvim",
+            config = function()
+                require("plugin-config.gitsigns")
+            end
+        }
         -- better filetype detect
         use {
             "nathom/filetype.nvim",
@@ -226,9 +245,20 @@ return require("packer").startup({
             end,
         }
         -- key repeat
-        use { "anuvyklack/hydra.nvim", requires = "anuvyklack/keymap-layer.nvim" }
+        use {
+            "anuvyklack/hydra.nvim",
+            requires = "anuvyklack/keymap-layer.nvim",
+            config = function()
+                require("plugin-config.hydra")
+            end
+        }
         -- speed move
-        use "phaazon/hop.nvim"
+        use {
+            "phaazon/hop.nvim",
+            config = function()
+                require("plugin-config.hop")
+            end
+        }
         -- sort
         use {
             "sQVe/sort.nvim",
@@ -237,7 +267,12 @@ return require("packer").startup({
             end,
         }
         -- auto session
-        use "rmagatti/auto-session"
+        use {
+            "rmagatti/auto-session",
+            config = function()
+                require("plugin-config.auto-sess")
+            end
+        }
         -- comma text object
         use "austintaylor/vim-commaobject"
         -- vim thrift syntax

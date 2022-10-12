@@ -1,7 +1,3 @@
-if not require("localutils").safe_load("hydra") then
-    return
-end
-
 local Hydra = require("hydra")
 
 Hydra({

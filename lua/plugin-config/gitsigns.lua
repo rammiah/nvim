@@ -1,7 +1,3 @@
-if not require("localutils").safe_load("gitsigns") then
-    return
-end
-
 require("gitsigns").setup {
     signs                        = {
         add          = { hl = "GitSignsAdd", text = "█", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
