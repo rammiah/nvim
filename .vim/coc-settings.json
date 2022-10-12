@@ -7,7 +7,8 @@
   "Lua.diagnostics.enable": true,
   "Lua.diagnostics.workspaceDelay": 3000,
   "Lua.diagnostics.workspaceRate": 100,
-  "sumneko-lua.inlayHints.refreshOnInsertMode": true,
+  "inlayHint.enable": true,
+  "Lua.completion.displayContext": 1,
   "Lua.diagnostics.globals": [
     "_M"
   ]
