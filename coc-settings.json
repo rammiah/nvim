@@ -46,6 +46,8 @@
   "coc.source.file.ignoreHidden": true,
   "coc.source.tag.shortcut": "T",
   "coc.source.dictionary.shortcut": "D",
+  "coc.source.dictionary.enable": true,
+  "coc.source.dictionary.priority": 1,
   "snippets.shortcut": "SN",
   "tree.key.toggle": "t",
   "tree.key.toggleSelection": "<space>",

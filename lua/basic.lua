@@ -118,3 +118,4 @@ vim.o.pumheight = 12
 vim.opt.path = vim.opt.path + "**"
 vim.o.undofile = true
 vim.o.undolevels = 200
+vim.o.dictionary = vim.fn.stdpath("config") .. "/data/dict/words_alpha.txt"
