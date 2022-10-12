@@ -71,7 +71,6 @@
   "list.nextKeymap": "<C-j>",
   "list.previousKeymap": "<C-k>",
   "sumneko-lua.prompt": true,
-  "sumneko-lua.inlayHints.typeHintsPrefix": "« ",
   "inlayHint.enable": true,
   "inlayHint.enableParameter": true,
   "inlayHint.refreshOnInsertMode": false,
