@@ -363,12 +363,12 @@ return require("packer").startup({
                 local toggler = require("nvim-toggler")
                 toggler.setup {
                     inverses = {
-                        ['true'] = 'false',
-                        ['yes'] = 'no',
-                        ['on'] = 'off',
-                        ['left'] = 'right',
-                        ['up'] = 'down',
-                        ['!='] = '==',
+                        ["true"] = "false",
+                        ["yes"] = "no",
+                        ["on"] = "off",
+                        ["left"] = "right",
+                        ["up"] = "down",
+                        ["!="] = "==",
                         ["connected"] = "disconnected",
                         ["vim"] = "emacs",
                         ["True"] = "False",

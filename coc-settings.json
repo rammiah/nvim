@@ -11,7 +11,8 @@
     "linksInHover": false,
     "diagnosticsDelay": "500ms",
     "staticcheck": true,
-    "importShortcut": "Both"
+    "importShortcut": "Both",
+    "verboseOutput": false
   },
   "languageserver": {
     "haskell": {
@@ -38,19 +39,18 @@
   "coc.source.file.shortcut": "F",
   "coc.source.file.priority": 50,
   "coc.source.around.shortcut": "A",
-  "coc.source.around.disableSyntaxes": [],
   "coc.source.buffer.priority": 60,
-  "coc.source.file.disableSyntaxes": [],
   "coc.source.buffer.ignoreGitignore": true,
-  "coc.source.buffer.disableSyntaxes": [],
   "coc.source.file.triggerCharacters": ["/", "\\"],
   "coc.source.file.trimSameExts": [".ts", ".js", ".lua"],
   "coc.source.file.ignoreHidden": true,
-  "coc.source.file.ignorePatterns": [],
+  "coc.source.tag.shortcut": "T",
+  "coc.source.dictionary.shortcut": "D",
+  "snippets.shortcut": "SN",
   "tree.key.toggle": "t",
   "tree.key.toggleSelection": "<space>",
   "tree.key.actions": "<tab>",
-  "tree.key.collapseAll": "M",
+  "tree.key.collapseAll": "W",
   "tree.key.invoke": "<cr>",
   "tree.key.close": "<esc>",
   "tree.key.activeFilter": "f",
