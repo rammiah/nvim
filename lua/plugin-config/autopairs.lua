@@ -43,6 +43,7 @@ map("i", "<CR>", "v:lua.MUtils.completion_confirm()", { expr = true, noremap = t
 local Rule = require 'nvim-autopairs.rule'
 local cond = require 'nvim-autopairs.conds'
 
+-- add pair space
 npairs.add_rules {
     Rule(' ', ' ')
         :with_pair(function(opts)
@@ -75,3 +76,15 @@ npairs.add_rules {
         :with_del(cond.none())
         :use_key(']'),
 }
+
+-- pass , ;
+for _, punct in pairs { ",", ";" } do
+    npairs.add_rules {
+        Rule("", punct)
+            :with_move(function(opts) return opts.char == punct end)
+            :with_pair(function() return false end)
+            :with_del(function() return false end)
+            :with_cr(function() return false end)
+            :use_key(punct)
+    }
+end
