@@ -1,7 +1,3 @@
-if not require("localutils").safe_load("bufferline") then
-    return
-end
-
 local map = require("localutils").KeyMap
 
 -- map("n", "<C-h>", ":BufferLineCyclePrev<CR>")

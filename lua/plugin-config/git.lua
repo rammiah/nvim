@@ -1,7 +1,3 @@
-if not require("localutils").safe_load("git", "git.nvim is not installed") then
-    return
-end
-
 require("git").setup({
     default_mappings = false,
     keymaps = {
