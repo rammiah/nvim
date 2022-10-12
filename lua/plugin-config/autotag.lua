@@ -1,7 +1,3 @@
-if not require("localutils").safe_load("nvim-ts-autotag") then
-    return
-end
-
 require("nvim-ts-autotag").setup({
     filetypes = {
         "glimmer",

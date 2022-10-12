@@ -244,8 +244,8 @@ return require("packer").startup({
             end,
         }
         use {
-            'mvllow/modes.nvim',
-            -- tag = 'v0.2.0',
+            "mvllow/modes.nvim",
+            -- tag = "v0.2.0",
             config = function()
                 require("modes").setup {
                     colors = {
@@ -265,7 +265,7 @@ return require("packer").startup({
                     set_number = true,
                     -- Disable modes highlights in specified filetypes
                     -- Please PR commonly ignored filetypes
-                    ignore_filetypes = { 'NvimTree', 'TelescopePrompt' },
+                    ignore_filetypes = { "NvimTree", "TelescopePrompt" },
                 }
             end,
         }
@@ -304,50 +304,8 @@ return require("packer").startup({
         use { "tzachar/cmp-fuzzy-path", requires = { "hrsh7th/nvim-cmp", "tzachar/fuzzy.nvim" } }
         use {
             "hrsh7th/nvim-cmp",
-            config = function()
-                local cmp = require "cmp"
-                local lspkind = require "lspkind"
-                cmp.setup {
-                    formatting = {
-                        format = lspkind.cmp_format({
-                            preset = "codicons",
-                            mode = "symbol", -- show only symbol annotations
-                            maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-                            ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
-
-                            -- The function below will be called before any actual modifications from lspkind
-                            -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-                            before = function(entry, vim_item)
-                                return vim_item
-                            end
-                        })
-                    },
-                }
-                -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-                cmp.setup.cmdline({ "/", "?" }, {
-                    -- fields = { "kind", "abbr" },
-                    mapping = cmp.mapping.preset.cmdline(),
-                    sources = cmp.config.sources({
-                        { name = "buffer", keyword_length = 2 }
-                    }),
-                })
-
-                -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-                cmp.setup.cmdline(":", {
-                    -- fields = { "kind", "abbr" },
-                    mapping = cmp.mapping.preset.cmdline(),
-                    sources = cmp.config.sources(
-                        {
-                            { name = "cmdline", keyword_length = 2 }
-                        },
-                        {
-                            { name = "path", keyword_length = 2 }
-                        },
-                        {
-                            { name = "fuzzy_path", keyword_length = 2, option = { fd_timeout_msec = 2000 } },
-                        }
-                    ),
-                })
+            config = function ()
+                require("plugin-config.cmp")
             end
         }
         use {
@@ -359,32 +317,21 @@ return require("packer").startup({
         }
         use {
             "nguyenvukhang/nvim-toggler",
+            config = function ()
+                require("plugin-config.toggler")
+            end 
+        }
+        use {
+            "nacro90/numb.nvim",
             config = function()
-                local toggler = require("nvim-toggler")
-                toggler.setup {
-                    inverses = {
-                        ["true"] = "false",
-                        ["yes"] = "no",
-                        ["on"] = "off",
-                        ["left"] = "right",
-                        ["up"] = "down",
-                        ["!="] = "==",
-                        ["connected"] = "disconnected",
-                        ["vim"] = "emacs",
-                        ["True"] = "False",
-                        ["TRUE"] = "FALSE",
-                        ["Yes"] = "No",
-                        ["YES"] = "NO",
-                        ["success"] = "fail",
-                    },
-                    remove_default_keybinds = true,
-                    remove_default_inverses = true,
+                require("numb").setup {
+                    show_numbers = true, -- Enable 'number' for the window while peeking
+                    show_cursorline = true, -- Enable 'cursorline' for the window while peeking
+                    hide_relativenumbers = true, -- Enable turning off 'relativenumber' for the window while peeking
+                    number_only = false, -- Peek only when the command is only a number instead of when it starts with a number
+                    centered_peeking = true, -- Peeked line will be centered relative to window
                 }
-                vim.keymap.set({ "n", "v" }, "<leader>cl", toggler.toggle, {
-                    noremap = true,
-                    silent = true,
-                })
-            end
+            end,
         }
     end,
     config = {
@@ -419,7 +366,7 @@ return require("packer").startup({
             },
             depth = 1, -- Git clone depth
             clone_timeout = 60, -- Timeout, in seconds, for git clones
-            default_url_format = 'https://github.com/%s' -- Lua format string used for "aaa/bbb" style plugins
+            default_url_format = "https://github.com/%s" -- Lua format string used for "aaa/bbb" style plugins
         },
         display              = {
             open_fn = require("packer.util").float,
