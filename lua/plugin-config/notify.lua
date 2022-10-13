@@ -25,7 +25,7 @@ highlight link NotifyTRACEBody Normal
 
 require("notify").setup {
     background_colour = "Normal",
-    fps = 30,
+    fps = 60,
     icons = {
         DEBUG = "",
         ERROR = "",
@@ -33,9 +33,9 @@ require("notify").setup {
         TRACE = "✎",
         WARN = ""
     },
-    level = 2,
-    minimum_width = 50,
+    level = vim.log.levels.INFO,
+    minimum_width = 40,
     render = "default",
     stages = "fade_in_slide_out",
-    timeout = 5000
+    timeout = 2000,
 }
