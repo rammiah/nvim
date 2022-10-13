@@ -176,13 +176,6 @@ return require("packer").startup({
                 require("plugin-config.gitsigns")
             end
         }
-        -- better filetype detect
-        use {
-            "nathom/filetype.nvim",
-            config = function()
-                require("plugin-config.filetype")
-            end,
-        }
         -- impatient to speed up vim
         use "lewis6991/impatient.nvim"
         -- todo comment list
