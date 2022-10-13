@@ -40,6 +40,7 @@ vim.o.whichwrap = "b,s,<,>,[,],h,l"
 vim.o.hidden = true
 -- 鼠标支持
 vim.o.mouse = "nv"
+vim.o.mousescroll = "ver:1,hor:3"
 -- 禁止创建备份文件
 vim.o.backup = false
 vim.o.writebackup = false
