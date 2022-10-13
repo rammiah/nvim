@@ -12,8 +12,16 @@
     "diagnosticsDelay": "500ms",
     "staticcheck": true,
     "importShortcut": "Both",
-    "verboseOutput": false
+    "analyses": {
+      "unusedwrite": true,
+      "unusedparams": true,
+      "unusedresult": true,
+      "unusedvariable": true,
+      "nilness": true,
+      "shadow": false
+    }
   },
+  "go.goplsUseDaemon": true,
   "languageserver": {
     "haskell": {
       "command": "haskell-language-server-wrapper",
