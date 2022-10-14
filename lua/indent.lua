@@ -1,9 +1,6 @@
-vim.cmd [[
-" filetype on
-filetype plugin indent on
-set autoindent
-set shiftwidth=4
-set tabstop=4
-set expandtab
-set softtabstop=4
-]]
+vim.cmd [[ filetype plugin indent on ]]
+
+vim.o.autoindent = true
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true

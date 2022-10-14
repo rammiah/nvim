@@ -3,6 +3,7 @@
 require("basic")
 require("filetype")
 require("commands")
+require("autocmd")
 require("keybindings")
 require("indent")
 
