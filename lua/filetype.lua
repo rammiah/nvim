@@ -3,6 +3,7 @@ vim.filetype.add({
         ["Caddyfile"] = "Caddyfile",
         ["tmux.conf"] = "tmux",
         [".gitconfig"] = "gitconfig", -- Included in the plugin
-        [".envrc"] = "bash",
+        [".envrc"] = "sh",
+        ["tsconfig.json"] = "jsonc",
     },
 })
