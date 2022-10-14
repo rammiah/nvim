@@ -57,15 +57,20 @@ vim.g.coc_global_extensions = {
 vim.g.coc_disable_transparent_cursor = 0
 vim.g.coc_enable_locationlist = 1
 
--- format options
--- ShowDoc show document or type hover
-function _M.ShowHover()
+local opts = {
+    silent = true,
+    noremap = true
+}
+
+local function on_hover()
     if vim.fn.CocHasProvider and vim.fn.CocHasProvider('hover') then
         vim.fn.CocActionAsync("doHover")
     else
         vim.api.nvim_feedkeys("K", "in", false)
     end
 end
+
+vim.keymap.set("n", "K", on_hover, opts)
 
 function _M.OrganizeImports()
     if vim.g.coc_service_initialized == 1 then
@@ -103,13 +108,12 @@ function _M.FormatDoc()
     end
 end
 
--- Use K to show documentation in preview window.
-map("n", "K", ":lua _M.ShowHover()<CR>")
 -- map for format key use editor.action.formatDocument
 map("n", "<leader>i", ":lua _M.FormatDoc()<CR>")
 map("i", "<C-j>", "<Plug>(coc-snippets-expand-jump)", { noremap = false })
 
 vim.api.nvim_create_autocmd("User", {
+    desc = "update signature when jump placeholder",
     pattern = "CocJumpPlaceholder",
     command = "call CocActionAsync('showSignatureHelp')",
 })
