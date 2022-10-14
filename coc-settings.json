@@ -72,6 +72,9 @@
   "Lua.completion.autoRequire": true,
   "Lua.completion.displayContext": 1,
   "Lua.hint.enable": false,
+  "Lua.diagnostics.groupSeverity": {
+    "unbalanced": "Hint"
+  },
   "list.maxPreviewHeight": 9999,
   "list.alignColumns": true,
   "list.extendedSearchMode": true,

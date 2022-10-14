@@ -2,7 +2,6 @@ local map = require("localutils").KeyMap
 vim.bo.shiftwidth = 2
 vim.bo.softtabstop = 2
 
-
 if require("localutils").safe_load("jsonpath") then
     -- jsonpath support
     if vim.fn.exists("+winbar") == 1 then
