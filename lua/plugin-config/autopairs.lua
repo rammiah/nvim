@@ -1,7 +1,7 @@
 local npairs = require("nvim-autopairs")
 
-npairs.setup({
-    disable_filetype = { "TelescopePrompt" },
+npairs.setup {
+    disable_filetype = { "TelescopePrompt", "NvimTree" },
     disable_in_macro = false, -- disable when recording or executing a macro
     disable_in_visualblock = false, -- disable when insert after visual block mode
     ignored_next_char = [=[[%w%%%'%[%"%.]]=],
@@ -18,27 +18,25 @@ npairs.setup({
     map_bs = true, -- map the <BS> key
     map_c_h = false, -- Map the <C-h> key to delete a pair
     map_c_w = false, -- map <c-w> to delete a pair if possible
-})
+}
 
--- local ts_conds = require("nvim-autopairs.ts-conds")
-local map = require("localutils").KeyMap
-
--- skip it, if you use another global object
-_G.MUtils = {}
-
-MUtils.completion_confirm = function()
+local function completion_confirm()
     if vim.fn["coc#pum#visible"] and vim.fn["coc#pum#visible"]() ~= 0 then
         -- visible 返回int
-        return vim.fn["coc#pum#confirm"]()
+        vim.fn["coc#pum#confirm"]()
     elseif vim.fn["coc#expandable"] and vim.fn["coc#expandable"]() then
         -- expandable 返回bool
-        return vim.fn["coc#pum#confirm"]()
+        vim.fn["coc#pum#confirm"]()
     else
-        return npairs.autopairs_cr()
+        local key = npairs.autopairs_cr()
+        vim.api.nvim_feedkeys(key, "in", true)
     end
 end
 
-map("i", "<CR>", "v:lua.MUtils.completion_confirm()", { expr = true, noremap = true, silent = true })
+vim.keymap.set("i", "<CR>", completion_confirm, {
+    noremap = true,
+    silent = true,
+})
 
 local Rule = require 'nvim-autopairs.rule'
 local cond = require 'nvim-autopairs.conds'

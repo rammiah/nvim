@@ -33,20 +33,18 @@ return require("packer").startup({
         use {
             "nvim-treesitter/nvim-treesitter",
             run = ":TSUpdate",
-            requires = "p00f/nvim-ts-rainbow",
+            requires = {
+                "p00f/nvim-ts-rainbow",
+                "nvim-treesitter/nvim-treesitter-textobjects",
+                "JoosepAlviste/nvim-ts-context-commentstring",
+                "RRethy/nvim-treesitter-endwise",
+            },
             -- commit = "635c450",
             config = function()
                 require("plugin-config.nvim-treesitter")
             end,
         }
-        use "nvim-treesitter/nvim-treesitter-textobjects"
-        use "JoosepAlviste/nvim-ts-context-commentstring"
         use "nvim-treesitter/playground"
-        -- Lua
-        -- use {
-        --     "SmiteshP/nvim-gps",
-        --     requires = "nvim-treesitter/nvim-treesitter"
-        -- }
         -- commenter
         use {
             "numToStr/Comment.nvim",

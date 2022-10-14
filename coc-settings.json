@@ -178,7 +178,7 @@
   ],
   "snippet.statusText": "SN",
   "snippet.highlight": false,
-  "snippet.nextPlaceholderOnDelete": false,
+  "snippet.nextPlaceholderOnDelete": true,
   "snippets.priority": 90,
   "snippets.autoTrigger": true,
   "coc.preferences.jumpCommand": "edit",
