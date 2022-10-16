@@ -2,13 +2,41 @@ local map = require("localutils").KeyMap
 local builtin = require('telescope.builtin')
 local actions = require('telescope.actions')
 
-map("n", "<leader>ff", ':lua require("telescope.builtin").find_files(' ..
-    '{ find_command = { "fd", "--type", "f", "--strip-cwd-prefix", ' ..
-    ' "-E", "kitex_gen/", "-E", "thrift_gen/" } })<CR>')
+local opts = {
+    silent = true,
+    noremap = true,
+}
 
-map("n", "<leader>fg", ':lua require("telescope.builtin").live_grep({ vimgrep_arguments = { "rg", ' ..
-    ' "--color=never", "--no-heading", "--with-filename", "--line-number", "--column", "--smart-case", ' ..
-    ' "--iglob", "!.git/", "--iglob", "!thrift_gen/", "--iglob", "!kitex_gen/", } })<CR>')
+vim.keymap.set("n", "<leader>ff", function()
+    builtin.find_files({
+        find_command = {
+            "fd",
+            "--type", "f",
+            "--strip-cwd-prefix",
+            "-E", "kitex_gen/",
+            "-E", "thrift_gen/",
+            "-E", "node_modules/",
+        }
+    })
+end, opts)
+
+vim.keymap.set("n", "<leader>fg", function()
+    builtin.live_grep({
+        vimgrep_arguments = {
+            "rg",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
+            "--iglob", "!.git/",
+            "--iglob", "!thrift_gen/",
+            "--iglob", "!kitex_gen/",
+            "--iglob", "!node_modules/",
+        }
+    })
+end, opts)
 
 map("n", "<leader>fb", ':lua require("telescope.builtin").buffers()<CR>')
 -- map("n", "<leader>ft", ':lua require("telescope.builtin").tags()<CR>')
