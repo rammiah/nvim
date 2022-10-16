@@ -147,10 +147,8 @@ require("nvim-treesitter.configs").setup {
     textobjects = {
         select = {
             enable = true,
-
             -- Automatically jump forward to textobj, similar to targets.vim
             lookahead = true,
-
             keymaps = {
                 -- You can use the capture groups defined in textobjects.scm
                 ["af"] = "@function.outer",
@@ -163,13 +161,14 @@ require("nvim-treesitter.configs").setup {
                 ["ia"] = "@parameter.inner",
                 ["aa"] = "@parameter.outer",
             },
+            include_surrounding_whitespace = true,
         },
         move = {
             enable = true,
             set_jumps = true, -- whether to set jumps in the jumplist
             goto_next_start = {
                 -- ["]m"] = "@function.outer",
-                ["]]"] = "@function.outer",
+                ["]]"] = { query = "@function.outer", desc = "Next function start" },
                 -- ["]]"] = "@class.outer",
             },
             goto_next_end = {
@@ -177,7 +176,7 @@ require("nvim-treesitter.configs").setup {
                 -- ["]["] = "@class.outer",
             },
             goto_previous_start = {
-                ["[["] = "@function.outer",
+                ["[["] = { query = "@function.outer", desc = "Previous function start" },
                 -- ["[["] = "@class.outer",
             },
             goto_previous_end = {
