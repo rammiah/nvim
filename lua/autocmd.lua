@@ -41,11 +41,11 @@ vim.api.nvim_create_autocmd("BufNewFile", {
     pattern = "*",
     callback = function(opts)
         local bufnr = opts.buf
-        print(string.format("filename %s", opts.file))
+        -- print(string.format("filename %s", opts.file))
         local ft = vim.filetype.match({
             filename = opts.file,
         })
-        print("filetype " .. vim.inspect(ft))
+        -- print("filetype " .. vim.inspect(ft))
         if ft and shells[ft] then
             local lines = { "#!/usr/bin/env " .. shells[ft], "" }
             vim.api.nvim_put(lines, "l", false, true)
