@@ -7,6 +7,7 @@ return require("packer").startup({
         use "wbthomason/packer.nvim"
         -- color theme
         use "overcache/NeoSolarized"
+        use { "ellisonleao/gruvbox.nvim" }
         -- dev icons
         use {
             "kyazdani42/nvim-web-devicons",

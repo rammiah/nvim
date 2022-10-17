@@ -1,12 +1,15 @@
---exclude=*/kitex_gen/*
---exclude=*/thrift_gen/*
---exclude=*/.vim/*
 --exclude=*/.git/*
+--exclude=*/.vim/*
+--exclude=*/kitex_gen/*
 --exclude=*/output/*
---exclude=kitex_gen/*
---exclude=thrift_gen/*
---exclude=.vim/*
+--exclude=*/thrift_gen/*
 --exclude=.git/*
+--exclude=.vim/*
+--exclude=kitex_gen/*
 --exclude=output/*
--f tags
+--exclude=thrift_gen/*
+--exclude=target/*
+--exclude=vendor/*
+--exclude=node_modules/*
 --recurse
+-f tags
