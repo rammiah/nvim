@@ -389,6 +389,19 @@ return require("packer").startup({
                 }
             end,
         }
+        -- markdown preview
+        use {
+            "iamcco/markdown-preview.nvim",
+            run = "cd app && yarn install --frozen-lock-file",
+            setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+            config = function()
+                require("plugin-config.markdown_preview")
+            end,
+            opt = true,
+            ft = {
+                "markdown"
+            },
+        }
     end,
     config = {
         ensure_dependencies  = true, -- Should packer install plugin dependencies?
