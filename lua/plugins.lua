@@ -243,13 +243,13 @@ return require("packer").startup({
             end,
         }
         -- key repeat
-        use {
-            "anuvyklack/hydra.nvim",
-            requires = "anuvyklack/keymap-layer.nvim",
-            config = function()
-                require("plugin-config.hydra")
-            end
-        }
+        -- use {
+        --     "anuvyklack/hydra.nvim",
+        --     requires = "anuvyklack/keymap-layer.nvim",
+        --     config = function()
+        --         require("plugin-config.hydra")
+        --     end
+        -- }
         -- speed move
         use {
             "phaazon/hop.nvim",
