@@ -66,6 +66,7 @@ local ctags_args = {
     "--exclude=output/*",
     "--exclude=thrift_gen/*",
     "--exclude=target/*",
+    "--exclude=vendor/*",
     "--recurse",
     "-f", "tags",
 }

@@ -24,12 +24,10 @@ map("n", "<leader>cc", "<Plug>(coc-codeaction-cursor)")
 map("v", "<leader>a", "<Plug>(coc-codeaction-selected)")
 map("n", "<leader>a", "<Plug>(coc-codeaction-selected)")
 
--- #657b83 #ffffd7
 vim.cmd [[
-  hi CocFloating guifg=#000000 guibg=#e4e4e4 "#f7f7f7
+  hi CocFloating guifg=#000000 guibg=#e4e4e4
   hi CocSearch ctermfg=12 guifg=#2470b3
-  "hi CocMenuSel ctermbg=109 guifg=#000000 guibg=#c5dffc
-  hi CocMenuSel guibg=#ffffd7    "#c5dffc
+  hi CocMenuSel guibg=#ffffd7
 ]]
 
 -- global options
@@ -87,10 +85,6 @@ end
 
 -- FormatDoc will format buffer by language server
 function _M.FormatDoc()
-    -- local bufnr = vim.api.nvim_get_current_buf()
-    -- if bufnr.filetype == 'go' then
-    --     print('file type is go')
-    -- end
     -- go.format is too slow for big project, use coc organizeImports to import
     _M.OrganizeImports()
 
@@ -102,7 +96,6 @@ function _M.FormatDoc()
         vim.fn.CocActionAsync("format")
     else
         local view = vim.fn.winsaveview()
-        -- print("view saved is " .. vim.inspect(view))
         vim.api.nvim_feedkeys("gg=G", "in", false)
         vim.fn.winrestview(view)
     end
