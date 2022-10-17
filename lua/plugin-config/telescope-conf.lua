@@ -77,6 +77,7 @@ telescope.setup({
                 ["<C-k>"] = actions.move_selection_previous,
 
                 ["<C-c>"] = actions.close,
+                ["<C-\\>"] = actions.close,
 
                 -- hop.hop_toggle_selection
                 ["<C-h>"] = telescope.extensions.hop.hop,
@@ -114,6 +115,7 @@ telescope.setup({
 
             n = {
                 ["<esc>"] = actions.close,
+                ["<C-\\>"] = actions.close,
                 ["<CR>"] = actions.select_default,
                 ["<C-x>"] = actions.select_horizontal,
                 ["<C-v>"] = actions.select_vertical,

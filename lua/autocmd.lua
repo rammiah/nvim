@@ -95,12 +95,13 @@ vim.api.nvim_create_autocmd("BufWritePost", {
                 vim.notify(string.format("[ctags]please install %s to generate ctags file", cmd), levels.WARN)
                 return
             end
+
             local job = Job:new({
                 command = cmd,
                 args = args,
                 cwd = uv.cwd(),
                 env = {
-                    PATH = uv.os_getenv("PATH"),
+                    PATH = vim.fn.getenv("PATH"),
                 },
                 on_exit = function(j, ret)
                     if ret ~= 0 then
@@ -109,8 +110,8 @@ vim.api.nvim_create_autocmd("BufWritePost", {
                         vim.notify(string.format("[ctags]%s run success", cmd), levels.INFO)
                     end
                 end,
-                on_stderr = function(err, data)
-                    vim.notify(string.format("[ctags]%s run error %s, message:\n%s", cmd, err, data),
+                on_stderr = function(_, data)
+                    vim.notify(string.format("[ctags]%s run error, message:\n%s", cmd, data),
                         levels.ERROR)
                 end,
             })

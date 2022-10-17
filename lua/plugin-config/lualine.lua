@@ -31,6 +31,23 @@ local nvim_tree = {
     filetypes = { "NvimTree" }
 }
 
+local telescope = {
+    sections = {
+        lualine_a = {
+            {
+                "mode",
+                fmt = fmt_mode
+            }
+        },
+        lualine_b = {
+            function ()
+                return " Telescope"
+            end
+        },
+    },
+    filetypes = { "TelescopePrompt" }
+}
+
 lualine.setup {
     options = {
         icons_enabled = true,
@@ -135,7 +152,7 @@ lualine.setup {
     tabline = {},
     winbar = {},
     inactive_winbar = {},
-    extensions = { "toggleterm", nvim_tree },
+    extensions = { "toggleterm", nvim_tree, telescope },
 }
 
 vim.api.nvim_create_autocmd("User", {

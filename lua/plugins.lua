@@ -12,7 +12,14 @@ return require("packer").startup({
             "kyazdani42/nvim-web-devicons",
             config = function()
                 require("nvim-web-devicons").setup {
-                    override = {};
+                    override = {
+                        TelescopePrompt = {
+                            icon = " ",
+                            color = "#428850",
+                            cterm_color = "65",
+                            name = "Telescope"
+                        },
+                    };
                     color_icons = true;
                     default = true;
                 }
