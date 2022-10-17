@@ -67,7 +67,7 @@ local ctags_args = {
     "--exclude=thrift_gen/*",
     "--exclude=target/*",
     "--recurse",
-    "-f tags",
+    "-f", "tags",
 }
 
 local ctags_cmds = {
@@ -99,7 +99,9 @@ vim.api.nvim_create_autocmd("BufWritePost", {
                 command = cmd,
                 args = args,
                 cwd = uv.cwd(),
-                env = {},
+                env = {
+                    PATH = uv.os_getenv("PATH"),
+                },
                 on_exit = function(j, ret)
                     if ret ~= 0 then
                         vim.notify(string.format("[ctags]%s run not success, ret code %d", cmd, ret), levels.ERROR)
@@ -107,9 +109,8 @@ vim.api.nvim_create_autocmd("BufWritePost", {
                         vim.notify(string.format("[ctags]%s run success", cmd), levels.INFO)
                     end
                 end,
-                on_stderr = function(j, ret)
-                    local err_msg = table.concat(j:result(), "\n")
-                    vim.notify(string.format("[ctags]%s run error, ret code %d, message:\n%s", cmd, ret, err_msg),
+                on_stderr = function(err, data)
+                    vim.notify(string.format("[ctags]%s run error %s, message:\n%s", cmd, err, data),
                         levels.ERROR)
                 end,
             })
