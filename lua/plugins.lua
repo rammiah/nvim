@@ -414,6 +414,12 @@ return require("packer").startup({
                 }
             end,
         }
+        use {
+            "tjdevries/colorbuddy.nvim",
+            config = function()
+                local Color, colors, Group, groups, styles = require("colorbuddy").setup()
+            end
+        }
     end,
     config = {
         ensure_dependencies  = true, -- Should packer install plugin dependencies?
