@@ -52,6 +52,7 @@ end
 local nvim_tree = {
     sections = {
         lualine_a = { get_short_cwd },
+        lualine_b = { "branch" },
     },
     filetypes = { "NvimTree" }
 }
