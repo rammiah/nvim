@@ -11,12 +11,37 @@ local status_map = {
     ["TERMINAL"] = "TERM",
 }
 
+-- helper functions
+
+-- format mode to short
 local function fmt_mode(str)
     local ret = status_map[str]
     if ret == nil then
         return str
     end
     return ret
+end
+
+-- format filepath for short
+local function shorten_filename(filepath)
+    local words = vim.split(filepath, "/", { trimempty = true })
+    if #words == 0 then
+        return filepath
+    end
+
+    local arr = {}
+    for i = 1, #words - 1, 1 do
+        table.insert(arr, words[i]:sub(1, 1))
+    end
+    -- last component filename
+    table.insert(arr, words[#words])
+
+    local result = table.concat(arr, "/")
+    if filepath:sub(1, 1) == '/' then
+        result = "/" .. result
+    end
+
+    return result
 end
 
 -- nvim-tree extensions
@@ -40,7 +65,7 @@ local telescope = {
             }
         },
         lualine_b = {
-            function ()
+            function()
                 return " Telescope"
             end
         },
@@ -63,8 +88,8 @@ lualine.setup {
         ignore_focus = {},
         refresh = {
             statusline = 3000, -- time before nvim-tree refresh
-            tabline = 1000,
-            winbar = 1000,
+            tabline = 3000,
+            winbar = 3000,
         },
     },
     sections = {
@@ -89,8 +114,9 @@ lualine.setup {
                 symbols = {
                     modified = "[+]", -- Text to show when the file is modified.
                     readonly = "[-]", -- Text to show when the file is non-modifiable or readonly.
-                    unnamed = "[No Name]", -- Text to show for unnamed buffers.
+                    unnamed = "[New]", -- Text to show for unnamed buffers.
                 },
+                fmt = shorten_filename,
             },
             -- { gps.get_location, cond = gps.is_available },
             "g:coc_status",
