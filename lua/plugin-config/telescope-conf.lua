@@ -1,6 +1,7 @@
 local map = require("localutils").KeyMap
 local builtin = require('telescope.builtin')
 local actions = require('telescope.actions')
+local view = require("nvim-tree.view")
 
 local opts = {
     silent = true,
@@ -8,6 +9,9 @@ local opts = {
 }
 
 vim.keymap.set("n", "<leader>ff", function()
+    if view.is_visible() then
+        view.close()
+    end
     builtin.find_files({
         find_command = {
             "fd",
@@ -21,6 +25,9 @@ vim.keymap.set("n", "<leader>ff", function()
 end, opts)
 
 vim.keymap.set("n", "<leader>fg", function()
+    if view.is_visible() then
+        view.close()
+    end
     builtin.live_grep({
         vimgrep_arguments = {
             "rg",
@@ -38,14 +45,38 @@ vim.keymap.set("n", "<leader>fg", function()
     })
 end, opts)
 
-map("n", "<leader>fb", ':lua require("telescope.builtin").buffers()<CR>')
+vim.keymap.set("n", "<leader>fb", function()
+    if view.is_visible() then
+        view.close()
+    end
+    builtin.buffers()
+end, opts)
+
+vim.keymap.set("n", "<leader>fr", function()
+    if view.is_visible() then
+        view.close()
+    end
+    builtin.resume()
+end, opts)
+
+vim.keymap.set("n", "<leader>fs", function()
+    if view.is_visible() then
+        view.close()
+    end
+    builtin.git_status()
+end, opts)
+
+vim.keymap.set("n", "<leader>fl", function()
+    if view.is_visible() then
+        view.close()
+    end
+    builtin.current_buffer_fuzzy_find()
+end, opts)
+
 -- map("n", "<leader>ft", ':lua require("telescope.builtin").tags()<CR>')
 -- map("n", "<leader>fh", ':lua require("telescope.builtin").help_tags()<CR>')
 -- map("n", "<leader>fc", ':lua require("telescope.builtin").commands()<CR>')
 -- map("n", "<leader>fq", ':lua require("telescope.builtin").quickfix()<CR>')
-map("n", "<leader>fr", ':lua require("telescope.builtin").resume()<CR>')
-map("n", "<leader>fs", ':lua require("telescope.builtin").git_status()<CR>')
-map("n", "<leader>fl", ':lua require("telescope.builtin").current_buffer_fuzzy_find()<CR>')
 
 local telescope = require("telescope")
 
