@@ -14,7 +14,10 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         if vim.fn.isdirectory(path) == 1 then
             return
         end
-        vim.fn.mkdir(path, "p", "0o755")
+        if vim.fn.mkdir(path, "p", "0o755") == 0 then
+            vim.notify(string.format("create folder %s failed", path), levels.ERROR)
+            return
+        end
     end,
     group = gid,
 })
@@ -49,76 +52,6 @@ vim.api.nvim_create_autocmd("BufNewFile", {
         if ft and shells[ft] then
             local lines = { "#!/usr/bin/env " .. shells[ft], "" }
             vim.api.nvim_put(lines, "l", false, true)
-        end
-    end,
-    group = gid,
-})
-
-local ctags_args = {
-    "--exclude=*/.git/*",
-    "--exclude=*/.vim/*",
-    "--exclude=*/kitex_gen/*",
-    "--exclude=*/output/*",
-    "--exclude=*/thrift_gen/*",
-    "--exclude=.git/*",
-    "--exclude=.vim/*",
-    "--exclude=kitex_gen/*",
-    "--exclude=output/*",
-    "--exclude=thrift_gen/*",
-    "--exclude=target/*",
-    "--exclude=vendor/*",
-    "--exclude=node_modules/*",
-    "--exclude=build/*",
-    "--recurse",
-    "-f", "tags",
-}
-
-local ctags_cmds = {
-    c = { cmd = "ctags", args = ctags_args },
-    cpp = { cmd = "ctags", args = ctags_args },
-    go = { cmd = "ctags", args = ctags_args },
-    java = { cmd = "ctags", args = ctags_args },
-    json = { cmd = "ctags", args = ctags_args },
-    lua = { cmd = "ctags", args = ctags_args },
-    python = { cmd = "ctags", args = ctags_args },
-}
-
--- auto generate ctags after write source file
-vim.api.nvim_create_autocmd("BufWritePost", {
-    desc = "generate ctags file",
-    pattern = "*",
-    callback = function(opts)
-        local ft = vim.filetype.match({
-            buf = opts.buf,
-        })
-        if ft and ctags_cmds[ft] then
-            local cmd = ctags_cmds[ft].cmd
-            local args = ctags_cmds[ft].args
-            if vim.fn.executable(cmd) ~= 1 then
-                vim.notify(string.format("[ctags]please install %s to generate ctags file", cmd), levels.WARN)
-                return
-            end
-
-            local job = Job:new({
-                command = cmd,
-                args = args,
-                cwd = uv.cwd(),
-                env = {
-                    PATH = vim.fn.getenv("PATH"),
-                },
-                on_exit = function(j, ret)
-                    if ret ~= 0 then
-                        vim.notify(string.format("[ctags]%s run not success, ret code %d", cmd, ret), levels.ERROR)
-                    else
-                        vim.notify(string.format("[ctags]%s run success", cmd), levels.INFO)
-                    end
-                end,
-                on_stderr = function(_, data)
-                    vim.notify(string.format("[ctags]%s run error, message:\n%s", cmd, data),
-                        levels.ERROR)
-                end,
-            })
-            job:start()
         end
     end,
     group = gid,
