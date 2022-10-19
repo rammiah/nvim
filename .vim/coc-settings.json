@@ -6,6 +6,6 @@
     "_M"
   ],
   "Lua.workspace.library": [
-    "/data00/home/wangyaning.ovo/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+    "$HOME/.local/share/nvim/site/pack/packer/start/plenary.nvim"
   ]
 }
