@@ -85,7 +85,7 @@ end
 
 -- vim.g.did_load_filetypes = 1
 -- set python3 path
-if vim.fn.executable("/opt/homebrew/bin/python3") then
+if vim.fn.executable("/opt/homebrew/bin/python3") == 1 then
     vim.g.python3_host_prog = "/opt/homebrew/bin/python3"
 else
     vim.g.python3_host_prog = "/usr/bin/python3"
