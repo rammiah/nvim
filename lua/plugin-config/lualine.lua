@@ -66,6 +66,9 @@ local telescope = {
             }
         },
         lualine_b = {
+            "branch"
+        },
+        lualine_c = {
             function()
                 return " Telescope"
             end
