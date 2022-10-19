@@ -8,13 +8,6 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 ZSH_TMUX_DEFAULT_SESSION_NAME="dev"
 ZSH_TMUX_FIXTERM=false
 
-if [ -d ~/.zshconf ]
-then
-    for file in ~/.zshconf/*; do
-        source "$file"
-    done
-fi
-
 plugins=( 
     common-aliases 
     fzf 
@@ -36,6 +29,13 @@ plugins=(
 
 # user config
 source $ZSH/oh-my-zsh.sh
+
+if [ -d ~/.zshconf ]
+then
+    for file in ~/.zshconf/*; do
+        source "$file"
+    done
+fi
 
 _fix_cursor() {
     echo -ne "\e[5 q"
