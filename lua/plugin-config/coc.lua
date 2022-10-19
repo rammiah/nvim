@@ -102,7 +102,7 @@ function _M.FormatDoc()
 end
 
 -- map for format key use editor.action.formatDocument
-map("n", "<leader>i", ":lua _M.FormatDoc()<CR>")
+map("n", "<leader>=", ":lua _M.FormatDoc()<CR>")
 map("i", "<C-j>", "<Plug>(coc-snippets-expand-jump)", { noremap = false })
 
 vim.api.nvim_create_autocmd("User", {
