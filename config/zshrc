@@ -8,6 +8,13 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 ZSH_TMUX_DEFAULT_SESSION_NAME="dev"
 ZSH_TMUX_FIXTERM=false
 
+if [ -d ~/.zshconf ]
+then
+    for file in ~/.zshconf/*; do
+        source "$file"
+    done
+fi
+
 plugins=( 
     common-aliases 
     fzf 
@@ -126,12 +133,5 @@ lscwd() {
 }
 
 [ -s "$HOME/.acme.sh/acme.sh.env" ] && source "$HOME/.acme.sh/acme.sh.env"
-
-if [ -d ~/.zshconf ]
-then
-    for file in ~/.zshconf/*; do
-        source "$file"
-    done
-fi
 
 eval "$(direnv hook zsh)"
