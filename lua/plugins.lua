@@ -319,12 +319,18 @@ return require("packer").startup({
                 }
             end,
         }
-        -- zen-mod
+        -- zen-mode
         use {
             "folke/zen-mode.nvim",
             config = function()
                 require("plugin-config.zen-mode")
             end,
+        }
+        use {
+            "Pocco81/true-zen.nvim",
+            config = function()
+                require("lua.plugin-config.true-zen")
+            end
         }
         -- command result real time
         use {
@@ -418,6 +424,42 @@ return require("packer").startup({
             "tjdevries/colorbuddy.nvim",
             config = function()
                 local Color, colors, Group, groups, styles = require("colorbuddy").setup()
+            end
+        }
+        use {
+            "mbbill/undotree",
+            config = function()
+                vim.g.undotree_WindowLayout = 3
+            end,
+        }
+        -- better fold
+        use {
+            "anuvyklack/pretty-fold.nvim",
+            config = function()
+                require("plugin-config.pretty-fold")
+            end
+        }
+        use {
+            "anuvyklack/fold-preview.nvim",
+            requires = {
+                "anuvyklack/keymap-amend.nvim",
+            },
+            config = function()
+                require("fold-preview").setup {
+                    default_keybindings = true,
+                    boder = "single",
+                }
+                local keymap = vim.keymap
+                keymap.amend = require("keymap-amend")
+                local map = require("fold-preview").mapping
+
+                keymap.amend("n", "h", map.show_close_preview_open_fold)
+                keymap.amend("n", "l", map.close_preview_open_fold)
+                keymap.amend("n", "zo", map.close_preview)
+                keymap.amend("n", "zO", map.close_preview)
+                keymap.amend("n", "zc", map.close_preview_without_defer)
+                keymap.amend("n", "zR", map.close_preview)
+                keymap.amend("n", "zM", map.close_preview_without_defer)
             end
         }
     end,

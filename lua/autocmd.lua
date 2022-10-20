@@ -56,3 +56,12 @@ vim.api.nvim_create_autocmd("BufNewFile", {
     end,
     group = gid,
 })
+
+-- vim.api.nvim_create_autocmd("VimEnter", {
+--     desc = "clear jumplist when enter neovim",
+--     pattern = "*",
+--     callback = function ()
+--         vim.cmd[[:clearjumps]]
+--     end,
+--     group = gid,
+-- })
