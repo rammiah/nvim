@@ -182,6 +182,7 @@
   "snippet.nextPlaceholderOnDelete": true,
   "snippets.priority": 90,
   "snippets.autoTrigger": true,
+  "snippets.userSnippetsDirectory": "$HOME/.config/nvim/data/snippets",
   "coc.preferences.jumpCommand": "edit",
   "coc.preferences.formatOnSaveFiletypes": [],
   "coc.preferences.enableMarkdown": true,
