@@ -329,7 +329,7 @@ return require("packer").startup({
         use {
             "Pocco81/true-zen.nvim",
             config = function()
-                require("lua.plugin-config.true-zen")
+                require("plugin-config.true-zen")
             end
         }
         -- command result real time
