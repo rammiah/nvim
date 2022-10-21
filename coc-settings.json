@@ -102,7 +102,7 @@
     "border": false,
     "rounded": false,
     "borderhighlight": "CocFloating",
-    "maxWidth": 100,
+    "maxWidth": 120,
     "winblend": 5,
     "shadow": false
   },
@@ -194,14 +194,14 @@
   "json.enable": true,
   "hover.autoHide": true,
   "hover.target": "float",
-  "hover.previewMaxHeight": 12,
+  "hover.previewMaxHeight": 14,
   "hover.floatConfig": {
     "maxHeight": 30,
     "border": false,
     "shadow": false,
     "borderhighlight": "CocFloating",
     "rounded": false,
-    "maxWidth": 100,
+    "maxWidth": 120,
     "winblend": 10
   },
   "notification.border": true,
