@@ -16,6 +16,7 @@ then
 fi
 
 plugins=( 
+    autojump
     common-aliases 
     fzf 
     git 
