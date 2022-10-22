@@ -466,6 +466,13 @@ return require("packer").startup({
                 keymap.amend("n", "zM", map.close_preview_without_defer)
             end
         }
+        use {
+            "itchyny/calendar.vim",
+            config = function()
+                vim.g.calendar_google_calendar = 0
+                vim.g.calendar_google_task = 0
+            end
+        }
     end,
     config = {
         ensure_dependencies  = true, -- Should packer install plugin dependencies?
