@@ -32,6 +32,7 @@ vim.cmd [[
 
 -- global options
 vim.g.coc_global_extensions = {
+    "coc-clangd",
     "coc-dictionary",
     "coc-go",
     "coc-html",
