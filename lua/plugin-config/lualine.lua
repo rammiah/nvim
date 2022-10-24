@@ -77,10 +77,18 @@ local telescope = {
     filetypes = { "TelescopePrompt" }
 }
 
+
+local theme = "auto"
+if vim.g.colors_name == "NeoSolarized" then
+    theme = "solarized_light"
+elseif vim.g.colors_name == "solarized" then
+    theme = "solarized"
+end
+
 lualine.setup {
     options = {
         icons_enabled = true,
-        theme = "solarized_light",
+        theme = theme,
         -- theme = "solarized",
         -- theme = "auto",
         -- theme = "tokyonight",
