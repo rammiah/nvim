@@ -105,6 +105,25 @@ end
 map("n", "<leader>=", ":lua _M.FormatDoc()<CR>")
 map("i", "<C-j>", "<Plug>(coc-snippets-expand-jump)", { noremap = false })
 
+-- check hover is shown
+vim.keymap.set({ "n", "i" }, "<PageDown>", function()
+    if vim.fn["coc#float#has_float"]() == 1 then
+        vim.fn["coc#float#scroll"](1)
+    else
+        local key = vim.api.nvim_replace_termcodes("<PageDown>", true, false, true)
+        vim.api.nvim_feedkeys(key, "in", true)
+    end
+end, opts)
+
+vim.keymap.set({ "n", "i" }, "<PageUp>", function()
+    if vim.fn["coc#float#has_float"]() == 1 then
+        vim.fn["coc#float#scroll"](0)
+    else
+        local key = vim.api.nvim_replace_termcodes("<PageUp>", true, false, true)
+        vim.api.nvim_feedkeys(key, "in", true)
+    end
+end, opts)
+
 vim.api.nvim_create_autocmd("User", {
     desc = "update signature when jump placeholder",
     pattern = "CocJumpPlaceholder",
