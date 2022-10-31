@@ -473,6 +473,12 @@ return require("packer").startup({
                 vim.g.calendar_google_task = 0
             end
         }
+        use {
+            "ThePrimeagen/vim-be-good",
+            config = function()
+                -- vim.g.vim_be_good_delete_me_offset = 35
+            end
+        }
     end,
     config = {
         ensure_dependencies  = true, -- Should packer install plugin dependencies?
