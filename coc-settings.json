@@ -16,7 +16,6 @@
       "unusedwrite": true,
       "unusedparams": true,
       "unusedresult": true,
-      "unusedvariable": true,
       "nilness": true,
       "shadow": false
     }
@@ -36,7 +35,6 @@
       "filetypes": ["haskell", "lhaskell"]
     }
   },
-  "snippet.choicesMenuPicker": false,
   "coc.source.around.enable": true,
   "coc.source.around.priority": 60,
   "coc.source.around.shortcut": "A",
@@ -97,6 +95,7 @@
   "suggest.detailField": "preview",
   "suggest.formatItems": ["kind", "abbr", "menu", "shortcut"],
   "suggest.enablePreselect": true,
+  "suggest.filterGraceful": true,
   "suggest.fixInsertedWord": true,
   "suggest.floatConfig": {
     "border": false,
@@ -167,19 +166,10 @@
   },
   "signature.target": "float",
   "signature.hideOnTextChange": false,
-  "colors.filetypes": [
-    "css",
-    "go",
-    "html",
-    "javascript",
-    "lua",
-    "typescript",
-    "vim",
-    "vue"
-  ],
+  "colors.enable": true,
   "snippet.statusText": "SN",
   "snippet.highlight": false,
-  "snippet.nextPlaceholderOnDelete": true,
+  "snippet.nextPlaceholderOnDelete": false,
   "snippets.priority": 90,
   "snippets.autoTrigger": true,
   "snippets.userSnippetsDirectory": "$HOME/.config/nvim/data/snippets",
