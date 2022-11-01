@@ -1,3 +1,5 @@
+#!/usr/bin/env lua
+
 local uv = vim.loop
 local Job = require("plenary.job")
 local levels = vim.log.levels
@@ -40,15 +42,13 @@ local shells = {
 
 -- auto add shebang when create a file
 vim.api.nvim_create_autocmd("BufNewFile", {
-    desc = "add file shebang",
+    desc = "add shebang when create a new file",
     pattern = "*",
     callback = function(opts)
         local bufnr = opts.buf
-        -- print(string.format("filename %s", opts.file))
         local ft = vim.filetype.match({
             filename = opts.file,
         })
-        -- print("filetype " .. vim.inspect(ft))
         if ft and shells[ft] then
             local lines = { "#!/usr/bin/env " .. shells[ft], "" }
             vim.api.nvim_put(lines, "l", false, true)
@@ -56,12 +56,22 @@ vim.api.nvim_create_autocmd("BufNewFile", {
     end,
     group = gid,
 })
-
--- vim.api.nvim_create_autocmd("VimEnter", {
---     desc = "clear jumplist when enter neovim",
---     pattern = "*",
---     callback = function ()
---         vim.cmd[[:clearjumps]]
---     end,
---     group = gid,
--- })
+-- add shebang for editing a empty file
+vim.api.nvim_create_autocmd("BufReadPost", {
+    desc = "add shebang when read a empty file",
+    pattern = "*",
+    callback = function(opts)
+        local stat = uv.fs_stat(vim.fn.expand("<afile>:p"))
+        if stat == nil or stat.size > 0 then
+            return
+        end
+        local ft = vim.filetype.match({
+            filename = opts.file,
+        })
+        if ft and shells[ft] then
+            local lines = { "#!/usr/bin/env " .. shells[ft], "" }
+            vim.api.nvim_put(lines, "l", false, true)
+        end
+    end,
+    group = gid,
+})
