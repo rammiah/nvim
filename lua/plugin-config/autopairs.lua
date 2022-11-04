@@ -23,10 +23,10 @@ npairs.setup {
 vim.keymap.set("i", "<CR>", function()
     if vim.fn["coc#pum#visible"] and vim.fn["coc#pum#visible"]() ~= 0 then
         -- visible 返回int
-        vim.fn["coc#pum#insert"]()
+        vim.fn["coc#pum#confirm"]()
     elseif vim.fn["coc#expandable"] and vim.fn["coc#expandable"]() then
         -- expandable 返回bool
-        vim.fn["coc#pum#insert"]()
+        vim.fn["coc#pum#confirm"]()
     else
         local key = npairs.autopairs_cr()
         vim.api.nvim_feedkeys(key, "in", true)
