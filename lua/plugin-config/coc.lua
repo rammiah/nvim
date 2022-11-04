@@ -71,7 +71,7 @@ end
 
 vim.keymap.set("n", "K", on_hover, opts)
 
-function _M.OrganizeImports()
+local function organize_imports()
     if vim.g.coc_service_initialized == 1 then
         local actions = vim.fn.CocAction("codeActions", "", { "source.organizeImports" })
         -- print('actions is ' .. vim.inspect(actions))
@@ -85,9 +85,9 @@ function _M.OrganizeImports()
 end
 
 -- FormatDoc will format buffer by language server
-function _M.FormatDoc()
+local function format_doc()
     -- go.format is too slow for big project, use coc organizeImports to import
-    _M.OrganizeImports()
+    organize_imports()
 
     -- local nvim_go = require("go.format")
     -- if vim.bo.ft == "go" and nvim_go and nvim_go.format then
@@ -102,9 +102,11 @@ function _M.FormatDoc()
     end
 end
 
+vim.keymap.set("n", "<leader>=", function()
+    format_doc()
+end, opts)
 -- map for format key use editor.action.formatDocument
-map("n", "<leader>=", ":lua _M.FormatDoc()<CR>")
-map("i", "<C-j>", "<Plug>(coc-snippets-expand-jump)", { noremap = false })
+map("i", "<C-j>", "<Plug>(coc-snippets-expand-jump)", { noremap = false, silent = true })
 
 -- check hover is shown
 vim.keymap.set({ "n", "i" }, "<PageDown>", function()

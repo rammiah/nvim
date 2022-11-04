@@ -20,20 +20,18 @@ npairs.setup {
     map_c_w = false, -- map <c-w> to delete a pair if possible
 }
 
-local function completion_confirm()
+vim.keymap.set("i", "<CR>", function()
     if vim.fn["coc#pum#visible"] and vim.fn["coc#pum#visible"]() ~= 0 then
         -- visible 返回int
-        vim.fn["coc#pum#confirm"]()
+        vim.fn["coc#pum#insert"]()
     elseif vim.fn["coc#expandable"] and vim.fn["coc#expandable"]() then
         -- expandable 返回bool
-        vim.fn["coc#pum#confirm"]()
+        vim.fn["coc#pum#insert"]()
     else
         local key = npairs.autopairs_cr()
         vim.api.nvim_feedkeys(key, "in", true)
     end
-end
-
-vim.keymap.set("i", "<CR>", completion_confirm, {
+end, {
     noremap = true,
     silent = true,
 })
