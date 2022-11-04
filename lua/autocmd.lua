@@ -1,5 +1,9 @@
 #!/usr/bin/env lua
 
+if not require("localutils").safe_load("plenary.job") then
+    return
+end
+
 local uv = vim.loop
 local Job = require("plenary.job")
 local levels = vim.log.levels

@@ -1,5 +1,9 @@
-local uv = vim.loop
+if not require("localutils").safe_load("plenary.job") then
+    return
+end
+
 local Job = require("plenary.job")
+local uv = vim.loop
 local levels = vim.log.levels
 
 local ctags_args = {
@@ -72,6 +76,7 @@ end, {
     force = true,
     bang = false,
 })
+
 if vim.g.neovide then
     vim.api.nvim_create_user_command("Fullscreen", function(opts)
         vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen
