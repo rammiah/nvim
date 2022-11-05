@@ -8,3 +8,4 @@ plugin/
 node_modules/
 
 config/lazygit/state.yml
+pythonx/__pycache__

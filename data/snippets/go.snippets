@@ -1,4 +1,6 @@
-# init function for golang
+# Snippets for Go
+
+priority -50
 
 snippet "^init" "init function" r
 func init() {
@@ -6,3 +8,160 @@ func init() {
 }
 endsnippet
 
+# when to abbriviate and when not?
+# b doesn't work here, because it ignores whitespace
+# optional local name?
+snippet /^import/ "Import declaration" r
+import (
+	"${1:package}"
+)
+endsnippet
+
+snippet /^package/ "Package declaration" r
+// Package $1 provides ...
+package ${1:main}
+endsnippet
+
+# Mostly converted from: https://github.com/AlanQuatermain/go-tmbundle
+snippet /^cons/ "Constants declaration" r
+const (
+	${1:constant}${2/(.+)/ /}${2:type} = ${0:value}
+)
+endsnippet
+
+snippet /^con/ "Constant declaration" r
+const ${1:name}${2/(.+)/ /}${2:type} = ${0:value}
+endsnippet
+
+snippet iota "Iota constant generator" b
+const (
+	${1:constant}${2/(.+)/ /}${2:type} = iota
+)
+endsnippet
+
+snippet struct "Struct declaration" b
+type ${1:Struct} struct {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet interface "Interface declaration" b
+type ${1:Interface} interface {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet if "If statement" b
+if ${1:condition}${1/(.+)/ /}{
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet switch "Switch statement" b
+switch ${1:expression}${1/(.+)/ /}{
+case$0
+}
+endsnippet
+
+# functions
+snippet /^main/ "Main function" r
+func main() {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet /^meth/ "Method" r
+func (${1:receiver} ${2:type}) ${3:name}(${4:params})${5/(.+)/ /}${5:type} {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet func "Function" b
+func ${1:name}(${2:params})${3/(.+)/ /}${3:type} {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet funch "HTTP handler" b
+func ${1:handler}(${2:w} http.ResponseWriter, ${3:r} *http.Request) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+# types and variables
+snippet map "Map type" b
+map[${1:keytype}]${2:valtype}
+endsnippet
+
+snippet var "Variable declaration" b
+var ${1:name}${2/(.+)/ /}${2:type}${3: = ${0:value}}
+endsnippet
+
+snippet vars "Variables declaration" b
+var (
+	${1:name}${2/(.+)/ /}${2:type}${3: = ${0:value} }
+)
+endsnippet
+
+snippet json "JSON field"
+\`json:"${1:displayName}"\`
+endsnippet
+
+# vim:ft=snippets:
+
+# error handling
+snippet err "Basic error handling" b
+if err != nil {
+	log.${1:Fatal}(err)
+}
+endsnippet
+
+snippet ap "append" b
+append(${1:slice}, ${0:value})
+endsnippet
+
+snippet df "defer"
+defer ${0:func}()
+endsnippet
+
+snippet dfr "defer recover"
+defer func() {
+	if err := recover(); err != nil {
+		${0:${VISUAL}}
+	}
+}()
+endsnippet
+
+snippet fori "for int loop"
+for ${2:i} := 0; $2 < ${1:count}; $2${3:++} {
+	${0:${VISUAL}}
+}
+endsnippet
+
+
+snippet forr "for range loop"
+for ${1:e} := range ${2:collection} {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet test "test function"
+func Test${1:name}(t *testing.T) {
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet bench "benchmark function"
+func Benchmark${1:name}(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		${2}
+	}
+}
+${0}
+endsnippet
+
+snippet inm "if key in a map"
+if ${1:value}, ok := ${2:map}[${3:key}]; ok == true {
+	${4:/* code */}
+}
+endsnippet
