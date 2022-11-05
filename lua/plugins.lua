@@ -91,14 +91,10 @@ return require("packer").startup({
         use {
             "neoclide/coc.nvim",
             branch = "release",
-            require = {
-                "honza/vim-snippets",
-            },
             config = function()
                 require("plugin-config.coc")
             end
         }
-        use "honza/vim-snippets"
         -- auto pair
         use {
             "windwp/nvim-autopairs",
