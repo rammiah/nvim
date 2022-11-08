@@ -95,6 +95,11 @@ local function format_doc()
     -- elseif vim.g.coc_service_initialized == 1 and vim.fn.CocHasProvider and vim.fn.CocHasProvider("format") then
     if vim.g.coc_service_initialized == 1 and vim.fn.CocHasProvider and vim.fn.CocHasProvider("format") then
         vim.fn.CocActionAsync("format")
+        vim.notify("formatted by lsp success", vim.log.levels.INFO, {
+            title = "Formatting",
+            timeout = 500,
+            icon = "",
+        })
     else
         local view = vim.fn.winsaveview()
         vim.api.nvim_feedkeys("gg=G", "in", false)
