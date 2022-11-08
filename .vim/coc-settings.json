@@ -7,5 +7,6 @@
   ],
   "Lua.workspace.library": [
     "$HOME/.local/share/nvim/site/pack/packer/start/plenary.nvim"
-  ]
+  ],
+  "Lua.workspace.checkThirdParty": false
 }
