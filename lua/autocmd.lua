@@ -79,3 +79,11 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end,
     group = gid,
 })
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+    group = gid,
+    pattern = '*',
+    callback = function()
+        vim.highlight.on_yank { higroup = 'IncSearch', timeout = 300 }
+    end,
+})
