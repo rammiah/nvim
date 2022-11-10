@@ -194,8 +194,8 @@ lualine.setup {
 }
 
 vim.api.nvim_create_autocmd("User", {
-    pattern = "CocStatusChange",
-    desc = "refresh lualine for coc_status",
+    pattern = { "CocStatusChange", "CocDiagnosticChange" },
+    desc = "refresh lualine for coc.nvim",
     callback = function(opts)
         lualine.refresh({
             scope = "tabpage", -- scope of refresh all/tabpage/window
