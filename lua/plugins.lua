@@ -475,6 +475,16 @@ return require("packer").startup({
                 -- vim.g.vim_be_good_delete_me_offset = 35
             end
         }
+        use {
+            "uga-rosa/translate.nvim",
+            config = function()
+                require("translate").setup {
+                    default = {
+                        command = "google",
+                    },
+                }
+            end,
+        }
     end,
     config = {
         ensure_dependencies  = true, -- Should packer install plugin dependencies?
