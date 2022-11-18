@@ -96,7 +96,6 @@
   "suggest.formatItems": ["kind", "abbr", "menu", "shortcut"],
   "suggest.enablePreselect": true,
   "suggest.filterGraceful": true,
-  "suggest.fixInsertedWord": true,
   "suggest.floatConfig": {
     "border": false,
     "rounded": false,
