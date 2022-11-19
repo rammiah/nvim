@@ -161,7 +161,7 @@ require("nvim-treesitter.configs").setup {
                 ["ia"] = "@parameter.inner",
                 ["aa"] = "@parameter.outer",
             },
-            include_surrounding_whitespace = false,
+            include_surrounding_whitespace = true,
             selection_modes = {
                 ["@parameter.outer"] = "v", -- charwise
                 ["@parameter.inner"] = "v", -- charwise
