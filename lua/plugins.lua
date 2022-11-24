@@ -239,14 +239,6 @@ return require("packer").startup({
                 }
             end,
         }
-        -- key repeat
-        -- use {
-        --     "anuvyklack/hydra.nvim",
-        --     requires = "anuvyklack/keymap-layer.nvim",
-        --     config = function()
-        --         require("plugin-config.hydra")
-        --     end
-        -- }
         -- speed move
         use {
             "phaazon/hop.nvim",
@@ -484,6 +476,13 @@ return require("packer").startup({
                     },
                 }
             end,
+        }
+        use {
+            "petertriho/nvim-scrollbar",
+            requires = { "lewis6991/gitsigns.nvim" },
+            config = function()
+                require('scrollbar').setup {}
+            end
         }
     end,
     config = {
