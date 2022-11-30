@@ -484,6 +484,7 @@ return require("packer").startup({
                 require('scrollbar').setup {}
             end
         }
+        use "eandrju/cellular-automaton.nvim"
     end,
     config = {
         ensure_dependencies  = true, -- Should packer install plugin dependencies?
