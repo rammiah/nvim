@@ -83,7 +83,7 @@ end
 -- nested options are documented by accessing them with `.` (eg: `:help nvim-tree.view.mappings.list`).
 require "nvim-tree".setup { -- BEGIN_DEFAULT_OPTS
     auto_reload_on_write = true,
-    create_in_closed_folder = true,
+    -- create_in_closed_folder = true,
     disable_netrw = false,
     hijack_cursor = true,
     hijack_netrw = true,
