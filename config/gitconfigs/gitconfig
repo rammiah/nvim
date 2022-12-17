@@ -1,6 +1,7 @@
 [user]
 	email = ""
 	name = ""
+	signingkey = ""
 ; core settings
 [core]
 	editor=nvim
@@ -44,3 +45,5 @@
 	conflictstyle = diff3
 [diff]
 	colorMoved = default
+[commit]
+	gpgsign = true
