@@ -112,6 +112,7 @@
     "shadow": false
   },
   "suggest.localityBonus": false,
+  "suggest.insertMode": "replace",
   "suggest.maxCompleteItemCount": 50,
   "suggest.minTriggerInputLength": 2,
   "suggest.preferCompleteThanJumpPlaceholder": false,
