@@ -125,5 +125,5 @@ vim.o.pumheight = 12
 vim.opt.path = vim.opt.path + "**"
 vim.o.undofile = true
 vim.o.undolevels = 200
-vim.o.dictionary = vim.fn.stdpath("config") .. "/data/dict/30k.txt"
+vim.o.dictionary = vim.fn.stdpath("config") .. "/data/dict/google-10000-english.txt"
 vim.o.jumpoptions = vim.o.jumpoptions .. "stack"
