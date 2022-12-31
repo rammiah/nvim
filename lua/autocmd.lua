@@ -42,6 +42,7 @@ local shells = {
     ruby = "ruby",
     scala = "scala",
     zsh = "zsh",
+    sh = "bash",
 }
 
 -- auto add shebang when create a file
@@ -50,9 +51,12 @@ vim.api.nvim_create_autocmd("BufNewFile", {
     pattern = "*",
     callback = function(opts)
         local bufnr = opts.buf
+        -- print("opts is "..vim.inspect(opts))
         local ft = vim.filetype.match({
             filename = opts.file,
+            buf = opts.buf,
         })
+        -- print("ft is "..vim.inspect(ft))
         if ft and shells[ft] then
             local lines = { "#!/usr/bin/env " .. shells[ft], "" }
             vim.api.nvim_put(lines, "l", false, true)
@@ -60,6 +64,7 @@ vim.api.nvim_create_autocmd("BufNewFile", {
     end,
     group = gid,
 })
+
 -- add shebang for editing a empty file
 vim.api.nvim_create_autocmd("BufReadPost", {
     desc = "add shebang when read a empty file",
@@ -71,6 +76,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
         end
         local ft = vim.filetype.match({
             filename = opts.file,
+            buf = opts.buf,
         })
         if ft and shells[ft] then
             local lines = { "#!/usr/bin/env " .. shells[ft], "" }
