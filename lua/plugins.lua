@@ -7,7 +7,7 @@ return require("packer").startup({
         use "wbthomason/packer.nvim"
         -- color theme
         use "overcache/NeoSolarized"
-        use { "ellisonleao/gruvbox.nvim" }
+        -- use { "ellisonleao/gruvbox.nvim" }
         -- dev icons
         use {
             "kyazdani42/nvim-web-devicons",
@@ -204,15 +204,15 @@ return require("packer").startup({
             end,
         }
         -- glow
-        use { "ellisonleao/glow.nvim",
-            branch = "main",
-            config = function()
-                vim.g.glow_border = "rounded"
-                vim.g.glow_width = 120
-                vim.g.glow_use_pager = true
-                vim.g.glow_style = "light"
-            end,
-        }
+        -- use { "ellisonleao/glow.nvim",
+        --     branch = "main",
+        --     config = function()
+        --         vim.g.glow_border = "rounded"
+        --         vim.g.glow_width = 120
+        --         vim.g.glow_use_pager = true
+        --         vim.g.glow_style = "light"
+        --     end,
+        -- }
         -- color
         -- use "norcalli/nvim-colorizer.lua"
         use {
@@ -261,7 +261,7 @@ return require("packer").startup({
             end
         }
         -- comma text object
-        use "austintaylor/vim-commaobject"
+        -- use "austintaylor/vim-commaobject"
         -- vim thrift syntax
         use "solarnz/thrift.vim"
         -- stay in place format
@@ -308,18 +308,18 @@ return require("packer").startup({
             end,
         }
         -- zen-mode
-        use {
-            "folke/zen-mode.nvim",
-            config = function()
-                require("plugin-config.zen-mode")
-            end,
-        }
-        use {
-            "Pocco81/true-zen.nvim",
-            config = function()
-                require("plugin-config.true-zen")
-            end
-        }
+        -- use {
+        --     "folke/zen-mode.nvim",
+        --     config = function()
+        --         require("plugin-config.zen-mode")
+        --     end,
+        -- }
+        -- use {
+        --     "Pocco81/true-zen.nvim",
+        --     config = function()
+        --         require("plugin-config.true-zen")
+        --     end
+        -- }
         -- command result real time
         use {
             "smjonas/live-command.nvim",
@@ -357,13 +357,13 @@ return require("packer").startup({
             end
         }
         -- orgmode
-        use {
-            "nvim-orgmode/orgmode",
-            config = function()
-                require("orgmode").setup {}
-                require("orgmode").setup_ts_grammar {}
-            end,
-        }
+        -- use {
+        --     "nvim-orgmode/orgmode",
+        --     config = function()
+        --         require("orgmode").setup {}
+        --         require("orgmode").setup_ts_grammar {}
+        --     end,
+        -- }
         -- toggle bool, words
         use {
             "nguyenvukhang/nvim-toggler",
@@ -385,18 +385,18 @@ return require("packer").startup({
             end,
         }
         -- markdown preview
-        use {
-            "iamcco/markdown-preview.nvim",
-            run = "cd app && yarn install --frozen-lock-file",
-            setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
-            config = function()
-                require("plugin-config.markdown_preview")
-            end,
-            opt = true,
-            ft = {
-                "markdown"
-            },
-        }
+        -- use {
+        --     "iamcco/markdown-preview.nvim",
+        --     run = "cd app && yarn install --frozen-lock-file",
+        --     setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+        --     config = function()
+        --         require("plugin-config.markdown_preview")
+        --     end,
+        --     opt = true,
+        --     ft = {
+        --         "markdown"
+        --     },
+        -- }
         use {
             "anuvyklack/help-vsplit.nvim",
             config = function()
@@ -408,12 +408,12 @@ return require("packer").startup({
                 }
             end,
         }
-        use {
-            "tjdevries/colorbuddy.nvim",
-            config = function()
-                local Color, colors, Group, groups, styles = require("colorbuddy").setup()
-            end
-        }
+        -- use {
+        --     "tjdevries/colorbuddy.nvim",
+        --     config = function()
+        --         local Color, colors, Group, groups, styles = require("colorbuddy").setup()
+        --     end
+        -- }
         use {
             "mbbill/undotree",
             config = function()
@@ -461,22 +461,22 @@ return require("packer").startup({
                 vim.g.calendar_google_task = 0
             end
         }
-        use {
-            "ThePrimeagen/vim-be-good",
-            config = function()
-                -- vim.g.vim_be_good_delete_me_offset = 35
-            end
-        }
-        use {
-            "uga-rosa/translate.nvim",
-            config = function()
-                require("translate").setup {
-                    default = {
-                        command = "google",
-                    },
-                }
-            end,
-        }
+        -- use {
+        --     "ThePrimeagen/vim-be-good",
+        --     config = function()
+        --         -- vim.g.vim_be_good_delete_me_offset = 35
+        --     end
+        -- }
+        -- use {
+        --     "uga-rosa/translate.nvim",
+        --     config = function()
+        --         require("translate").setup {
+        --             default = {
+        --                 command = "google",
+        --             },
+        --         }
+        --     end,
+        -- }
         use {
             "petertriho/nvim-scrollbar",
             requires = { "lewis6991/gitsigns.nvim" },
