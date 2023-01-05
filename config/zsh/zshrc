@@ -21,6 +21,7 @@ plugins=(
     fzf 
     git 
     golang
+    gpg-agent
     node
     npm
     ripgrep
