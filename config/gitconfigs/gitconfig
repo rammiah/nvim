@@ -22,8 +22,6 @@
 [mergetool "nvimdiff"]
 	cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 ; store github token
-[credential]
-	helper = store
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
