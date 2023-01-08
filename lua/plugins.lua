@@ -493,7 +493,7 @@ return require("packer").startup({
         package_root         = util.join_paths(vim.fn.stdpath("data"), "site", "pack"),
         compile_path         = util.join_paths(vim.fn.stdpath("config"), "plugin", "packer_compiled.lua"),
         plugin_package       = "packer", -- The default package for plugins
-        max_jobs             = 7, -- Limit the number of simultaneous jobs. nil means no limit
+        max_jobs             = 4, -- Limit the number of simultaneous jobs. nil means no limit
         auto_clean           = true, -- During sync(), remove unused plugins
         compile_on_sync      = true, -- During sync(), run packer.compile()
         disable_commands     = false, -- Disable creating commands
