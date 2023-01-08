@@ -44,7 +44,8 @@
 [diff]
 	colorMoved = default
 [commit]
-	gpgsign = true
+	sign = true
+	gpgSign = true
 [http]
       sslVerify = true
 [url "ssh://git@github.com/"]
