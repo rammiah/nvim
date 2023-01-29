@@ -21,10 +21,8 @@ if not vim.loop.fs_stat(lazypath) then
     })
 end
 vim.opt.rtp:prepend(lazypath)
-require("plugins")
 
--- git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
--- basic config
+require("plugins")
 require("filetype")
 require("commands")
 require("autocmd")
