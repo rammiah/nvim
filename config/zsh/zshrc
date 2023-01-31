@@ -55,6 +55,9 @@ precmd_functions+=(_fix_cursor)
 export BAT_THEME="Solarized (light)"
 alias cat="bat"
 alias rm="trash"
+if [[ "$TERM" == "xterm-kitty" ]] then
+    alias icat="kitty +kitten icat"
+fi
 # alias lz="lazygit"
 # boe
 export RUNTIME_IDC_NAME="boe"
