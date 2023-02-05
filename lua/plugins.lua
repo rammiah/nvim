@@ -35,7 +35,7 @@ require("lazy").setup({
     -- nvim tree
     {
         "kyazdani42/nvim-tree.lua",
-        dependences = {
+        dependencies = {
             "kyazdani42/nvim-web-devicons", -- optional, for file icon
         },
         -- tag = "nightly" -- optional, updated every week. (see issue 1193)
