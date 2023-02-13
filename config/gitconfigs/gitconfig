@@ -1,6 +1,6 @@
 [user]
-	email = ""
 	name = ""
+	email = ""
 	signingkey = ""
 ; core settings
 [core]
