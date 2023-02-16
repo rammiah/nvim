@@ -7,4 +7,7 @@ vim.filetype.add({
         [".envrc"] = "sh",
         ["tsconfig.json"] = "jsonc",
     },
+    extension = {
+        thrift = "thrift",
+    }
 })

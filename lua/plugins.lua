@@ -257,7 +257,7 @@ require("lazy").setup({
     -- comma text object
     -- use "austintaylor/vim-commaobject"
     -- vim thrift syntax
-    "solarnz/thrift.vim",
+    -- "solarnz/thrift.vim", -- has been supported by treesitter
     -- stay in place format
     {
         "gbprod/stay-in-place.nvim",
