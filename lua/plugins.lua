@@ -12,6 +12,7 @@ require("lazy").setup({
     -- Packer can manage itself
     -- color theme
     "overcache/NeoSolarized",
+    "Mofiqul/dracula.nvim",
     "nvim-lua/plenary.nvim",
     -- use { "ellisonleao/gruvbox.nvim" }
     -- dev icons
@@ -276,31 +277,32 @@ require("lazy").setup({
         end,
     },
     -- cursor line mode colors
-    {
-        "mvllow/modes.nvim",
-        config = function()
-            require("modes").setup {
-                colors = {
-                    copy = "#f5c359",
-                    delete = "#dc322f",
-                    insert = "#859900",
-                    visual = "#d33682",
-                },
-                -- Set opacity for cursorline and number background
-                line_opacity = 0.2,
-                -- Enable cursor highlights
-                set_cursor = true,
-                -- Enable cursorline initially, and disable cursorline for inactive windows
-                -- or ignored filetypes
-                set_cursorline = true,
-                -- Enable line number highlights to match cursorline
-                set_number = true,
-                -- Disable modes highlights in specified filetypes
-                -- Please PR commonly ignored filetypes
-                ignore_filetypes = { "NvimTree", "TelescopePrompt" },
-            }
-        end,
-    },
+    -- {
+    --     "mvllow/modes.nvim",
+    --     config = function()
+    --         require("modes").setup {
+    --             colors = {
+    --                 copy = "#f5c359",
+    --                 delete = "#dc322f",
+    --                 insert = "#859900",
+    --                 visual = "#d33682",
+    --             },
+    --             -- Set opacity for cursorline and number background
+    --             line_opacity = 0.2,
+    --             -- Enable cursor highlights
+    --             set_cursor = true,
+    --             -- Enable cursorline initially, and disable cursorline for inactive windows
+    --             -- or ignored filetypes
+    --             set_cursorline = true,
+    --             -- Enable line number highlights to match cursorline
+    --             set_number = true,
+    --             -- Disable modes highlights in specified filetypes
+    --             -- Please PR commonly ignored filetypes
+    --             ignore_filetypes = { "NvimTree", "TelescopePrompt" },
+    --         }
+    --     end,
+    --     enabled = false,
+    -- },
     -- command result real time
     {
         "smjonas/live-command.nvim",
@@ -330,7 +332,13 @@ require("lazy").setup({
     "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-buffer",
     "onsails/lspkind.nvim",
-    { "tzachar/cmp-fuzzy-path", dependencies = { "hrsh7th/nvim-cmp", "tzachar/fuzzy.nvim" } },
+    { 
+	    "tzachar/cmp-fuzzy-path",
+	    dependencies = { 
+		    "hrsh7th/nvim-cmp", 
+		    "tzachar/fuzzy.nvim" 
+	    },
+    },
     {
         "hrsh7th/nvim-cmp",
         config = function()
@@ -338,13 +346,14 @@ require("lazy").setup({
         end
     },
     -- orgmode
-    -- use {
-    --     "nvim-orgmode/orgmode",
-    --     config = function()
-    --         require("orgmode").setup {}
-    --         require("orgmode").setup_ts_grammar {}
-    --     end,
-    -- }
+    {
+        "nvim-orgmode/orgmode",
+        config = function()
+            require("orgmode").setup {}
+            require("orgmode").setup_ts_grammar {}
+        end,
+        enabled =false,
+    },
     -- toggle bool, words
     {
         "nguyenvukhang/nvim-toggler",
@@ -391,7 +400,8 @@ require("lazy").setup({
         "anuvyklack/pretty-fold.nvim",
         config = function()
             require("plugin-config.pretty-fold")
-        end
+        end,
+        enabled = false,
     },
     {
         "anuvyklack/fold-preview.nvim",
@@ -414,7 +424,8 @@ require("lazy").setup({
             keymap.amend("n", "zc", map.close_preview_without_defer)
             keymap.amend("n", "zR", map.close_preview)
             keymap.amend("n", "zM", map.close_preview_without_defer)
-        end
+        end,
+        enabled = false,
     },
     {
         "itchyny/calendar.vim",

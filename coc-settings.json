@@ -18,7 +18,8 @@
       "unusedresult": true,
       "nilness": true,
       "shadow": false
-    }
+    },
+    "semanticTokens": true
   },
   "go.goplsUseDaemon": true,
   "languageserver": {
