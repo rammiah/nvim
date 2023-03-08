@@ -22,6 +22,7 @@ plugins=(
     git 
     golang
     gpg-agent
+    kubectl
     node
     npm
     ripgrep
@@ -59,8 +60,6 @@ if [[ "$TERM" == "xterm-kitty" ]] then
     alias icat="kitty +kitten icat"
 fi
 # alias lz="lazygit"
-# boe
-export RUNTIME_IDC_NAME="boe"
 # editor
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
@@ -141,3 +140,6 @@ lscwd() {
 [ -s "$HOME/.acme.sh/acme.sh.env" ] && source "$HOME/.acme.sh/acme.sh.env"
 
 eval "$(direnv hook zsh)"
+
+# krew path
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
