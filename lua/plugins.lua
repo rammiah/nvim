@@ -129,7 +129,7 @@ require("lazy").setup({
         config = function()
             vim.api.nvim_create_autocmd("TextYankPost", {
                 desc = "send text by osc32",
-                command = [[if v:event.operator is 'y' && v:event.regname is '' | execute 'OSCYankReg "' | endif]],
+                command = [[if v:event.operator is 'y' && v:event.regname is '' | execute 'OSCYankRegister "' | endif]],
                 pattern = "*",
             })
             vim.g.oscyank_silent = true
