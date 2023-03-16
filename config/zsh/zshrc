@@ -140,6 +140,3 @@ lscwd() {
 [ -s "$HOME/.acme.sh/acme.sh.env" ] && source "$HOME/.acme.sh/acme.sh.env"
 
 eval "$(direnv hook zsh)"
-
-# krew path
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
