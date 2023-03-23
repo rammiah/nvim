@@ -27,9 +27,9 @@ require("lazy").setup({
                         cterm_color = "65",
                         name = "Telescope"
                     },
-                };
-                color_icons = true;
-                default = true;
+                },
+                color_icons = true,
+                default = true,
             }
         end,
     },
@@ -122,19 +122,21 @@ require("lazy").setup({
             require("plugin-config.surround")
         end,
     },
-    -- yank
     {
-        "ojroques/vim-oscyank",
-        branch = "main",
+        "ojroques/nvim-osc52",
         config = function()
+            local copy = function()
+                if vim.v.event.operator == 'y' and vim.v.event.regname == '' then
+                    require('osc52').copy_register('')
+                end
+            end
+
             vim.api.nvim_create_autocmd("TextYankPost", {
-                desc = "send text by osc32",
-                command = [[if v:event.operator is 'y' && v:event.regname is '' | execute 'OSCYankRegister "' | endif]],
+                desc = "copy text by nvim-osc52",
                 pattern = "*",
+                callback = copy,
             })
-            vim.g.oscyank_silent = true
-            vim.g.oscyank_term = "default"
-        end,
+        end
     },
     -- suda sudo write
     {
@@ -151,7 +153,8 @@ require("lazy").setup({
             "nvim-lua/plenary.nvim",
             {
                 -- fzf support
-                "nvim-telescope/telescope-fzf-native.nvim", build = "make"
+                "nvim-telescope/telescope-fzf-native.nvim",
+                build = "make"
             },
             "nvim-lua/popup.nvim",
             "nvim-telescope/telescope-hop.nvim",
@@ -276,33 +279,6 @@ require("lazy").setup({
             require("scope").setup {}
         end,
     },
-    -- cursor line mode colors
-    -- {
-    --     "mvllow/modes.nvim",
-    --     config = function()
-    --         require("modes").setup {
-    --             colors = {
-    --                 copy = "#f5c359",
-    --                 delete = "#dc322f",
-    --                 insert = "#859900",
-    --                 visual = "#d33682",
-    --             },
-    --             -- Set opacity for cursorline and number background
-    --             line_opacity = 0.2,
-    --             -- Enable cursor highlights
-    --             set_cursor = true,
-    --             -- Enable cursorline initially, and disable cursorline for inactive windows
-    --             -- or ignored filetypes
-    --             set_cursorline = true,
-    --             -- Enable line number highlights to match cursorline
-    --             set_number = true,
-    --             -- Disable modes highlights in specified filetypes
-    --             -- Please PR commonly ignored filetypes
-    --             ignore_filetypes = { "NvimTree", "TelescopePrompt" },
-    --         }
-    --     end,
-    --     enabled = false,
-    -- },
     -- command result real time
     {
         "smjonas/live-command.nvim",
@@ -332,27 +308,18 @@ require("lazy").setup({
     "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-buffer",
     "onsails/lspkind.nvim",
-    { 
-	    "tzachar/cmp-fuzzy-path",
-	    dependencies = { 
-		    "hrsh7th/nvim-cmp", 
-		    "tzachar/fuzzy.nvim" 
-	    },
+    {
+        "tzachar/cmp-fuzzy-path",
+        dependencies = {
+            "hrsh7th/nvim-cmp",
+            "tzachar/fuzzy.nvim"
+        },
     },
     {
         "hrsh7th/nvim-cmp",
         config = function()
             require("plugin-config.cmp")
         end
-    },
-    -- orgmode
-    {
-        "nvim-orgmode/orgmode",
-        config = function()
-            require("orgmode").setup {}
-            require("orgmode").setup_ts_grammar {}
-        end,
-        enabled =false,
     },
     -- toggle bool, words
     {
@@ -366,11 +333,11 @@ require("lazy").setup({
         "nacro90/numb.nvim",
         config = function()
             require("numb").setup {
-                show_numbers = true, -- Enable 'number' for the window while peeking
-                show_cursorline = true, -- Enable 'cursorline' for the window while peeking
+                show_numbers = true,         -- Enable 'number' for the window while peeking
+                show_cursorline = true,      -- Enable 'cursorline' for the window while peeking
                 hide_relativenumbers = true, -- Enable turning off 'relativenumber' for the window while peeking
-                number_only = false, -- Peek only when the command is only a number instead of when it starts with a number
-                centered_peeking = true, -- Peeked line will be centered relative to window
+                number_only = false,         -- Peek only when the command is only a number instead of when it starts with a number
+                centered_peeking = true,     -- Peeked line will be centered relative to window
             }
         end,
     },
@@ -394,38 +361,6 @@ require("lazy").setup({
             -- vim.g.undotree_DiffCommand = "delta"
             vim.g.undotree_ShortIndicators = 1
         end,
-    },
-    -- better fold
-    {
-        "anuvyklack/pretty-fold.nvim",
-        config = function()
-            require("plugin-config.pretty-fold")
-        end,
-        enabled = false,
-    },
-    {
-        "anuvyklack/fold-preview.nvim",
-        dependencies = {
-            "anuvyklack/keymap-amend.nvim",
-        },
-        config = function()
-            require("fold-preview").setup {
-                default_keybindings = true,
-                boder = "single",
-            }
-            local keymap = vim.keymap
-            keymap.amend = require("keymap-amend")
-            local map = require("fold-preview").mapping
-
-            keymap.amend("n", "h", map.show_close_preview_open_fold)
-            keymap.amend("n", "l", map.close_preview_open_fold)
-            keymap.amend("n", "zo", map.close_preview)
-            keymap.amend("n", "zO", map.close_preview)
-            keymap.amend("n", "zc", map.close_preview_without_defer)
-            keymap.amend("n", "zR", map.close_preview)
-            keymap.amend("n", "zM", map.close_preview_without_defer)
-        end,
-        enabled = false,
     },
     {
         "itchyny/calendar.vim",
