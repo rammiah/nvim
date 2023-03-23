@@ -226,7 +226,7 @@ require "nvim-tree".setup { -- BEGIN_DEFAULT_OPTS
                 },
             },
         },
-        special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
+        -- special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
     },
     hijack_directories = {
         enable = true,
