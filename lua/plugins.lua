@@ -377,4 +377,5 @@ require("lazy").setup({
         end
     },
     "eandrju/cellular-automaton.nvim",
+    "github/copilot.vim",
 }, opts)
