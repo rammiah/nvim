@@ -52,8 +52,6 @@
   "coc.source.file.shortcut": "F",
   "coc.source.file.triggerCharacters": ["/", "\\"],
   "coc.source.file.trimSameExts": [".ts", ".js", ".lua"],
-  "coc.source.tag.priority": 30,
-  "coc.source.tag.shortcut": "T",
   "snippets.shortcut": "SN",
   "tree.key.toggle": "t",
   "tree.key.toggleSelection": "<space>",
@@ -233,6 +231,7 @@
     "sjson",
   ],
   "cSpell.userWords": [
+    "Infof",
     "gitee"
   ]
 }
