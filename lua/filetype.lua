@@ -4,7 +4,7 @@ vim.filetype.add({
         ["tmux.conf"] = "tmux",
         [".gitconfig"] = "gitconfig",
         ["gitconfig"] = "gitconfig",
-        [".envrc"] = "sh",
+        [".envrc"] = "envrc",
         ["tsconfig.json"] = "jsonc",
     },
     extension = {
