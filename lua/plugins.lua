@@ -59,7 +59,10 @@ require("lazy").setup({
             require("plugin-config.nvim-treesitter")
         end,
     },
-    "nvim-treesitter/playground",
+    {
+        "nvim-treesitter/playground",
+        enabled = false,
+    },
     -- commenter
     {
         "numToStr/Comment.nvim",
