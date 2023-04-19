@@ -17,7 +17,7 @@ require("lazy").setup({
     -- use { "ellisonleao/gruvbox.nvim" }
     -- dev icons
     {
-        "kyazdani42/nvim-web-devicons",
+        "nvim-tree/nvim-web-devicons",
         config = function()
             require("nvim-web-devicons").setup {
                 override = {
@@ -35,14 +35,32 @@ require("lazy").setup({
     },
     -- nvim tree
     {
-        "kyazdani42/nvim-tree.lua",
+        "nvim-tree/nvim-tree.lua",
         dependencies = {
-            "kyazdani42/nvim-web-devicons", -- optional, for file icon
+            "nvim-tree/nvim-web-devicons", -- optional, for file icon
         },
         -- tag = "nightly" -- optional, updated every week. (see issue 1193)
         config = function()
             require("plugin-config.nvim-tree")
         end,
+        lazy = true,
+        cmd = {
+            "NvimTreeOpen",
+            "NvimTreeClose",
+            "NvimTreeToggle",
+            "NvimTreeFocus",
+            "NvimTreeRefresh",
+            "NvimTreeFindFile",
+            "NvimTreeFindFileToggle",
+            "NvimTreeClipboard",
+            "NvimTreeResize",
+            "NvimTreeCollapse",
+            "NvimTreeCollapseKeepBuffers",
+            "NvimTreeGenerateOnAttach",
+        },
+        keys = {
+            "<leader>e"
+        },
     },
     -- treesitter
     {
@@ -54,6 +72,8 @@ require("lazy").setup({
             "JoosepAlviste/nvim-ts-context-commentstring",
             "RRethy/nvim-treesitter-endwise",
         },
+        lazy = true,
+        event = "VeryLazy",
         -- commit = "635c450",
         config = function()
             require("plugin-config.nvim-treesitter")
@@ -61,7 +81,10 @@ require("lazy").setup({
     },
     {
         "nvim-treesitter/playground",
-        enabled = false,
+        lazy = true,
+        cmds = {
+            "TSPlaygroundToggle",
+        },
     },
     -- commenter
     {
@@ -69,12 +92,16 @@ require("lazy").setup({
         config = function()
             require("plugin-config.comment")
         end,
+        lazy = true,
+        keys = {
+            "gc", "gb", "gbc", "gcc", "gcA", "gco", "gcO",
+        },
     },
     -- bufferline
     {
         "akinsho/bufferline.nvim",
         version = "*",
-        dependencies = "kyazdani42/nvim-web-devicons",
+        dependencies = "nvim-tree/nvim-web-devicons",
         config = function()
             require("plugin-config.bufferline")
         end,
@@ -86,9 +113,14 @@ require("lazy").setup({
             "nvim-lua/plenary.nvim",
             "rcarriga/nvim-notify",
         },
+        lazy = true,
         config = function()
             require("plugin-config.nvim-go")
         end,
+        ft = {
+            "go",
+            "gomod",
+        },
     },
     "rammiah/gocommand.vim",
     {
@@ -103,7 +135,9 @@ require("lazy").setup({
         branch = "release",
         config = function()
             require("plugin-config.coc")
-        end
+        end,
+        event = "VeryLazy",
+        lazy = true,
     },
     -- auto pair
     {
@@ -111,19 +145,28 @@ require("lazy").setup({
         config = function()
             require("plugin-config.autopairs")
         end,
+        lazy = true,
+        event = "VeryLazy",
     },
     {
         "windwp/nvim-ts-autotag",
         config = function()
             require("plugin-config.autotag")
         end,
+        lazy = true,
+        event = "VeryLazy",
     },
     -- surround
     {
         "kylechui/nvim-surround",
+        version = "*",
         config = function()
             require("plugin-config.surround")
         end,
+        lazy = true,
+        keys = {
+            "ds", "cs", "ys", "yss", "yS", "ySS", "S", "gS",
+        },
     },
     {
         "ojroques/nvim-osc52",
@@ -147,7 +190,12 @@ require("lazy").setup({
         config = function()
             vim.g.suda_smart_edit = 0
             vim.g["suda#prompt"] = "password: "
-        end
+        end,
+        lazy = true,
+        cmd = {
+            "SudaWrite",
+            "SudaRead",
+        },
     },
     -- telescope and plugins
     {
@@ -166,9 +214,25 @@ require("lazy").setup({
         config = function()
             require("plugin-config.telescope-conf")
         end,
+        lazy = true,
+        cmd = {
+            "Telescope",
+            "TodoTelescope",
+        },
+        keys = {
+            "<leader>ff", "<leader>fg",
+            "<leader>fb", "<leader>fr",
+            "<leader>fs", "<leader>fl",
+        },
     },
     -- neovim start time
-    "dstein64/vim-startuptime",
+    {
+        "dstein64/vim-startuptime",
+        lazy = true,
+        cmd = {
+            "StartupTime",
+        },
+    },
     -- git diff view
     {
         "sindrets/diffview.nvim",
@@ -176,13 +240,30 @@ require("lazy").setup({
         config = function()
             require("plugin-config.diffview")
         end,
+        lazy = true,
+        cmd = {
+            "DiffviewOpen",
+            "DiffviewFileHistory",
+            "DiffviewClose",
+            "DiffviewToggleFiles",
+            "DiffviewFocusFiles",
+            "DiffviewRefresh",
+            "DiffviewLog",
+        },
     },
     -- git blame
     {
         "dinhhuy258/git.nvim",
         config = function()
             require("plugin-config.git")
-        end
+        end,
+        lazy = true,
+        cmd = {
+            "GitBlame",
+        },
+        keys = {
+            "<leader>gb",
+        },
     },
     -- git line signs, hunk previw and jump
     {
@@ -207,11 +288,29 @@ require("lazy").setup({
         config = function()
             require("plugin-config.toggleterm")
         end,
+        lazy = true,
+        keys = {
+            "<C-\\>",
+            "<leader>tl",
+            "<leader>tt",
+            "<leader>tu",
+            "<leader>tp",
+            "<leader>tn",
+            "<leader>`",
+        },
+        cmd = {
+            "ToggleTerm",
+            "ToggleTermSendCurrentLine",
+            "ToggleTermSendVisualLines",
+            "ToggleTermSendVisualSelection",
+            "ToggleTermSetName",
+            "ToggleTermToggleAll",
+        },
     },
     -- lualine status line
     {
         "nvim-lualine/lualine.nvim",
-        dependencies = "kyazdani42/nvim-web-devicons",
+        dependencies = "nvim-tree/nvim-web-devicons",
         config = function()
             require("plugin-config.lualine")
         end,
@@ -245,7 +344,11 @@ require("lazy").setup({
         "phaazon/hop.nvim",
         config = function()
             require("plugin-config.hop")
-        end
+        end,
+        lazy = true,
+        keys = {
+            "<C-h>",
+        },
     },
     -- sort
     {
@@ -253,13 +356,38 @@ require("lazy").setup({
         config = function()
             require("plugin-config.sort")
         end,
+        lazy = true,
+        keys = {
+            "gs'",
+            "gs(",
+            "gs)",
+            "gs[",
+            "gs[",
+            "gs]",
+            "gs{",
+            "gs}",
+            'gs"',
+        },
+        cmd = "Sort",
     },
     -- auto session
     {
         "rmagatti/auto-session",
         config = function()
             require("plugin-config.auto-sess")
-        end
+        end,
+        lazy = true,
+        keys = {
+            "<leader>ss",
+            "<leader>sr",
+        },
+        cmd = {
+            "AutoSession",
+            "DelteteSession",
+            "RestoreSession",
+            "RestoreSessionFromFile",
+            "SaveSession",
+        },
     },
     -- comma text object
     -- use "austintaylor/vim-commaobject"
@@ -329,7 +457,9 @@ require("lazy").setup({
         "nguyenvukhang/nvim-toggler",
         config = function()
             require("plugin-config.toggler")
-        end
+        end,
+        lazy = true,
+        keys = "<leader>cl",
     },
     -- real time line number
     {
@@ -364,21 +494,38 @@ require("lazy").setup({
             -- vim.g.undotree_DiffCommand = "delta"
             vim.g.undotree_ShortIndicators = 1
         end,
+        lazy = true,
+        cmd = {
+            "UndoTreeToggle",
+            "UndoTreeShow",
+            "UndoTreeHide",
+            "UndoTreeFocus",
+        },
     },
     {
         "itchyny/calendar.vim",
         config = function()
             vim.g.calendar_google_calendar = 0
             vim.g.calendar_google_task = 0
-        end
+        end,
+        lazy = true,
+        cmd = {
+            "Calendar",
+        },
     },
     {
         "petertriho/nvim-scrollbar",
         dependencies = { "lewis6991/gitsigns.nvim" },
         config = function()
             require('scrollbar').setup {}
-        end
+        end,
     },
-    "eandrju/cellular-automaton.nvim",
+    {
+        "eandrju/cellular-automaton.nvim",
+        lazy = true,
+        cmd = {
+            "CellularAutomaton",
+        },
+    },
     "github/copilot.vim",
 }, opts)
