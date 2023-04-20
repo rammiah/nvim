@@ -94,7 +94,17 @@ require("lazy").setup({
         end,
         lazy = true,
         keys = {
-            "gc", "gb", "gbc", "gcc", "gcA", "gco", "gcO",
+            "gbc",
+            "gcc",
+            "gcA",
+            "gco",
+            "gcO",
+            {
+                "gc", mode = "x",
+            },
+            {
+                "gb", mode = "x",
+            }
         },
     },
     -- bufferline
@@ -165,7 +175,18 @@ require("lazy").setup({
         end,
         lazy = true,
         keys = {
-            "ds", "cs", "ys", "yss", "yS", "ySS", "S", "gS",
+            "ds",
+            "cs",
+            "ys",
+            "yss",
+            "yS",
+            "ySS",
+            {
+                "S", mode = "x",
+            },
+            {
+                "gS", mode = "x",
+            }
         },
     },
     {
@@ -368,7 +389,9 @@ require("lazy").setup({
             "gs}",
             'gs"',
         },
-        cmd = "Sort",
+        cmd = {
+                "Sort",
+        },
     },
     -- auto session
     {
