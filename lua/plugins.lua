@@ -138,6 +138,7 @@ require("lazy").setup({
         config = function()
             require("plugin-config.notify")
         end,
+        lazy = true,
     },
     -- coc.nvim
     {
@@ -222,15 +223,24 @@ require("lazy").setup({
     {
         "nvim-telescope/telescope.nvim",
         dependencies = {
-            "nvim-lua/plenary.nvim",
+            {
+                "nvim-lua/plenary.nvim",
+                lazy = true,
+            },
             {
                 -- fzf support
                 "nvim-telescope/telescope-fzf-native.nvim",
-                build = "make"
+                build = "make",
+                lazy = true,
             },
-            "nvim-lua/popup.nvim",
-            "nvim-telescope/telescope-hop.nvim",
-            "fannheyward/telescope-coc.nvim",
+            {
+                "nvim-lua/popup.nvim",
+                lazy = true,
+            },
+            {
+                "nvim-telescope/telescope-hop.nvim",
+                lazy = true,
+            },
         },
         config = function()
             require("plugin-config.telescope-conf")
@@ -347,7 +357,9 @@ require("lazy").setup({
                     events = { "WinScrolled", "TextChanged", "TextChangedI" },
                 },
             }
-        end
+        end,
+        lazy = true,
+        event = "VeryLazy",
     },
     -- lastplace
     {
@@ -425,6 +437,8 @@ require("lazy").setup({
                 preserve_visual_selection = true,
             }
         end,
+        lazy = true,
+        event = "VeryLazy",
     },
     -- tab scope buffers
     {
@@ -456,7 +470,15 @@ require("lazy").setup({
         end
     },
     -- jsonpath
-    "phelipetls/jsonpath.nvim",
+    {
+        "phelipetls/jsonpath.nvim",
+        lazy = true,
+        ft = {
+            "json",
+            "jsonc",
+            "jsonc5",
+        },
+    },
     -- nvim-cmp for cmdline
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-cmdline",
@@ -473,7 +495,9 @@ require("lazy").setup({
         "hrsh7th/nvim-cmp",
         config = function()
             require("plugin-config.cmp")
-        end
+        end,
+        lazy = true,
+        event = "VeryLazy",
     },
     -- toggle bool, words
     {
