@@ -71,6 +71,7 @@
   "Lua.diagnostics.groupSeverity": {
     "unbalanced": "Hint"
   },
+  "yaml.format.enable": true,
   "list.maxPreviewHeight": 9999,
   "list.alignColumns": true,
   "list.extendedSearchMode": true,

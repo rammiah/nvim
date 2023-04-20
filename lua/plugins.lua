@@ -139,6 +139,7 @@ require("lazy").setup({
             require("plugin-config.notify")
         end,
         lazy = true,
+        event = "VeryLazy",
     },
     -- coc.nvim
     {
