@@ -60,6 +60,12 @@ vim.keymap.set("n", "<leader>fr", function()
 end, opts)
 
 vim.keymap.set("n", "<leader>fs", function()
+    -- check cwd is in a git repo
+    local git_dir = vim.fn.finddir(".git", vim.fn.getcwd() .. ";")
+    if git_dir == "" then
+        print("Not a git repo")
+        return
+    end
     if view.is_visible() then
         view.close()
     end
