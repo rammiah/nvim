@@ -403,7 +403,7 @@ require("lazy").setup({
             'gs"',
         },
         cmd = {
-                "Sort",
+            "Sort",
         },
     },
     -- auto session
@@ -575,5 +575,12 @@ require("lazy").setup({
             "CellularAutomaton",
         },
     },
-    "github/copilot.vim",
+    {
+        "github/copilot.vim",
+        config = function()
+            vim.g.copilot_filetypes = {
+                ["TelescopePrompt"] = false,
+            }
+        end,
+    },
 }, opts)
