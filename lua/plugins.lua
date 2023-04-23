@@ -199,13 +199,16 @@ require("lazy").setup({
                     require('osc52').copy_register('')
                 end
             end
-
             vim.api.nvim_create_autocmd("TextYankPost", {
-                desc = "copy text by nvim-osc52",
+                desc = "copy text to ssh client using nvim-osc52",
                 pattern = "*",
                 callback = copy,
             })
-        end
+            -- copy from current register, if this config is called by TextYankPost
+            copy()
+        end,
+        lazy = true,
+        event = "TextYankPost",
     },
     -- suda sudo write
     {
@@ -346,6 +349,8 @@ require("lazy").setup({
         config = function()
             require("plugin-config.lualine")
         end,
+        lazy = true,
+        event = "VeryLazy",
     },
     {
         "uga-rosa/ccc.nvim",
@@ -360,7 +365,7 @@ require("lazy").setup({
             }
         end,
         lazy = true,
-        event = "VeryLazy",
+        event = { "WinScrolled", "TextChanged", "TextChangedI" },
     },
     -- lastplace
     {
@@ -481,24 +486,31 @@ require("lazy").setup({
         },
     },
     -- nvim-cmp for cmdline
-    "hrsh7th/cmp-path",
-    "hrsh7th/cmp-cmdline",
-    "hrsh7th/cmp-buffer",
-    "onsails/lspkind.nvim",
+    {
+        "onsails/lspkind.nvim",
+        lazy = true,
+        event = "CmdlineEnter",
+    },
     {
         "tzachar/cmp-fuzzy-path",
         dependencies = {
-            "hrsh7th/nvim-cmp",
             "tzachar/fuzzy.nvim"
         },
+        lazy = true,
+        event = "CmdlineEnter",
     },
     {
         "hrsh7th/nvim-cmp",
         config = function()
             require("plugin-config.cmp")
         end,
+        dependencies = {
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-cmdline",
+            "hrsh7th/cmp-buffer",
+        },
         lazy = true,
-        event = "VeryLazy",
+        event = { "CmdlineEnter" },
     },
     -- toggle bool, words
     {
@@ -567,6 +579,8 @@ require("lazy").setup({
         config = function()
             require('scrollbar').setup {}
         end,
+        lazy = true,
+        event = "VeryLazy",
     },
     {
         "eandrju/cellular-automaton.nvim",
