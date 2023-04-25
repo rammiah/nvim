@@ -544,6 +544,11 @@ require("lazy").setup({
                 filetype = { "man" }
             }
         end,
+        lazy = true,
+        event = "VeryLazy",
+        cmd = {
+            "Man",
+        },
     },
     {
         "mbbill/undotree",
