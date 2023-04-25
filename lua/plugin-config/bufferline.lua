@@ -1,10 +1,3 @@
-local map = require("localutils").KeyMap
-
--- map("n", "<C-h>", ":BufferLineCyclePrev<CR>")
--- map("n", "<C-l>", ":BufferLineCycleNext<CR>")
--- map("n", "<leader>bp", ":BufferLinePick<CR>")
--- map("n", "gc", ":BufferLinePickClose<CR>")
-
 require("bufferline").setup {
     options = {
         mode = "buffers", -- set to "tabs" to only show tabpages instead

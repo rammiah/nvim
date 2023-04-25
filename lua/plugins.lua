@@ -252,7 +252,6 @@ require("lazy").setup({
         lazy = true,
         cmd = {
             "Telescope",
-            "TodoTelescope",
         },
         keys = {
             "<leader>ff", "<leader>fg",
