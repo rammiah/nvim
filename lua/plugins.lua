@@ -115,6 +115,8 @@ require("lazy").setup({
         config = function()
             require("plugin-config.bufferline")
         end,
+        lazy = true,
+        event = "BufWinEnter",
     },
     -- go
     {
@@ -451,6 +453,8 @@ require("lazy").setup({
         config = function()
             require("scope").setup {}
         end,
+        lazy = true,
+        event = "UIEnter",
     },
     -- command result real time
     {
