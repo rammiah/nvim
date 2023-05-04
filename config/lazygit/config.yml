@@ -4,8 +4,8 @@ gui:
   theme:
     lightTheme: false
 os:
-  editCommand: 'nvim' # see 'Configuring File Editing' section
-  editCommandTemplate: '{{editor}} +{{line}} -- {{filename}}'
+  edit: 'nvim {{filename}}' # see 'Configuring File Editing' section
+  editAtLine: 'nvim +{{line}} -- {{filename}}'
   openCommand: ''
 
 git:
