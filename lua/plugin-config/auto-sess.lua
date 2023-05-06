@@ -1,6 +1,6 @@
-local map = require("localutils").KeyMap
+local session = require("auto-session")
 
-require("auto-session").setup {
+session.setup {
     log_level = "info",
     auto_session_enable_last_session = false,
     auto_session_root_dir = vim.fn.stdpath("state") .. "/sessions/",
@@ -13,5 +13,11 @@ require("auto-session").setup {
     bypass_session_save_file_types = { "NvimTree", "thrift", "diff" }
 }
 
-map("n", "<leader>ss", "<Cmd>SaveSession<CR>")
-map("n", "<leader>sr", "<Cmd>RestoreSession<CR>")
+local opts = { noremap = true, silent = true }
+vim.keymap.set("n", "<leader>ss", function()
+    session.SaveSession()
+end, opts)
+
+vim.keymap.set("n", "<leader>sr", function()
+    session.RestoreSession()
+end, opts)
