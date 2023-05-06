@@ -35,7 +35,7 @@ require("notify").setup {
     },
     level = vim.log.levels.INFO,
     minimum_width = 40,
-    render = "default",
+    render = "compact",
     stages = "fade_in_slide_out",
     timeout = 2000,
 }
