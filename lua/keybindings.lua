@@ -4,3 +4,18 @@ map('v', '<', '<gv')
 map('v', '>', '>gv')
 map("n", "]q", ":cnext<CR>")
 map("n", "[q", ":cprevious<CR>")
+
+local opts = { noremap = true, silent = true }
+vim.keymap.set("n", "<leader>ss", function()
+    local sess = require("auto-session")
+    if sess ~= nil then
+        sess.SaveSession()
+    end
+end, opts)
+
+vim.keymap.set("n", "<leader>sr", function()
+    local sess = require("auto-session")
+    if sess ~= nil then
+        sess.RestoreSession()
+    end
+end, opts)
