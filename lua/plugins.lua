@@ -418,6 +418,14 @@ require("lazy").setup({
         config = function()
             require("plugin-config.auto-sess")
         end,
+        lazy = true,
+        cmd = {
+            "AutoSession",
+            "DelteteSession",
+            "RestoreSession",
+            "RestoreSessionFromFile",
+            "SaveSession",
+        },
     },
     -- comma text object
     -- use "austintaylor/vim-commaobject"
