@@ -209,6 +209,7 @@ require("lazy").setup({
             -- copy from current register, if this config is called by TextYankPost
             copy()
         end,
+        cond = vim.g.neovide == nil, -- 如果有neovide一定是本地环境，不需要osc52
         lazy = true,
         event = "TextYankPost",
     },
