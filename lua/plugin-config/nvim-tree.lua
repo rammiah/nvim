@@ -1,6 +1,7 @@
 local map = require("localutils").KeyMap
 local lib = require("nvim-tree.lib")
 local api = require("nvim-tree.api")
+local treeutils = require("treeutils")
 
 map("n", "<leader>e", "<Cmd>NvimTreeToggle<CR>")
 
@@ -124,6 +125,14 @@ local function on_attach(bufnr)
     vim.keymap.set('n', 'J', function()
         split_preview()
     end, opts('split_preview'))
+
+    vim.keymap.set('n', '<C-f>', function()
+        treeutils.launch_find_files()
+    end, opts('find_files'))
+
+    vim.keymap.set('n', '<C-g>', function()
+        treeutils.launch_live_grep()
+    end, opts('live_grep'))
 
     vim.keymap.set('n', 'h', api.node.navigate.parent_close, opts('Close Directory'))
     vim.keymap.set('n', 'I', api.tree.toggle_gitignore_filter, opts('Toggle Git Ignore'))
