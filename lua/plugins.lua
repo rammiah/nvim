@@ -601,5 +601,6 @@ require("lazy").setup({
                 ["TelescopePrompt"] = false,
             }
         end,
+	enabled = false,
     },
 }, opts)
