@@ -6,6 +6,7 @@ require("nvim-surround").setup({
         insert_line = "<C-g>S",
         delete = "ds",
         change = "cs",
+        change_line = "cS",
         normal = "ys",
         normal_cur = "yss",
         normal_line = "yS",
