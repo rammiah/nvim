@@ -1,10 +1,11 @@
 diff --git a/themes/robbyrussell.zsh-theme b/themes/robbyrussell.zsh-theme
-index 2fd5f2c..731f9c5 100644
+index 173e6d5..1a619e9 100644
 --- a/themes/robbyrussell.zsh-theme
 +++ b/themes/robbyrussell.zsh-theme
 @@ -1,4 +1,5 @@
- PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
-+PROMPT+="%D{%H:%M:%S}"
- PROMPT+=' %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
+-PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ ) %{$fg[cyan]%}%c%{$reset_color%}"
++PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%D{%H:%M:%S} %{$fg[cyan]%}%c%{$reset_color%}"
++# PROMPT+="%D{%H:%M:%S}"
+ PROMPT+=' $(git_prompt_info)'
  
  ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
