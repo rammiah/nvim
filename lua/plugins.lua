@@ -181,6 +181,7 @@ require("lazy").setup({
         keys = {
             "ds",
             "cs",
+            "cS",
             "ys",
             "yss",
             "yS",
