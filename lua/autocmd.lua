@@ -60,7 +60,7 @@ vim.api.nvim_create_autocmd("BufNewFile", {
             filename = opts.file,
             buf = opts.buf,
         })
-        -- print("ft is "..vim.inspect(ft))
+        -- print("new ft is "..vim.inspect(ft))
         if ft and shells[ft] then
             local lines = { "#!/usr/bin/env " .. shells[ft], "" }
             vim.api.nvim_put(lines, "l", false, true)
@@ -85,6 +85,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
             filename = opts.file,
             buf = opts.buf,
         })
+        -- print("read ft is "..vim.inspect(ft))
         if ft and shells[ft] then
             local lines = { "#!/usr/bin/env " .. shells[ft], "" }
             vim.api.nvim_put(lines, "l", false, true)

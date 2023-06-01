@@ -7,6 +7,7 @@
 --   ╚═══╝  ╚══════╝     ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝
 
 require("basic")
+require("filetype")
 
 -- plugin init
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -23,7 +24,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("plugins")
-require("filetype")
 require("commands")
 require("autocmd")
 require("keybindings")
