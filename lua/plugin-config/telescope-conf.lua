@@ -114,7 +114,7 @@ telescope.setup({
                 ["<C-k>"] = actions.move_selection_previous,
 
                 ["<C-c>"] = actions.close,
-                ["<C-\\>"] = actions.close,
+                -- ["<C-\\>"] = actions.close,
 
                 -- hop.hop_toggle_selection
                 ["<C-h>"] = telescope.extensions.hop.hop,
@@ -148,11 +148,12 @@ telescope.setup({
                 ["<C-l>"] = false,
                 ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
                 ["<C-w>"] = { "<c-s-w>", type = "command" },
+                ["<Del>"] = actions.delete_buffer + actions.close,
             },
 
             n = {
                 ["<esc>"] = actions.close,
-                ["<C-\\>"] = actions.close,
+                -- ["<C-\\>"] = actions.close,
                 ["<CR>"] = actions.select_default,
                 ["<C-x>"] = actions.select_horizontal,
                 ["<C-v>"] = actions.select_vertical,
@@ -193,6 +194,7 @@ telescope.setup({
                 ["<PageDown>"] = actions.results_scrolling_down,
 
                 ["?"] = actions.which_key,
+                ["<Del>"] = actions.delete_buffer + actions.close,
             },
         },
         layout_config = {
@@ -261,10 +263,10 @@ telescope.setup({
     },
     extensions = {
         fzf = {
-            fuzzy = true, -- false will only do exact matching
+            fuzzy = true,                   -- false will only do exact matching
             override_generic_sorter = true, -- override the generic sorter
-            override_file_sorter = true, -- override the file sorter
-            case_mode = "smart_case", -- or "ignore_case" or "respect_case" the default case_mode is "smart_case"
+            override_file_sorter = true,    -- override the file sorter
+            case_mode = "smart_case",       -- or "ignore_case" or "respect_case" the default case_mode is "smart_case"
         },
         hop = {
             -- the shown `keys` are the defaults, no need to set `keys` if defaults work for you ;)
