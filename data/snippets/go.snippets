@@ -154,23 +154,19 @@ ${0}
 endsnippet
 
 snippet gle "glog error"
-glog.Logger.Errorf(${1:ctx}, "${2:}",${3:})
-${0}
+glog.Logger.Errorf(${1:ctx}, "${2:}",${3:})${0}
 endsnippet
 
 snippet gli "glog Infof"
-glog.Logger.Infof(${1:ctx}, "${2:}",${3:})
-${0}
+glog.Logger.Infof(${1:ctx}, "${2:}",${3:})${0}
 endsnippet
 
 snippet glw "glog Warnf"
-glog.Logger.Warnf(${1:ctx}, "${2:}",${3:})
-${0}
+glog.Logger.Warnf(${1:ctx}, "${2:}",${3:})${0}
 endsnippet
 
 snippet gld "glog Debugf"
-glog.Logger.Debugf(${1:ctx}, "${2:}",${3:})
-${0}
+glog.Logger.Debugf(${1:ctx}, "${2:}", ${3:})${0}
 endsnippet
 
 # vim:ft=snippets:
