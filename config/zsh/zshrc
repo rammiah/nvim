@@ -18,6 +18,7 @@ fi
 plugins=( 
     autojump
     common-aliases 
+    docker-compose
     fzf 
     git 
     golang
