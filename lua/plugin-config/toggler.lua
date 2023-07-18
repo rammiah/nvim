@@ -16,6 +16,7 @@ toggler.setup {
 		["success"] = "fail",
 		[">"] = "<",
         ["&&"] = "||",
+        ["++"] = "--",
 	},
 	remove_default_keybinds = true,
 	remove_default_inverses = true,
