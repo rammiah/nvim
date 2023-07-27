@@ -78,14 +78,14 @@ local telescope = {
 }
 
 
-local theme = "solarized_light"
+-- local theme = "solarized_light"
 
 lualine.setup {
     options = {
         icons_enabled = true,
-        theme = theme,
+        -- theme = theme,
         -- theme = "solarized",
-        -- theme = "auto",
+        theme = "auto",
         -- theme = "tokyonight",
         component_separators = { left = "", right = "" }, -- { left = "", right = "" }
         section_separators = { left = '', right = "" }, -- { left = "", right = ""},
