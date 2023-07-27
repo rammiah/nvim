@@ -607,4 +607,9 @@ require("lazy").setup({
         end,
         enabled = false,
     },
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000
+    },
 }, opts)

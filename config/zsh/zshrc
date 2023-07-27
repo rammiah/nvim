@@ -33,6 +33,7 @@ plugins=(
     tig
     tmux
     ufw
+    web-search
     yarn
     zsh-completions
     zsh-syntax-highlighting
