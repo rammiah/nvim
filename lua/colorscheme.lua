@@ -1,4 +1,4 @@
-local colorscheme = "catppuccin-macchiato"
+local colorscheme = "catppuccin-latte"
 vim.o.background = "dark"
 -- tokyonight
 -- OceanicNext
