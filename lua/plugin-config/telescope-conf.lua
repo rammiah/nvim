@@ -148,7 +148,7 @@ telescope.setup({
                 ["<C-l>"] = false,
                 ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
                 ["<C-w>"] = { "<c-s-w>", type = "command" },
-                ["<Del>"] = actions.delete_buffer + actions.close,
+                ["<Del>"] = actions.delete_buffer,
             },
 
             n = {
@@ -194,7 +194,7 @@ telescope.setup({
                 ["<PageDown>"] = actions.results_scrolling_down,
 
                 ["?"] = actions.which_key,
-                ["<Del>"] = actions.delete_buffer + actions.close,
+                ["<Del>"] = actions.delete_buffer,
             },
         },
         layout_config = {
