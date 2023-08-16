@@ -200,9 +200,6 @@ require "nvim-tree".setup { -- BEGIN_DEFAULT_OPTS
         number = false,
         relativenumber = false,
         signcolumn = "no",
-        mappings = {
-            custom_only = true,
-        },
     },
     renderer = {
         add_trailing = false,
