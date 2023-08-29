@@ -617,10 +617,10 @@ require("lazy").setup({
         config = function()
             local NS = { noremap = true, silent = true }
 
-            vim.keymap.set('x', 'aa', function() require 'align'.align_to_char(1, true) end, NS) -- Aligns to 1 character, looking left
-            vim.keymap.set('x', 'as', function() require 'align'.align_to_char(2, true, true) end, NS) -- Aligns to 2 characters, looking left and with previews
+            vim.keymap.set('x', 'aa', function() require 'align'.align_to_char(1, true) end, NS)             -- Aligns to 1 character, looking left
+            vim.keymap.set('x', 'as', function() require 'align'.align_to_char(2, true, true) end, NS)       -- Aligns to 2 characters, looking left and with previews
             vim.keymap.set('x', 'aw', function() require 'align'.align_to_string(false, true, true) end, NS) -- Aligns to a string, looking left and with previews
-            vim.keymap.set('x', 'ar', function() require 'align'.align_to_string(true, true, true) end, NS) -- Aligns to a Lua pattern, looking left and with previews
+            vim.keymap.set('x', 'ar', function() require 'align'.align_to_string(true, true, true) end, NS)  -- Aligns to a Lua pattern, looking left and with previews
 
             -- Example gawip to align a paragraph to a string, looking left and with previews
             vim.keymap.set(
@@ -650,5 +650,23 @@ require("lazy").setup({
                 NS
             )
         end
+    },
+    {
+        'willothy/moveline.nvim',
+        build = 'make',
+        config = function()
+            local moveline = require('moveline')
+            vim.keymap.set('n', '<M-k>', moveline.up)
+            vim.keymap.set('n', '<M-j>', moveline.down)
+            vim.keymap.set('v', '<M-k>', moveline.block_up)
+            vim.keymap.set('v', '<M-j>', moveline.block_down)
+        end,
+        lazy = true,
+        keys = {
+            { "<M-k>", mode = "n", desc = "move line up" },
+            { "<M-j>", mode = "n", desc = "move line down" },
+            { "<M-k>", mode = "v", desc = "move block up" },
+            { "<M-j>", mode = "v", desc = "move block down" },
+        },
     },
 }, opts)
