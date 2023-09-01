@@ -669,4 +669,9 @@ require("lazy").setup({
             { "<M-j>", mode = "v", desc = "move block down" },
         },
     },
+    {
+        'Exafunction/codeium.vim',
+        lazy = true,
+        event = 'BufEnter'
+    }
 }, opts)
