@@ -163,7 +163,17 @@ require("lazy").setup({
             require("plugin-config.autopairs")
         end,
         lazy = true,
-        event = "VeryLazy",
+        keys = {
+            { "ys",   mode = "n" },
+            { "ds",   mode = "n" },
+            { "cs",   mode = "n" },
+            { "yS",   mode = "n" },
+            { "dS",   mode = "n" },
+            { "cS",   mode = "n" },
+            { "S",    mode = "x" },
+            { "<CR>", mode = "i" },
+        },
+        -- event = "VeryLazy",
     },
     {
         "windwp/nvim-ts-autotag",
