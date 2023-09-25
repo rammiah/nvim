@@ -183,7 +183,6 @@ require "nvim-tree".setup { -- BEGIN_DEFAULT_OPTS
         adaptive_size = true,
         centralize_selection = true,
         width = 30,
-        hide_root_folder = false,
         side = "left",
         float = {
             enable = false,
@@ -207,6 +206,7 @@ require "nvim-tree".setup { -- BEGIN_DEFAULT_OPTS
         highlight_git = false,
         highlight_opened_files = "none",
         root_folder_modifier = ":~",
+        root_folder_label = false,
         indent_width = 2,
         indent_markers = {
             enable = true,
