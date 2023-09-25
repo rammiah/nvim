@@ -74,8 +74,7 @@ vim.o.pumheight = 10
 vim.o.showtabline = 2
 vim.o.grepprg = "rg --vimgrep --smart-case --hidden --follow"
 vim.o.selection = "inclusive"
--- don't add '\n' to end of file
-vim.o.fixendofline = false
+vim.o.fixendofline = true
 -- no shell temp file
 vim.o.shelltemp = false
 -- shell is zsh or powershell
