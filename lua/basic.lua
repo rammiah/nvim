@@ -86,11 +86,20 @@ end
 
 -- vim.g.did_load_filetypes = 1
 -- set python3 path
-if vim.fn.executable("/opt/homebrew/bin/python3") == 1 then
-    vim.g.python3_host_prog = "/opt/homebrew/bin/python3"
-else
-    vim.g.python3_host_prog = "/usr/bin/python3"
+local python3_binaries = {
+    "/opt/homebrew/bin/python3",
+    "/usr/bin/python3",
+    "/usr/sbin/python3",
+    "python3",
+}
+
+for i = 1, #python3_binaries do
+    if vim.fn.executable(python3_binaries[i]) == 1 then
+        vim.g.python3_host_prog = python3_binaries[i]
+        break
+    end
 end
+
 -- disable ruby and perl
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
