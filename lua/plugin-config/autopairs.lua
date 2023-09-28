@@ -2,11 +2,11 @@ local npairs = require("nvim-autopairs")
 
 npairs.setup {
     disable_filetype = { "TelescopePrompt", "NvimTree" },
-    disable_in_macro = false, -- disable when recording or executing a macro
+    disable_in_macro = false,       -- disable when recording or executing a macro
     disable_in_visualblock = false, -- disable when insert after visual block mode
     ignored_next_char = [=[[%w%%%'%[%"%.]]=],
     enable_moveright = true,
-    enable_afterquote = true, -- add bracket pairs after quote
+    enable_afterquote = true,         -- add bracket pairs after quote
     enable_check_bracket_line = true, --- check bracket in same line
     enable_bracket_in_quote = true,
     check_ts = true,
@@ -15,12 +15,12 @@ npairs.setup {
         javascript = { "template_string", "string" },
     },
     map_cr = false,
-    map_bs = true, -- map the <BS> key
+    map_bs = true,   -- map the <BS> key
     map_c_h = false, -- Map the <C-h> key to delete a pair
     map_c_w = false, -- map <c-w> to delete a pair if possible
 }
 
-vim.keymap.set("i", "<CR>", function()
+_M.autopairs_cr = function()
     if vim.fn["coc#pum#visible"] and vim.fn["coc#pum#visible"]() ~= 0 then
         -- visible 返回int
         local cmd = vim.fn["coc#pum#confirm"]()
@@ -32,10 +32,12 @@ vim.keymap.set("i", "<CR>", function()
     else
         return npairs.autopairs_cr()
     end
-end, {
-    noremap = true,
-    silent = true,
+end
+
+vim.api.nvim_set_keymap('i', "<CR>", "v:lua._M.autopairs_cr()", {
     expr = true,
+    silent = true,
+    noremap = true,
 })
 
 local Rule = require 'nvim-autopairs.rule'

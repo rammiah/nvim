@@ -159,7 +159,6 @@ require("lazy").setup({
     -- auto pair
     {
         "windwp/nvim-autopairs",
-        commit = "3b664e8277c36accec37f43414d85a3b64feba5f",
         config = function()
             require("plugin-config.autopairs")
         end,
@@ -173,6 +172,11 @@ require("lazy").setup({
             { "cS",   mode = "n" },
             { "S",    mode = "x" },
             { "<CR>", mode = "i" },
+            { "(",    mode = "i" },
+            { "{",    mode = "i" },
+            { "[",    mode = "i" },
+            { "'",    mode = "i" },
+            { '"',    mode = "i" },
         },
         -- event = "VeryLazy",
         -- enabled = false,
