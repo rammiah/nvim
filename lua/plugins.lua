@@ -217,8 +217,8 @@ require("lazy").setup({
         "ojroques/nvim-osc52",
         config = function()
             local copy = function()
-                if vim.v.event.operator == 'y' and vim.v.event.regname == '' then
-                    require('osc52').copy_register('')
+                if vim.v.event.operator == "y" and vim.v.event.regname == "" then
+                    require("osc52").copy_register("")
                 end
             end
             vim.api.nvim_create_autocmd("TextYankPost", {
@@ -598,15 +598,15 @@ require("lazy").setup({
             "Calendar",
         },
     },
-    {
-        "petertriho/nvim-scrollbar",
-        dependencies = { "lewis6991/gitsigns.nvim" },
-        config = function()
-            require('scrollbar').setup {}
-        end,
-        lazy = true,
-        event = "VeryLazy",
-    },
+    -- {
+    --     "petertriho/nvim-scrollbar",
+    --     dependencies = { "lewis6991/gitsigns.nvim" },
+    --     config = function()
+    --         require("scrollbar").setup {}
+    --     end,
+    --     lazy = true,
+    --     event = "VeryLazy",
+    -- },
     {
         "eandrju/cellular-automaton.nvim",
         lazy = true,
@@ -633,17 +633,17 @@ require("lazy").setup({
         config = function()
             local NS = { noremap = true, silent = true }
 
-            vim.keymap.set('x', 'aa', function() require 'align'.align_to_char(1, true) end, NS)             -- Aligns to 1 character, looking left
-            vim.keymap.set('x', 'as', function() require 'align'.align_to_char(2, true, true) end, NS)       -- Aligns to 2 characters, looking left and with previews
-            vim.keymap.set('x', 'aw', function() require 'align'.align_to_string(false, true, true) end, NS) -- Aligns to a string, looking left and with previews
-            vim.keymap.set('x', 'ar', function() require 'align'.align_to_string(true, true, true) end, NS)  -- Aligns to a Lua pattern, looking left and with previews
+            vim.keymap.set("x", "aa", function() require "align".align_to_char(1, true) end, NS)             -- Aligns to 1 character, looking left
+            vim.keymap.set("x", "as", function() require "align".align_to_char(2, true, true) end, NS)       -- Aligns to 2 characters, looking left and with previews
+            vim.keymap.set("x", "aw", function() require "align".align_to_string(false, true, true) end, NS) -- Aligns to a string, looking left and with previews
+            vim.keymap.set("x", "ar", function() require "align".align_to_string(true, true, true) end, NS)  -- Aligns to a Lua pattern, looking left and with previews
 
             -- Example gawip to align a paragraph to a string, looking left and with previews
             vim.keymap.set(
-                'n',
-                'gaw',
+                "n",
+                "gaw",
                 function()
-                    local a = require 'align'
+                    local a = require "align"
                     a.operator(
                         a.align_to_string,
                         { is_pattern = false, reverse = true, preview = true }
@@ -654,10 +654,10 @@ require("lazy").setup({
 
             -- Example gaaip to aling a paragraph to 1 character, looking left
             vim.keymap.set(
-                'n',
-                'gaa',
+                "n",
+                "gaa",
                 function()
-                    local a = require 'align'
+                    local a = require "align"
                     a.operator(
                         a.align_to_char,
                         { length = 1, reverse = true }
@@ -668,14 +668,14 @@ require("lazy").setup({
         end
     },
     {
-        'willothy/moveline.nvim',
-        build = 'make',
+        "willothy/moveline.nvim",
+        build = "make",
         config = function()
-            local moveline = require('moveline')
-            vim.keymap.set('n', '<M-k>', moveline.up)
-            vim.keymap.set('n', '<M-j>', moveline.down)
-            vim.keymap.set('v', '<M-k>', moveline.block_up)
-            vim.keymap.set('v', '<M-j>', moveline.block_down)
+            local moveline = require("moveline")
+            vim.keymap.set("n", "<M-k>", moveline.up)
+            vim.keymap.set("n", "<M-j>", moveline.down)
+            vim.keymap.set("v", "<M-k>", moveline.block_up)
+            vim.keymap.set("v", "<M-j>", moveline.block_down)
         end,
         lazy = true,
         keys = {
@@ -686,8 +686,25 @@ require("lazy").setup({
         },
     },
     {
-        'Exafunction/codeium.vim',
+        "Exafunction/codeium.vim",
         lazy = true,
-        event = 'BufEnter'
-    }
+        event = "BufEnter"
+    },
+    {
+        "akinsho/git-conflict.nvim",
+        version = "*",
+        config = function()
+            require("git-conflict").setup {
+                default_mappings = false, -- disable buffer local mapping created by this plugin
+                default_commands = true, -- disable commands created by this plugin
+                disable_diagnostics = false, -- This will disable the diagnostics in a buffer whilst it is conflicted
+                list_opener = "copen", -- command or function to open the conflicts list
+                highlights = { -- They must have background color, otherwise the default color will be used
+                    incoming = "DiffAdd",
+                    current = "DiffText",
+                }
+            }
+        end,
+        enabled = false,
+    },
 }, opts)
