@@ -1,5 +1,5 @@
-local colorscheme = "catppuccin-latte"
-vim.o.background = "dark"
+local colorscheme = "onenord-light"
+vim.o.background = "light"
 -- tokyonight
 -- OceanicNext
 -- gruvbox

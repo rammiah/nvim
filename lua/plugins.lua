@@ -16,6 +16,7 @@ require("lazy").setup({
         "Mofiqul/dracula.nvim",
         enabled = false,
     },
+    "rmehri01/onenord.nvim" ,
     "nvim-lua/plenary.nvim",
     -- use { "ellisonleao/gruvbox.nvim" }
     -- dev icons
