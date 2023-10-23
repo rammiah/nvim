@@ -9,6 +9,10 @@ require("nvim-treesitter.configs").setup {
         "cmake",
         "cpp",
         "css",
+        "csv",
+        "cuda",
+        "d",
+        "dart",
         "diff",
         "dockerfile",
         "erlang",
@@ -38,6 +42,7 @@ require("nvim-treesitter.configs").setup {
         "julia",
         "kconfig",
         "kotlin",
+        "llvm",
         "lua",
         "make",
         "markdown",
@@ -97,7 +102,7 @@ require("nvim-treesitter.configs").setup {
     rainbow = {
         enable = true,
         -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-        extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+        extended_mode = true,  -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
         max_file_lines = 5000, -- Do not enable for files with more than n lines, int
         -- colors = {}, -- table of hex strings
         -- termcolors = {} -- table of colour name strings
@@ -126,8 +131,8 @@ require("nvim-treesitter.configs").setup {
             selection_modes = {
                 ["@parameter.outer"] = "v", -- charwise
                 ["@parameter.inner"] = "v", -- charwise
-                ["@function.outer"] = "V", -- linewise
-                ["@function.inner"] = "V", -- linewise
+                ["@function.outer"] = "V",  -- linewise
+                ["@function.inner"] = "V",  -- linewise
                 ["@class.outer"] = "<c-v>", -- blockwise
                 ["@loop.outer"] = "V",
             },
