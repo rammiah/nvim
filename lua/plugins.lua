@@ -16,7 +16,7 @@ require("lazy").setup({
         "Mofiqul/dracula.nvim",
         enabled = false,
     },
-    "rmehri01/onenord.nvim" ,
+    "rmehri01/onenord.nvim",
     "nvim-lua/plenary.nvim",
     -- use { "ellisonleao/gruvbox.nvim" }
     -- dev icons
@@ -696,16 +696,31 @@ require("lazy").setup({
         version = "*",
         config = function()
             require("git-conflict").setup {
-                default_mappings = false, -- disable buffer local mapping created by this plugin
-                default_commands = true, -- disable commands created by this plugin
+                default_mappings = false,    -- disable buffer local mapping created by this plugin
+                default_commands = true,     -- disable commands created by this plugin
                 disable_diagnostics = false, -- This will disable the diagnostics in a buffer whilst it is conflicted
-                list_opener = "copen", -- command or function to open the conflicts list
-                highlights = { -- They must have background color, otherwise the default color will be used
+                list_opener = "copen",       -- command or function to open the conflicts list
+                highlights = {               -- They must have background color, otherwise the default color will be used
                     incoming = "DiffAdd",
                     current = "DiffText",
                 }
             }
         end,
         enabled = false,
+    },
+    {
+        "stevearc/oil.nvim",
+        config = function()
+            require("oil").setup {
+                delete_to_trash = true,
+                trash_command = "trash-put",
+            }
+        end,
+        -- Optional dependencies
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        lazy = true,
+        cmd = {
+            "Oil",
+        }
     },
 }, opts)
