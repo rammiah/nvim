@@ -680,10 +680,10 @@ require("lazy").setup({
         end,
         lazy = true,
         keys = {
-            { "<M-k>", mode = "n", desc = "move line up" },
-            { "<M-j>", mode = "n", desc = "move line down" },
-            { "<M-k>", mode = "v", desc = "move block up" },
-            { "<M-j>", mode = "v", desc = "move block down" },
+            { "<M-k>", mode = "n", desc = "(normal)move line up" },
+            { "<M-j>", mode = "n", desc = "(nornal)move line down" },
+            { "<M-k>", mode = "x", desc = "(visual)move block up" },
+            { "<M-j>", mode = "x", desc = "(visual)move block down" },
         },
     },
     {
