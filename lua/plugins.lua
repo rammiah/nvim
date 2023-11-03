@@ -9,16 +9,9 @@ local opts = {
 }
 
 require("lazy").setup({
-    -- Packer can manage itself
     -- color theme
     "overcache/NeoSolarized",
-    {
-        "Mofiqul/dracula.nvim",
-        enabled = false,
-    },
-    "rmehri01/onenord.nvim",
     "nvim-lua/plenary.nvim",
-    -- use { "ellisonleao/gruvbox.nvim" }
     -- dev icons
     {
         "nvim-tree/nvim-web-devicons",
@@ -614,15 +607,6 @@ require("lazy").setup({
         cmd = {
             "CellularAutomaton",
         },
-    },
-    {
-        "github/copilot.vim",
-        config = function()
-            vim.g.copilot_filetypes = {
-                ["TelescopePrompt"] = false,
-            }
-        end,
-        enabled = false,
     },
     {
         "catppuccin/nvim",
