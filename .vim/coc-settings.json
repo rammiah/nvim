@@ -8,5 +8,5 @@
   "Lua.workspace.library": [
     "$HOME/.local/share/nvim/lazy/plenary.nvim",
   ],
-  "Lua.workspace.checkThirdParty": false
+  "Lua.workspace.checkThirdParty": "Disable"
 }

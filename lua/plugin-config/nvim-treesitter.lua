@@ -11,7 +11,6 @@ require("nvim-treesitter.configs").setup {
         "css",
         "csv",
         "cuda",
-        "d",
         "dart",
         "diff",
         "dockerfile",
