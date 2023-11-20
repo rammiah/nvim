@@ -66,15 +66,20 @@ require("lazy").setup({
         dependencies = {
             "p00f/nvim-ts-rainbow",
             "nvim-treesitter/nvim-treesitter-textobjects",
-            "JoosepAlviste/nvim-ts-context-commentstring",
+            -- "JoosepAlviste/nvim-ts-context-commentstring",
             "RRethy/nvim-treesitter-endwise",
         },
         lazy = true,
         event = "VeryLazy",
         -- commit = "635c450",
         config = function()
+            vim.g.skip_ts_context_commentstring_module = true
             require("plugin-config.nvim-treesitter")
         end,
+    },
+    {
+        "JoosepAlviste/nvim-ts-context-commentstring",
+        event = "VeryLazy",
     },
     {
         "nvim-treesitter/playground",
