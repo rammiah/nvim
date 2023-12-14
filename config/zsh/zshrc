@@ -141,4 +141,6 @@ lscwd() {
 
 [ -s "$HOME/.acme.sh/acme.sh.env" ] && source "$HOME/.acme.sh/acme.sh.env"
 
+autoload -U compinit; compinit
+
 eval "$(direnv hook zsh)"
