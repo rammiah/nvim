@@ -1,4 +1,0 @@
-# hello
-set main-options = -n 100 # Show up to 100 commits
-set diff-options = -m
-set main-view-id = yes
