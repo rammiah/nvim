@@ -1,7 +1,7 @@
 [user]
-	name = ""
-	email = ""
-	signingkey = ""
+	email =  rammiahcn@gmail.com
+	name = rammiah
+	signingkey = FDDFFCCEC57EB400
 ; core settings
 [core]
 	editor=nvim
@@ -47,6 +47,12 @@
 	sign = true
 	gpgSign = true
 [http]
-      sslVerify = true
-[url "ssh://git@github.com/"]
-      pushInsteadOf = https://github.com/
+	sslVerify = true
+[url "https://gh.i2x.cc/github.com/"]
+	insteadOf = https://github.com/
+[url "https://[user:token]@github.com/"]
+	pushInsteadOf = https://github.com/
+[url "ssh://git@gitlab.com/"]
+	pushInsteadOf = https://gitlab.com/
+[url "ssh://git@gitea.com/"]
+	pushInsteadOf = https://gitea.com/
