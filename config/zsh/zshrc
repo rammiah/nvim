@@ -144,4 +144,6 @@ lscwd() {
 
 autoload -U compinit; compinit
 
+proxy enable
+
 eval "$(direnv hook zsh)"
