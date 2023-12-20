@@ -29,6 +29,7 @@ plugins=(
     ripgrep
     rsync
     rust
+    shell-proxy
     systemd
     tig
     tmux
