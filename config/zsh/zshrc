@@ -29,7 +29,6 @@ plugins=(
     ripgrep
     rsync
     rust
-    shell-proxy
     systemd
     tig
     tmux
@@ -143,7 +142,5 @@ lscwd() {
 [ -s "$HOME/.acme.sh/acme.sh.env" ] && source "$HOME/.acme.sh/acme.sh.env"
 
 autoload -U compinit; compinit
-
-proxy enable
 
 eval "$(direnv hook zsh)"
