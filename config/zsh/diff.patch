@@ -1,0 +1,24 @@
+diff --git a/plugins/git/git.plugin.zsh b/plugins/git/git.plugin.zsh
+index 2a82444..f4684ea 100644
+--- a/plugins/git/git.plugin.zsh
++++ b/plugins/git/git.plugin.zsh
+@@ -35,7 +35,7 @@ function git_develop_branch() {
+ function git_main_branch() {
+   command git rev-parse --git-dir &>/dev/null || return
+   local ref
+-  for ref in refs/{heads,remotes/{origin,upstream}}/{main,trunk,mainline,default,master}; do
++  for ref in refs/{heads,remotes/{origin,upstream}}/{master,main,trunk,mainline,default}; do
+     if command git show-ref -q --verify $ref; then
+       echo ${ref:t}
+       return 0
+diff --git a/themes/robbyrussell.zsh-theme b/themes/robbyrussell.zsh-theme
+index 173e6d5..1a619e9 100644
+--- a/themes/robbyrussell.zsh-theme
++++ b/themes/robbyrussell.zsh-theme
+@@ -1,4 +1,5 @@
+-PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ ) %{$fg[cyan]%}%c%{$reset_color%}"
++PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%D{%H:%M:%S} %{$fg[cyan]%}%c%{$reset_color%}"
++# PROMPT+="%D{%H:%M:%S}"
+ PROMPT+=' $(git_prompt_info)'
+ 
+ ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
