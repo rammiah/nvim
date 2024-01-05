@@ -268,5 +268,15 @@
     "gitee",
     "oneof",
     "tmpl"
-  ]
+  ],
+  "semanticTokens.enable": true,
+  "semanticTokens.incrementTypes": [
+    "variable",
+    "string",
+    "parameter"
+  ],
+  "semanticTokens.combinedModifiers": [
+    "deprecated"
+  ],
+  "semanticTokens.highlightPriority": 2048,
 }
