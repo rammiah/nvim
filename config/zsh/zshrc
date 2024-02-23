@@ -58,6 +58,7 @@ precmd_functions+=(_fix_cursor)
 export BAT_THEME="Solarized (light)"
 alias cat="bat"
 alias rm="trash"
+alias ta="tmux attach"
 if [[ "$TERM" == "xterm-kitty" ]] then
     alias icat="kitty +kitten icat"
 fi
