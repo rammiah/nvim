@@ -77,7 +77,7 @@ require("nvim-treesitter.configs").setup {
         "zig",
     },
 
-    sync_install = false,
+    sync_install = true,
     -- 启用代码高亮功能
     highlight = {
         enable = true,
