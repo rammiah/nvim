@@ -16,7 +16,6 @@ then
 fi
 
 plugins=( 
-    autojump
     common-aliases 
     docker-compose
     fzf 
@@ -35,6 +34,7 @@ plugins=(
     ufw
     web-search
     yarn
+    zoxide
     zsh-completions
     zsh-syntax-highlighting
 )
