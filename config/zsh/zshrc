@@ -17,6 +17,7 @@ fi
 
 plugins=( 
     common-aliases 
+    cp
     docker-compose
     fzf 
     git 
