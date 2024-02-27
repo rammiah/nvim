@@ -8,9 +8,10 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 ZSH_TMUX_DEFAULT_SESSION_NAME="dev"
 ZSH_TMUX_FIXTERM=false
 # to check for updates once a month
-export UPDATE_ZSH_DAYS=30
+UPDATE_ZSH_DAYS=30
 # or to check for updates daily
-export UPDATE_ZSH_DAYS=1
+UPDATE_ZSH_DAYS=1
+ZOXIDE_CMD_OVERRIDE=cd
 
 if [ -d ~/.zshconf/pre ]
 then
