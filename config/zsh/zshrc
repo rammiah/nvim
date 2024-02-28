@@ -12,6 +12,8 @@ UPDATE_ZSH_DAYS=30
 # or to check for updates daily
 UPDATE_ZSH_DAYS=1
 
+export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+
 if [ -d ~/.zshconf/pre ]
 then
     for file in ~/.zshconf/pre/*; do
@@ -87,9 +89,6 @@ export FZF_DEFAULT_COMMAND="fd --type file --hidden --follow --color=always --gl
 export GOROOT="$HOME/.gos/go"
 export GOPATH="$HOME/code/gopath"
 export PATH="$GOROOT/bin:$GOPATH/bin:$PATH" 
-# for rootless docker
-export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-# export DOCKER_HOST=unix:///run/user/1000/docker.sock
 
 # params alias
 unalias gco
