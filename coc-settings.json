@@ -51,6 +51,7 @@
       ]
     }
   },
+  "zig.path": "~/.local/bin/zls",
   "coc.source.around.enable": true,
   "coc.source.around.priority": 60,
   "coc.source.around.shortcut": "A",
