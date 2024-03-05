@@ -87,7 +87,7 @@ require("lazy").setup({
     {
         "nvim-treesitter/playground",
         lazy = true,
-        cmds = {
+        cmd = {
             "TSPlaygroundToggle",
         },
     },
