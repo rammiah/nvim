@@ -6,6 +6,7 @@ vim.filetype.add({
         ["gitconfig"] = "gitconfig",
         [".envrc"] = "envrc",
         ["tsconfig.json"] = "jsonc",
+        ["vps_config"] = "sshconfig",
     },
     extension = {
         thrift = "thrift",
