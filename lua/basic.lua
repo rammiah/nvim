@@ -86,23 +86,33 @@ end
 
 -- vim.g.did_load_filetypes = 1
 -- set python3 path
-local python3_binaries = {
-    "/opt/homebrew/bin/python3",
-    "/usr/bin/python3",
-    "/usr/sbin/python3",
-    "python3",
-}
+-- search python3 host by pyenv
+local python3_host = ""
+if vim.fn.executable("pyenv") == 1 then
+    python3_host = vim.fn.trim(vim.fn.system("pyenv which python3"))
+end
+if python3_host ~= "" then
+    vim.g.python3_host_prog = python3_host
+else
+    local python3_binaries = {
+        "/opt/homebrew/bin/python3",
+        "/usr/bin/python3",
+        "/usr/sbin/python3",
+        "python3",
+    }
 
-for i = 1, #python3_binaries do
-    if vim.fn.executable(python3_binaries[i]) == 1 then
-        vim.g.python3_host_prog = python3_binaries[i]
-        break
+    for i = 1, #python3_binaries do
+        if vim.fn.executable(python3_binaries[i]) == 1 then
+            vim.g.python3_host_prog = python3_binaries[i]
+            break
+        end
     end
 end
 
 -- disable ruby and perl
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
+vim.g.loaded_node_provider = 0
 -- set language to english
 vim.api.nvim_exec("language en_US.UTF-8", true)
 -- lazyredraw
