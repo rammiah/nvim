@@ -505,7 +505,6 @@ require("lazy").setup({
         ft = {
             "json",
             "jsonc",
-            "jsonc5",
         },
     },
     -- nvim-cmp for cmdline
