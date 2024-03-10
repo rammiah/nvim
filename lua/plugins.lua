@@ -557,22 +557,6 @@ require("lazy").setup({
         end,
     },
     {
-        "anuvyklack/help-vsplit.nvim",
-        config = function()
-            require("help-vsplit").setup {
-                always = false, -- Always open help in a vertical split.
-                side = "right", -- 'left' or 'right'
-                buftype = { "help" },
-                filetype = { "man" }
-            }
-        end,
-        lazy = true,
-        event = "VeryLazy",
-        cmd = {
-            "Man",
-        },
-    },
-    {
         "mbbill/undotree",
         config = function()
             vim.g.undotree_WindowLayout = 3
