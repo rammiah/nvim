@@ -6,9 +6,9 @@ local opts = {
         -- The border to use for the UI window. Accepts same border values as |nvim_open_win()|.
         border = "single",
     },
-    git = {
-        url_format = "https://gh.i2x.cc/github.com/%s.git",
-    }
+    -- git = {
+    --     url_format = "https://gh.i2x.cc/github.com/%s.git",
+    -- }
 }
 
 require("lazy").setup({
