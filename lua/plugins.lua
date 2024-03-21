@@ -67,7 +67,7 @@ require("lazy").setup({
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         dependencies = {
-            "p00f/nvim-ts-rainbow",
+            "hiphish/rainbow-delimiters.nvim",
             "nvim-treesitter/nvim-treesitter-textobjects",
             -- "JoosepAlviste/nvim-ts-context-commentstring",
             "RRethy/nvim-treesitter-endwise",
@@ -79,6 +79,36 @@ require("lazy").setup({
             vim.g.skip_ts_context_commentstring_module = true
             require("plugin-config.nvim-treesitter")
         end,
+    },
+    {
+        "hiphish/rainbow-delimiters.nvim",
+        event = "VeryLazy",
+        config = function()
+            local rainbow_delimiters = require 'rainbow-delimiters'
+            vim.g.rainbow_delimiters = {
+                strategy = {
+                    [''] = rainbow_delimiters.strategy['global'],
+                    vim = rainbow_delimiters.strategy['local'],
+                },
+                query = {
+                    [''] = 'rainbow-delimiters',
+                    lua = 'rainbow-blocks',
+                },
+                priority = {
+                    [''] = 110,
+                    lua = 210,
+                },
+                highlight = {
+                    'RainbowDelimiterRed',
+                    'RainbowDelimiterYellow',
+                    'RainbowDelimiterBlue',
+                    'RainbowDelimiterOrange',
+                    'RainbowDelimiterGreen',
+                    'RainbowDelimiterViolet',
+                    'RainbowDelimiterCyan',
+                },
+            }
+        end
     },
     {
         "JoosepAlviste/nvim-ts-context-commentstring",
@@ -199,22 +229,7 @@ require("lazy").setup({
         config = function()
             require("plugin-config.surround")
         end,
-        lazy = true,
-        keys = {
-            "ds",
-            "cs",
-            "cS",
-            "ys",
-            "yss",
-            "yS",
-            "ySS",
-            {
-                "S", mode = "x",
-            },
-            {
-                "gS", mode = "x",
-            }
-        },
+        event = "VeryLazy",
     },
     {
         "ojroques/nvim-osc52",

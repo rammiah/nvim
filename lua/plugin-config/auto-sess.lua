@@ -1,7 +1,7 @@
 local session = require("auto-session")
 
 session.setup {
-    log_level = "info",
+    log_level = "error",
     auto_session_enable_last_session = false,
     auto_session_root_dir = vim.fn.stdpath("state") .. "/sessions/",
     auto_session_enabled = true,
