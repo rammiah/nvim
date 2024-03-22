@@ -108,6 +108,12 @@
   "list.source.outline.defaultOptions": [
     "--auto-preview"
   ],
+  "list.insertMappings": {
+    "<C-y>": "do:togglemode",
+  },
+  "list.normalMappings": {
+    "<C-y>": "do:togglemode",
+  },
   "sumneko-lua.prompt": true,
   "sumneko-lua.checkUpdate": true,
   "inlayHint.enable": true,

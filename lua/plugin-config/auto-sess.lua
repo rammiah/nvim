@@ -10,5 +10,15 @@ session.setup {
     auto_session_suppress_dirs = { "~/" },
     auto_session_use_git_branch = true,
     -- the configs below are lua only
-    bypass_session_save_file_types = { "NvimTree", "thrift", "diff" }
+    bypass_session_save_file_types = { "NvimTree", "thrift", "diff", "vimdoc", "help" },
+    post_save_cmds = {
+        function ()
+            vim.notify("Session save success!", vim.log.levels.INFO)
+        end,
+    },
+    post_restore_cmds = {
+        function ()
+            vim.notify("Session restore success!", vim.log.levels.INFO)
+        end,
+    },
 }
