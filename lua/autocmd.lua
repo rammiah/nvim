@@ -23,6 +23,8 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         if vim.fn.mkdir(path, "p", "0o755") == 0 then
             vim.notify(string.format("create folder %s failed", path), levels.ERROR)
             return
+        else
+            vim.notify(string.format("create folder %s success", path), levels.INFO)
         end
     end,
     group = gid,
