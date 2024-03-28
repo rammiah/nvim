@@ -113,6 +113,8 @@
   },
   "list.normalMappings": {
     "<C-y>": "do:togglemode",
+    "<C-j>": "do:next",
+    "<C-k>": "do:previous",
   },
   "sumneko-lua.prompt": true,
   "sumneko-lua.checkUpdate": true,
@@ -272,6 +274,7 @@
   ],
   "cSpell.userWords": [
     "Infof",
+    "gcom",
     "gitee",
     "oneof",
     "tmpl"
