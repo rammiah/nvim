@@ -229,7 +229,7 @@ require("lazy").setup({
         config = function()
             require("plugin-config.surround")
         end,
-        event = "VeryLazy",
+        lazy = false,
     },
     {
         "ojroques/nvim-osc52",
