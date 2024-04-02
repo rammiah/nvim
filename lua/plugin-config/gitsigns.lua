@@ -6,7 +6,7 @@ require("gitsigns").setup {
         topdelete    = { hl = "GitSignsDelete", text = "▀", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
         changedelete = { hl = "GitSignsChange", text = "≌", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
     },
-    signcolumn                   = true, -- Toggle with `:Gitsigns toggle_signs`
+    signcolumn                   = true,  -- Toggle with `:Gitsigns toggle_signs`
     numhl                        = false, -- Toggle with `:Gitsigns toggle_numhl`
     linehl                       = false, -- Toggle with `:Gitsigns toggle_linehl`
     word_diff                    = false, -- Toggle with `:Gitsigns toggle_word_diff`
@@ -35,9 +35,8 @@ require("gitsigns").setup {
         row = 0,
         col = 1
     },
-    yadm                         = {
-        enable = false
-    },
+    -- on_attach_pre = function (bufnr)
+    -- end,
     on_attach                    = function(bufnr)
         local gs = package.loaded.gitsigns
 
