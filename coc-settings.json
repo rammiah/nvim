@@ -85,6 +85,7 @@
   "tree.key.activeFilter": "f",
   "tree.key.selectNext": "<C-j>",
   "tree.key.selectPrevious": "<C-k>",
+  "Lua.semantic.enable": true,
   "Lua.completion.callSnippet": "Replace",
   "Lua.completion.keywordSnippet": "Replace",
   "Lua.signatureHelp.enable": true,
