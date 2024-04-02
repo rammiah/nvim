@@ -6,8 +6,8 @@ local opts = {
         -- The border to use for the UI window. Accepts same border values as |nvim_open_win()|.
         border = "single",
     },
-    concurrency = 4,
-    throttle = 20,
+    concurrency = 10,
+    throttle = 10,
     -- git = {
     --     url_format = "https://gh.i2x.cc/github.com/%s.git",
     -- }
