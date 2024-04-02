@@ -6,9 +6,19 @@ local opts = {
         -- The border to use for the UI window. Accepts same border values as |nvim_open_win()|.
         border = "single",
     },
+    concurrency = 4,
+    throttle = 20,
     -- git = {
     --     url_format = "https://gh.i2x.cc/github.com/%s.git",
     -- }
+    checker = {
+        -- automatically check for plugin updates
+        enabled = true,
+        concurrency = 4, ---@type number? set to 1 to check for updates very slowly
+        notify = true,    -- get a notification when new updates are found
+        frequency = 60 * 60 * 24, -- check for updates every day
+        check_pinned = false, -- check for pinned packages that can't be updated
+    },
 }
 
 require("lazy").setup({
@@ -345,7 +355,9 @@ require("lazy").setup({
         "lewis6991/gitsigns.nvim",
         config = function()
             require("plugin-config.gitsigns")
-        end
+        end,
+        lazy = true,
+        event = "VeryLazy",
     },
     -- impatient to speed up vim
     -- use "lewis6991/impatient.nvim"
@@ -356,6 +368,8 @@ require("lazy").setup({
         config = function()
             require("plugin-config.todo-comments")
         end,
+        lazy = true,
+        event = "VeryLazy",
     },
     -- toggleterm
     {
