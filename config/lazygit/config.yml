@@ -1,8 +1,8 @@
 gui:
   scrollHeight: 4 # how many lines you scroll by
   scrollPastBottom: false # enable scrolling past the bottom
-  theme:
-    lightTheme: false
+  border: rounded
+  filterMode: fuzzy
 os:
   edit: 'nvim {{filename}}' # see 'Configuring File Editing' section
   editAtLine: 'nvim +{{line}} -- {{filename}}'
