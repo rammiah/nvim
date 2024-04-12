@@ -45,6 +45,7 @@ vim.g.coc_global_extensions = {
     "coc-spell-checker",
     "coc-sql",
     "coc-sumneko-lua",
+    "coc-svelte",
     "coc-tsserver",
     "coc-vimlsp",
     "coc-yaml",

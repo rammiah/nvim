@@ -290,4 +290,7 @@
     "deprecated"
   ],
   "semanticTokens.highlightPriority": 2048,
+  "svelte.enable-ts-plugin": true,
+  "svelte.plugin.css.enable": true,
+  "svelte.plugin.html.enable": true
 }
