@@ -693,6 +693,9 @@ require("lazy").setup({
     },
     {
         "Exafunction/codeium.vim",
+        config = function ()
+            vim.g.codeium_idle_delay = 500
+        end,
         lazy = true,
         event = "BufEnter"
     },
