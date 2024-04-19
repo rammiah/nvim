@@ -102,11 +102,11 @@ _fzf_git_branch() {
         fzf --height 50% --ansi --no-multi --preview-window right:65% \
         --preview 'git log -n 50 --color=always --date=short --pretty="format:%C(auto)%cd %h%d %s" $(sed "s/.* //" <<< {})' |
         sed "s/.* //"
-    }
+}
 
-    gco() {
-        # check in git respository
-        git rev-parse HEAD > /dev/null 2>&1 || return
+gco() {
+    # check in git respository
+    git rev-parse HEAD > /dev/null 2>&1 || return
 
     # params count
     if (( $# > 0 )) ; then
@@ -130,6 +130,13 @@ _fzf_git_branch() {
     else
         git checkout $branch;
     fi
+}
+
+neofetch() {
+    echo "please use fastfetch"
+    echo "please use fastfetch"
+    echo "please use fastfetch"
+    print -z fastfetch
 }
 
 lscwd() {
