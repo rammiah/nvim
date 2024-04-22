@@ -63,7 +63,8 @@ vim.api.nvim_create_autocmd("BufNewFile", {
             local lines = { "#!/usr/bin/env " .. shells[ft], "" }
             vim.api.nvim_put(lines, "l", false, true)
         end
-        if opts.file == ".envrc" then
+        local name = vim.fn.fnamemodify(opts.file, ":t")
+        if name == ".envrc" then
             vim.api.nvim_put({ "source_up", "" }, "l", false, true)
         end
     end,
