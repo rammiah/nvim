@@ -47,10 +47,6 @@ local shells = {
     sh = "bash",
 }
 
-local headers = {
-    envrc = "source_up",
-}
-
 -- auto add shebang when create a file
 vim.api.nvim_create_autocmd("BufNewFile", {
     desc = "add shebang when create a new file",
@@ -67,8 +63,8 @@ vim.api.nvim_create_autocmd("BufNewFile", {
             local lines = { "#!/usr/bin/env " .. shells[ft], "" }
             vim.api.nvim_put(lines, "l", false, true)
         end
-        if headers[ft] then
-            vim.api.nvim_put({ headers[ft], "" }, "l", false, true)
+        if opts.file == ".envrc" then
+            vim.api.nvim_put({ "source_up", "" }, "l", false, true)
         end
     end,
     group = gid,
@@ -90,10 +86,10 @@ vim.api.nvim_create_autocmd("BufReadPost", {
         -- print("read ft is "..vim.inspect(ft))
         if ft and shells[ft] then
             local lines = { "#!/usr/bin/env " .. shells[ft], "" }
-            vim.api.nvim_put(lines, "l", false, true)
+            vim.api.nvim_put(lines, "l", true, true)
         end
         if headers[ft] then
-            vim.api.nvim_put({ headers[ft], "" }, "l", false, true)
+            vim.api.nvim_put({ headers[ft], "" }, "l", true, true)
         end
     end,
     group = gid,
