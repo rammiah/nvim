@@ -76,13 +76,3 @@ end, {
     force = true,
     bang = false,
 })
-
-if vim.g.neovide then
-    vim.api.nvim_create_user_command("Fullscreen", function(opts)
-        vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen
-    end, {
-        desc = "toggle neovide fullscreen",
-        force = true,
-        bang = false,
-    })
-end

@@ -21,3 +21,10 @@ vim.keymap.set("n", "<leader>sr", function()
         sess.RestoreSession()
     end
 end, opts)
+
+
+if vim.g.neovide then
+    vim.keymap.set("n", "<M-Enter>", function()
+        vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen
+    end, opts)
+end
