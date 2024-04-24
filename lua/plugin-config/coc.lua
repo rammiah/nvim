@@ -78,7 +78,7 @@ local function organize_imports()
             vim.fn.CocAction('organizeImport')
         end
     else
-        vim.notify("coc not initialized", vim.log.levels.INFO)
+        vim.notify("coc not initialized", vim.log.levels.WARN)
     end
 end
 
@@ -96,7 +96,7 @@ local function format_doc()
         vim.notify("formatted by lsp success", vim.log.levels.INFO, {
             title = "Formatting",
             timeout = 500,
-            icon = "",
+            icon = "✅",
         })
     else
         local view = vim.fn.winsaveview()
