@@ -76,14 +76,11 @@ export VISUAL="nvim"
 export EDITOR="$VISUAL"
 export NEOVIDE_MULTIGRID="true"
 
-# rust toolchain
-# export RUSTUP_DIST_SERVER="https://rsproxy.cn"
-# export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
-# export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git' --glob '!kitex_gen' --glob '!thrift_gen'"
-export FZF_DEFAULT_COMMAND="fd --type file --hidden --follow --color=always --glob '!.git' --glob '!kitex_gen' --glob '!thrift_gen'"
-
 # fzf
 [ -s ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND="fd --type file --hidden --follow" # search all files
+export FZF_CTRL_T_COMMAND="fd --type file --hidden --follow --exclude '.git/' --exclude 'kitex_gen/' --exclude '*.pb.go'" # search with exclude
+export FZF_ALT_C_COMMAND="fd --type directory --exclude '.git/' --exclude 'kitex_gen/' --exclude 'thrift_gen/'"
 
 # gopath & goroot settings
 export GOROOT="$HOME/.gos/go"
