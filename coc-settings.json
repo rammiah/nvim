@@ -52,6 +52,11 @@
     }
   },
   "zig.path": "~/.local/bin/zls",
+  "clangd.compilationDatabaseCandidates": [
+    "build",
+    "build/clangd",
+    "clangd"
+  ],
   "coc.source.around.enable": true,
   "coc.source.around.priority": 60,
   "coc.source.around.shortcut": "A",
