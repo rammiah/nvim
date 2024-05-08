@@ -1,11 +1,10 @@
 {
   "go.goplsArgs": [
-    "-remote=auto",
     "-logfile=auto",
     "-debug=\"\"",
     "-rpc.trace"
   ],
-  "go.goplsPath": "~/code/gopath/bin/gopls",
+  "go.goplsPath": "gopls",
   "go.goplsOptions": {
     "usePlaceholders": false,
     "linksInHover": false,
