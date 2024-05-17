@@ -18,7 +18,16 @@
       "nilness": true,
       "shadow": false
     },
-    "semanticTokens": true
+    "semanticTokens": true,
+    "hints": {
+      "assignVariableTypes": false,
+      "compositeLiteralFields": true,
+      "compositeLiteralTypes": false,
+      "constantValues": true,
+      "functionTypeParameters": true,
+      "parameterNames": true,
+      "rangeVariableTypes": true
+    }
   },
   "go.goplsUseDaemon": true,
   "languageserver": {
@@ -125,7 +134,7 @@
   "sumneko-lua.checkUpdate": true,
   "inlayHint.enable": true,
   "inlayHint.enableParameter": true,
-  "inlayHint.refreshOnInsertMode": false,
+  "inlayHint.refreshOnInsertMode": true,
   "suggest.noselect": false,
   "documentHighlight.timeout": 500,
   "suggest.acceptSuggestionOnCommitCharacter": true,
