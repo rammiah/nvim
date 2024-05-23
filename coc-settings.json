@@ -132,6 +132,8 @@
   },
   "sumneko-lua.prompt": true,
   "sumneko-lua.checkUpdate": true,
+  "Lua.hint.await": true,
+  "Lua.hint.enable": true,
   "inlayHint.enable": true,
   "inlayHint.enableParameter": true,
   "inlayHint.refreshOnInsertMode": true,
