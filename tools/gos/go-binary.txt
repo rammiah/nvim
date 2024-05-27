@@ -24,3 +24,4 @@ google.golang.org/protobuf/cmd/protoc-gen-go
 honnef.co/go/tools/cmd/staticcheck
 mvdan.cc/gofumpt
 github.com/zu1k/nali
+github.com/natesales/q
