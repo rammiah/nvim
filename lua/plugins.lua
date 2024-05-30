@@ -84,7 +84,7 @@ require("lazy").setup({
         },
         lazy = true,
         event = "VeryLazy",
-        -- commit = "c09932b",
+        -- commit = "30de5e7",
         config = function()
             vim.g.skip_ts_context_commentstring_module = true
             require("plugin-config.nvim-treesitter")
@@ -240,6 +240,7 @@ require("lazy").setup({
             require("plugin-config.surround")
         end,
         lazy = false,
+        event = "VimEnter",
     },
     {
         "ojroques/nvim-osc52",
