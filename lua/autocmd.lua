@@ -89,9 +89,6 @@ vim.api.nvim_create_autocmd("BufReadPost", {
             local lines = { "#!/usr/bin/env " .. shells[ft], "" }
             vim.api.nvim_put(lines, "l", true, true)
         end
-        if headers[ft] then
-            vim.api.nvim_put({ headers[ft], "" }, "l", true, true)
-        end
     end,
     group = gid,
 })
