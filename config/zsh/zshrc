@@ -149,8 +149,9 @@ lscwd() {
     lsof -p $procs 2>&1 | grep -v "^lsof" | grep cwd | awk -F' ' '{printf "%s\t%s\n",$2,$9}'
 }
 
-[ -s "$HOME/.acme.sh/acme.sh.env" ] && source "$HOME/.acme.sh/acme.sh.env"
+# [ -s "$HOME/.acme.sh/acme.sh.env" ] && source "$HOME/.acme.sh/acme.sh.env"
 
-autoload -U compinit; compinit
+# autoload -U compinit; compinit
 
 eval "$(direnv hook zsh)"
+# zprof
