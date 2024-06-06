@@ -25,3 +25,4 @@ honnef.co/go/tools/cmd/staticcheck
 mvdan.cc/gofumpt
 github.com/zu1k/nali
 github.com/natesales/q
+github.com/wailsapp/wails/v2/cmd/wails
