@@ -15,9 +15,9 @@ local opts = {
         -- automatically check for plugin updates
         enabled = true,
         concurrency = 4, ---@type number? set to 1 to check for updates very slowly
-        notify = true,    -- get a notification when new updates are found
+        notify = true,            -- get a notification when new updates are found
         frequency = 60 * 60 * 24, -- check for updates every day
-        check_pinned = false, -- check for pinned packages that can't be updated
+        check_pinned = false,     -- check for pinned packages that can't be updated
     },
 }
 
@@ -694,11 +694,14 @@ require("lazy").setup({
     },
     {
         "Exafunction/codeium.vim",
-        config = function ()
+        config = function()
             vim.g.codeium_idle_delay = 500
+            vim.g.codeium_disable_bindings = 1
+            vim.keymap.set('i', '<Tab>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
         end,
         lazy = true,
-        event = "BufEnter"
+        event = "BufEnter",
+        version = "1.8.37",
     },
     {
         "akinsho/git-conflict.nvim",
