@@ -234,15 +234,6 @@ require("lazy").setup({
     },
     -- surround
     {
-        "kylechui/nvim-surround",
-        version = "*",
-        config = function()
-            require("plugin-config.surround")
-        end,
-        lazy = false,
-        event = "VimEnter",
-    },
-    {
         "ojroques/nvim-osc52",
         config = function()
             local copy = function()
@@ -734,5 +725,14 @@ require("lazy").setup({
         cmd = {
             "Oil",
         }
+    },
+    {
+        "kylechui/nvim-surround",
+        version = "*",
+        config = function()
+            require("plugin-config.surround")
+        end,
+        -- lazy = false,
+        -- event = "VimEnter",
     },
 }, opts)
