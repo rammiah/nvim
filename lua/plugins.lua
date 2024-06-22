@@ -22,6 +22,15 @@ local opts = {
 }
 
 require("lazy").setup({
+    {
+        "kylechui/nvim-surround",
+        version = "*",
+        config = function()
+            require("nvim-surround").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end,
+    },
     -- color theme
     "overcache/NeoSolarized",
     "nvim-lua/plenary.nvim",
@@ -725,14 +734,5 @@ require("lazy").setup({
         cmd = {
             "Oil",
         }
-    },
-    {
-        "kylechui/nvim-surround",
-        version = "*",
-        config = function()
-            require("plugin-config.surround")
-        end,
-        -- lazy = false,
-        -- event = "VimEnter",
     },
 }, opts)
