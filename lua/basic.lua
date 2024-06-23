@@ -114,7 +114,8 @@ vim.g.loaded_ruby_provider = 0
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_node_provider = 0
 -- set language to english
-vim.api.nvim_exec("language en_US.UTF-8", true)
+-- vim.api.nvim_exec("language en_US.UTF-8", true)
+vim.o.langmenu = "en_US.UTF-8"
 -- lazyredraw
 vim.o.lazyredraw = true
 -- number add or sub format recognize
