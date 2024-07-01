@@ -623,13 +623,13 @@ require("lazy").setup({
     --     lazy = true,
     --     event = "VeryLazy",
     -- },
-    {
-        "eandrju/cellular-automaton.nvim",
-        lazy = true,
-        cmd = {
-            "CellularAutomaton",
-        },
-    },
+    -- {
+    --     "eandrju/cellular-automaton.nvim",
+    --     lazy = true,
+    --     cmd = {
+    --         "CellularAutomaton",
+    --     },
+    -- },
     {
         "catppuccin/nvim",
         name = "catppuccin",
