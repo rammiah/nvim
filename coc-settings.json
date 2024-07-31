@@ -302,7 +302,8 @@
     "gitee",
     "oneof",
     "randn",
-    "tmpl"
+    "tmpl",
+    "vmware"
   ],
   "semanticTokens.enable": true,
   "semanticTokens.incrementTypes": [

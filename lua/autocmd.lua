@@ -17,9 +17,15 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = "*",
     callback = function()
         local path = vim.fn.expand("%:p:h")
+
+        if path:sub(1, #"oil:/") == "oil:/" then
+            return
+        end
+
         if vim.fn.isdirectory(path) == 1 then
             return
         end
+
         if vim.fn.mkdir(path, "p", "0o755") == 0 then
             vim.notify(string.format("create folder %s failed", path), levels.ERROR)
             return
