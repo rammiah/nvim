@@ -70,7 +70,7 @@ alias ta="tmux attach"
 if [[ "$TERM" == "xterm-kitty" ]] then
     alias icat="kitty +kitten icat"
 fi
-# alias lz="lazygit"
+alias oil="nvim +Oil"
 # editor
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
