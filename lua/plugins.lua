@@ -701,7 +701,8 @@ require("lazy").setup({
         end,
         lazy = true,
         event = "BufEnter",
-        version = "1.8.37",
+        -- version = "1.8.37",
+        version = "1.12.0",
     },
     {
         "akinsho/git-conflict.nvim",
