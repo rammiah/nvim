@@ -93,7 +93,8 @@ require("lazy").setup({
         },
         lazy = true,
         event = "VeryLazy",
-        commit = "495c93b0d4f49f688a83f493bee0908fe1d2d2df",
+        -- commit = "495c93b0d4f49f688a83f493bee0908fe1d2d2df",
+        commit = "bef7ec6",
         config = function()
             vim.g.skip_ts_context_commentstring_module = true
             require("plugin-config.nvim-treesitter")
