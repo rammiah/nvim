@@ -16,7 +16,7 @@ local opts = {
         enabled = true,
         concurrency = 4, ---@type number? set to 1 to check for updates very slowly
         notify = true,            -- get a notification when new updates are found
-        frequency = 60 * 60 * 24, -- check for updates every day
+        frequency = 60 * 60 * 24 * 7, -- check for updates every week
         check_pinned = false,     -- check for pinned packages that can't be updated
     },
 }
