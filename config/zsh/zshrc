@@ -67,8 +67,13 @@ export BAT_THEME="Solarized (light)"
 alias cat="bat"
 alias rm="trash"
 alias ta="tmux attach"
-if [[ "$TERM" == "xterm-kitty" ]] then
+if test -n "$KITTY_INSTALLATION_DIR"; then
+    export KITTY_SHELL_INTEGRATION="enabled"
+    autoload -Uz -- "$KITTY_INSTALLATION_DIR"/shell-integration/zsh/kitty-integration
+    kitty-integration
+    unfunction kitty-integration
     alias icat="kitty +kitten icat"
+    # alias ssh="kitty +kitten ssh"
 fi
 alias oil="nvim +Oil"
 # editor
