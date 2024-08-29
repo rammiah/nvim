@@ -302,9 +302,11 @@
     "gitee",
     "httpx",
     "oneof",
+    "pydantic",
     "quic",
     "randn",
     "tmpl",
+    "uvicorn",
     "vmware"
   ],
   "semanticTokens.enable": true,
