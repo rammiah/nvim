@@ -80,6 +80,8 @@ alias oil="nvim +Oil"
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
 export NEOVIDE_MULTIGRID="true"
+export SYSTEMD_EDITOR="$VISUAL"
+# Defaults  env_keep += "SYSTEMD_EDITOR"
 
 # fzf
 [ -s ~/.fzf.zsh ] && source ~/.fzf.zsh
