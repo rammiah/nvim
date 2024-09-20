@@ -57,6 +57,18 @@
         "scala",
         "sbt"
       ]
+    },
+    "html": {
+      "command": "superhtml",
+      "args": [
+        "lsp"
+      ],
+      "rootPatterns": [],
+      "filetypes": [
+        "html",
+        "htm",
+        "shtml"
+      ]
     }
   },
   "zig.path": "~/.local/bin/zls",
