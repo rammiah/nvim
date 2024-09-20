@@ -35,7 +35,6 @@ vim.g.coc_global_extensions = {
     "coc-clangd",
     "coc-dictionary",
     "coc-go",
-    "coc-html",
     "coc-json",
     "coc-lists",
     "coc-pyright",
