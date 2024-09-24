@@ -15,9 +15,9 @@ local opts = {
         -- automatically check for plugin updates
         enabled = true,
         concurrency = 4, ---@type number? set to 1 to check for updates very slowly
-        notify = true,            -- get a notification when new updates are found
+        notify = true,                -- get a notification when new updates are found
         frequency = 60 * 60 * 24 * 7, -- check for updates every week
-        check_pinned = false,     -- check for pinned packages that can't be updated
+        check_pinned = false,         -- check for pinned packages that can't be updated
     },
 }
 
@@ -516,16 +516,14 @@ require("lazy").setup({
                     Norm = { cmd = "norm" },
                     G = { cmd = "g" },
                 },
-                defaults = {
-                    enable_highlighting = true,
-                    inline_highlighting = true,
-                    hl_groups = {
-                        insertion = "DiffAdd",
-                        deletion = "DiffDelete",
-                        change = "DiffChange",
-                    },
-                    debug = false,
+                enable_highlighting = true,
+                inline_highlighting = true,
+                hl_groups = {
+                    insertion = "DiffAdd",
+                    deletion = "DiffDelete",
+                    change = "DiffChange",
                 },
+                debug = false,
             }
         end
     },
