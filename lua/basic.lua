@@ -162,6 +162,6 @@ vim.opt.path = vim.opt.path + "**"
 vim.o.undofile = true
 vim.o.undolevels = 200
 vim.o.dictionary = vim.fn.stdpath("config") .. "/data/dict/google-10000-english.txt"
-vim.o.jumpoptions = vim.o.jumpoptions .. "stack"
+vim.o.jumpoptions = "stack"
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
