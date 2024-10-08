@@ -17,7 +17,7 @@ local function edit_or_open()
         api.tree.close() -- Close the tree if file was opened
     elseif node.nodes ~= nil then
         -- 文件夹节点
-        lib.expand_or_collapse(node)
+        node:expand_or_collapse()
     elseif node.name == ".." then
         -- 根节点不做操作
     else
@@ -37,7 +37,7 @@ local function split_preview()
     if node.link_to and not node.nodes then
         require('nvim-tree.actions.node.open-file').fn(action, node.link_to)
     elseif node.nodes ~= nil then
-        lib.expand_or_collapse(node)
+        node:expand_or_collapse()
     elseif node.name == ".." then
         -- ignore root node
     else
@@ -61,7 +61,7 @@ local function vsplit_preview()
     if node.link_to and not node.nodes then
         require('nvim-tree.actions.node.open-file').fn(action, node.link_to)
     elseif node.nodes ~= nil then
-        lib.expand_or_collapse(node)
+        node:expand_or_collapse()
     elseif node.name == ".." then
         -- ignore root node
     else
