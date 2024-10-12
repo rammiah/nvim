@@ -116,7 +116,8 @@
   "Lua.signatureHelp.enable": true,
   "Lua.completion.autoRequire": true,
   "Lua.completion.displayContext": 1,
-  "Lua.hint.enable": false,
+  "Lua.hint.await": true,
+  "Lua.hint.enable": true,
   "Lua.diagnostics.groupSeverity": {
     "unbalanced": "Hint"
   },
@@ -144,8 +145,6 @@
   },
   "sumneko-lua.prompt": true,
   "sumneko-lua.checkUpdate": true,
-  "Lua.hint.await": true,
-  "Lua.hint.enable": true,
   "inlayHint.enable": true,
   "inlayHint.enableParameter": true,
   "inlayHint.refreshOnInsertMode": true,
