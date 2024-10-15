@@ -29,7 +29,7 @@
       "rangeVariableTypes": true
     }
   },
-  "go.goplsUseDaemon": true,
+  "go.goplsUseDaemon": false,
   "languageserver": {
     "haskell": {
       "command": "haskell-language-server-wrapper",
