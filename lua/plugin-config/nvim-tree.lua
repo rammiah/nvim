@@ -1,5 +1,4 @@
 local map = require("localutils").KeyMap
-local lib = require("nvim-tree.lib")
 local api = require("nvim-tree.api")
 local treeutils = require("treeutils")
 
@@ -8,7 +7,7 @@ map("n", "<leader>e", "<Cmd>NvimTreeToggle<CR>")
 local function edit_or_open()
     -- open as vsplit on current node
     local action = "edit"
-    local node = lib.get_node_at_cursor()
+    local node = api.tree.get_node_under_cursor()
 
     -- Just copy what's done normally with vsplit
     if node.link_to and not node.nodes then
@@ -31,7 +30,7 @@ end
 local function split_preview()
     -- open as split on current node
     local action = "split"
-    local node = lib.get_node_at_cursor()
+    local node = api.tree.get_node_under_cursor()
 
     -- Just copy what's done normally with vsplit
     if node.link_to and not node.nodes then
@@ -55,7 +54,7 @@ end
 local function vsplit_preview()
     -- open as vsplit on current node
     local action = "vsplit"
-    local node = lib.get_node_at_cursor()
+    local node = api.tree.get_node_under_cursor()
 
     -- Just copy what's done normally with vsplit
     if node.link_to and not node.nodes then
