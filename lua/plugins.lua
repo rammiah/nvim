@@ -13,7 +13,7 @@ local opts = {
     -- }
     checker = {
         -- automatically check for plugin updates
-        enabled = true,
+        enabled = false,
         concurrency = 4, ---@type number? set to 1 to check for updates very slowly
         notify = true,                -- get a notification when new updates are found
         frequency = 60 * 60 * 24 * 7, -- check for updates every week
