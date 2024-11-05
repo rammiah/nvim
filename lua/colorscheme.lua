@@ -1,4 +1,4 @@
-local colorscheme = "catppuccin-macchiato"
+local colorscheme = "catppuccin-latte"
 vim.o.background = "light"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
