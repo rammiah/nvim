@@ -121,8 +121,8 @@ mods = "Command"
 
 [[keyboard.bindings]]
 action = "ToggleFullscreen"
-key = "Return"
-mods = "Command"
+key = "F"
+mods = "Control|Command"
 
 [[keyboard.bindings]]
 chars = "\u001B[1;5A"
@@ -247,9 +247,9 @@ x = 0
 y = 0
 
 [general]
-# import = ["~/.config/alacritty/catppuccin-latte.toml"]
+import = ["~/.config/alacritty/catppuccin-latte.toml"]
 # import = ["~/.config/alacritty/catppuccin-frappe.toml"]
-import = ["~/.config/alacritty/catppuccin-macchiato.toml"]
+# import = ["~/.config/alacritty/catppuccin-macchiato.toml"]
 
 [terminal]
 shell = { program = "/bin/zsh", args = ["-l"] }
