@@ -36,9 +36,8 @@ plugins=(
     rsync
     rust
     systemd
-    tig
     tmux
-    ufw
+    uv
     web-search
     yarn
     zoxide
@@ -75,6 +74,9 @@ if test -n "$KITTY_INSTALLATION_DIR"; then
     # alias ssh="kitty +kitten ssh"
 fi
 alias oil="nvim +Oil"
+# git show tag
+alias gdce="git describe --exact-match --tags"
+
 # editor
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
