@@ -94,9 +94,9 @@ lualine.setup {
         globalstatus = true,
         ignore_focus = {},
         refresh = {
-            statusline = 3000, -- time before nvim-tree refresh
-            tabline = 3000,
-            winbar = 3000,
+            statusline = 100,
+            tabline = 100,
+            winbar = 100,
         },
     },
     sections = {
