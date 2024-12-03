@@ -694,7 +694,7 @@ require("lazy").setup({
     {
         "rammiah/codeium.vim",
         config = function()
-            vim.g.codeium_idle_delay = 500
+            vim.g.codeium_idle_delay = 300
             vim.g.codeium_disable_bindings = 1
             -- vim.g.codeium_log_file = "/tmp/codeium.log"
             -- vim.g.codeium_log_level = "DEBUG"
@@ -702,7 +702,7 @@ require("lazy").setup({
         end,
         lazy = true,
         event = "BufEnter",
-        version = "1.28.3",
+        version = "1.28.6",
     },
     {
         "akinsho/git-conflict.nvim",
