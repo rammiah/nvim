@@ -692,7 +692,7 @@ require("lazy").setup({
         },
     },
     {
-        "rammiah/codeium.vim",
+        "Exafunction/codeium.vim",
         config = function()
             vim.g.codeium_idle_delay = 300
             vim.g.codeium_disable_bindings = 1
@@ -702,7 +702,7 @@ require("lazy").setup({
         end,
         lazy = true,
         event = "BufEnter",
-        version = "1.28.6",
+        version = "1.12.0",
     },
     {
         "akinsho/git-conflict.nvim",
