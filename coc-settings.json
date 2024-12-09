@@ -341,6 +341,6 @@
   "svelte.plugin.css.enable": true,
   "svelte.plugin.html.enable": true,
   "snippets.ultisnips.pythonPrompt": false,
-  "pyright.enable": true,
-  "python.venvPath": ".venv,venv"
+  "python.venvPath": ".venv",
+  "rust-analyzer.files.watcher": "server"
 }
