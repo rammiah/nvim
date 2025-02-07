@@ -760,4 +760,10 @@ require("lazy").setup({
             "Oil",
         }
     },
+    {
+        "nvzone/typr",
+        cmd = "TyprStats",
+        dependencies = "nvzone/volt",
+        opts = {},
+    },
 }, opts)
