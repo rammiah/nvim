@@ -10,3 +10,4 @@ node_modules/
 config/lazygit/state.yml
 pythonx/__pycache__
 lazy-lock.json
+typrstats
