@@ -18,7 +18,7 @@
       "nilness": true,
       "shadow": false
     },
-    "semanticTokens": true,
+    "semanticTokens": false,
     "hints": {
       "assignVariableTypes": false,
       "compositeLiteralFields": true,
