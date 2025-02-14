@@ -57,3 +57,5 @@
 	pushInsteadOf = https://gitlab.com/
 [url "ssh://git@gitea.com/"]
 	pushInsteadOf = https://gitea.com/
+[init]
+	defaultBranch = master
