@@ -24,6 +24,24 @@ vim.keymap.set("n", "<leader>ff", function()
     })
 end, opts)
 
+vim.keymap.set("n", "<leader>fF", function()
+    if view.is_visible() then
+        view.close()
+    end
+    builtin.find_files({
+        find_command = {
+            "fd",
+            "--type", "f",
+            "--strip-cwd-prefix",
+            "-E", "kitex_gen/",
+            "-E", "thrift_gen/",
+            "-E", "node_modules/",
+            "-H",
+            "-I",
+        }
+    })
+end, opts)
+
 vim.keymap.set("n", "<leader>fg", function()
     if view.is_visible() then
         view.close()
@@ -41,6 +59,29 @@ vim.keymap.set("n", "<leader>fg", function()
             "--iglob", "!thrift_gen/",
             "--iglob", "!kitex_gen/",
             "--iglob", "!node_modules/",
+        }
+    })
+end, opts)
+
+vim.keymap.set("n", "<leader>fG", function()
+    if view.is_visible() then
+        view.close()
+    end
+    builtin.live_grep({
+        vimgrep_arguments = {
+            "rg",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
+            "--iglob", "!.git/",
+            "--iglob", "!thrift_gen/",
+            "--iglob", "!kitex_gen/",
+            "--iglob", "!node_modules/",
+            "--hidden",
+            "--no-ignore",
         }
     })
 end, opts)

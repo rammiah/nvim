@@ -49,8 +49,6 @@
 	gpgSign = true
 [http]
 	sslVerify = true
-[url "https://gh.i2x.cc/github.com/"]
-	insteadOf = https://github.com/
 [url "https://[user:token]@github.com/"]
 	pushInsteadOf = https://github.com/
 [url "ssh://git@gitlab.com/"]
@@ -59,3 +57,4 @@
 	pushInsteadOf = https://gitea.com/
 [init]
 	defaultBranch = master
+
