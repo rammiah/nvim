@@ -15,6 +15,7 @@
       "unusedwrite": true,
       "unusedparams": true,
       "unusedresult": true,
+      "unusedfunc": true,
       "nilness": true,
       "shadow": false
     },
@@ -306,6 +307,7 @@
     "sjson",
   ],
   "cSpell.userWords": [
+    "Doubao",
     "Fooocus",
     "GEOIP",
     "Infof",
