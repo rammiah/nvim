@@ -1,5 +1,3 @@
-#!/usr/bin/env lua
-
 if not require("localutils").safe_load("plenary.job") then
     return
 end
@@ -41,7 +39,7 @@ local shells = {
     bash = "bash",
     haskell = "runhaskell",
     julia = "julia",
-    lua = "lua",
+    -- lua = "lua",
     make = "make",
     matlab = "octave", -- octave/matlab
     perl = "perl",
