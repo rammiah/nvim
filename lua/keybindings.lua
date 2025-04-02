@@ -28,3 +28,7 @@ if vim.g.neovide then
         vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen
     end, opts)
 end
+
+vim.keymap.set("n", "<leader>=", function ()
+vim.lsp.buf.format()
+end, opts)

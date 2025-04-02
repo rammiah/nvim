@@ -1,7 +1,6 @@
 -- #!/usr/bin/env lua
 return {
     "windwp/nvim-autopairs",
-    -- dependencies = { "saghen/blink.cmp" },
     config = function()
         local npairs = require("nvim-autopairs")
 
@@ -19,7 +18,7 @@ return {
                 lua = { "string", "source" }, -- it will not add a pair on that treesitter node
                 javascript = { "template_string", "string" },
             },
-            map_cr = false,
+            map_cr = true,
             map_bs = true, -- map the <BS> key
             map_c_h = false, -- Map the <C-h> key to delete a pair
             map_c_w = false, -- map <c-w> to delete a pair if possible
@@ -28,8 +27,10 @@ return {
         -- local cmp = require("blink-cmp")
         -- _M.autopairs_cr = function()
         --     if cmp.is_visible() then
-        --         return "<C-y>"
+        --         print("cmp visible")
+        --         return npairs.esc("<cr-y>")
         --     else
+        --         print("cmp not visible")
         --         return npairs.autopairs_cr()
         --     end
         -- end
@@ -89,7 +90,7 @@ return {
             }
         end
     end,
-    lazy = false,
-    -- event = "VeryLazy",
-    -- enabled = false,
+    lazy = true,
+    event = "VeryLazy",
+    enabled = true,
 }
