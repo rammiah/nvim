@@ -25,11 +25,22 @@ require("lazy").setup({
     {
         "kylechui/nvim-surround",
         version = "*",
+        lazy = false,
         config = function()
             require("nvim-surround").setup({
                 -- Configuration here, or leave empty to use defaults
             })
         end,
+        keys = {
+            { "ys", mode = "n" },
+            { "ds", mode = "n" },
+            { "cs", mode = "n" },
+            { "yS", mode = "n" },
+            { "dS", mode = "n" },
+            { "cS", mode = "n" },
+            { "S",  mode = "x" },
+            { "g",  mode = "x" },
+        },
     },
     -- color theme
     "overcache/NeoSolarized",
@@ -233,15 +244,9 @@ require("lazy").setup({
             require("plugin-config.autopairs")
         end,
         lazy = true,
+        -- event = "VeryLazy",
+        -- enabled = false,
         keys = {
-            { "ys",   mode = "n" },
-            { "ds",   mode = "n" },
-            { "cs",   mode = "n" },
-            { "yS",   mode = "n" },
-            { "dS",   mode = "n" },
-            { "cS",   mode = "n" },
-            { "S",    mode = "x" },
-            { "g",    mode = "x" },
             { "<CR>", mode = "i" },
             { "(",    mode = "i" },
             { "{",    mode = "i" },
@@ -249,8 +254,6 @@ require("lazy").setup({
             { "'",    mode = "i" },
             { '"',    mode = "i" },
         },
-        -- event = "VeryLazy",
-        -- enabled = false,
     },
     {
         "windwp/nvim-ts-autotag",

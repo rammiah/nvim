@@ -28,3 +28,11 @@ if vim.g.neovide then
         vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen
     end, opts)
 end
+
+-- delete vim.lsp keymap
+vim.keymap.del("n", "gri")
+vim.keymap.del("x", "gra")
+vim.keymap.del("n", "gra")
+vim.keymap.del("n", "grr")
+vim.keymap.del("n", "grn")
+vim.keymap.del("i", "<C-s>")
