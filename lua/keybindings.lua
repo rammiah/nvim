@@ -29,6 +29,6 @@ if vim.g.neovide then
     end, opts)
 end
 
-vim.keymap.set("n", "<leader>=", function ()
-vim.lsp.buf.format()
+vim.keymap.set("n", "<leader>=", function()
+    vim.lsp.buf.format()
 end, opts)
