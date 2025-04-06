@@ -13,7 +13,7 @@ return {
             nerd_font_variant = 'mono'
         },
 
-        signature = { enabled = false },
+        signature = { enabled = true },
 
         completion = {
             keyword = {
