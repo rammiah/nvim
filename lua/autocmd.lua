@@ -66,8 +66,8 @@ vim.api.nvim_create_autocmd("BufNewFile", {
         })
         -- print("new ft is "..vim.inspect(ft))
         if ft and shells[ft] then
-            local lines = { "#!/usr/bin/env " .. shells[ft], "" }
-            vim.api.nvim_put(lines, "l", false, true)
+            local lines = { "#!/usr/bin/env " .. shells[ft], "", "" }
+            vim.api.nvim_put(lines, "c", false, true)
         end
         local name = vim.fn.fnamemodify(opts.file, ":t")
         if name == ".envrc" then
@@ -92,8 +92,8 @@ vim.api.nvim_create_autocmd("BufReadPost", {
         })
         -- print("read ft is "..vim.inspect(ft))
         if ft and shells[ft] then
-            local lines = { "#!/usr/bin/env " .. shells[ft], "" }
-            vim.api.nvim_put(lines, "l", true, true)
+            local lines = { "#!/usr/bin/env " .. shells[ft], "", "" }
+            vim.api.nvim_put(lines, "c", true, true)
         end
     end,
     group = gid,
