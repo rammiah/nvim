@@ -1,6 +1,6 @@
 return {
-    -- "Exafunction/codeium.vim",
-    "rammiah/codeium.vim",
+    "Exafunction/windsurf.vim",
+    -- "rammiah/codeium.vim",
     config = function()
         vim.g.codeium_idle_delay = 300
         vim.g.codeium_disable_bindings = 1
@@ -10,7 +10,8 @@ return {
     end,
     lazy = true,
     event = "BufEnter",
-    version = "1.28.6",
+    branch = "main",
+    -- version = "1.28.6",
     -- version = "1.12.0",
-    enabled = false,
+    enabled = true,
 }
