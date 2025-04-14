@@ -84,29 +84,21 @@ elseif vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
     vim.o.shell = "powershell"
 end
 
--- vim.g.did_load_filetypes = 1
--- set python3 path
--- search python3 host by pyenv
-local python3_host = ""
-if vim.fn.executable("pyenv") == 1 then
-    python3_host = vim.fn.trim(vim.fn.system("pyenv which python3"))
-end
-if python3_host ~= "" then
-    vim.g.python3_host_prog = python3_host
-else
-    local python3_binaries = {
-        "/opt/homebrew/bin/python3",
-        "/usr/bin/python3",
-        "/usr/sbin/python3",
-        "python3",
-    }
+local python3_binaries = {
+    "$HOME/.local/venvs/nvim/.venv/bin/python3",
+    "/home/rammiah/.local/venvs/nvim/.venv/bin/python3",
+    "/root/.local/venvs/nvim/.venv/bin/python3",
+    "/Users/rammiah/.local/venvs/nvim/.venv/bin/python3",
+}
 
-    for i = 1, #python3_binaries do
-        if vim.fn.executable(python3_binaries[i]) == 1 then
-            vim.g.python3_host_prog = python3_binaries[i]
-            break
-        end
+for i = 1, #python3_binaries do
+    if vim.fn.executable(python3_binaries[i]) == 1 then
+        vim.g.python3_host_prog = python3_binaries[i]
+        break
     end
+end
+if vim.g.python3_host_prog == "" then
+    vim.notify("no python3 host", vim.log.levels.ERROR)
 end
 
 -- disable ruby and perl
