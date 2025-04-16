@@ -58,50 +58,47 @@ return {
         local Terminal = require('toggleterm.terminal').Terminal
         local map = require("localutils").KeyMap
 
-        -- TODO: add terminal shortcuts
-        -- local M = {}
-        --
-        -- local function add_terminal(exe, args, key, cnt, direction)
-        --     local direction = direction or "float"
-        --     local args = args or {}
-        --     if vim.fn.executable(exe) then
-        --         local cmd = exe .. table.concat(args, " ")
-        --         -- if cmds[cmd] ~= nil then
-        --         --     map("n", key, "<Cmd>lua require('plugin-config.toggleterm')." .. exe .. "Toggle()<CR>")
-        --         --     return
-        --         -- end
-        --         local term = Terminal:new({
-        --             cmd = cmd,
-        --             hidden = true,
-        --             direction = direction,
-        --             count = cnt,
-        --             on_open = function(t)
-        --                 vim.api.nvim_buf_set_keymap(t.bufnr, "t", "<C-\\>",
-        --                     "<Cmd>lua require('plugin-config.toggleterm')." .. exe .. "Toggle()<CR>",
-        --                     { silent = true, noremap = true })
-        --             end,
-        --             highlight = {
-        --                 NormalFloat = { link = "PMenu" },
-        --             },
-        --         })
-        --
-        --         M[exe .. "Toggle"] = function()
-        --             term:toggle()
-        --         end
-        --
-        --         map("n", key, "<Cmd>lua require('plugin-config.toggleterm')." .. exe .. "Toggle()<CR>")
-        --     else
-        --         vim.notify("please install " .. exe .. " first!!!", vim.log.levels.WARN)
-        --     end
-        -- end
+        local function add_terminal(exe, args, key, cnt, direction)
+            local direction = direction or "float"
+            local args = args or {}
+            if vim.fn.executable(exe) then
+                local cmd = exe .. table.concat(args, " ")
+                -- if cmds[cmd] ~= nil then
+                --     map("n", key, "<Cmd>lua require('plugin-config.toggleterm')." .. exe .. "Toggle()<CR>")
+                --     return
+                -- end
+                local term = Terminal:new({
+                    cmd = cmd,
+                    hidden = true,
+                    direction = direction,
+                    count = cnt,
+                    on_open = function(t)
+                        vim.api.nvim_buf_set_keymap(t.bufnr, "t", "<C-\\>",
+                            "<Cmd>lua _M." .. exe .. "Toggle()<CR>",
+                            { silent = true, noremap = true })
+                    end,
+                    highlight = {
+                        NormalFloat = { link = "PMenu" },
+                    },
+                })
 
-        -- add_terminal("lazygit", nil, "<leader>lz", 100)
-        -- add_terminal("lazygit", nil, "<leader>tl", 100)
-        -- add_terminal("htop", nil, "<leader>tt", 102)
-        -- add_terminal("ncdu", nil, "<leader>tu", 103)
-        -- add_terminal("ipython", nil, "<leader>tp", 104)
-        -- add_terminal("node", nil, "<leader>tn", 105)
-        -- add_terminal("zsh", nil, "<leader>`", 106, "horizontal")
+                _M[exe .. "Toggle"] = function()
+                    term:toggle()
+                end
+
+                map("n", key, "<Cmd>lua _M." .. exe .. "Toggle()<CR>")
+            else
+                vim.notify("please install " .. exe .. " first!!!", vim.log.levels.WARN)
+            end
+        end
+
+        add_terminal("lazygit", nil, "<leader>lz", 100)
+        add_terminal("lazygit", nil, "<leader>tl", 100)
+        add_terminal("htop", nil, "<leader>tt", 102)
+        add_terminal("ncdu", nil, "<leader>tu", 103)
+        add_terminal("ipython", nil, "<leader>tp", 104)
+        add_terminal("node", nil, "<leader>tn", 105)
+        add_terminal("zsh", nil, "<leader>`", 106, "horizontal")
 
         -- return M
     end,
