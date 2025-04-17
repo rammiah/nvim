@@ -130,6 +130,14 @@ return {
                 print("Not a git repo")
                 return
             end
+            local function git_has_changes()
+                local output = vim.fn.systemlist("git status --porcelain")
+                return #output > 0
+            end
+            if not git_has_changes() then
+                vim.notify("无未提交的改动", vim.log.levels.INFO)
+                return
+            end
             if view.is_visible() then
                 view.close()
             end
@@ -322,10 +330,10 @@ return {
             },
             extensions = {
                 fzf = {
-                    fuzzy = true,           -- false will only do exact matching
+                    fuzzy = true,                   -- false will only do exact matching
                     override_generic_sorter = true, -- override the generic sorter
-                    override_file_sorter = true, -- override the file sorter
-                    case_mode = "smart_case", -- or "ignore_case" or "respect_case" the default case_mode is "smart_case"
+                    override_file_sorter = true,    -- override the file sorter
+                    case_mode = "smart_case",       -- or "ignore_case" or "respect_case" the default case_mode is "smart_case"
                 },
                 hop = {
                     -- the shown `keys` are the defaults, no need to set `keys` if defaults work for you ;)
