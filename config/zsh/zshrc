@@ -103,9 +103,6 @@ export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 unalias gco
 
 _fzf_git_branch() {
-    # get all branch
-    git rev-parse HEAD > /dev/null 2>&1 || return
-
     git branch --color=always --all --sort=-committerdate |
         grep -v HEAD |
         fzf --height 50% --ansi --no-multi --preview-window right:65% \
@@ -115,7 +112,11 @@ _fzf_git_branch() {
 
 gco() {
     # check in git respository
-    git rev-parse HEAD > /dev/null 2>&1 || return
+    if ! git rev-parse HEAD > /dev/null 2>&1; then
+        echo "Not in a git repository." >&2
+        return 1
+    fi
+
 
     # params count
     if (( $# > 0 )) ; then
@@ -139,6 +140,32 @@ gco() {
     else
         git checkout $branch;
     fi
+}
+
+_fzf_git_tag() {
+    git tag --sort=-creatordate |
+        fzf --height 50% --ansi --no-multi --preview-window right:65% \
+        --preview 'git log -n 50 --color=always --date=short --pretty="format:%C(auto)%cd %h %s" {}'
+}
+
+gct() {
+    if ! git rev-parse HEAD > /dev/null 2>&1; then
+        echo "Not in a git repository." >&2
+        return 1
+    fi
+
+    if (( $# > 0 )) ; then
+        git checkout "$@"
+        return
+    fi
+
+    local tag
+    tag=$(_fzf_git_tag)
+    if [[ -z "$tag" ]]; then
+        echo "No tag selected."
+        return 1
+    fi
+    git checkout "$tag"
 }
 
 neofetch() {
