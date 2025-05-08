@@ -1,5 +1,5 @@
 [user]
-	email =  rammiahcn@gmail.com
+	email = rammiahcn@gmail.com
 	name = rammiah
 	signingkey = FDDFFCCEC57EB400
 ; core settings
@@ -21,7 +21,6 @@
 	writeToTemp = true
 [mergetool "nvimdiff"]
 	cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
-; store github token
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
@@ -49,12 +48,7 @@
 	gpgSign = true
 [http]
 	sslVerify = true
-[url "https://[user:token]@github.com/"]
-	pushInsteadOf = https://github.com/
-[url "ssh://git@gitlab.com/"]
-	pushInsteadOf = https://gitlab.com/
-[url "ssh://git@gitea.com/"]
-	pushInsteadOf = https://gitea.com/
 [init]
 	defaultBranch = master
-
+[include]
+	path = ~/.gitconfig.d/custom
