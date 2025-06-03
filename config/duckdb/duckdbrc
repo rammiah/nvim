@@ -1,0 +1,16 @@
+SET http_proxy='127.0.0.1:7890';
+
+INSTALL excel;
+LOAD excel;
+
+INSTALL spatial;
+LOAD spatial;
+
+INSTALL httpfs;
+LOAD httpfs;
+
+INSTALL aws;
+LOAD aws;
+
+INSTALL fts;
+LOAD fts;
