@@ -23,7 +23,7 @@ return {
     config = function()
         local builtin = require('telescope.builtin')
         local actions = require('telescope.actions')
-        local view = require("nvim-tree.view")
+        local tree_api = require("nvim-tree.api")
 
         local opts = {
             silent = true,
@@ -31,8 +31,8 @@ return {
         }
 
         vim.keymap.set("n", "<leader>ff", function()
-            if view.is_visible() then
-                view.close()
+            if tree_api.tree.is_visible() then
+                tree_api.tree.close()
             end
             builtin.find_files({
                 find_command = {
@@ -47,8 +47,8 @@ return {
         end, opts)
 
         vim.keymap.set("n", "<leader>fF", function()
-            if view.is_visible() then
-                view.close()
+            if tree_api.tree.is_visible() then
+                tree_api.tree.close()
             end
             builtin.find_files({
                 find_command = {
@@ -65,8 +65,8 @@ return {
         end, opts)
 
         vim.keymap.set("n", "<leader>fg", function()
-            if view.is_visible() then
-                view.close()
+            if tree_api.tree.is_visible() then
+                tree_api.tree.close()
             end
             builtin.live_grep({
                 vimgrep_arguments = {
@@ -86,8 +86,8 @@ return {
         end, opts)
 
         vim.keymap.set("n", "<leader>fG", function()
-            if view.is_visible() then
-                view.close()
+            if tree_api.tree.is_visible() then
+                tree_api.tree.close()
             end
             builtin.live_grep({
                 vimgrep_arguments = {
@@ -109,15 +109,15 @@ return {
         end, opts)
 
         vim.keymap.set("n", "<leader>fb", function()
-            if view.is_visible() then
-                view.close()
+            if tree_api.tree.is_visible() then
+                tree_api.tree.close()
             end
             builtin.buffers()
         end, opts)
 
         vim.keymap.set("n", "<leader>fr", function()
-            if view.is_visible() then
-                view.close()
+            if tree_api.tree.is_visible() then
+                tree_api.tree.close()
             end
             builtin.resume()
         end, opts)
@@ -138,15 +138,15 @@ return {
                 vim.notify("无未提交的改动", vim.log.levels.INFO)
                 return
             end
-            if view.is_visible() then
-                view.close()
+            if tree_api.tree.is_visible() then
+                tree_api.tree.close()
             end
             builtin.git_status()
         end, opts)
 
         vim.keymap.set("n", "<leader>fl", function()
-            if view.is_visible() then
-                view.close()
+            if tree_api.tree.is_visible() then
+                tree_api.tree.close()
             end
             builtin.current_buffer_fuzzy_find()
         end, opts)
