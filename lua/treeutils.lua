@@ -1,7 +1,6 @@
 local api = require 'nvim-tree.api'
 local openfile = require 'nvim-tree.actions.node.open-file'
 local actions = require 'telescope.actions'
-local view = require("nvim-tree.view")
 local action_state = require 'telescope.actions.state'
 local M = {}
 
