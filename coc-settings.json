@@ -17,7 +17,9 @@
       "unusedresult": true,
       "unusedfunc": true,
       "nilness": true,
-      "shadow": false
+      "shadow": false,
+      "ST1003": false,
+      "ST1000": false,
     },
     "semanticTokens": false,
     "hints": {
@@ -30,7 +32,7 @@
       "rangeVariableTypes": true
     }
   },
-  "go.goplsUseDaemon": false,
+  "go.goplsUseDaemon": true,
   "languageserver": {
     "haskell": {
       "command": "haskell-language-server-wrapper",
@@ -160,7 +162,7 @@
   "suggest.noselect": false,
   "documentHighlight.timeout": 500,
   "suggest.acceptSuggestionOnCommitCharacter": true,
-  "suggest.languageSourcePriority": 99,
+  "suggest.languageSourcePriority": 100,
   "suggest.autoTrigger": "always",
   "suggest.defaultSortMethod": "length",
   "suggest.detailField": "preview",
@@ -198,7 +200,7 @@
   "suggest.snippetsSupport": true,
   "suggest.timeout": 5000,
   "suggest.triggerAfterInsertEnter": false,
-  "suggest.triggerCompletionWait": 50,
+  "suggest.triggerCompletionWait": 1,
   "suggest.reversePumAboveCursor": false,
   "suggest.completionItemKindLabels": {
     "class": "",
