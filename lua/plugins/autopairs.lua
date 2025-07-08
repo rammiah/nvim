@@ -92,7 +92,7 @@ return {
             }
         end
     end,
-    lazy = true,
-    event = "VeryLazy",
+    lazy = false,
+    -- event = "VeryLazy",
     enabled = true,
 }
