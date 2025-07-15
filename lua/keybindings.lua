@@ -31,6 +31,8 @@ end
 
 -- delete vim.lsp keymap
 vim.keymap.del("n", "gri")
+vim.keymap.del("n", "grt")
+vim.keymap.del("n", "gO")
 vim.keymap.del("x", "gra")
 vim.keymap.del("n", "gra")
 vim.keymap.del("n", "grr")

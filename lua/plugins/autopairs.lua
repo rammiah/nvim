@@ -93,6 +93,6 @@ return {
         end
     end,
     lazy = false,
-    -- event = "VeryLazy",
+    event = "VeryLazy",
     enabled = true,
 }
