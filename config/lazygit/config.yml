@@ -6,7 +6,6 @@ gui:
 os:
   edit: 'nvim {{filename}}' # see 'Configuring File Editing' section
   editAtLine: 'nvim +{{line}} -- {{filename}}'
-  openCommand: ''
 
 git:
   paging:
