@@ -9,8 +9,8 @@ return {
     },
     lazy = true,
     event = "VeryLazy",
-    -- commit = "495c93b0d4f49f688a83f493bee0908fe1d2d2df",
-    commit = "da5825bf70cc2ea7eacd1e60c32c07baf19adeba",
+    -- commit = "da5825bf70cc2ea7eacd1e60c32c07baf19adeba",
+    version = 'v0.10.0',
     config = function()
         vim.g.skip_ts_context_commentstring_module = true
         require("nvim-treesitter.configs").setup {
