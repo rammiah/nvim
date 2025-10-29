@@ -104,3 +104,19 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         vim.highlight.on_yank { higroup = 'IncSearch', timeout = 300 }
     end,
 })
+
+local filetype_settings_group = vim.api.nvim_create_augroup('FileTypeSettings', { clear = true })
+
+vim.api.nvim_create_autocmd({ 'BufReadPre', 'BufNewFile' }, {
+    group = filetype_settings_group,
+    pattern = { '*.bat', '*.cmd', "*.ps1" }, -- 匹配 .bat 和 .cmd 文件
+    callback = function()
+        -- 设置缓冲区本地选项
+        vim.bo.fileencoding = 'cp936'
+        vim.bo.fileformat = 'dos'
+
+        -- 可选：如果你希望 Neovim 界面也用 gbk 显示，可以设置 'encoding'
+        -- 但这通常不推荐，因为它会影响整个 Neovim 的 UI
+        -- vim.o.encoding = 'cp936'
+    end,
+})
