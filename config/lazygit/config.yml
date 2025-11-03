@@ -6,10 +6,8 @@ gui:
 os:
   edit: 'nvim {{filename}}' # see 'Configuring File Editing' section
   editAtLine: 'nvim +{{line}} -- {{filename}}'
-
 git:
-  paging:
-    colorArg: always
-    pager: delta --light --paging=never
-
+  pagers:
+    - colorArg: always
+      pager: delta --light --paging=never
 promptToReturnFromSubprocess: false
