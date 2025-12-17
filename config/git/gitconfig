@@ -2,6 +2,7 @@
 	email = rammiahcn@gmail.com
 	name = rammiah
 	signingkey = FDDFFCCEC57EB400
+	useConfigOnly = true
 ; core settings
 [core]
 	editor=nvim
@@ -28,9 +29,18 @@
 	smudge = git-lfs smudge -- %f
 [pull]
 	ff = only
+	rebase = false
 
 [core]
 	pager = delta
+	quotepath = false
+	longpaths = true
+	autocrlf = input
+	trustctime = false
+	excludesfile = ~/.gitignore_global
+	attributesfile = ~/.attributes_global
+	ignorecase = true
+	untrackedcache = true
 [interactive]
 	diffFilter = delta --color-only
 [add.interactive]
@@ -48,7 +58,25 @@
 	gpgSign = true
 [http]
 	sslVerify = true
+	postBuffer = 655360000
 [init]
 	defaultBranch = master
 [include]
 	path = ~/.gitconfig.d/custom
+[diff "text"]
+	textconv = cat
+[lfs]
+	concurrenttransfers = 32
+	fetchrecentrefsdays = 0
+	pruneoffsetdays = 0
+	dialtimeout = 3
+	tlstimeout = 3
+[lfs "transfer"]
+	maxretries = 1
+	maxretrydelay = 2
+[merge "lfs-text"]
+	driver = git lfs merge-driver --ancestor %O --current %A --other %B --marker-size %L --output %A --program 'git merge-file --stdout --marker-size=%%L %%A %%O %%B >%%D'
+[rebase]
+	backend = merge
+[safe]
+	directory = *
