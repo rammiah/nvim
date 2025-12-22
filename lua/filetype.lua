@@ -10,5 +10,6 @@ vim.filetype.add({
     },
     extension = {
         thrift = "thrift",
+        site = "Caddyfile",
     }
 })
