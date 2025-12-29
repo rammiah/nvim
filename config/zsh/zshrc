@@ -12,7 +12,7 @@ UPDATE_ZSH_DAYS=30
 # or to check for updates daily
 UPDATE_ZSH_DAYS=1
 
-export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 if [ -d ~/.zshconf/pre ]
 then
