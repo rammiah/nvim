@@ -1,0 +1,41 @@
+{
+  "plugin": [
+    "opencode-anthropic-auth@0.0.9",
+    "oh-my-opencode"
+  ],
+  "$schema": "https://opencode.ai/config.json",
+  "enabled_providers": [
+    "anthropic",
+    "openrouter",
+    "alibaba-cn",
+    "zhipuai",
+    "minimax-cn",
+    "doubao",
+    "opencode",
+    "nvidia",
+  ],
+  "provider": {
+    "doubao": {
+      "options": {
+        "baseURL": "https://ark.cn-beijing.volces.com/api/coding/v3"
+      },
+      "models": {
+        "ark-code-latest": {
+          "name": "ark-code-latest"
+        },
+        "doubao-seed-code-preview-latest": {
+          "name": "doubao-seed-code"
+        }
+      }
+    },
+    "nvidia": {
+      "options": {
+        "baseURL": "https://integrate.api.nvidia.com/v1"
+      },
+      "models": {
+        "minimaxai/minimax-m2.1": {},
+      }
+    }
+  },
+  "model": "doubao/ark-code-latest"
+}
