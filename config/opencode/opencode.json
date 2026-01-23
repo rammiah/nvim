@@ -1,7 +1,8 @@
 {
   "plugin": [
     "opencode-anthropic-auth@0.0.9",
-    "oh-my-opencode"
+    "oh-my-opencode",
+    "@zenobius/opencode-skillful",
   ],
   "$schema": "https://opencode.ai/config.json",
   "enabled_providers": [
@@ -33,9 +34,11 @@
         "baseURL": "https://integrate.api.nvidia.com/v1"
       },
       "models": {
-        "minimaxai/minimax-m2.1": {},
+        "minimaxai/minimax-m2.1": {
+          "name": "Minimax-M2.1"
+        },
       }
     }
   },
-  "model": "doubao/ark-code-latest"
+  "model": "minimax-cn/MiniMax-M2.1",
 }
