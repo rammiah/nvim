@@ -2,6 +2,7 @@ return {
     "hiphish/rainbow-delimiters.nvim",
     event = "VeryLazy",
     version = "v0.9.1",
+    submodules = false,
     config = function()
         local rainbow_delimiters = require 'rainbow-delimiters'
         vim.g.rainbow_delimiters = {
