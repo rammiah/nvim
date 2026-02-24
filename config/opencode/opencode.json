@@ -9,26 +9,12 @@
     "alibaba-cn",
     "zhipuai",
     "minimax-cn",
-    "doubao",
     "opencode",
     "nvidia",
     "moonshotai-cn",
     "kimi-for-coding"
   ],
   "provider": {
-    "doubao": {
-      "options": {
-        "baseURL": "https://ark.cn-beijing.volces.com/api/coding/v3"
-      },
-      "models": {
-        "ark-code-latest": {
-          "name": "ark-code-latest"
-        },
-        "doubao-seed-code-preview-latest": {
-          "name": "doubao-seed-code"
-        }
-      }
-    },
     "nvidia": {
       "options": {
         "baseURL": "https://integrate.api.nvidia.com/v1"
