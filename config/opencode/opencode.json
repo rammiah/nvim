@@ -19,8 +19,8 @@
         "baseURL": "https://integrate.api.nvidia.com/v1"
       },
       "models": {
-        "minimaxai/minimax-m2.1": {
-          "name": "Minimax-M2.1"
+        "minimaxai/minimax-m2.5": {
+          "name": "Minimax-M2.5"
         }
       }
     },
@@ -37,5 +37,5 @@
     }
   },
   "model": "openai/gpt-5.3-codex",
-  "small_model": "openai/gpt-5.3-codex-spark"
+  "small_model": "alibaba-cn/qwen3.5-plus"
 }
