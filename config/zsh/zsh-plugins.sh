@@ -2,7 +2,7 @@
 
 function clone_repo() {
     test -e "$2" && rm -rf "$2"
-    git clone "$1" "$2"
+    git clone --depth=1 "$1" "$2"
 }
 
 clone_repo https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
