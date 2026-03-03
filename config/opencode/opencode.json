@@ -29,11 +29,208 @@
         "qwen3-max-2026-01-23": {}
       }
     },
-    "anthropic": {
+    "free-gpt": {
+      "npm": "@ai-sdk/openai",
+      "name": "free-gpt",
       "options": {
-        "baseURL": "https://one.zifumh.cn/v1",
+        "baseURL": "https://betterclau.de/openai/cch.jlypx.de/v1",
       },
-      "npm": "@ai-sdk/anthropic"
+      "models": {
+        "gpt-5.3-codex": {
+          "name": "GPT-5.3 Codex",
+          "attachment": true,
+          "reasoning": true,
+          "tool_call": true,
+          "temperature": false,
+          "cost": {
+            "input": 1.75,
+            "output": 14,
+            "cache_read": 0.175
+          },
+          "limit": {
+            "context": 272000,
+            "output": 128000
+          },
+          "options": {
+            "store": false,
+            "reasoningEffort": "high",
+            "textVerbosity": "medium",
+            "reasoningSummary": "auto",
+            "promptCacheKey": "opencode-stable-user",
+            "include": [
+              "reasoning.encrypted_content"
+            ]
+          },
+          "variants": {
+            "xhigh": {
+              "reasoningEffort": "xhigh",
+              "textVerbosity": "medium",
+              "reasoningSummary": "detailed"
+            },
+            "high": {
+              "reasoningEffort": "high",
+              "textVerbosity": "medium",
+              "reasoningSummary": "detailed"
+            },
+            "medium": {
+              "reasoningEffort": "medium",
+              "textVerbosity": "medium",
+              "reasoningSummary": "auto"
+            },
+            "low": {
+              "reasoningEffort": "low",
+              "textVerbosity": "medium",
+              "reasoningSummary": "auto"
+            }
+          },
+          "headers": {
+            "x-session-id": "opencode-stable-user",
+            "conversation_id": "opencode-stable-user",
+            "session_id": "opencode-stable-user"
+          }
+        },
+        "gpt-5.2": {
+          "name": "GPT-5.2",
+          "attachment": true,
+          "reasoning": true,
+          "tool_call": true,
+          "temperature": false,
+          "cost": {
+            "input": 1.75,
+            "output": 14,
+            "cache_read": 0.175
+          },
+          "limit": {
+            "context": 272000,
+            "output": 128000
+          },
+          "options": {
+            "store": false,
+            "reasoningEffort": "high",
+            "textVerbosity": "medium",
+            "reasoningSummary": "auto",
+            "promptCacheKey": "opencode-stable-user",
+            "include": [
+              "reasoning.encrypted_content"
+            ]
+          },
+          "variants": {
+            "xhigh": {
+              "reasoningEffort": "xhigh",
+              "textVerbosity": "medium",
+              "reasoningSummary": "auto"
+            },
+            "high": {
+              "reasoningEffort": "high",
+              "textVerbosity": "medium",
+              "reasoningSummary": "auto"
+            },
+            "medium": {
+              "reasoningEffort": "medium",
+              "textVerbosity": "medium",
+              "reasoningSummary": "auto"
+            },
+            "low": {
+              "reasoningEffort": "low",
+              "textVerbosity": "medium",
+              "reasoningSummary": "auto"
+            }
+          },
+          "headers": {
+            "x-session-id": "opencode-stable-user",
+            "conversation_id": "opencode-stable-user",
+            "session_id": "opencode-stable-user"
+          }
+        },
+        "gpt-5.2-codex": {
+          "name": "GPT-5.2 Codex",
+          "attachment": true,
+          "reasoning": true,
+          "tool_call": true,
+          "temperature": false,
+          "cost": {
+            "input": 1.75,
+            "output": 14,
+            "cache_read": 0.175
+          },
+          "limit": {
+            "context": 272000,
+            "output": 128000
+          },
+          "options": {
+            "store": false,
+            "reasoningEffort": "high",
+            "textVerbosity": "medium",
+            "reasoningSummary": "auto",
+            "promptCacheKey": "opencode-stable-user",
+            "include": [
+              "reasoning.encrypted_content"
+            ]
+          },
+          "variants": {
+            "xhigh": {
+              "reasoningEffort": "xhigh",
+              "textVerbosity": "medium",
+              "reasoningSummary": "auto"
+            },
+            "high": {
+              "reasoningEffort": "high",
+              "textVerbosity": "medium",
+              "reasoningSummary": "auto"
+            },
+            "medium": {
+              "reasoningEffort": "medium",
+              "textVerbosity": "medium",
+              "reasoningSummary": "auto"
+            },
+            "low": {
+              "reasoningEffort": "low",
+              "textVerbosity": "medium",
+              "reasoningSummary": "auto"
+            }
+          },
+          "headers": {
+            "x-session-id": "opencode-stable-user",
+            "conversation_id": "opencode-stable-user",
+            "session_id": "opencode-stable-user"
+          }
+        },
+        "gpt-5.1-codex-max": {
+          "name": "GPT-5.1-Codex-Max",
+          "limit": {
+            "context": 272000,
+            "output": 128000
+          },
+          "options": {
+            "store": false,
+            "include": [
+              "reasoning.encrypted_content"
+            ]
+          },
+          "variants": {
+            "xhigh": {
+              "reasoningEffort": "xhigh",
+              "textVerbosity": "medium",
+              "reasoningSummary": "auto"
+            },
+            "high": {
+              "reasoningEffort": "high",
+              "textVerbosity": "medium",
+              "reasoningSummary": "auto"
+            },
+            "medium": {
+              "reasoningEffort": "medium",
+              "textVerbosity": "medium",
+              "reasoningSummary": "auto"
+            },
+            "low": {
+              "reasoningEffort": "low",
+              "textVerbosity": "medium",
+              "reasoningSummary": "auto"
+            }
+          }
+        }
+      }
     }
   },
   "model": "openai/gpt-5.3-codex",
