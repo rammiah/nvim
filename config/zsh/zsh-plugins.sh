@@ -12,4 +12,4 @@ clone_repo https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-
 clone_repo https://github.com/TamCore/autoupdate-oh-my-zsh-plugins ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/autoupdate
 
 mkdir -p ~/.zshconf/post
-cp -f ~/.config/nvim/config/zsh/clipcopy.zsh ~/.zshconf/post/
+ln -sf ~/.config/nvim/config/zsh/clipcopy.zsh ~/.zshconf/post/clipcopy.zsh
