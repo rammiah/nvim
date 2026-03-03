@@ -9,3 +9,6 @@ clone_or_pull https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-
 clone_or_pull https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 clone_or_pull https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 clone_or_pull https://github.com/TamCore/autoupdate-oh-my-zsh-plugins ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/autoupdate
+
+mkdir -p ~/.zshconf/post
+cp -f ~/.config/nvim/config/zsh/clipcopy.zsh ~/.zshconf/post/
